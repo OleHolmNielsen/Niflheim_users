@@ -33,4 +33,4 @@ language = 'en'
 # See https://sphinx-rtd-theme.readthedocs.io/en/stable/
 html_theme = 'sphinx_rtd_theme'
 # html_theme = 'classic'
-html_static_path = ['_static']
+# html_static_path = ['_static']
