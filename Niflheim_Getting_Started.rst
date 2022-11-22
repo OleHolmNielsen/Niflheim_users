@@ -889,10 +889,15 @@ is running Linux or MacOS.
       
       ssh -J username@jumphost -L NNNN:localhost:NNNN username@xxxx.fysik.dtu.dk -N
 
-   where ``xxxx`` is slid or whatever machine you are using; ``username`` is your DTU username;
-   ``NNNN`` is the port number printed by the notebook command; and ``jumphost`` is the name of 
-   the DTU Physics gateway machine.  You need to contact Ole or your supervisor to get the actual name of the ``jumphost``, and to have 
-   your account enabled on it.
+   where:
+
+   * ``xxxx`` is slid or whatever machine you are using,
+   * ``username`` is your DTU username,
+   * ``NNNN`` is the port number printed by the notebook command,
+   * ``jumphost`` is the name of the DTU Physics gateway machine.
+     You need to contact Ole or your supervisor to get the actual name of the ``jumphost``, and to have your account enabled on it.
+
+   The part ``-J username@jumphost`` can be omitted if you are using a desktop connected to the Fysik cabled network.
 
 5. Open a browser, and cut-and-paste the address starting with ``https://localhost`` into your browser.
 
