@@ -4,7 +4,7 @@
 Niflheim Getting Started
 ========================
 
-View the page contents in the menu bar.
+View the page contents in the menu bar on the left.
 See the :ref:`Access_to_Niflheim` section about getting access.
 
 Overview of Niflheim
@@ -30,6 +30,7 @@ Accounting: You can see the Niflheim monthly and weekly usage
 Login to Niflheim
 =================
 
+See the :ref:`Access_to_Niflheim` section about getting access.
 Login to *Niflheim* is available with SSH_ **only** from the DTU network.
 If you are outside of DTU, please log in to the DTU_VPN_ service or the G-databar_ first.
 
