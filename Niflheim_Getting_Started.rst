@@ -31,7 +31,7 @@ Login to Niflheim
 =================
 
 See the :ref:`Access_to_Niflheim` section about getting access.
-Login to *Niflheim* is available with SSH_ **only** from the DTU network.
+Login to *Niflheim* is available with SSH_ **only** from within the DTU network.
 If you are outside of DTU, please log in to the DTU_VPN_ service or the G-databar_ first.
 
 .. _DTU_VPN: https://www.inside.dtu.dk/en/medarbejder/it-og-telefoni/wifi-og-fjernadgang/vpn-cisco-anyconnect/vpn-ait-dtu-dk
