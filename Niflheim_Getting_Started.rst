@@ -5,6 +5,7 @@ Niflheim Getting Started
 ========================
 
 View the page contents in the menu bar.
+See the :ref:`Access_to_Niflheim` section about getting access.
 
 Overview of Niflheim
 ====================

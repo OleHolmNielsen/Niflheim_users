@@ -18,6 +18,8 @@ Please see the :ref:`Hardware` page for further details.
 
 .. _TeraFLOPS: http://en.wikipedia.org/wiki/FLOPS
 
+.. _Access_to_Niflheim:
+
 Access to Niflheim
 ==================
 
