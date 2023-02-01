@@ -341,7 +341,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 * The default **time limit** for jobs is **50 hours**.
   However, the xeon16, xeon16_128, xeon16_256 partitions will accept jobs up to **1 week** (168 hours).
 
-* Please use the most modern compute nodes in the xeon40 and xeon24 partitions fully.'
+* Please use the most modern compute nodes in the xeon40 and xeon24 partitions fully.
   Please do not submit jobs to these partitions which only use partial nodes.
 
 * Please do not use the GPU partition ``sm3090`` unless you have been authorized to use GPUs.
