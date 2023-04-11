@@ -600,7 +600,7 @@ Shared scratch disk spaces
 For those applications which require the medium-term use of scratch files across several different nodes or for subsequent batch jobs,
 we provide some scratch file spaces at::
 
-  /home/scratch9/$USER/         # CAMD, CatTheory, Energy groups
+  /home/scratch3/$USER/         # CAMD, CatTheory, Energy groups
   /home/scratch11/$USER/        # Construct/MEK group
 
 **REMEMBER:** There is **no backup** of files!!
