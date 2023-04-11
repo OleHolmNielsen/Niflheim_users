@@ -585,8 +585,6 @@ This ``$TMPDIR`` setting is the default value in many computer codes and may not
 
 Notes:
 
-* Previously (before July 7, 2022) we advised to use the ``/scratch/$USER`` folder,
-  but we have implemented a new method so that users are now advised to use ``/tmp`` in stead.
 * On the **login nodes** you should **not** use ``/tmp`` for large files!
   Please continue to use the ``/scratch/$USER`` folder.
 
@@ -596,17 +594,19 @@ Technical details:
 * This temporary disk space lives only for the duration of the Slurm_ job, and is automatically deleted when the job terminates.
 * This temporary disk space is actually allocated on the compute node's local ``/scratch`` disk, the size of which is specified above under the *Compute node partitions* section.
 
-Shared scratch disk space
-.........................
+Shared scratch disk spaces
+..........................
 
-For those applications which require the use of scratch files across several different nodes, we have a special scratch file space for each user at::
+For those applications which require the medium-term use of scratch files across several different nodes or for subsequent batch jobs,
+we provide some scratch file spaces at::
 
-  /home/scratch2/$USER/
+  /home/scratch9/$USER/         # CAMD, CatTheory, Energy groups
+  /home/scratch11/$USER/        # Construct/MEK group
 
-This disk space is on an old server with a reasonable but not very high performance.
-There is **no backup** of files!!
+**REMEMBER:** There is **no backup** of files!!
+Lost files cannot be recovered by any means!
 
-**Files older than 30 days** will get deleted automatically.
+Please remember to clean up scratch files regularly when they are no longer needed.
 
 Viewing completed job information
 ---------------------------------
