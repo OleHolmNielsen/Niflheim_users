@@ -955,82 +955,55 @@ Containers_ are well suited to running one or two applications non-interactively
 Containers_ share the under-lying Linux kernel of the host system, so only Linux Containers_ can exist on a Linux host.
 
 However, Docker_ is not well suited for a shared multi-user system, let alone an HPC supercomputer system, primarily due to security issues and performance issues with parallel HPC applications.
-Please see the Singularity_security_ page.
+Please see the Apptainer_security_ page.
 
-A relatively new Containers_ technology created for HPC is Singularity_, developed at *Lawrence Berkeley Lab* (LBL_).
-Singularity_ assumes (more or less) that each application will have its own container. 
-Singularity_ assumes that you will have a build system where you are the root user, but that you will also have a production system where you may not be the root user.
+A Containers_ technology created for HPC is Apptainer_ (previously known as Singularity_).
+Apptainer_ assumes (more or less) that each application will have its own container. 
+Apptainer_ assumes that you will have a build system where you are the root user, but that you will also have a production system where you may not be the root user.
 
-To learn more about Singularity_, please see some resources:
-
-* Singularity_ home page.
-* About_Singularity_.
-* Singularity_FAQ_.
-* Singularity_tutorial_ page.
-* Singularity_Hub_ Container Registry.
-* Singularity_recipe_ for building any container.
+Please consult the Apptainer_documentation_ for further information.
+There is a *Singularity video tutorial* on the Apptainer_ homepage.
 
 .. _Containers: https://cloud.google.com/containers/
 .. _Docker: https://www.docker.com/
-.. _Singularity: https://singularity.lbl.gov/
-.. _About_Singularity: https://singularity.lbl.gov/about
-.. _Singularity_FAQ: https://singularity.lbl.gov/faq
-.. _LBL: https:/www.lbl.gov
-.. _Singularity_tutorial: https://singularity-tutorial.github.io/
-.. _Singularity_Hub: https://singularity-hub.org/
-.. _Singularity_recipe: https://singularity.lbl.gov/docs-recipes
-.. _Singularity_security: https://singularity.lbl.gov/docs-security
+.. _Apptainer: https://apptainer.org/
+.. _Apptainer_security: https://apptainer.org/docs/user/main/security.html
+.. _Apptainer_documentation: https://apptainer.org/docs/user/latest/
+.. _Singularity: https://en.wikipedia.org/wiki/Singularity_(software)
 
-Singularity on Niflheim
+Apptainer on Niflheim
 -----------------------
 
-We have installed Singularity_ (current version: 3.8 from EPEL) as RPM packages.
-To get started with Singularity_ it is recommended to follow the Singularity_tutorial_ page, where you may skip to *Hour 2 (Building and Running Containers)*.
+We have installed Apptainer_ (current version: 1.1.7 from EPEL) as RPM packages.
 
-You can make a test run of a Docker_ container to be executed by Singularity_::
+If you have root priviledge on your personal Linux PC, you may want to make an Apptainer_ installation locally on the PC.
+Finished containers can be copied to Niflheim, and executing Apptainer_ containers is as a **normal user** without any root priviledge at all!
 
-  singularity run docker://godlovedc/lolcow
+Please note that you must build containers within a **local file system** (not a shared file system like NFS where root access is prohibited).
 
-Examples of Singularity_ containers are in this directory::
-
-  /usr/share/doc/singularity*/examples/
-
-If you want to build and test Singularity_ containers on Niflheim, we must grant you some *sudo* priviledge - please write to the :ref:`Niflheim_support` E-mail. 
-
-Alternatively, if you have root priviledge on your personal Linux PC, you may want to make a Singularity installation locally on the PC.
-Finished containers can be copied to Niflheim, and executing Singularity_ containers is as a **normal user** without any root priviledge at all!
-
-Please note that you must build containers within a **local file system** (not a shared file system like NFS where root access is prohibited),
-so please go to a local scratch directory such as ``/scratch/$USER``).
-
-Questions: Please write to the :ref:`Niflheim_support` E-mail. 
-
-Running Docker containers
--------------------------
-
-Docker_ containers can be executed under Singularity_.
+Docker_ containers can be executed under Apptainer_.
 For example, make a test run of a simple Docker_ container from DockerHub_::
 
-  singularity run docker://godlovedc/lolcow
+  apptainer run docker://godlovedc/lolcow
 
 You can run many recent versions of CentOS Docker_ containers from the `CentOS library <https://hub.docker.com/r/library/centos/>`_, for example a 6.9 container::
 
-  singularity run docker://centos:centos6.9
+  apptainer run docker://centos:centos6.9
 
 Ubuntu Linux may be run from the `Ubuntu library <https://hub.docker.com/_/ubuntu/>`_::
 
-  singularity run docker://ubuntu:17.10
+  apptainer run docker://ubuntu:17.10
 
 Application codes may also be on DockerHub_, for example an `OpenFOAM container <https://hub.docker.com/r/openfoam/>`_ can be run with::
 
-  singularity run docker://openfoam/openfoam4-paraview50 
+  apptainer run docker://openfoam/openfoam4-paraview50 
 
 .. _DockerHub: https://hub.docker.com/explore/
 
-Singularity batch jobs
+Apptainer batch jobs
 ----------------------
 
-You can submit normal Slurm_ batch jobs to the queue running Singularity_ containers just like any other executable.
+You can submit normal Slurm_ batch jobs to the queue running Apptainer_ containers just like any other executable.
 
 An example job script running a container image ``lolcow.simg``::
 
@@ -1039,14 +1012,14 @@ An example job script running a container image ``lolcow.simg``::
   #SBATCH --partition=xeon16
   #SBATCH --time=05:00
   #SBATCH --output=lolcow.%J.log
-  singularity exec lolcow.simg cowsay 'How did you get out of the container?'
+  apptainer exec lolcow.simg cowsay 'How did you get out of the container?'
 
-To run a Singularity_ container in parallel on 2 nodes and 10 CPU cores with MPI use the following lines::
+To run a Apptainer_ container in parallel on 2 nodes and 10 CPU cores with MPI use the following lines::
 
   #SBATCH -N 2-2
   #SBATCH -n 10
   module load OpenMPI
-  mpirun -n $SLURM_NTASKS singularity exec lolcow.simg cowsay 'How did you get out of the container?'
+  mpirun -n $SLURM_NTASKS apptainer exec lolcow.simg cowsay 'How did you get out of the container?'
 
 
 Pages for system administrators
