@@ -963,6 +963,10 @@ Apptainer_ assumes that you will have a build system where you are the root user
 
 Please consult the Apptainer_documentation_ for further information.
 There is a *Singularity video tutorial* on the Apptainer_ homepage.
+For system administrators there are some useful pages
+`Admin Quick Start <https://docs.sylabs.io/guides/latest/admin-guide/admin_quickstart.html>`_
+and
+`User Namespaces & Fakeroot <https://docs.sylabs.io/guides/latest/admin-guide/user_namespace.html>`_.
 
 .. _Containers: https://cloud.google.com/containers/
 .. _Docker: https://www.docker.com/
