@@ -198,7 +198,7 @@ If the disk on your local machine is formatted as a Windows ExFAT_ filesystem (f
 **NOTICE** about ExFAT_ file systems: 
 
 * ExFAT_ file systems do not support the concept of a symbolic_link_ (soft link) file.
-* File names **must not** contain ":" or other special characters, see `ntfs.com <https://ntfs.com/exfat-filename-dentry.htm>`_.
+* File names **must not** contain ":" or other special characters, see `www.ntfs.com <https://www.ntfs.com/exfat-filename-dentry.htm>`_.
   Such file names may be renamed using the Linux ``rename`` command.
 
 Windows users may use `WinSCP <https://winscp.net/eng/docs/introduction>`_ or `FileZilla <https://filezilla-project.org/>`_, to do ``scp`` or ``sftp`` operations.
