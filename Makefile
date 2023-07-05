@@ -5,7 +5,8 @@
 # from the environment for the first two.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = .
+# SOURCEDIR     = .
+SOURCEDIR     = docs
 BUILDDIR      = _build
 WEBTOPDIR     = /var/www/wiki
 
