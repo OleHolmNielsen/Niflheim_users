@@ -114,6 +114,10 @@ You are encouraged to configure SSH_ keys on your own PC so that you can login t
   The Windows PC should run PuTTY_ 's application `Pageant <https://the.earth.li/~sgtatham/putty/0.76/htmldoc/Chapter9.html#pageant>`_ 
   for authentication.
 
+* Windows users may alternatively install the graphical MobaXterm_ X server and SSH client.
+  **Warning**: MobaXterm_ has a *Remote Monitoring* feature that probes the login node every second so that it can display a remote status bar at the bottom of the terminal window.
+  It is not on by default, and we request that you **do not use** it because it overloads the login nodes!
+
 The SSH **public key** from your PC can be appended to the file ``$HOME/.ssh/authorized_keys`` to enable password-less logins.
 
 **WARNING:** DO NOT copy SSH keys from Niflheim to any external computer (for example, your PC) for reasons of security!
@@ -127,6 +131,7 @@ The SSH_ key files will be created in the directory ``$HOME/.ssh/``.
 This can be necessary if you use commercial MPI libraries which use SSH in stead of the recommended Slurm_ method for starting tasks.
 
 .. _PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/
+.. _MobaXterm: https://mobaxterm.mobatek.net/
 
 Home directory and disk quota
 =============================
@@ -916,7 +921,7 @@ Use these instructions when you are located outside DTU Physics, and your laptop
 is running Microsoft Windows.
 
 1. Log in to a Niflheim login node, preferably *slid*.
-   Use MobaXterm to log in directly to e.g. slid.fysik.dtu.dk, but when you create the login session (the Session tab), select Network Settings, then Jump Host.  Fill in the Jump Host (and your DTU user name).
+   Use MobaXterm_ to log in directly to e.g. slid.fysik.dtu.dk, but when you create the login session (the Session tab), select Network Settings, then Jump Host.  Fill in the Jump Host (and your DTU user name).
 
 2. Load the relevant module, for example::
 
@@ -928,10 +933,11 @@ is running Microsoft Windows.
 
       jupyter notebook --no-browser --ip=$HOSTNAME
 
-   Note the extra ``--ip`` option needed when connecting with MobaXterm.  Jupyter will respond with around ten lines of text, at the bottom is a URL.  
+   Note the extra ``--ip`` option needed when connecting with MobaXterm_. 
+   Jupyter will respond with around ten lines of text, at the bottom is a URL.  
    It will contain the text ``localhost:NNNN`` or ``127.0.0.1:NNNN`` where NNNN is a port number, typically 8888 or close.  You need that number in the next step.
 
-4. Use MobaXterm to set up an SSH tunnel (the Tunneling tab).
+4. Use MobaXterm_ to set up an SSH tunnel (the Tunneling tab).
    
    * On "My computer" enter **port number printed by jupyter**.
 
