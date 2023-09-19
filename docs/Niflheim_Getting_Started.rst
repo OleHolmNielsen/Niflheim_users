@@ -1031,6 +1031,18 @@ To run a Apptainer_ container in parallel on 2 nodes and 10 CPU cores with MPI u
   module load OpenMPI
   mpirun -n $SLURM_NTASKS apptainer exec lolcow.simg cowsay 'How did you get out of the container?'
 
+Visual Studio Code
+=====================
+
+The *Visual Studio Code* (VS_code_) editor can be used on your personal desktop and make remote SSH connections to the Niflheim login nodes.
+
+There is a bug in VS_code_ which will leave processes behind even after you quit VS_code_, see VS_code_bug_8546_.
+The workaround is to add to your VS_code_ file ``settings.json`` the line::
+
+  "remote.SSH.useLocalServer": true 
+
+.. _VS_code: https://code.visualstudio.com/
+.. _VS_code_bug_8546: https://github.com/microsoft/vscode-remote-release/issues/8546
 
 Pages for system administrators
 ===============================
