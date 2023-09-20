@@ -1039,12 +1039,13 @@ The *Visual Studio Code* (VS_code_) editor can be used on your personal desktop 
 The DTU `course 02002/02003: Computer Programming <https://cp.pages.compute.dtu.dk/02002public/da/index.html>`_
 has some material in the page `Using VSCode <https://cp.pages.compute.dtu.dk/02002public/da/vscode/index.html>`_.
 
-There is a bug in VS_code_ which will leave processes behind even after you quit VS_code_, see VS_code_bug_8546_.
+There is a bug with remote SSH connections from VS_code_ which will leave processes behind on the remote server,
+even after you quit VS_code_, see VS_code_bug_8546_.
 The workaround is to add to your VS_code_ file ``settings.json`` the line::
 
   "remote.SSH.useLocalServer": true 
 
-Enabling ``useLocalServer`` will be the default in the future, but hasn't happened yet due to some issues on Windows.
+Enabling ``useLocalServer`` will be the default in the future, but hasn't happened yet due to some issues on Windows SSH servers.
 
 The Settings_editor_ is the UI that lets you review and modify setting values that are stored in a ``settings.json`` file. 
 The location is documented in `Settings file locations <https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations>`_.
