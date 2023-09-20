@@ -1036,6 +1036,9 @@ Visual Studio Code
 
 The *Visual Studio Code* (VS_code_) editor can be used on your personal desktop and make remote SSH connections to the Niflheim login nodes.
 
+The DTU `course 02002/02003: Computer Programming <https://cp.pages.compute.dtu.dk/02002public/da/index.html>`_
+has some material in the page `Using VSCode <https://cp.pages.compute.dtu.dk/02002public/da/vscode/index.html>`_.
+
 There is a bug in VS_code_ which will leave processes behind even after you quit VS_code_, see VS_code_bug_8546_.
 The workaround is to add to your VS_code_ file ``settings.json`` the line::
 
@@ -1045,9 +1048,6 @@ Enabling ``useLocalServer`` will be the default in the future, but hasn't happen
 
 The Settings_editor_ is the UI that lets you review and modify setting values that are stored in a ``settings.json`` file. 
 The location is documented in `Settings file locations <https://code.visualstudio.com/docs/getstarted/settings#_settings-file-locations>`_.
-
-The DTU `course 02002/02003: Computer Programming <https://cp.pages.compute.dtu.dk/02002public/da/index.html>`_
-has some material in the page `Using VSCode <https://cp.pages.compute.dtu.dk/02002public/da/vscode/index.html>`_.
 
 .. _VS_code: https://code.visualstudio.com/
 .. _VS_code_bug_8546: https://github.com/microsoft/vscode-remote-release/issues/8546
