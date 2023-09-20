@@ -1042,6 +1042,8 @@ The workaround is to add to your VS_code_ file ``settings.json`` the line::
   "remote.SSH.useLocalServer": true 
 
 Enabling ``useLocalServer`` will be the default in the future, but hasn't happened yet due to some issues on Windows.
+The ``settings.json`` file may be found under the ~/.vscode/ folder on Linux,
+and in ~/Library/Application Support/Code/User om MacOS.
 
 .. _VS_code: https://code.visualstudio.com/
 .. _VS_code_bug_8546: https://github.com/microsoft/vscode-remote-release/issues/8546
