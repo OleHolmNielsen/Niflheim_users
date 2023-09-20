@@ -1045,6 +1045,9 @@ Enabling ``useLocalServer`` will be the default in the future, but hasn't happen
 The ``settings.json`` file may be found under the ~/.vscode/ folder on Linux,
 and in ~/Library/Application Support/Code/User om MacOS.
 
+The DTU `course 02002/02003: Computer Programming <https://cp.pages.compute.dtu.dk/02002public/da/index.html>`_
+has some material in the page `Using VSCode <https://cp.pages.compute.dtu.dk/02002public/da/vscode/index.html>`_.
+
 .. _VS_code: https://code.visualstudio.com/
 .. _VS_code_bug_8546: https://github.com/microsoft/vscode-remote-release/issues/8546
 
