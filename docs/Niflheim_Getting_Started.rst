@@ -34,7 +34,7 @@ See the :ref:`Access_to_Niflheim` section about getting access.
 Login to *Niflheim* is available with SSH_ **only** from within the DTU network.
 If you are outside of DTU, please log in to the DTU_VPN_ service or the G-databar_ first.
 
-.. _DTU_VPN: https://www.inside.dtu.dk/en/medarbejder/it-og-telefoni/wifi-og-fjernadgang/vpn-cisco-anyconnect/vpn-ait-dtu-dk
+.. _DTU_VPN: https://www.inside.dtu.dk/da/medarbejder/it-og-telefoni/it-support-og-kontakt/it-systemer-og-vaerktoejer/it-systemer-ait/vpn
 .. _G-databar: https://www.gbar.dtu.dk/
 
 Please login to the node type identical to the compute-nodes onto which you submit batch jobs.
