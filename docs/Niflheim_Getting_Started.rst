@@ -249,7 +249,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
       xeon24 includes also the
 
-      larger memory nodes below.
+      xeon24_512 nodes below.
     - 24
     - 254 GB
     - 140 GB
