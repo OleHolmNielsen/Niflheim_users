@@ -325,11 +325,11 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 **Please notice** the following points:
 
-* The default **time limit** for jobs is **50 hours**.
-  However, the xeon24_week partition will accept jobs up to **1 week** (168 hours).
-  The xeon24_test partition has a 10 minute time limit and must be used only for development tests.
+* The default ** maximum time limit** for jobs is **50 hours** in all partitions.
+  However, the ``xeon24_week`` partition will accept jobs up to **1 week** (168 hours).
+  The ``xeon24_test`` partition has a 10 minute time limit and must be used only for development tests.
 
-* Please use **all CPU cores** in the most modern compute nodes (xeon40 and xeon56 partitions),
+* Please use **all CPU cores** in the most modern compute nodes (``xeon40`` and ``xeon56`` partitions),
   and do not submit jobs to these partitions which only use partial nodes.
   Partial node usage, including single-core jobs, are permitted in the xeon24 partition by submitting to 1 to 24 cores.
 
@@ -337,7 +337,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 * The RAM memory is slightly less than the physical RAM due to operating system overheads.
 
-* The **xeon40** partition consists of both Skylake_ and Cascade_Lake_ CPU types.
+* The ``xeon40`` partition consists of both Skylake_ and Cascade_Lake_ CPU types.
   While these CPUs are (almost) binary compatible, the new Cascade_Lake_ CPUs will have a higher performance.
 
 * Partitions are overlapping so that nodes with more memory are also members of the partition with the least memory.
