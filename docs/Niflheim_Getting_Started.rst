@@ -42,13 +42,6 @@ See `Compute node partitions`_ below and the :ref:`Hardware` page.
 
 The login nodes  are:
 
-* **thul.fysik.dtu.dk**: Login node for CPU type **xeon16**:
-
-  * thul: A 16-CPU (dual-processor, 8-core + Hyperthreading_ = 32 "virtual" cores), 64 GB of RAM.
-  * OS: CentOS_ 7.
-  * CPUs: Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz Sandy_Bridge_.
-  * Refer to this as CPU_ARCH= **sandybridge**. Use this login node also for the **ivybridge** architecture.
-
 * **sylg.fysik.dtu.dk** and **slid.fysik.dtu.dk**: Login nodes for CPU type **xeon24**:
 
   * The Intel CPU type **xeon24**.
@@ -253,35 +246,10 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - **/tmp scratch disk**
     - **Login nodes**
     - **Linux OS**
-  * - xeon16
-    - Ivy_Bridge_
-
-      Includes also larger memory nodes below.
-    - 16
-    - 63 GB
-    - 198 GB
-    - thul
-    - CentOS 7
-  * - xeon16_128
-    - Ivy_Bridge_
-
-      Includes also larger memory nodes below.
-    - 16
-    - 127 GB
-    - 198 GB
-    - thul
-    - CentOS 7
-  * - xeon16_256
-    - Ivy_Bridge_
-    - 16
-    - 254 GB
-    - 198 GB
-    - thul
-    - CentOS 7
-  * - xeon24
+  * - xeon24, xeon24_week, xeon24_test
     - Broadwell_
 
-      Includes also larger memory nodes below.
+      xeon24 includes also the larger memory nodes below.
     - 24
     - 254 GB
     - 140 GB
@@ -358,10 +326,12 @@ Niflheim contains a number of node partitions with different types of CPU archit
 **Please notice** the following points:
 
 * The default **time limit** for jobs is **50 hours**.
-  However, the xeon16, xeon16_128, xeon16_256 partitions will accept jobs up to **1 week** (168 hours).
+  However, the xeon24_week partition will accept jobs up to **1 week** (168 hours).
+  The xeon24_test partition has a 10 minute time limit and must be used only for development tests.
 
-* Please use the most modern compute nodes in the xeon40 and xeon24 partitions fully.
-  Please do not submit jobs to these partitions which only use partial nodes.
+* Please use **all CPU cores** in the most modern compute nodes (xeon40 and xeon56 partitions),
+  and do not submit jobs to these partitions which only use partial nodes.
+  Partial node usage, including single-core jobs, are permitted in the xeon24 partition by submitting to 1 to 24 cores.
 
 * Please do not use the GPU partition ``sm3090`` unless you have been authorized to use GPUs.
 
@@ -445,10 +415,6 @@ You may validate your batch script, and return an estimate of when a job would b
   sbatch --test-only <scriptfile>  # No job is actually submitted.
 
 You can select a specific node partition (see `Compute node partitions`_) with lines in the script (or on the command line):
-
-* Select the 16-core nodes in the *xeon16 partition* (The Default partition)::
-
-  #SBATCH --partition=xeon16
 
 * Select the 24-core nodes in the *xeon24 partition*::
 
@@ -560,12 +526,11 @@ The most modern compute nodes with many CPU cores should be used fully by the ba
 
   xeon56 nodes should utilize 56 CPU cores per node
   xeon40 nodes should utilize 40 CPU cores per node
-  xeon24 nodes should utilize 24 CPU cores per node
-  xeon16 nodes should utilize 16 CPU cores per node, in case 2 or more nodes are used
+  xeon24 nodes should utilize 24 CPU cores per node, in case 2 or more nodes are used
 
-If you have jobs that use **less than 24 CPU cores per node**, we request that you use the older compute nodes::
+If you have jobs that use **less than 40 CPU cores per node**, we request that you use the older compute nodes::
 
-  xeon16 nodes support jobs using 1-16 CPU cores on 1 node
+  xeon24 nodes permit jobs using 1-24 CPU cores on 1 node
 
 Please see also the list of `Compute node partitions`_ above.
 
@@ -1033,7 +998,7 @@ An example job script running a container image ``lolcow.simg``::
 
   #!/bin/sh
   #SBATCH --mail-type=ALL
-  #SBATCH --partition=xeon16
+  #SBATCH --partition=xeon24
   #SBATCH --time=05:00
   #SBATCH --output=lolcow.%J.log
   apptainer exec lolcow.simg cowsay 'How did you get out of the container?'
