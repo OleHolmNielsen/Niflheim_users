@@ -247,7 +247,9 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - xeon24, xeon24_week, xeon24_test
     - Broadwell_
 
-      xeon24 includes also the larger memory nodes below.
+      xeon24 includes also the
+
+      larger memory nodes below.
     - 24
     - 254 GB
     - 140 GB
