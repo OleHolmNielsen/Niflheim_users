@@ -230,9 +230,7 @@ Compute node partitions
 
 Slurm_ node **partitions** are the compute resource in Slurm_ which group nodes into logical and possibly overlapping sets.
 
-To display the status of all available Slurm partitions use the command (append ``-h`` for help)::
-
-  showpartitions
+To display the status of all available Slurm partitions use the ``showpartitions`` command (append ``-h`` for help).
 
 Niflheim contains a number of node partitions with different types of CPU architecture hardware and the corresponding recommended login nodes:
 
