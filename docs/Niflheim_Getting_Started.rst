@@ -228,9 +228,9 @@ Here is a brief introduction to the usage of Slurm_:
 Compute node partitions
 -----------------------
 
-Slurm_ node **partitions** are the compute resource in Slurm_ which group nodes into logical (possibly overlapping) sets.
+Slurm_ node **partitions** are the compute resource in Slurm_ which group nodes into logical and possibly overlapping sets.
 
-To display the status of all available Slurm partitions use the command (append -h for help)::
+To display the status of all available Slurm partitions use the command (append ``-h`` for help)::
 
   showpartitions
 
