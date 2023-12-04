@@ -329,7 +329,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 * Please use **all CPU cores** in the most modern compute nodes (``xeon40`` and ``xeon56`` partitions),
   and do not submit jobs to these partitions which only use partial nodes.
-  Partial node usage, including single-core jobs, are permitted in the xeon24 partition by submitting to 1 to 24 cores of 1 node.
+  Partial node usage, including single-core jobs, are permitted in the xeon24 partition by submitting to 1 to 23 cores of 1 24-core node.
 
 * Please do not use the GPU partition ``sm3090`` unless you have been authorized to use GPUs.
 
