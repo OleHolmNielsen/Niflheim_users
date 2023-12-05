@@ -106,25 +106,6 @@ Huawei Broadwell servers
 
   Installed in **December 2016, March 2017, November 2017**.
 
-Dell Ivy Bridge servers
------------------------
-
-* **47 16-core nodes** `Dell PowerEdge C8220 <http://www.dell.com/us/business/p/poweredge-c8220/pd>`_
-  with two Intel Ivy_Bridge_ Xeon_E5-2650_v2_ 8-core CPUs (a total of 816 cores) running at 2.60 GHz (up to 3.40 GHz in Turbo_mode_).
-
-  Peak speed: 166 GFLOPS/node, 8 TFLOPS_ in total for all nodes.
-
-  The RAM memory type is 1833 MHz DDR3 dual-rank memory:
-
-  * 27 nodes have 128 GB of memory (8 GB/core), 3.5 TB in total for all nodes.
-  * 20 nodes have 256 GB of memory (16 GB/core, 5.1 TB in total for all nodes).
-
-  Each server has a 300 GB local SSD hard disk.
-  The network interconnect is QDR Infiniband_.
-
-  Installed in **May 2014**, **April 2015** and **June 2015**.
-
-
 .. _OmniPath: https://www.cornelisnetworks.com/products/
 .. _Cornelis_Networks: https://www.cornelisnetworks.com/
 .. _Infiniband: http://en.wikipedia.org/wiki/InfiniBand
@@ -132,8 +113,6 @@ Dell Ivy Bridge servers
 .. _Cascade_Lake: https://en.wikipedia.org/wiki/Cascade_Lake_(microarchitecture)
 .. _Skylake: https://en.wikipedia.org/wiki/Skylake_(microarchitecture)
 .. _Broadwell: https://en.wikipedia.org/wiki/Broadwell_%28microarchitecture%29
-.. _Sandy_Bridge: http://en.wikipedia.org/wiki/Sandy_Bridge
-.. _Ivy_Bridge: http://en.wikipedia.org/wiki/Ivy_Bridge_%28microarchitecture%29
 .. _GPU: http://en.wikipedia.org/wiki/Graphics_processing_unit
 .. _AVX-512: https://en.wikipedia.org/wiki/AVX-512
 .. _Xeon_Gold_6348: https://www.intel.com/content/www/us/en/products/sku/212456/intel-xeon-gold-6348-processor-42m-cache-2-60-ghz/specifications.html
