@@ -1015,8 +1015,8 @@ Visual Studio Code
 
 The *Visual Studio Code* (VS_code_) editor can be used on your personal desktop and make remote SSH connections to the Niflheim login nodes.
 
-The DTU `course 02002/02003: Computer Programming <https://cp.pages.compute.dtu.dk/02002public/da/index.html>`_
-has some material in the page `Using VSCode <https://cp.pages.compute.dtu.dk/02002public/da/vscode/index.html>`_.
+The DTU `course 02002/02003: Computer Programming <https://02002.compute.dtu.dk/index.html>`_
+has some material in the page `Using VSCode <https://02002.compute.dtu.dk/vscode/index.html>`_.
 
 There is a bug with remote SSH connections from VS_code_ which will leave processes behind on the remote server,
 even after you quit VS_code_, see VS_code_bug_8546_.
