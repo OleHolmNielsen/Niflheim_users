@@ -177,7 +177,7 @@ On your local machine you may find these commands useful::
   rsync -av -e ssh sylg.fysik.dtu.dk:niflheim_directory/ local_directory/
 
   From your local machine to Niflheim:
-  rsync -av -e ssh local_directory/ thul.fysik.dtu.dk:niflheim_directory/
+  rsync -av -e ssh local_directory/ sylg.fysik.dtu.dk:niflheim_directory/
 
 (Note that **trailing ``/`` is important** with ``rsync`` - read the ``rsync`` man-page first).
 
@@ -187,11 +187,11 @@ Note that paths in `FILE` must be relative to the root directory of the source, 
 If the disk on your local machine is formatted as a Windows FAT_/FAT32 filesystem (for example, on an external USB disk) 
 we suggest using these flags with *rsync*::
 
-  rsync -rlptv --modify-window=1 -e ssh thul.fysik.dtu.dk:niflheim_directory/ USB-disk/
+  rsync -rltv --modify-window=1 -e ssh sylg.fysik.dtu.dk:niflheim_directory/ USB-disk/
 
 If the disk on your local machine is formatted as a Windows ExFAT_ filesystem (for example, on an external USB disk) use `these options <https://www.scivision.dev/rsync-to-exfat-drive/>`_::
 
-  rsync -vrltD -e ssh thul.fysik.dtu.dk:niflheim_directory/ USB-disk/
+  rsync -rltv -e ssh sylg.fysik.dtu.dk:niflheim_directory/ USB-disk/
 
 **NOTICE** about ExFAT_ file systems: 
 
