@@ -41,7 +41,7 @@ Dell Ice Lake servers
 SuperMicro servers
 ------------------
 
-* **8 40-core nodes** from Nextron/SuperMicro with Intel Xeon_Gold_5218R_ 20-core CPUs @2.10 GHz (a total of 320 cores).
+* **8 40-core nodes** SYS-4029GP-TRT2_ from Nextron/SuperMicro with Intel Xeon_Gold_5218R_ 20-core CPUs @2.10 GHz (a total of 320 cores).
   Hyperthreading is enabled so that each node has 80 threads or virtual CPUs.
 
   Peak speed: 2688 GFLOPS/node, 21 TFLOPS_ in total for all nodes.
@@ -53,6 +53,8 @@ SuperMicro servers
   Each server has a 960 GB local NVMe hard disk and a 1 Gbit Ethernet.
 
   Installed in **December 2020 and July 2021**.
+
+.. _SYS-4029GP-TRT2: https://www.supermicro.com/en/products/system/4U/4029/SYS-4029GP-TRT2.cfm
 
 Dell Cascade Lake Refresh servers
 ---------------------------------
