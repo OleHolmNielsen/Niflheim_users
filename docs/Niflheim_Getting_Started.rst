@@ -592,13 +592,20 @@ Lost files cannot be recovered by any means!
 
 Please remember to clean up scratch files regularly when they are no longer needed.
 
-Viewing completed job information
----------------------------------
+Viewing completed or failed job information
+--------------------------------------------
 
 After your job has completed (or terminated), you can view job accounting data by inquiring the Slurm database.
 For example, to inquire about a specific job Id 1234::
 
   sacct -j 1234 -o jobid,jobname,user,Timelimit,Elapsed,NNodes,Partition,ExitCode,nodelist
+
+If some jobs have failed or been cancelled, you can display a list of such jobs within a given time interval using a command such as::
+
+  sacct -s FAILED,CANCELLED -X --starttime 2024-01-11T19:00 --endtime 2024-01-12T09:00 -o User,jobid,jobname%40,partition,State,ExitCode
+
+Here the ``--starttime`` indicates the *Start* and ``--endtime`` indicates the *End* of the desired time interval.
+The ``sacct`` manual page documents the *valid time formats*.
 
 You may inquire about many job parameters, to see a complete list run::
 
