@@ -142,9 +142,11 @@ To view file systems mounted on the node (omitting temporary file systems)::
 
   df -Phx tmpfs
 
-To count your files and their sizes, the login nodes have a nice Python tool cfas_::
+To count your files and their sizes, the *CentOS 7* login nodes (only) have a nice *Python2* tool cfas_::
 
-  cfas $HOME
+  cfas <directory-name>
+
+Unfortunately, cfas_ has never been ported to *Python3*, and therefore it cannot be used on our AlmaLinux_ 8 nodes.
 
 .. _cfas: https://github.com/runefriborg/cfas
 
