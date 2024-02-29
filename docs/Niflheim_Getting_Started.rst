@@ -13,7 +13,7 @@ Overview of Niflheim
 The *Niflheim* Linux cluster setup is based upon:
 
 * Compute nodes as described on the :ref:`Hardware` page.
-* CentOS_ 7 and AlmaLinux_ 8 Linux OS,
+* RockyLinux_ 8, AlmaLinux_ 8, and CentOS_ 7 Linux OS,
 * Slurm_ batch queueing system,
 * Software_Modules_ using Lmod_ and EasyBuild_modules_.
 
@@ -24,6 +24,7 @@ Accounting: You can see the Niflheim monthly and weekly usage
 
 .. _CentOS: https://www.centos.org/
 .. _AlmaLinux: https://almalinux.org/
+.. _RockyLinux: https://rockylinux.org/
 .. _Slurm: https://www.schedmd.com/
 .. _EasyBuild_modules: https://wiki.fysik.dtu.dk/Niflheim_system/EasyBuild_modules/
 
@@ -289,6 +290,13 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 140 GB
     - svol
     - CentOS 7
+  * - xeon40_el8
+    - Skylake_ and Cascade_Lake_.
+    - 40
+    - 380 GB
+    - 140 GB
+    - thul
+    - RockyLinux 8
   * - sm3090el8
     - Skylake_ + GPUs
     - 80 (40*2 with HT)
@@ -303,20 +311,6 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 800 GB
     - svol
     - AlmaLinux 8
-  * - sm3090
-    - Skylake_ + GPUs
-    - 80 (40*2 with HT)
-    - 192 GB
-    - 800 GB
-    - svol
-    - CentOS 7
-  * - sm3090_768
-    - Skylake_ + GPUs
-    - 80 (40*2 with HT)
-    - 768 GB
-    - 800 GB
-    - svol
-    - CentOS 7
   * - xeon56
     - IceLake_
     - 56
