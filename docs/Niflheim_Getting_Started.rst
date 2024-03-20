@@ -32,7 +32,7 @@ Login to Niflheim
 =================
 
 See the :ref:`Access_to_Niflheim` section about getting access.
-Login to *Niflheim* is available with SSH_ **only** from within the DTU network.
+Login to *Niflheim* is available using SSH_ **only** from within the DTU network.
 If you are outside of DTU, please log in to the DTU_VPN_ service or the G-databar_ first.
 
 .. _DTU_VPN: https://www.inside.dtu.dk/en/medarbejder/it-og-telefoni/it-support-og-kontakt/guides/remote/vpn-cisco-anyconnect
@@ -43,34 +43,43 @@ See `Compute node partitions`_ below and the :ref:`Hardware` page.
 
 The login nodes  are:
 
-* **sylg.fysik.dtu.dk** and **slid.fysik.dtu.dk**: Login nodes for CPU type **xeon24**:
+* **sylg.fysik.dtu.dk** and **slid.fysik.dtu.dk**: Login nodes for partition **xeon24**:
 
-  * The Intel CPU type **xeon24**.
+  * The Intel Broadwell_ type **xeon24**.
   * OS: CentOS_ 7.
   * Please build all applications for xeon24 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
-  * A 24-CPU (dual-processor, 12-cores + Hyperthreading_ = 48 "virtual" cores), 256 GB of RAM.
+  * 24-CPU (dual-processor, 12-cores + Hyperthreading_ = 48 "virtual" cores), 256 GB of RAM.
   * CPUs: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz Broadwell_
   * Refer to this as CPU_ARCH= **broadwell**.
 
-* **svol.fysik.dtu.dk**: Login node for CPU type **xeon40**:
+* **svol.fysik.dtu.dk**: Login node for partition **xeon40**:
 
-  * The Intel CPU type **xeon40**.
+  * The Intel Skylake_  type **xeon40**.
   * OS: CentOS_ 7.
   * Please build all applications for xeon40 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
-  * A 40-CPU (dual-processor, 20 cores + Hyperthreading_ = 80 "virtual" cores), 768 GB of RAM.
+  * 40-CPU (dual-processor, 20 cores + Hyperthreading_ = 80 "virtual" cores), 768 GB of RAM.
   * CPUs: Intel(R) Xeon(R) Scalable Gold CPU 6148 @ 2.20GHz Skylake_ with AVX512_ vector instructions.
   * Refer to this as CPU_ARCH= **skylake**.
 
-* **surt.fysik.dtu.dk**: Login node for CPU type **xeon56**:
+* **surt.fysik.dtu.dk**: Login node for partitions **xeon56**, **xeon32_4096**, and **a100**:
 
-  * The Intel CPU type **xeon56**.
+  * The Intel IceLake_ CPU type **xeon56**.
   * OS: AlmaLinux_ 8.
   * Please build all applications for xeon56 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
-  * A 56-CPU (dual-processor, 56 cores + Hyperthreading_ = 112 "virtual" cores), 512 GB of RAM.
+  * 56-CPU (dual-processor, 56 cores + Hyperthreading_ = 112 "virtual" cores), 512 GB of RAM.
   * CPUs: Intel(R) Xeon(R) Gold 6348 CPU @ 2.60GHz IceLake_ with AVX512_ vector instructions.
   * Refer to this as CPU_ARCH= **icelake**.
 
-The login nodes **surt**, **svol**, **sylg**, and **thul** must not be overloaded with heavy tasks, since this will disturb other users.
+* **fjorm.fysik.dtu.dk**: Login node for partition **epyc96**:
+
+  * The AMD EPYC Zen4_ CPU type **epyc96**.
+  * OS: RockyLinux_ 8.
+  * Please build all applications for **epyc96** with the latest ``foss`` toolchain (see `Software environment modules`_ below)!
+  * 16-CPU (single-processor, 16 cores + Hyperthreading_ = 32 "virtual" cores), 384 GB of RAM.
+  * CPUs: AMD(R) EPYC(R) 9124 CPU @ 3.00GHz Genoa Zen4_ (note: the **epyc96** have more and faster CPU cores).
+  * Refer to this as CPU_ARCH= **epyc9004**.
+
+The login nodes **fjorm**, **surt**, **svol**, **sylg**, and **thul** must not be overloaded with heavy tasks, since this will disturb other users.
 
 The login node **slid** would be acceptable for more heavy testing of codes, but please bear in mind that the login nodes may be shared by many users, and no single user should monopolize any login nodes.
 **Long tasks should always be submitted as batch jobs**.
@@ -85,8 +94,9 @@ The login node **slid** would be acceptable for more heavy testing of codes, but
 .. _Cascade_Lake: https://en.wikipedia.org/wiki/Cascade_Lake_(microarchitecture)
 .. _Skylake: https://en.wikipedia.org/wiki/Skylake_(microarchitecture)
 .. _Broadwell: https://en.wikipedia.org/wiki/Broadwell_%28microarchitecture%29
-.. _Sandy_Bridge: https://en.wikipedia.org/wiki/Sandy_Bridge_(microarchitecture)
-.. _Ivy_Bridge: https://en.wikipedia.org/wiki/Ivy_Bridge_(microarchitecture)
+.. _Zen4: https://en.wikipedia.org/wiki/Zen_4
+.. _NVLink: https://en.wikipedia.org/wiki/NVLink
+.. _A100: https://www.nvidia.com/en-us/data-center/a100/
 
 SSH setup
 ---------
@@ -318,6 +328,27 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 293 GB
     - surt
     - AlmaLinux 8
+  * - epyc96
+    - AMD EPYC Zen4_ 9474F
+    - 96
+    - 768 GB
+    - 1.7 GB
+    - fjorm
+    - RockyLinux 8
+  * - xeon32_4096
+    - IceLake_
+    - 32
+    - 4096 GB
+    - 14 TB
+    - surt
+    - RockyLinux 8
+  * - a100
+    - IceLake_ + 4* A100_ NVLink_ GPUs
+    - 128
+    - 512 GB
+    - 1.7 TB
+    - surt
+    - RockyLinux 8
 
 **Please notice** the following points:
 
@@ -325,11 +356,12 @@ Niflheim contains a number of node partitions with different types of CPU archit
   However, the ``xeon24_week`` partition will accept jobs up to **1 week** (168 hours).
   The ``xeon24_test`` partition has a 10 minute time limit and must be used only for development tests.
 
-* Please use **all CPU cores** in the most modern compute nodes (``xeon40`` and ``xeon56`` partitions),
+* Please use **all CPU cores** in the most modern CPU compute nodes (``xeon40``, ``xeon56``, and ``epyc96`` partitions),
   and do not submit jobs to these partitions which only use partial nodes.
-  Partial node usage, including single-core jobs, are permitted in the xeon24 partition by submitting to 1 to 23 cores of a 24-core node.
+  Partial node usage, including single-core jobs, are permitted in the ``xeon24`` partition by submitting to 1 to 23 cores of a 24-core node.
+  Partial node jobs are also permitted in the ``xeon32_4096`` **BIG memory** partition and the ``a100`` GPU partition.
 
-* Please do not use the GPU partition ``sm3090`` unless you have been authorized to use GPUs.
+* Please do not use the GPU partitions ``a100`` or ``sm3090`` unless your group has been authorized to use GPUs.
 
 * The RAM memory is slightly less than the physical RAM due to operating system overheads.
 
@@ -339,6 +371,26 @@ Niflheim contains a number of node partitions with different types of CPU archit
 * Partitions are overlapping so that nodes with more memory are also members of the partition with the least memory.
 
 * The local node scratch disk space is shared between Slurm_ jobs currently running on the node, see `Using compute node temporary scratch disk space`_ below.
+
+Usage of BIG memory nodes
+--------------------------
+
+We have installed 4 **BIG memory** nodes for special applications used by selected groups.
+These nodes have 4096 GB (4 TB) of RAM memory,
+and it is expected (required) that all jobs submitted to the ``xeon32_4096`` partition will use **at least 768 GB** of RAM memory.
+Jobs using up to 768 GB of RAM memory must use one of the other available partitions.
+
+The ``xeon32_4096`` nodes are also equipped with a very large, very fast scratch file system of 14 TB.
+This is typically required by big-memory jobs.
+Slurm_ jobs must use the scratch disk as the job-private ``/tmp`` directory.
+
+Here are some special instructions for submitting jobs to the ``xeon32_4096`` partition:
+
+* Specify the amount of memory required in the Slurm_ script::
+
+   #SBATCH --mem=1000G
+
+* TBD
 
 Compute nodes and jobs
 ----------------------
@@ -565,8 +617,8 @@ This ``$TMPDIR`` setting is the default value in many computer codes and may not
 
 Notes:
 
-* On the **login nodes** you should **not** use ``/tmp`` for large files!
-  Please continue to use the ``/scratch/$USER`` folder.
+* On the **login nodes** you **must not** use ``/tmp`` for large files!
+  Please use in stead the local ``/scratch/$USER`` folder.
 
 Technical details:
 
