@@ -45,7 +45,7 @@ The login nodes  are:
 
 * **sylg.fysik.dtu.dk** and **slid.fysik.dtu.dk**: Login nodes for partition **xeon24**:
 
-  * The Intel Broadwell_ type **xeon24**.
+  * The Intel Broadwell_ CPU type **xeon24**.
   * OS: CentOS_ 7.
   * Please build all applications for xeon24 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 24-CPU (dual-processor, 12-cores + Hyperthreading_ = 48 "virtual" cores), 256 GB of RAM.
@@ -54,7 +54,7 @@ The login nodes  are:
 
 * **svol.fysik.dtu.dk**: Login node for partition **xeon40**:
 
-  * The Intel Skylake_  type **xeon40**.
+  * The Intel Skylake_ CPU type **xeon40**.
   * OS: CentOS_ 7.
   * Please build all applications for xeon40 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 40-CPU (dual-processor, 20 cores + Hyperthreading_ = 80 "virtual" cores), 768 GB of RAM.
@@ -344,7 +344,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - RockyLinux 8
   * - a100
     - IceLake_ + 4* A100_ NVLink_ GPUs
-    - 128
+    - 128 (16*4 with HT) 
     - 512 GB
     - 1.7 TB
     - surt
@@ -386,7 +386,7 @@ Slurm_ jobs must use the scratch disk as the job-private ``/tmp`` directory.
 
 Here are some special instructions for submitting jobs to the ``xeon32_4096`` partition:
 
-* Specify the amount of memory required in the Slurm_ script::
+* Specify the amount of memory required (up to 4 TB) in the Slurm_ script, for example::
 
    #SBATCH --mem=1000G
 
