@@ -267,14 +267,14 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 254 GB
     - 140 GB
     - sylg
-    - CentOS 7
+    - CentOS_ 7
   * - xeon24_512
     - Broadwell_
     - 24
     - 510 GB
     - 140 GB
     - sylg
-    - CentOS 7
+    - CentOS_ 7
   * - xeon40
     - Skylake_ and Cascade_Lake_.
 
@@ -285,21 +285,21 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 380 GB
     - 140 GB
     - svol
-    - CentOS 7
+    - CentOS_ 7
   * - xeon40_768
     - Skylake_
     - 40
     - 760 GB
     - 140 GB
     - svol
-    - CentOS 7
+    - CentOS_ 7
   * - xeon40_clx
     - Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
     - svol
-    - CentOS 7
+    - CentOS_ 7
   * - xeon40_el8
     - Skylake_ and Cascade_Lake_.
     - 40
@@ -1048,7 +1048,7 @@ For example, make a test run of a simple Docker_ container from DockerHub_::
 
   apptainer run docker://godlovedc/lolcow
 
-You can run many recent versions of CentOS Docker_ containers from the `CentOS library <https://hub.docker.com/r/library/centos/>`_, for example a 6.9 container::
+You can run many recent versions of CentOS_ Docker_ containers from the `CentOS library <https://hub.docker.com/r/library/centos/>`_, for example a 6.9 container::
 
   apptainer run docker://centos:centos6.9
 
