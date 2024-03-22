@@ -637,8 +637,6 @@ If you have jobs that use **less than 40 CPU cores per node**, we request that y
 
 Please see also the list of `Compute node partitions`_ above.
 
-For correct usage of GPU nodes please see the section `GPU compute nodes`_.
-
 Job scripts the do not use CPU cores or GPUs correctly may be rejected at submit time with an error message.
 
 Usage of BIG memory nodes
