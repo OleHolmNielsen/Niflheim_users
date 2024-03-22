@@ -306,49 +306,49 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 380 GB
     - 140 GB
     - thul
-    - RockyLinux 8
+    - RockyLinux_ 8
   * - sm3090el8
     - Skylake_ + GPUs
     - 80 (40*2 with HT)
     - 192 GB
     - 800 GB
     - svol
-    - AlmaLinux 8
+    - AlmaLinux_ 8
   * - sm3090el8_768
     - Skylake_ + GPUs
     - 80 (40*2 with HT)
     - 768 GB
     - 800 GB
     - svol
-    - AlmaLinux 8
+    - AlmaLinux_ 8
   * - xeon56
     - IceLake_
     - 56
     - 512 GB
     - 293 GB
     - surt
-    - AlmaLinux 8
+    - AlmaLinux_ 8
   * - epyc96
     - AMD EPYC Zen4_ 9474F
     - 96
     - 768 GB
     - 1.7 GB
     - fjorm
-    - RockyLinux 8
+    - RockyLinux_ 8
   * - xeon32_4096
     - IceLake_
     - 32
     - 4096 GB
     - 14 TB
     - surt
-    - RockyLinux 8
+    - RockyLinux_ 8
   * - a100
     - IceLake_ + 4* A100_ NVLink_ GPUs
     - 128 (16*4 with HT) 
     - 512 GB
     - 1.7 TB
     - surt
-    - RockyLinux 8
+    - RockyLinux_ 8
 
 **Please notice** the following points:
 
@@ -652,7 +652,7 @@ and/or use the large scratch disk space.
 Jobs using up to 768 GB of RAM memory should use one of the other `Compute node partitions`_.
 Partial-node jobs are permitted in the ``xeon32_4096`` partition.
 
-The ``xeon32_4096`` nodes are also equipped with a very large and very fast scratch file system with a size of 14 TB.
+The ``xeon32_4096`` nodes are also equipped with a very large (14 TB) and very fast scratch file system.
 Large scratch spaces are typically required by big-memory jobs.
 Slurm_ jobs use the local scratch disk as the job's private ``/tmp`` directory,
 but note that the scratch disk space is shared between all jobs on the node. 
@@ -660,8 +660,8 @@ but note that the scratch disk space is shared between all jobs on the node.
 Here are some special instructions for submitting jobs to the ``xeon32_4096`` partition:
 
 - Memory must **always** be specified in the Slurm submit script.
-- Memory can be specified in two ways: ``--mem=xx`` for the total memory requirement of the job or ``--mem-per-cpu=xx`` for memory per CPU allocated in the job.
-- Any job can ask for up to 4 TB of memory, even if it does not require all the cores, for example::
+  Memory can be specified in either of two ways: ``--mem=xx`` for the total memory requirement of the job or ``--mem-per-cpu=xx`` for memory per CPU allocated in the job.
+- Any job can ask for up to 4 TB of memory even if it does not require all of the CPU cores, for example::
 
     #SBATCH --mem=3000GB
     #SBATCH -n 4
@@ -675,7 +675,7 @@ Usage of GPU compute nodes
 --------------------------
 
 Please do not use the GPU partitions unless your group has been authorized to use GPUs.
-The appropriate login nodes for GPU partitions are:
+The appropriate login nodes (RockyLinux_ / AlmaLinux_ 8) for GPU partitions are:
 
 * Partition ``sm3090``: **thul** (Skylake_)
 * Partition ``a100``: **surt** (IceLake_)
