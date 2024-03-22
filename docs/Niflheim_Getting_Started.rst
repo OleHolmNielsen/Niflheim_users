@@ -670,7 +670,7 @@ Here are some special instructions for submitting jobs to the ``xeon32_4096`` pa
   Here, Slurm_ will allocate 4 cores and 3 TB of memory.
   This means that another job can run on the same node utilizing at most the remaining 28 cores and 1 TB of memory.
 
-Job scripts that do not use CPU cores or GPUs correctly may be rejected at submit time or be cancelled by the administrators.
+Job scripts that do not use CPU cores correctly may be rejected at submit time or be cancelled by the administrators.
 
 Usage of GPU compute nodes
 --------------------------
@@ -705,7 +705,7 @@ For example, to submit a batch jobs to 1 GPU on 8 CPU cores of a node in the ``s
   #SBATCH -n 8
   #SBATCH --gres=gpu:1
 
-Similarly, the nodes in the ``a100`` partition have 4 A100 GPUs each and 128 "virtual" CPU cores,
+Similarly, the nodes in the ``a100`` partition have 4 A100_ GPUs each and 128 "virtual" CPU cores,
 so you should request 32 CPU cores per GPU..
 Job scripts that do not use CPU cores or GPUs correctly may be rejected at submit time or be cancelled by the administrators.
 
