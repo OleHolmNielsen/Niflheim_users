@@ -622,8 +622,11 @@ You may inquire about many job parameters, to see a complete list run::
 
   sacct -e
 
+Correct usage of node types
+============================
+
 Usage of multi-CPU nodes
-==========================
+-------------------------
 
 The most modern compute nodes with many CPU cores should be used fully by the batch jobs::
 
@@ -640,7 +643,7 @@ Please see also the list of `Compute node partitions`_ above.
 Job scripts the do not use CPU cores or GPUs correctly may be rejected at submit time with an error message.
 
 Usage of BIG memory nodes
-==========================
+-------------------------
 
 We have installed 4 **BIG memory** nodes for special applications used by selected groups.
 These nodes have 4096 GB (4 TB) of RAM memory,
@@ -666,7 +669,7 @@ Here are some special instructions for submitting jobs to the ``xeon32_4096`` pa
   This means that another job can run on the same node utilizing at most the remaining 28 cores and 1 TB of memory.
 
 Usage of GPU compute nodes
-=============================
+--------------------------
 
 Please do not use the GPU partitions unless your group has been authorized to use GPUs.
 The appropriate login nodes for GPU partitions are:
