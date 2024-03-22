@@ -630,6 +630,7 @@ Usage of multi-CPU nodes
 
 The most modern compute nodes with many CPU cores should be utilized fully by the batch jobs::
 
+  epyc96 node jobs should utilize 96 CPU cores per node
   xeon56 node jobs should utilize 56 CPU cores per node
   xeon40 node jobs should utilize 40 CPU cores per node
 
