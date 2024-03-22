@@ -628,28 +628,29 @@ Correct usage of node types
 Usage of multi-CPU nodes
 -------------------------
 
-The most modern compute nodes with many CPU cores should be used fully by the batch jobs::
+The most modern compute nodes with many CPU cores should be utilized fully by the batch jobs::
 
   xeon56 node jobs should utilize 56 CPU cores per node
   xeon40 node jobs should utilize 40 CPU cores per node
 
-If you have jobs that use **less than 40 CPU cores per node**, we request that you use the older compute nodes::
+If you have jobs that utilize **less than 40 CPU cores per node**, we request that you use the older compute nodes::
 
   xeon24 nodes permit jobs using 1-24 CPU cores on 1 node
   xeon24 node jobs should utilize 24 CPU cores per node, but only in case 2 or more nodes are requested
 
-Please see also the list of `Compute node partitions`_ above.
+Please see also the list of `Compute node partitions`_.
 
-Job scripts the do not use CPU cores or GPUs correctly may be rejected at submit time with an error message.
+Job scripts that do not use CPU cores or GPUs correctly may be rejected at submit time or be cancelled by the administrators.
 
 Usage of BIG memory nodes
 -------------------------
 
 We have installed 4 **BIG memory** nodes for special applications used by selected groups.
 These nodes have 4096 GB (4 TB) of RAM memory,
-and it is expected (required) that all jobs submitted to the ``xeon32_4096`` partition will use **at least 768 GB** of RAM memory.
-Jobs using up to 768 GB of RAM memory should use one of the other available partitions.
-Partial node jobs are permitted in the ``xeon32_4096`` partition.
+and it is expected (required) that all jobs submitted to the ``xeon32_4096`` partition will use **at least 768 GB** of RAM memory
+and/or use the large scratch disk space.
+Jobs using up to 768 GB of RAM memory should use one of the other `Compute node partitions`_.
+Partial-node jobs are permitted in the ``xeon32_4096`` partition.
 
 The ``xeon32_4096`` nodes are also equipped with a very large and very fast scratch file system with a size of 14 TB.
 Large scratch spaces are typically required by big-memory jobs.
@@ -667,6 +668,8 @@ Here are some special instructions for submitting jobs to the ``xeon32_4096`` pa
 
   Here, Slurm will allocate 4 cores and 3 TB of memory.
   This means that another job can run on the same node utilizing at most the remaining 28 cores and 1 TB of memory.
+
+Job scripts that do not use CPU cores or GPUs correctly may be rejected at submit time or be cancelled by the administrators.
 
 Usage of GPU compute nodes
 --------------------------
@@ -703,6 +706,7 @@ For example, to submit a batch jobs to 1 GPU on 8 CPU cores of a node in the ``s
 
 Similarly, the nodes in the ``a100`` partition have 4 A100 GPUs each and 128 "virtual" CPU cores,
 so you should request 32 CPU cores per GPU..
+Job scripts that do not use CPU cores or GPUs correctly may be rejected at submit time or be cancelled by the administrators.
 
 For further Slurm_ information see the GRES_ page.
 
