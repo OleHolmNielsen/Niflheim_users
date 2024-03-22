@@ -243,7 +243,7 @@ Compute node partitions
 
 Slurm_ node **partitions** are the compute resource in Slurm_ which group nodes into logical and possibly overlapping sets.
 
-To display the status of all available Slurm partitions use the ``showpartitions`` command (append ``-h`` for help).
+To display the status of all available Slurm_ partitions use the ``showpartitions`` command (append ``-h`` for help).
 
 Niflheim contains a number of node partitions with different types of CPU architecture hardware and the corresponding recommended login nodes:
 
@@ -606,7 +606,7 @@ Please remember to clean up scratch files regularly when they are no longer need
 Viewing completed or failed job information
 --------------------------------------------
 
-After your job has completed (or terminated), you can view job accounting data by inquiring the Slurm database.
+After your job has completed (or terminated), you can view job accounting data by inquiring the Slurm_ database.
 For example, to inquire about a specific job Id 1234::
 
   sacct -j 1234 -o jobid,jobname,user,Timelimit,Elapsed,NNodes,Partition,ExitCode,nodelist
@@ -660,14 +660,14 @@ but note that the scratch disk space is shared between all jobs on the node.
 
 Here are some special instructions for submitting jobs to the ``xeon32_4096`` partition:
 
-- Memory must **always** be specified in the Slurm submit script.
+- Memory must **always** be specified in the Slurm_ submit script.
   Memory can be specified in either of two ways: ``--mem=xx`` for the total memory requirement of the job or ``--mem-per-cpu=xx`` for memory per CPU allocated in the job.
 - Any job can ask for up to 4 TB of memory even if it does not require all of the CPU cores, for example::
 
     #SBATCH --mem=3000GB
     #SBATCH -n 4
 
-  Here, Slurm will allocate 4 cores and 3 TB of memory.
+  Here, Slurm_ will allocate 4 cores and 3 TB of memory.
   This means that another job can run on the same node utilizing at most the remaining 28 cores and 1 TB of memory.
 
 Job scripts that do not use CPU cores or GPUs correctly may be rejected at submit time or be cancelled by the administrators.
