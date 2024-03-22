@@ -358,8 +358,10 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 * Please use **all CPU cores** in the most modern CPU compute nodes (``xeon40``, ``xeon56``, and ``epyc96`` partitions),
   and do not submit jobs to these partitions which only use partial nodes.
-  Partial node usage, including single-core jobs, are permitted in the ``xeon24`` partition by submitting to 1 to 23 cores of a 24-core node.
-  Partial node jobs are also permitted in the ``xeon32_4096`` **BIG memory** partition and the ``a100`` GPU partition.
+
+* Partial node usage, including single-core jobs, are permitted in the ``xeon24`` partition by submitting to 1 and up to 23 cores of a 24-core node.
+
+* Partial node jobs are also permitted in the partitions ``xeon32_4096`` (**BIG memory**) as well as the GPU partitions ``sm3090`` and ``a100``.
 
 * Please do not use the GPU partitions ``a100`` or ``sm3090`` unless your group has been authorized to use GPUs.
 
@@ -368,29 +370,9 @@ Niflheim contains a number of node partitions with different types of CPU archit
 * The ``xeon40`` partition consists of both Skylake_ and Cascade_Lake_ CPU types.
   While these CPUs are (almost) binary compatible, the new Cascade_Lake_ CPUs will have a higher performance.
 
-* Partitions are overlapping so that nodes with more memory are also members of the partition with the least memory.
+* Some partitions are overlapping so that nodes with more memory are also members of the partition with the lower amount of memory.
 
-* The local node scratch disk space is shared between Slurm_ jobs currently running on the node, see `Using compute node temporary scratch disk space`_ below.
-
-Usage of BIG memory nodes
---------------------------
-
-We have installed 4 **BIG memory** nodes for special applications used by selected groups.
-These nodes have 4096 GB (4 TB) of RAM memory,
-and it is expected (required) that all jobs submitted to the ``xeon32_4096`` partition will use **at least 768 GB** of RAM memory.
-Jobs using up to 768 GB of RAM memory must use one of the other available partitions.
-
-The ``xeon32_4096`` nodes are also equipped with a very large, very fast scratch file system of 14 TB.
-This is typically required by big-memory jobs.
-Slurm_ jobs must use the scratch disk as the job-private ``/tmp`` directory.
-
-Here are some special instructions for submitting jobs to the ``xeon32_4096`` partition:
-
-* Specify the amount of memory required (up to 4 TB) in the Slurm_ script, for example::
-
-   #SBATCH --mem=1000G
-
-* TBD
+* The **local node scratch disk space** is **shared** between all Slurm_ jobs currently running on the node, see `Using compute node temporary scratch disk space`_ below.
 
 Compute nodes and jobs
 ----------------------
@@ -567,25 +549,6 @@ To display job FairShare_ priority values use::
 
 .. _FairShare: https://slurm.schedmd.com/priority_multifactor.html#fairshare
 
-Correct usage of multi-CPU nodes
-................................
-
-The most modern compute nodes with many CPU cores should be used fully by the batch jobs::
-
-  xeon56 nodes should utilize 56 CPU cores per node
-  xeon40 nodes should utilize 40 CPU cores per node
-  xeon24 nodes should utilize 24 CPU cores per node, in case 2 or more nodes are used
-
-If you have jobs that use **less than 40 CPU cores per node**, we request that you use the older compute nodes::
-
-  xeon24 nodes permit jobs using 1-24 CPU cores on 1 node
-
-Please see also the list of `Compute node partitions`_ above.
-
-For correct usage of GPU nodes please see `GPU compute nodes`_ below.
-
-Job scripts the do not use CPU cores or GPUs correctly may be rejected at submit time with an error message.
-
 Job arrays
 ..........
 
@@ -658,6 +621,93 @@ The ``sacct`` manual page documents the *valid time formats*.
 You may inquire about many job parameters, to see a complete list run::
 
   sacct -e
+
+Usage of multi-CPU nodes
+==========================
+
+The most modern compute nodes with many CPU cores should be used fully by the batch jobs::
+
+  xeon56 node jobs should utilize 56 CPU cores per node
+  xeon40 node jobs should utilize 40 CPU cores per node
+
+If you have jobs that use **less than 40 CPU cores per node**, we request that you use the older compute nodes::
+
+  xeon24 nodes permit jobs using 1-24 CPU cores on 1 node
+  xeon24 node jobs should utilize 24 CPU cores per node, but only in case 2 or more nodes are requested
+
+Please see also the list of `Compute node partitions`_ above.
+
+For correct usage of GPU nodes please see the section `GPU compute nodes`_.
+
+Job scripts the do not use CPU cores or GPUs correctly may be rejected at submit time with an error message.
+
+Usage of BIG memory nodes
+==========================
+
+We have installed 4 **BIG memory** nodes for special applications used by selected groups.
+These nodes have 4096 GB (4 TB) of RAM memory,
+and it is expected (required) that all jobs submitted to the ``xeon32_4096`` partition will use **at least 768 GB** of RAM memory.
+Jobs using up to 768 GB of RAM memory should use one of the other available partitions.
+Partial node jobs are permitted in the ``xeon32_4096`` partition.
+
+The ``xeon32_4096`` nodes are also equipped with a very large and very fast scratch file system with a size of 14 TB.
+Large scratch spaces are typically required by big-memory jobs.
+Slurm_ jobs use the local scratch disk as the job's private ``/tmp`` directory,
+but note that the scratch disk space is shared between all jobs on the node. 
+
+Here are some special instructions for submitting jobs to the ``xeon32_4096`` partition:
+
+- Memory must **always** be specified in the Slurm submit script.
+- Memory can be specified in two ways: ``--mem=xx`` for the total memory requirement of the job or ``--mem-per-cpu=xx`` for memory per CPU allocated in the job.
+- Any job can ask for up to 4 TB of memory, even if it does not require all the cores, for example::
+
+    #SBATCH --mem=3000GB
+    #SBATCH -n 4
+
+  Here, Slurm will allocate 4 cores and 3 TB of memory.
+  This means that another job can run on the same node utilizing at most the remaining 28 cores and 1 TB of memory.
+
+Usage of GPU compute nodes
+=============================
+
+Please do not use the GPU partitions unless your group has been authorized to use GPUs.
+The appropriate login nodes for GPU partitions are:
+
+* Partition ``sm3090``: **thul** (Skylake_)
+* Partition ``a100``: **surt** (IceLake_)
+
+The appropriate login node must be used to build software for GPUs, since they have the same CPU architecture as the GPU-nodes.
+GPU-specific software modules will only be provided on GPU-compatible nodes.
+
+NVIDIA's CUDA_ software is available as a module on the login nodes and compute nodes::
+
+  $ module avail CUDA/
+
+Batch jobs submitted to the GPU nodes **must request GPU resources**!  
+Jobs that only use CPUs without using GPUs are **not permitted**.
+Partial node jobs are permitted in the GPU partitions.
+
+You must include batch job statements for specifying correct numbers of CPUs and GPUs.
+Since the nodes in the ``sm3090`` partition have 10 GPUs each and 80 "virtual" CPU cores, 
+you **must** submit jobs with 80/10 = **8 CPUs per GPU**::
+
+  #SBATCH -n 8
+
+For example, to submit a batch jobs to 1 GPU on 8 CPU cores of a node in the ``sm3090`` partition::
+
+  #SBATCH --partition=sm3090
+  #SBATCH -N 1-1
+  #SBATCH -n 8
+  #SBATCH --gres=gpu:1
+
+Similarly, the nodes in the ``a100`` partition have 4 A100 GPUs each and 128 "virtual" CPU cores,
+so you should request 32 CPU cores per GPU..
+
+For further Slurm_ information see the GRES_ page.
+
+.. _CUDA: https://en.wikipedia.org/wiki/CUDA
+.. _Tesla: https://www.nvidia.com/object/tesla-servers.html
+.. _GRES: https://slurm.schedmd.com/gres.html
 
 Software environment modules
 ============================
@@ -797,43 +847,6 @@ The Skylake_ architecture corresponds to the *xeon40* compute nodes, and the GCC
   module load GCC
   gcc -march=native -Q --help=target | grep march | awk '{print $2}'
   skylake
-
-GPU compute nodes
-=================
-
-The **svol** login node must be used to build software for GPUs, since it has the same CPU architecture as the GPU-nodes,
-and since GPU-specific software modules will only be provided on compatible nodes.
-
-CUDA_ software is **only** available as a module on the ``xeon40`` login node **svol** and compute nodes::
-
-  $ module avail CUDA/
-  -------------------------- /home/modules/modules/all ---------------------------
-   CUDA/11.4.1            (D)  
-
-Additional CUDA_ software modules can be installed by user request.
-
-Batch jobs submitted to the GPU nodes **must request GPU resources**!  
-Jobs that only use CPUs without GPUs are not permitted.
-Please do not use the GPU partition ``sm3090`` unless you have been authorized to use GPUs.
-
-You **must** include batch job statements for specifying correct numbers of CPUs and GPUs.
-Since the nodes in the ``sm3090`` partition have 10 GPUs each and 80 "virtual" CPU cores, 
-you **must** submit jobs with 80/10 = **8 CPUs per GPU**::
-
-  #SBATCH -n 8
-
-For example, to submit a batch jobs to 1 GPU on 8 CPU cores of a node in the ``sm3090`` partition::
-
-  #SBATCH --partition=sm3090
-  #SBATCH -N 1-1
-  #SBATCH -n 8
-  #SBATCH --gres=gpu:1
-
-For further Slurm_ information see the GRES_ page.
-
-.. _CUDA: https://en.wikipedia.org/wiki/CUDA
-.. _Tesla: https://www.nvidia.com/object/tesla-servers.html
-.. _GRES: https://slurm.schedmd.com/gres.html
 
 GPAW and ASE software on Niflheim
 =================================
