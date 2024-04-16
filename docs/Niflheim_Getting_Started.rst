@@ -54,12 +54,19 @@ The login nodes  are:
 
 * **svol.fysik.dtu.dk**: Login node for partition **xeon40**:
 
-  * The Intel Skylake_ CPU type **xeon40**.
+  * The Intel Skylake_ CPU type.
   * OS: CentOS_ 7.
   * Please build all applications for xeon40 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 40-CPU (dual-processor, 20 cores + Hyperthreading_ = 80 "virtual" cores), 768 GB of RAM.
   * CPUs: Intel(R) Xeon(R) Scalable Gold CPU 6148 @ 2.20GHz Skylake_ with AVX512_ vector instructions.
   * Refer to this as CPU_ARCH= **skylake**.
+
+* **thul.fysik.dtu.dk**: Login node for AlmaLinux_ / RockyLinux_ 8 partitions **xeon40_el8** and **sm3090el8**:
+
+  * The Intel Skylake_ CPU type.
+  * OS: RockyLinux_ 8.
+  * CPUs: Intel(R) Xeon(R) Scalable Gold CPU 5115 @ 2.40GHz Skylake_ with AVX512_ vector instructions.
+  * Refer to this as CPU_ARCH= **skylake_el8**.
 
 * **surt.fysik.dtu.dk**: Login node for partitions **xeon56**, **xeon32_4096**, and **a100**:
 
@@ -312,14 +319,14 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 80 (40*2 with HT)
     - 192 GB
     - 800 GB
-    - svol
+    - thul
     - AlmaLinux_ 8
   * - sm3090el8_768
     - Skylake_ + GPUs
     - 80 (40*2 with HT)
     - 768 GB
     - 800 GB
-    - svol
+    - thul
     - AlmaLinux_ 8
   * - xeon56
     - IceLake_
@@ -706,7 +713,7 @@ For example, to submit a batch jobs to 1 GPU on 8 CPU cores of a node in the ``s
   #SBATCH --gres=gpu:1
 
 Similarly, the nodes in the ``a100`` partition have 4 A100_ GPUs each and 128 "virtual" CPU cores,
-so you should request 32 CPU cores per GPU..
+so you should request 32 CPU cores per GPU.
 Job scripts that do not use CPU cores or GPUs correctly may be rejected at submit time or be cancelled by the administrators.
 
 For further Slurm_ information see the GRES_ page.
