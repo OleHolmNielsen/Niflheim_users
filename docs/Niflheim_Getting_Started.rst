@@ -61,7 +61,7 @@ The login nodes  are:
   * CPUs: Intel(R) Xeon(R) Scalable Gold CPU 6148 @ 2.20GHz Skylake_ with AVX512_ vector instructions.
   * Refer to this as CPU_ARCH= **skylake**.
 
-* **thul.fysik.dtu.dk**: Login node for AlmaLinux_ / RockyLinux_ 8 partitions **xeon40_el8** and **sm3090el8**:
+* **thul.fysik.dtu.dk**: Login node for AlmaLinux_ / RockyLinux_ 8 partitions **xeon40el8** and **sm3090el8**:
 
   * The Intel Skylake_ CPU type.
   * OS: RockyLinux_ 8.
@@ -307,7 +307,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 140 GB
     - svol
     - CentOS_ 7
-  * - xeon40_el8
+  * - xeon40el8
     - Skylake_ and Cascade_Lake_.
     - 40
     - 380 GB
