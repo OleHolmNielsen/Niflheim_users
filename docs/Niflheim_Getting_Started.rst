@@ -277,7 +277,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 24
     - 254 GB
     - 140 GB
-    - sylg
+    - sylg, slid
     - CentOS_ 7
   * - xeon24el8
     - Broadwell_
