@@ -52,6 +52,14 @@ The login nodes  are:
   * CPUs: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz Broadwell_
   * Refer to this as CPU_ARCH= **broadwell**.
 
+* **slid2.fysik.dtu.dk**: Login node for RockyLinux_ 8 partition **xeon24el8**:
+
+  * The Intel Broadwell_ CPU type.
+  * OS: RockyLinux_ 8.
+  * 24-CPU (dual-processor, 12-cores + Hyperthreading_ = 48 "virtual" cores), 256 GB of RAM.
+  * CPUs: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz Broadwell_
+  * Refer to this as CPU_ARCH= **broadwell_el8**.
+
 * **svol.fysik.dtu.dk**: Login node for partition **xeon40**:
 
   * The Intel Skylake_ CPU type.
