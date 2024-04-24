@@ -274,10 +274,6 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - **Linux OS**
   * - xeon24, xeon24_week, xeon24_test
     - Broadwell_
-
-      xeon24 includes also the
-
-      xeon24_512 nodes below.
     - 24
     - 254 GB
     - 140 GB
