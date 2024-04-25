@@ -56,7 +56,7 @@ The login nodes  are:
 
   * The Intel Broadwell_ CPU type.
   * OS: RockyLinux_ 8.
-  * 24-CPU (dual-processor, 12-cores + Hyperthreading_ = 48 "virtual" cores), 256 GB of RAM.
+  * 24-CPU, 256 GB of RAM.
   * CPUs: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz Broadwell_
   * Refer to this as CPU_ARCH= **broadwell_el8**.
 
