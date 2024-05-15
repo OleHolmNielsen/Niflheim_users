@@ -272,14 +272,14 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - **/tmp scratch disk**
     - **Login nodes**
     - **Linux OS**
-  * - xeon24, xeon24_week, xeon24_test
+  * - xeon24, xeon24_week
     - Broadwell_
     - 24
     - 254 GB
     - 140 GB
     - sylg, slid
     - CentOS_ 7
-  * - xeon24el8
+  * - xeon24el8, xeon24el8_test
     - Broadwell_
     - 24
     - 254 GB
@@ -365,7 +365,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 * The default **maximum time limit** for jobs is **50 hours** in all partitions.
   However, the ``xeon24_week`` partition will accept jobs up to **1 week** (168 hours).
-  The ``xeon24_test`` partition has a 10 minute time limit and must be used only for development tests.
+  The ``xeon24el8_test`` partition has a 10 minute time limit and must be used only for development tests.
 
 * Please use **all CPU cores** in the most modern CPU compute nodes (``xeon40``, ``xeon56``, and ``epyc96`` partitions),
   and do not submit jobs to these partitions which only use partial nodes.
