@@ -1088,4 +1088,4 @@ Pages for system administrators
 
 * `Slurm batch queueing system <https://wiki.fysik.dtu.dk/Niflheim_system/SLURM>`_.
 * `Cornelis Networks Omni-Path network fabric <https://wiki.fysik.dtu.dk/Niflheim_system/OmniPath>`_.
-* `EasyBuild software for environment modules on RHEL/CentOS <https://wiki.fysik.dtu.dk/Niflheim_system/EasyBuild_modules>`_.
+* `EasyBuild software for environment modules on RHEL Linux <https://wiki.fysik.dtu.dk/Niflheim_system/EasyBuild_modules>`_.
