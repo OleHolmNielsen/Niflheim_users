@@ -43,16 +43,7 @@ See `Compute node partitions`_ below and the :ref:`Hardware` page.
 
 The login nodes  are:
 
-* **sylg.fysik.dtu.dk** and **slid.fysik.dtu.dk**: Login nodes for partition **xeon24**:
-
-  * The Intel Broadwell_ CPU type **xeon24**.
-  * OS: CentOS_ 7.
-  * Please build all applications for xeon24 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
-  * 24-CPU (dual-processor, 12-cores + Hyperthreading_ = 48 "virtual" cores), 256 GB of RAM.
-  * CPUs: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz Broadwell_
-  * Refer to this as CPU_ARCH= **broadwell**.
-
-* **slid2.fysik.dtu.dk**: Login node for RockyLinux_ 8 partition **xeon24el8**:
+* **sylg.fysik.dtu.dk** and **slid2.fysik.dtu.dk**: Login node for RockyLinux_ 8 partition **xeon24el8**:
 
   * The Intel Broadwell_ CPU type.
   * OS: RockyLinux_ 8.
@@ -60,16 +51,7 @@ The login nodes  are:
   * CPUs: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz Broadwell_
   * Refer to this as CPU_ARCH= **broadwell_el8**.
 
-* **svol.fysik.dtu.dk**: Login node for partition **xeon40**:
-
-  * The Intel Skylake_ CPU type.
-  * OS: CentOS_ 7.
-  * Please build all applications for xeon40 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
-  * 40-CPU (dual-processor, 20 cores + Hyperthreading_ = 80 "virtual" cores), 768 GB of RAM.
-  * CPUs: Intel(R) Xeon(R) Scalable Gold CPU 6148 @ 2.20GHz Skylake_ with AVX512_ vector instructions.
-  * Refer to this as CPU_ARCH= **skylake**.
-
-* **thul.fysik.dtu.dk**: Login node for AlmaLinux_ / RockyLinux_ 8 partitions **xeon40el8** and **sm3090el8**:
+* **svol.fysik.dtu.dk** and **thul.fysik.dtu.dk**: Login node for AlmaLinux_ / RockyLinux_ 8 partitions **xeon40el8** as well as **sm3090el8**:
 
   * The Intel Skylake_ CPU type.
   * OS: RockyLinux_ 8.
@@ -94,9 +76,18 @@ The login nodes  are:
   * CPUs: AMD(R) EPYC(R) 9124 CPU @ 3.00GHz Genoa Zen4_ (note: the **epyc96** have more and faster CPU cores).
   * Refer to this as CPU_ARCH= **epyc9004**.
 
+* **Deprecated: slid.fysik.dtu.dk**: Login node for partition **xeon24**:
+
+  * The Intel Broadwell_ CPU type **xeon24**.
+  * OS: CentOS_ 7 (deprecated).
+  * Please build all applications for xeon24 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
+  * 24-CPU (dual-processor, 12-cores + Hyperthreading_ = 48 "virtual" cores), 256 GB of RAM.
+  * CPUs: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz Broadwell_
+  * Refer to this as CPU_ARCH= **broadwell**.
+
 The login nodes **fjorm**, **surt**, **svol**, **sylg**, and **thul** must not be overloaded with heavy tasks, since this will disturb other users.
 
-The login node **slid** would be acceptable for more heavy testing of codes, but please bear in mind that the login nodes may be shared by many users, and no single user should monopolize any login nodes.
+The login nodes **slid2** and **slid** would be acceptable for more heavy testing of codes, but please bear in mind that the login nodes may be shared by many users, and no single user should monopolize any login nodes.
 **Long tasks should always be submitted as batch jobs**.
 
 .. _Hyperthreading: https://en.wikipedia.org/wiki/Hyper-threading
@@ -277,7 +268,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 24
     - 254 GB
     - 140 GB
-    - sylg, slid
+    - slid
     - CentOS_ 7
   * - xeon24el8, xeon24el8_test
     - Broadwell_
@@ -286,37 +277,26 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 140 GB
     - slid2
     - RockyLinux_ 8
-  * - xeon40
-    - Skylake_ and Cascade_Lake_.
-
-      Includes nodes from
-
-      xeon40_768 and xeon40_clx.
-    - 40
-    - 380 GB
-    - 140 GB
-    - svol
-    - CentOS_ 7
-  * - xeon40_768
-    - Skylake_
-    - 40
-    - 760 GB
-    - 140 GB
-    - svol
-    - CentOS_ 7
-  * - xeon40_clx
-    - Cascade_Lake_
-    - 40
-    - 380 GB
-    - 140 GB
-    - svol
-    - CentOS_ 7
   * - xeon40el8
     - Skylake_ and Cascade_Lake_.
     - 40
     - 380 GB
     - 140 GB
-    - thul
+    - thul, svol
+    - RockyLinux_ 8
+  * - xeon40el8_768
+    - Skylake_
+    - 40
+    - 760 GB
+    - 140 GB
+    - thul, svol
+    - RockyLinux_ 8
+  * - xeon40el8_clx
+    - Cascade_Lake_
+    - 40
+    - 380 GB
+    - 140 GB
+    - thul, svol
     - RockyLinux_ 8
   * - sm3090el8
     - Skylake_ + GPUs
@@ -360,6 +340,13 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 1.7 TB
     - surt
     - RockyLinux_ 8
+  * - xeon24, xeon24_week
+    - Broadwell_
+    - 24
+    - 254 GB
+    - 140 GB
+    - slid
+    - CentOS_ 7
 
 **Please notice** the following points:
 
