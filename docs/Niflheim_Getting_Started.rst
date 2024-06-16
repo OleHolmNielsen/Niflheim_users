@@ -13,7 +13,7 @@ Overview of Niflheim
 The *Niflheim* Linux cluster setup is based upon:
 
 * Compute nodes as described on the :ref:`Hardware` page.
-* RockyLinux_ 8, AlmaLinux_ 8, and CentOS_ 7 Linux OS,
+* RockyLinux_ 8 and AlmaLinux_ 8 Linux OS,
 * Slurm_ batch queueing system,
 * Software_Modules_ using Lmod_ and EasyBuild_modules_.
 
@@ -47,7 +47,7 @@ The login nodes  are:
 
   * The Intel Broadwell_ CPU type.
   * OS: RockyLinux_ 8.
-  * 24-CPU, 256 GB of RAM.
+  * 24 CPU cores, 256 GB of RAM.
   * CPUs: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz Broadwell_
   * Refer to this as CPU_ARCH= **broadwell_el8**.
 
@@ -159,14 +159,6 @@ To view file systems mounted on the node (omitting temporary file systems)::
 
   df -Phx tmpfs
 
-To count your files and their sizes, the *CentOS 7* login nodes (only) have a nice *Python2* tool cfas_::
-
-  cfas <directory-name>
-
-Unfortunately, cfas_ has never been ported to *Python3*, and therefore it cannot be used on our AlmaLinux_ 8 nodes.
-
-.. _cfas: https://github.com/runefriborg/cfas
-
 Usage of binary compiled code
 =============================
 
@@ -263,14 +255,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - **/tmp scratch disk**
     - **Login nodes**
     - **Linux OS**
-  * - xeon24, xeon24_week
-    - Broadwell_
-    - 24
-    - 254 GB
-    - 140 GB
-    - slid
-    - CentOS_ 7
-  * - xeon24el8, xeon24el8_test
+  * - xeon24el8, xeon24el8_test, xeon24el8_week
     - Broadwell_
     - 24
     - 254 GB
@@ -340,13 +325,6 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 1.7 TB
     - surt
     - RockyLinux_ 8
-  * - xeon24, xeon24_week
-    - Broadwell_
-    - 24
-    - 254 GB
-    - 140 GB
-    - slid
-    - CentOS_ 7
 
 **Please notice** the following points:
 
