@@ -851,17 +851,16 @@ Notebook documents are both human-readable documents containing the analysis des
 
 On Niflheim we have installed Jupyter_Notebook_ software modules which you can load and use::
 
-  $ module avail IPython
+  $ module avail JupyterNotebook
   -------------------------- /home/modules/modules/all ---------------------------
-   IPython/6.4.0-foss-2018a-Python-3.6.4
-   IPython/7.2.0-foss-2018b-Python-3.6.6
-   IPython/7.2.0-intel-2018b-Python-3.6.6
-   IPython/7.18.1-GCCcore-10.2.0          (D)
+   JupyterNotebook/7.0.2-GCCcore-12.3.0
 
-You have to select the correct *jupyter* version shown above, according to which compiler has been used to compile the other software you are using (such as GPAW).  ``7.18.1-GCCcore-10.2.0`` matches the ``foss`` and ``intel`` 2020b toolchains.
+You have to select the correct *jupyter* version shown above, according to which compiler has been used to compile the other software you are using (such as GPAW).
 
-**NOTE:** If you use a virtual environment (venv), you cannot use the IPython module, as the jupyter notebook will not see the modules in the venv.  Instead you have to install jupyter in your venv (``pip install notebook``).
+**NOTE:** If you use a *Python virtual environment* (venv_), you cannot use the IPython module, as the jupyter notebook will not see the modules in the venv_. 
+Instead you have to install jupyter in your venv_ (``pip install notebook``).
 
+.. _venv: https://docs.python.org/3/library/venv.html
 
 Restrictions on the use of Jupyter Notebook
 -------------------------------------------
@@ -872,7 +871,6 @@ Restrictions on the use of Jupyter Notebook
 
 * The ``jupyter`` command starts a special web-server on the login node serving a network port number 8888 (plus/minus a small number).
 
-
 Using Jupyter_Notebook_ documents on Niflheim from DTU Physics
 --------------------------------------------------------------
 
@@ -880,9 +878,9 @@ Using Jupyter_Notebook_ documents on Niflheim from DTU Physics
 
 2. Load the relevant module, for example::
 
-     module load IPython/7.18.1-GCCcore-10.2.0
+     module load JupyterNotebook
 
-   venv users should **not** load this module!
+   Users of venv_ should **not** load this module!
 
 3. Go to the relevant folder for your notebooks, and start Jupyter with the command::
 
@@ -912,7 +910,7 @@ is running Linux or MacOS.
 
      module load IPython/7.18.1-GCCcore-10.2.0
 
-   venv users should **not** load this module!
+   Users of venv_ should **not** load this module!
 
 3. Go to the relevant folder for your notebooks, and start Jupyter with the command::
 
@@ -956,7 +954,7 @@ is running Microsoft Windows.
 
      module load IPython/7.18.1-GCCcore-10.2.0
 
-   venv users should **not** load this module!
+   Users of venv_ should **not** load this module!
 
 3. Go to the relevant folder for your notebooks, and start Jupyter with the command::
 
