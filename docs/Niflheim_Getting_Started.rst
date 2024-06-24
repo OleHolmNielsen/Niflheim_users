@@ -1011,7 +1011,7 @@ and
 Apptainer on Niflheim
 -----------------------
 
-We have installed Apptainer_ (current version: 1.1.7 from EPEL) as RPM packages.
+We have installed Apptainer_ (current version: 1.3 from EPEL) as RPM packages.
 
 If you have root priviledge on your personal Linux PC, you may want to make an Apptainer_ installation locally on the PC.
 Finished containers can be copied to Niflheim, and executing Apptainer_ containers is as a **normal user** without any root priviledge at all!
