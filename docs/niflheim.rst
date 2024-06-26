@@ -36,16 +36,19 @@ Please consult the :ref:`Niflheim_Getting_started` page for information about ho
 
 For Niflheim usage statistics please see the monthly `Niflheim accounting reports <https://wiki.fysik.dtu.dk/graphs/accounting_reports.html>`_.
 
-Niflheim: Niflheim setup with CentOS 7
---------------------------------------
+Niflheim: Niflheim setup with EL8 Linux
+---------------------------------------
 
 The current Niflheim setup is based upon:
 
-* CentOS 7 and AlmaLinux 8 Linux OS,
+* RockyLinux_ and AlmaLinux_ 8 Linux OS,
 * Slurm batch system,
 * Software environment modules.
 
 Please go the the :ref:`Niflheim_Getting_started` page for more information for users.
+
+.. _RockyLinux: https://rockylinux.org/
+.. _AlmaLinux: https://almalinux.org/
 
 The name Niflheim
 =================
