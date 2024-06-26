@@ -35,7 +35,6 @@ See the :ref:`Access_to_Niflheim` section about getting access.
 Login to *Niflheim* is available using SSH_ **only** from within the DTU network.
 If you are outside of DTU, please log in to the DTU_VPN_ service or the G-databar_ first.
 
-.. _DTU_VPN: https://www.inside.dtu.dk/en/medarbejder/it-og-telefoni/it-support-og-kontakt/guides/remote/vpn-cisco-anyconnect
 .. _G-databar: https://www.gbar.dtu.dk/
 
 Please login to the node type identical to the compute-nodes onto which you submit batch jobs.
@@ -904,42 +903,42 @@ Using Jupyter_Notebook_ documents on Niflheim from home/elsewhere (Linux or Mac)
 Use these instructions when you are located outside DTU Physics, and your laptop/desktop
 is running Linux or MacOS.
 
-1. Log in to a Niflheim login node, preferably *slid*.
+1. Connect to the DTU_VPN_
+   
+2. Log in to a Niflheim login node, preferably *slid*.
 
-2. Load the relevant module, for example::
+3. Load the relevant module, for example::
 
-     module load IPython/7.18.1-GCCcore-10.2.0
+     module load JupyterNotebook/7.0.2-GCCcore-12.3.0
 
    Users of venv_ should **not** load this module!
 
-3. Go to the relevant folder for your notebooks, and start Jupyter with the command::
+4. Go to the relevant folder for your notebooks, and start Jupyter with the command::
 
       jupyter notebook --no-browser
 
    Jupyter will respond with around ten lines of text, at the bottom is a URL.  
    It will contain the text ``localhost:NNNN`` where NNNN is a port number, typically 8888 or close.  You need that number in the next step.
 
-4. From your desktop/laptop, log in to niflheim again in a new window, using this command to set up an SSH tunnel::
+5. From your desktop/laptop, log in to niflheim again in a new window, using this command to set up an SSH tunnel::
       
-      ssh -J username@jumphost -L NNNN:localhost:NNNN username@xxxx.fysik.dtu.dk -N
+      ssh -L NNNN:localhost:NNNN username@xxxx.fysik.dtu.dk -N
 
    where:
 
    * ``xxxx`` is slid or whatever machine you are using,
    * ``username`` is your DTU username,
    * ``NNNN`` is the port number printed by the notebook command,
-   * ``jumphost`` is the name of the DTU Physics gateway machine.
-     You need to contact Ole or your supervisor to get the actual name of the ``jumphost``, and to have your account enabled on it.
+     
+   *Note* There will be no output from this command. To test if it is working; proceed to the next step.
 
-   The part ``-J username@jumphost`` can be omitted if you are using a desktop connected to the Fysik cabled network.
+6. Open a browser, and cut-and-paste the address starting with ``https://localhost`` into your browser.
 
-5. Open a browser, and cut-and-paste the address starting with ``https://localhost`` into your browser.
-
-6. **IMPORTANT:** Once you are done using your notebooks, **remember to shut down the Jupyter server!** See point 4 
+7. **IMPORTANT:** Once you are done using your notebooks, **remember to shut down the Jupyter server!** See point 4 
    in the instructions in the previous section (usage from DTU Physics).
 
 .. _Jupyter_Notebook: https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html
-
+.. _DTU_VPN: https://www.inside.dtu.dk/en/medarbejder/it-og-telefoni/it-systemer-og-retningslinjer/it-systemer-og-vaerktoejer/it-systemer-ait/vpn
 
 Using Jupyter_Notebook_ documents on Niflheim from home/elsewhere (Windows)
 ---------------------------------------------------------------------------
