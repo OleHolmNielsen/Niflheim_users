@@ -856,7 +856,7 @@ On Niflheim we have installed Jupyter_Notebook_ software modules which you can l
 
 You have to select the correct *jupyter* version shown above, according to which compiler has been used to compile the other software you are using (such as GPAW).
 
-**NOTE:** If you use a *Python virtual environment* (venv_), you cannot use the IPython module, as the jupyter notebook will not see the modules in the venv_. 
+**NOTE:** If you use a *Python virtual environment* (venv_), you cannot use the *IPython* module, as the Jupyter_Notebook_ will not see the modules in the venv_. 
 Instead you have to install jupyter in your venv_ (``pip install notebook``).
 
 .. _venv: https://docs.python.org/3/library/venv.html
@@ -951,7 +951,7 @@ is running Microsoft Windows.
 
 2. Load the relevant module, for example::
 
-     module load IPython/7.18.1-GCCcore-10.2.0
+     module load JupyterNotebook/7.0.2-GCCcore-12.3.0
 
    Users of venv_ should **not** load this module!
 
