@@ -75,10 +75,10 @@ The login nodes  are:
   * CPUs: AMD(R) EPYC(R) 9124 CPU @ 3.00GHz Genoa Zen4_ (note: the **epyc96** have more and faster CPU cores).
   * Refer to this as CPU_ARCH= **epyc9004**.
 
-* **Deprecated: slid.fysik.dtu.dk**: Login node for partition **xeon24**:
+* **Removed 01-July-2024: slid.fysik.dtu.dk**: Login node for partition **xeon24**:
 
   * The Intel Broadwell_ CPU type **xeon24**.
-  * OS: CentOS_ 7 (deprecated).
+  * OS: CentOS_ 7 (End-of-life 30-June-2024).
   * Please build all applications for xeon24 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 24-CPU (dual-processor, 12-cores + Hyperthreading_ = 48 "virtual" cores), 256 GB of RAM.
   * CPUs: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz Broadwell_
