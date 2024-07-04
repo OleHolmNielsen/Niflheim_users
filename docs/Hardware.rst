@@ -13,7 +13,7 @@ Niflheim currently (as of February 2024) consists of the following hardware:
 
 * A total of **700 compute nodes**.
 * The nodes contain a total of **31000 CPU cores**.
-* Aggregate theoretical peak performance of more than **22XX TeraFLOPS** (TFLOPS_) or **2.2 PetaFLOPS**.
+* Aggregate theoretical peak CPU performance of more than **22XX TeraFLOPS** (TFLOPS_) or **2.2 PetaFLOPS**.
 * Total RAM memory is 300+ TB.
 
 .. _TFLOPS: http://en.wikipedia.org/wiki/FLOPS
