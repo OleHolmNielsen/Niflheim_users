@@ -9,19 +9,58 @@ Hardware information
 Niflheim overview
 =================
 
-Niflheim currently (as of January 2022) consists of the following hardware:
+Niflheim currently (as of February 2024) consists of the following hardware:
 
-* A total of **679 compute nodes**.
-* The nodes contain a total of **24560 CPU cores**.
-* Aggregate theoretical peak performance of more than **1785 TeraFLOPS** (TFLOPS_) or **1.785 PetaFLOPS**.
-* Total RAM memory is 247 TB.
+* A total of **700 compute nodes**.
+* The nodes contain a total of **31000 CPU cores**.
+* Aggregate theoretical peak performance of more than **22XX TeraFLOPS** (TFLOPS_) or **2.2 PetaFLOPS**.
+* Total RAM memory is 300 TB.
 
 .. _TFLOPS: http://en.wikipedia.org/wiki/FLOPS
 
 CPU architectures
 =================
 
-Niflheim comprises several generations of hardware for a total of **679 compute nodes**:
+Niflheim comprises several generations of hardware for a total of **700 compute nodes**:
+
+Lenovo AMD EPYC 9474F servers
+------------------------------
+
+* **68 96-core nodes** Lenovo SD665_V3_ with two AMD EPYC Zen4_ 9474F_ 48-core CPUs (a total of 6528 cores) running at 3.60 GHz Base frequency (up to 4.10 GHz in Boost Clock) and including AVX-512_ vector instructions.
+  The Direct Water Cooled servers are mounted in *Neptune* DW612S_ chasisses.
+
+  Peak speed: 6500 GFLOPS/node, 442 TFLOPS_ in total for all nodes.
+
+  The RAM memory is 768 GB (8.0 GB/core) 4800 MHz DDR5 dual-rank memory, 52.2 TB in total for all nodes.
+
+  Each server has a 1.9 TB local NVMe hard disk.
+
+  The network interconnect is **100 Gbit/s** a water-cooled NVIDIA 2-Port PCIe Gen5 x16 InfiniBand Adapter (SharedIO)
+  `ThinkSystem NVIDIA ConnectX-7 NDR200 InfiniBand QSFP112 Adapters <https://lenovopress.lenovo.com/lp1693-thinksystem-nvidia-connectx-7-ndr200-infiniband-qsfp112-adapters>`_.
+
+  Installed in **February 2024**.
+
+.. _SD665_V3: https://lenovopress.lenovo.com/lp1612-lenovo-thinksystem-sd665-v3-server
+.. _DW612S: https://pubs.lenovo.com/dw612s_neptune_enclosure/
+.. _9474F: https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9474f.html
+.. _Zen4: https://www.amd.com/en/campaigns/epyc-9004-architecture
+
+Lenovo Intel servers with 4 TB RAM memory
+--------------------------------------------
+
+* **4 32-core nodes** Lenovo SR850_V3_ servers with 4 TB RAM memory and a 15 TB local NVMe scratch disk.
+
+.. _SR850_V3: https://lenovopress.lenovo.com/lp1605-thinksystem-sr850-v3-server
+
+Lenovo GPU servers with 4xA100 SXM4
+---------------------------------------
+
+* **4 GPU nodes** Lenovo SD650-N_V2_ 1U servers that feature the Intel Xeon family of processors and 4 times NVIDIA A100_ *A100-SXM4-40GB* GPUs and an NVLink_ interconnect. 
+  The Direct Water Cooled servers are mounted in *Neptune* DW612S_ chasisses.
+
+.. _SD650-N_V2: https://lenovopress.lenovo.com/lp1613-thinksystem-sd650-n-v2-server
+.. _A100: https://www.nvidia.com/en-us/data-center/a100/
+.. _NVLink: https://en.wikipedia.org/wiki/NVLink
 
 Dell Ice Lake servers
 ---------------------
