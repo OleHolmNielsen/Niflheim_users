@@ -71,7 +71,7 @@ Lenovo GPU servers with 4xA100 SXM4
 Dell AMD server with Instinct MI210 GPU
 ----------------------------------------
 
-* **1 GPU node** Dell R7525_ with 1 AMD Instinct_ MI210_ GPU.
+* **1 GPU node** Dell R7525_ with two AMD Instinct_ MI210_ GPUs.
   This node has two AMD EPYC 7313 16-Core Processor and 256 GB RAM memory.
 
 .. _R7525: https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r7525/pe_r7525_tm_vi_vp_sb
