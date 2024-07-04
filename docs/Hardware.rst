@@ -14,7 +14,7 @@ Niflheim currently (as of February 2024) consists of the following hardware:
 * A total of **700 compute nodes**.
 * The nodes contain a total of **31000 CPU cores**.
 * Aggregate theoretical peak performance of more than **22XX TeraFLOPS** (TFLOPS_) or **2.2 PetaFLOPS**.
-* Total RAM memory is 300 TB.
+* Total RAM memory is 300+ TB.
 
 .. _TFLOPS: http://en.wikipedia.org/wiki/FLOPS
 
@@ -48,7 +48,8 @@ Lenovo AMD EPYC 9474F servers
 Lenovo Intel servers with 4 TB RAM memory
 --------------------------------------------
 
-* **4 32-core nodes** Lenovo SR850_V3_ servers with 4 TB RAM memory and a 15 TB local NVMe scratch disk.
+* **4 32-core nodes** Lenovo SR850_V3_ servers with 4 TB RAM memory per node and a 15 TB local NVMe scratch disk.
+  The four processors are Intel(R) Xeon(R) Gold 6434H.
 
   Installed in **February 2024**.
 
@@ -58,6 +59,7 @@ Lenovo GPU servers with 4xA100 SXM4
 ---------------------------------------
 
 * **4 GPU nodes** Lenovo SD650-N_V2_ 1U servers that feature the Intel Xeon family of processors and 4 times NVIDIA A100_ *A100-SXM4-40GB* GPUs and an NVLink_ interconnect. 
+  The processors are Intel Xeon Platinum 8358 CPUs with 512 GB of RAM memory per node.
   The Direct Water Cooled servers are mounted in *Neptune* DW612S_ chasisses.
 
   Installed in **February 2024**.
