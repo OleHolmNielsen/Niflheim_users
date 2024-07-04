@@ -74,6 +74,8 @@ Dell AMD server with Instinct MI210 GPU
 * **1 GPU node** Dell R7525_ with two AMD Instinct_ MI210_ GPUs.
   This node has two AMD EPYC 7313 16-Core Processor and 256 GB RAM memory.
 
+  Installed in **December 2023**.
+
 .. _R7525: https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r7525/pe_r7525_tm_vi_vp_sb
 .. _Instinct: https://www.amd.com/en/products/accelerators/instinct.html
 .. _MI210: https://www.amd.com/en/products/accelerators/instinct/mi200/mi210.html
