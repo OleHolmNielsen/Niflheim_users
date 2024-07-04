@@ -18,8 +18,8 @@ Niflheim currently (as of February 2024) consists of the following hardware:
 
 .. _TFLOPS: http://en.wikipedia.org/wiki/FLOPS
 
-CPU architectures
-=================
+CPU and GPU architectures
+===========================
 
 Niflheim comprises several generations of hardware for a total of **700 compute nodes**:
 
@@ -67,6 +67,16 @@ Lenovo GPU servers with 4xA100 SXM4
 .. _SD650-N_V2: https://lenovopress.lenovo.com/lp1613-thinksystem-sd650-n-v2-server
 .. _A100: https://www.nvidia.com/en-us/data-center/a100/
 .. _NVLink: https://en.wikipedia.org/wiki/NVLink
+
+Dell AMD server with Instinct MI210 GPU
+----------------------------------------
+
+* **1 GPU node** Dell R7525_ with 1 AMD Instinct_ MI210_ GPU.
+  This node has two AMD EPYC 7313 16-Core Processor and 256 GB RAM memory.
+
+.. _R7525: https://www.dell.com/en-us/shop/cty/pdp/spd/poweredge-r7525/pe_r7525_tm_vi_vp_sb
+.. _Instinct: https://www.amd.com/en/products/accelerators/instinct.html
+.. _MI210: https://www.amd.com/en/products/accelerators/instinct/mi200/mi210.html
 
 Dell Ice Lake servers
 ---------------------
