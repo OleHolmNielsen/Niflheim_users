@@ -27,7 +27,7 @@ Lenovo AMD EPYC 9474F servers
 ------------------------------
 
 * **68 96-core nodes** Lenovo SD665_V3_ with two AMD EPYC Zen4_ 9474F_ 48-core CPUs (a total of 6528 cores) running at 3.60 GHz Base frequency (up to 4.10 GHz in Boost Clock) and including AVX-512_ vector instructions.
-  The Direct Water Cooled servers are mounted in *Neptune* DW612S_ chasisses.
+  The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
 
   Peak speed: 6500 GFLOPS/node, 442 TFLOPS_ in total for all nodes.
 
@@ -60,7 +60,7 @@ Lenovo GPU servers with 4xA100 SXM4
 
 * **4 GPU nodes** Lenovo SD650-N_V2_ 1U servers that feature the Intel Xeon family of processors and 4 times NVIDIA A100_ *A100-SXM4-40GB* GPUs and an NVLink_ interconnect. 
   The processors are Intel Xeon Platinum 8358 CPUs with 512 GB of RAM memory per node.
-  The Direct Water Cooled servers are mounted in *Neptune* DW612S_ chasisses.
+  The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
 
   Installed in **February 2024**.
 
