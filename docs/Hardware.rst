@@ -49,7 +49,7 @@ Lenovo Intel servers with 4 TB RAM memory
 --------------------------------------------
 
 * **4 32-core nodes** Lenovo SR850_V3_ 2U servers.
-  The four processors are Intel(R) Xeon(R) Gold 6434H running at 3.70 GHz Base frequency (up to 4.10 GHz in Turbo_mode_) and including AVX-512_ vector instructions..
+  The four processors are Intel(R) Xeon(R) Gold 6434H_ running at 3.70 GHz Base frequency (up to 4.10 GHz in Turbo_mode_) and including AVX-512_ vector instructions..
 
   The RAM memory is 4096 GB (128 GB/core) 4800 MHz DDR5 dual-rank memory.
 
@@ -59,13 +59,17 @@ Lenovo Intel servers with 4 TB RAM memory
 
 .. _SR850_V3: https://lenovopress.lenovo.com/lp1605-thinksystem-sr850-v3-server
 .. _NVMe: https://en.wikipedia.org/wiki/NVM_Express
+.. _6434H: https://www.intel.com/content/www/us/en/products/sku/232387/intel-xeon-gold-6434h-processor-22-5m-cache-3-70-ghz/specifications.html
 
 Lenovo GPU servers with 4xA100 SXM4
 ---------------------------------------
 
 * **4 GPU nodes** Lenovo SD650-N_V2_ 1U servers that feature the Intel Xeon family of processors and 4 times NVIDIA A100_ *A100-SXM4-40GB* GPUs and an NVLink_ interconnect. 
 
-  The processors are Intel Xeon Platinum 8358 CPUs with 512 GB of RAM memory per node.
+  The processors are Intel Xeon Platinum 8358_ CPUs running at 2.60 GHz Base frequency (up to 3.40 GHz in Turbo_mode_) and including AVX-512_ vector instructions.
+  
+  The RAM memory is 512 GB per node.
+
   The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
 
   Installed in **February 2024**.
@@ -73,6 +77,7 @@ Lenovo GPU servers with 4xA100 SXM4
 .. _SD650-N_V2: https://lenovopress.lenovo.com/lp1613-thinksystem-sd650-n-v2-server
 .. _A100: https://www.nvidia.com/en-us/data-center/a100/
 .. _NVLink: https://en.wikipedia.org/wiki/NVLink
+.. _8358: https://www.intel.com/content/www/us/en/products/sku/212282/intel-xeon-platinum-8358-processor-48m-cache-2-60-ghz/specifications.html
 
 Dell AMD server with Instinct MI210 GPU
 ----------------------------------------
