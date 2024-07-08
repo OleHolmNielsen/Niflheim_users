@@ -13,8 +13,8 @@ Niflheim currently (as of February 2024) consists of the following hardware:
 
 * A total of **700 compute nodes**.
 * The nodes contain a total of **31000 CPU cores**.
-* Aggregate theoretical peak CPU performance of more than **22XX TeraFLOPS** (TFLOPS_) or **2.2 PetaFLOPS**.
-* Total RAM memory is 300+ TB.
+* Aggregate theoretical peak CPU performance of more than **2255 TeraFLOPS** (TFLOPS_) or **2.2 PetaFLOPS**.
+* Total aggregate RAM memory is 308 TB.
 
 .. _TFLOPS: http://en.wikipedia.org/wiki/FLOPS
 
@@ -51,7 +51,9 @@ Lenovo Intel servers with 4 TB RAM memory
 * **4 32-core nodes** Lenovo SR850_V3_ 2U servers.
   The four processors are Intel(R) Xeon(R) Gold 6434H_ running at 3.70 GHz Base frequency (up to 4.10 GHz in Turbo_mode_) and including AVX-512_ vector instructions..
 
-  The RAM memory is 4096 GB (128 GB/core) 4800 MHz DDR5 dual-rank memory.
+  The RAM memory is 4096 GB (128 GB/core) 4800 MHz DDR5 dual-rank memory, 16 TB in total for all nodes.
+
+  Peak speed: 3789 GFLOPS/node, 15 TFLOPS_ in total for all nodes.
 
   Each server has 15 TB local NVMe_ scratch disk (striped over 4 disks of 3.9 TB for performance).
 
@@ -66,9 +68,11 @@ Lenovo GPU servers with 4xA100 SXM4
 
 * **4 GPU nodes** Lenovo SD650-N_V2_ 1U servers that feature the Intel Xeon family of processors and 4 times NVIDIA A100_ *A100-SXM4-40GB* GPUs and an NVLink_ interconnect. 
 
-  The processors are Intel Xeon Platinum 8358_ CPUs running at 2.60 GHz Base frequency (up to 3.40 GHz in Turbo_mode_) and including AVX-512_ vector instructions.
+  The processors are Intel Xeon Platinum 8358_ 2 times 32-core CPUs running at 2.60 GHz Base frequency (up to 3.40 GHz in Turbo_mode_) and including AVX-512_ vector instructions.
   
-  The RAM memory is 512 GB per node.
+  The RAM memory is 512 GB 3200 MHz DDR4 dual-rank memory per node, 2 TB in total for all nodes.
+
+  CPU peak speed: 5325 GFLOPS/node, 21 TFLOPS_ in total for all nodes.
 
   The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
 
