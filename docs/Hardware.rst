@@ -48,17 +48,23 @@ Lenovo AMD EPYC 9474F servers
 Lenovo Intel servers with 4 TB RAM memory
 --------------------------------------------
 
-* **4 32-core nodes** Lenovo SR850_V3_ servers with 4 TB RAM memory per node and a 15 TB local NVMe scratch disk.
-  The four processors are Intel(R) Xeon(R) Gold 6434H.
+* **4 32-core nodes** Lenovo SR850_V3_ 2U servers.
+  The four processors are Intel(R) Xeon(R) Gold 6434H running at 3.70 GHz Base frequency (up to 4.10 GHz in Turbo_mode_) and including AVX-512_ vector instructions..
+
+  The RAM memory is 4096 GB (128 GB/core) 4800 MHz DDR5 dual-rank memory.
+
+  Each server has 15 TB local NVMe_ scratch disk (striped over 4 disks of 3.9 TB for performance).
 
   Installed in **February 2024**.
 
 .. _SR850_V3: https://lenovopress.lenovo.com/lp1605-thinksystem-sr850-v3-server
+.. _NVMe: https://en.wikipedia.org/wiki/NVM_Express
 
 Lenovo GPU servers with 4xA100 SXM4
 ---------------------------------------
 
 * **4 GPU nodes** Lenovo SD650-N_V2_ 1U servers that feature the Intel Xeon family of processors and 4 times NVIDIA A100_ *A100-SXM4-40GB* GPUs and an NVLink_ interconnect. 
+
   The processors are Intel Xeon Platinum 8358 CPUs with 512 GB of RAM memory per node.
   The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
 
@@ -71,7 +77,7 @@ Lenovo GPU servers with 4xA100 SXM4
 Dell AMD server with Instinct MI210 GPU
 ----------------------------------------
 
-* **1 GPU node** Dell R7525_ with two AMD Instinct_ MI210_ GPUs.
+* **1 GPU node** Dell R7525_ with two AMD Instinct_ MI210_ GPUs with 64 GB HBM2e memory.
   This node has two AMD EPYC 7313 16-Core Processor and 256 GB RAM memory.
 
   Installed in **December 2023**.
