@@ -164,13 +164,14 @@ To view file systems mounted on the node (omitting temporary file systems)::
 Usage of binary compiled code
 =============================
 
-Users of Niflheim should be aware of some important facts about different CPU types.
-
-Newer CPUs use new machine instructions (especially AVX_ or AVX2_ vector instructions) which do not exist on older CPUs, so:
+Users of Niflheim should be aware of some important facts about **different CPU types**.
+More recent CPUs implement new machine instructions (for example, AVX_ or AVX2_ vector instructions) which do not exist on older generations of CPUs.
+The general rules of CPU usage are:
 
 * Code compiled on **newer** CPUs may potentially crash when executed on **older** nodes.
 * Code compiled on **older** CPUs is likely to run much slower on **newer** nodes because available vector instructions are not used.
-* **Do not run old binaries** compiled on other and older systems (such as the old Niflheim). Such binaries will run slowly or even crash.
+* **Do not run old binaries** compiled on other and older systems (such as CentOS 7 Linux).
+  Such binaries will run slowly or may likely crash.
 
 Read more here:
 
