@@ -38,7 +38,7 @@ If you are outside of DTU, please log in to the DTU_VPN_ service or the G-databa
 .. _G-databar: https://www.gbar.dtu.dk/
 
 Please login to the node type identical to the compute nodes onto which you submit batch jobs.
-See :ref:`_compute_node_partitions` and the :ref:`Hardware` page.
+See :ref:`compute_node_partitions` and the :ref:`Hardware` page.
 The purpose is to ensure that your compiled code runs on compatible nodes, see :ref:`binary_compiled_code`.
 
 The login nodes  are:
