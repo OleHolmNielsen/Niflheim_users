@@ -168,12 +168,12 @@ Users of Niflheim should be aware of some important facts about **different CPU 
 More recent CPUs implement new machine instructions (for example, AVX_ or AVX2_ vector instructions) which do not exist on older generations of CPUs.
 The general rules of CPU usage are:
 
-* Code compiled on **newer** CPUs may potentially crash when executed on **older** nodes.
+* Code compiled on **newer** CPUs may likely crash when executed on **older** nodes.
 * Code compiled on **older** CPUs is likely to run much slower on **newer** nodes because available vector instructions are not used.
 * **Do not run old binaries** compiled on other and older systems (such as CentOS 7 Linux).
   Such binaries will run slowly or may likely crash.
 
-Read more here:
+Read more about CPU architectures and instructions here:
 
 * `Instruction set architecture <https://en.wikipedia.org/wiki/Instruction_set_architecture>`_.
 * `x86_64 instruction set <https://en.wikipedia.org/wiki/X86-64>`_.
