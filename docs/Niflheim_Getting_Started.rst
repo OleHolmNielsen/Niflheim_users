@@ -43,6 +43,8 @@ This rule will ensure that if you build your own compiled code,
 it is going to run only on compatible compute node hardware,
 see :ref:`binary_compiled_code`.
 
+Test: `slid.fysik.dtu.dk <ssh://slid.fysik.dtu.dk>`_
+
 Niflheim's login nodes are:
 
 * ``sylg.fysik.dtu.dk``, ``slid.fysik.dtu.dk``, and ``slid2.fysik.dtu.dk``: Login node for RockyLinux_ 8 partition ``xeon24el8``:
