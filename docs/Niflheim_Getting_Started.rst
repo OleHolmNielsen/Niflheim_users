@@ -10,18 +10,15 @@ See the :ref:`Access_to_Niflheim` section about getting access.
 Overview of Niflheim
 ====================
 
-The *Niflheim* Linux cluster setup is based upon:
+Overview of the *Niflheim* Linux cluster:
 
-* Compute nodes as described on the :ref:`Hardware` page.
+* Compute nodes are described in the :ref:`Hardware` page.
 * RockyLinux_ 8 and AlmaLinux_ 8 OS.
 * Slurm_ batch queueing system.
 * Software_Modules_ using Lmod_ and EasyBuild_modules_.
+* Usage accounting_reports_ (access restricted to the DTU network).
+* User support: Please see the :ref:`Niflheim_support` page.
 
-Niflheim usage accounting_reports_ (access restricted to the DTU network).
-
-User support: Please see the :ref:`Niflheim_support` page.
-
-.. _CentOS: https://www.centos.org/
 .. _AlmaLinux: https://almalinux.org/
 .. _RockyLinux: https://rockylinux.org/
 .. _Slurm: https://www.schedmd.com/
@@ -157,13 +154,15 @@ The general rules of CPU usage are:
 * Code compiled on **newer** CPUs may likely crash if executed on **older** CPUs.
 * Code compiled on **older** CPUs (older node types) is likely to **run much slower on newer nodes**
   because performance-enhancing vector instructions etc. are not used.
-* **Do not run old binaries** compiled on other and older systems (such as CentOS 7 Linux).
+* **Do not run old binaries** compiled on other and older systems (such as CentOS_ 7 Linux).
   Such binaries will run slowly or may likely crash.
 
 Read more about CPU architectures and instructions here:
 
 * `Instruction set architecture <https://en.wikipedia.org/wiki/Instruction_set_architecture>`_.
 * `x86_64 instruction set <https://en.wikipedia.org/wiki/X86-64>`_.
+
+.. _CentOS: https://www.centos.org/
 
 File transfer to and from Niflheim
 ==================================
