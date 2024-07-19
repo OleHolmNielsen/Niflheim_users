@@ -45,7 +45,7 @@ see :ref:`binary_compiled_code`.
 
 Niflheim's login nodes are:
 
-* **sylg.fysik.dtu.dk**, **slid.fysik.dtu.dk**, and **slid2.fysik.dtu.dk**: Login node for RockyLinux_ 8 partition **xeon24el8**:
+* ``sylg.fysik.dtu.dk``, ``slid.fysik.dtu.dk``, and ``slid2.fysik.dtu.dk``: Login node for RockyLinux_ 8 partition ``xeon24el8``:
 
   * The Intel Broadwell_ CPU type.
   * OS: RockyLinux_ 8.
@@ -53,14 +53,14 @@ Niflheim's login nodes are:
   * CPUs: Intel(R) Xeon(R) CPU E5-2650 v4 @ 2.20GHz Broadwell_
   * Refer to this as CPU_ARCH= **broadwell_el8**.
 
-* **svol.fysik.dtu.dk** and **thul.fysik.dtu.dk**: Login node for AlmaLinux_ / RockyLinux_ 8 partitions **xeon40el8** as well as **sm3090el8**:
+* ``svol.fysik.dtu.dk`` and ``thul.fysik.dtu.dk``: Login node for AlmaLinux_ / RockyLinux_ 8 partitions ``xeon40el8`` as well as ``sm3090el8``:
 
   * The Intel Skylake_ CPU type.
   * OS: RockyLinux_ 8.
   * CPUs: Intel(R) Xeon(R) Scalable Gold CPU 5115 @ 2.40GHz Skylake_ with AVX512_ vector instructions.
   * Refer to this as CPU_ARCH= **skylake_el8**.
 
-* **surt.fysik.dtu.dk**: Login node for partitions **xeon56**, **xeon32_4096**, and **a100**:
+* ``surt.fysik.dtu.dk``: Login node for partitions ``xeon56``, ``xeon32_4096``, and ``a100``:
 
   * The Intel IceLake_ CPU type **xeon56**.
   * OS: AlmaLinux_ 8.
@@ -69,7 +69,7 @@ Niflheim's login nodes are:
   * CPUs: Intel(R) Xeon(R) Gold 6348 CPU @ 2.60GHz IceLake_ with AVX512_ vector instructions.
   * Refer to this as CPU_ARCH= **icelake**.
 
-* **fjorm.fysik.dtu.dk**: Login node for partition **epyc96**:
+* ``fjorm.fysik.dtu.dk``: Login node for partition ``epyc96``:
 
   * The AMD EPYC Zen4_ CPU type **epyc96**.
   * OS: RockyLinux_ 8.
@@ -78,9 +78,9 @@ Niflheim's login nodes are:
   * CPUs: AMD(R) EPYC(R) 9124 CPU @ 3.00GHz Genoa Zen4_ (note: the **epyc96** have more and faster CPU cores).
   * Refer to this as CPU_ARCH= **epyc9004**.
 
-The login nodes **fjorm**, **surt**, **svol**, **sylg**, and **thul** must not be overloaded with heavy tasks, since this will disturb other users.
+The login nodes ``fjorm``, ``surt``, ``svol``, ``sylg``, and ``thul`` must not be overloaded with heavy tasks, since this will disturb other users.
 
-The login nodes **slid2** and **slid** would be acceptable for more heavy testing of codes, but please bear in mind that the login nodes may be shared by many users, and no single user should monopolize any login nodes.
+The login nodes ``slid2`` and ``slid`` would be acceptable for more heavy testing of codes, but please bear in mind that the login nodes may be shared by many users, and no single user should monopolize any login nodes.
 **Long tasks should always be submitted as batch jobs**.
 
 .. _Hyperthreading: https://en.wikipedia.org/wiki/Hyper-threading
