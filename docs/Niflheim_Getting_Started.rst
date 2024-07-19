@@ -24,6 +24,8 @@ Overview of the Niflheim cluster
 .. _EasyBuild_modules: https://wiki.fysik.dtu.dk/Niflheim_system/EasyBuild_modules/
 .. _accounting_reports: https://wiki.fysik.dtu.dk/graphs/accounting_reports.html
 
+.. _login_nodes:
+
 Login to Niflheim
 =================
 
@@ -31,6 +33,7 @@ See the :ref:`Access_to_Niflheim` section about getting access.
 Login to *Niflheim* is available using SSH_ **only** from within the DTU network.
 If you are outside of DTU, please log in to the DTU_VPN_ service or the G-databar_ first.
 
+.. _DTU_VPN: https://www.inside.dtu.dk/en/medarbejder/it-og-telefoni/it-systemer-og-retningslinjer/it-systemer-og-vaerktoejer/it-systemer-ait/vpn
 .. _G-databar: https://www.gbar.dtu.dk/
 
 It is recommended to login to the node type identical to the compute nodes onto which you submit batch jobs,
@@ -890,15 +893,15 @@ Using Jupyter_Notebook_ documents on Niflheim from DTU Physics
 
       This is **not** the same as the ``Logout`` buttons on each notebook, which will disconnect your browser from the Jupyter server, but actually leave Jupyter running on the login node.
 
-Using Jupyter_Notebook_ documents on Niflheim from home/elsewhere (Linux or macOS_)
-------------------------------------------------------------------------------------
+Using Jupyter_Notebook_ documents from home or elsewhere on a Linux or macOS_ PC
+-----------------------------------------------------------------------------------
 
 Use these instructions when you are located outside DTU Physics, and your laptop/desktop
 is running Linux_ or macOS_.
 
-1. Connect to the DTU_VPN_
+1. Connect to the DTU_VPN_ network (information about DTU_VPN_ is on *DTU Inside*).
    
-2. Log in to a Niflheim login node, preferably *slid*.
+2. Use SSH_ to connect to one of the Niflheim login_nodes_, preferably ``slid.fysik.dtu.dk``.
 
 3. Load the relevant module, for example::
 
@@ -931,7 +934,6 @@ is running Linux_ or macOS_.
    in the instructions in the previous section (usage from DTU Physics).
 
 .. _Jupyter_Notebook: https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html
-.. _DTU_VPN: https://www.inside.dtu.dk/en/medarbejder/it-og-telefoni/it-systemer-og-retningslinjer/it-systemer-og-vaerktoejer/it-systemer-ait/vpn
 
 Using Jupyter_Notebook_ documents on Niflheim from home/elsewhere (Windows)
 ---------------------------------------------------------------------------
