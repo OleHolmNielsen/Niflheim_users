@@ -865,7 +865,7 @@ Restrictions on the use of Jupyter Notebook
 
 *  **NOTICE: Jupyter Notebooks cannot be connected to directly from any other network at DTU or outside DTU.**
 
-* The web-server on port 8888 can only be accessed from a PC on the Fysik cabled network (including *demon*).
+* The web-server on port 8888 can only be accessed from a PC on the *DTU Fysik* cabled network (which includes *demon*).
 
 * The ``jupyter`` command starts a special web-server on the login_nodes_ serving a network port number 8888 (plus/minus a small number).
 
@@ -936,8 +936,8 @@ is running Linux_ or macOS_.
 7. **IMPORTANT:** Once you are done using your notebooks, **remember to shut down the Jupyter server!** See point 4 
    in the instructions in the previous section (usage from DTU Physics).
 
-Using Jupyter_Notebook_ documents on Niflheim from home/elsewhere (Windows)
----------------------------------------------------------------------------
+Using Jupyter_Notebook_ documents on Niflheim from home or elsewhere on a Windows PC
+----------------------------------------------------------------------------------------
 
 Use these instructions when you are located outside DTU Physics, and your laptop/desktop
 is running Microsoft Windows.
