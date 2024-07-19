@@ -47,19 +47,19 @@ Niflheim's login nodes are:
 
 * ``sylg.fysik.dtu.dk``, ``slid.fysik.dtu.dk``, and ``slid2.fysik.dtu.dk``:
  
-  * Login node for RockyLinux_ 8 partition ``xeon24el8``.
+  * Login node for partition ``xeon24el8`` running RockyLinux_ 8.
   * 24 CPU cores, 256 GB of RAM, Intel Xeon CPU E5-2650 v4 @ 2.20GHz Broadwell_
   * Refer to this as CPU_ARCH= **broadwell_el8**.
 
 * ``svol.fysik.dtu.dk`` and ``thul.fysik.dtu.dk``:
 
-  * Login node for AlmaLinux_ / RockyLinux_ 8 partitions ``xeon40el8`` as well as ``sm3090el8``.
+  * Login node for partitions ``xeon40el8`` as well as ``sm3090el8`` running AlmaLinux_ / RockyLinux_ 8.
   * CPUs: Intel(R) Xeon(R) Scalable Gold CPU 5115 @ 2.40GHz Skylake_ with AVX512_ vector instructions.
   * Refer to this as CPU_ARCH= **skylake_el8**.
 
 * ``surt.fysik.dtu.dk``:
 
-  * Login node for AlmaLinux_ / RockyLinux_ 8 partitions ``xeon56``, ``xeon32_4096``, and ``a100``.
+  * Login node for partitions ``xeon56``, ``xeon32_4096``, and ``a100`` running AlmaLinux_ / RockyLinux_ 8.
   * Please build all applications for xeon56 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 56-CPU (dual-processor, 56 cores + Hyperthreading_ = 112 "virtual" cores), 512 GB of RAM,
     Intel Xeon Gold 6348 CPU @ 2.60GHz IceLake_ with AVX512_ vector instructions.
@@ -67,11 +67,10 @@ Niflheim's login nodes are:
 
 * ``fjorm.fysik.dtu.dk``:
 
-  * Login node for RockyLinux_ 8 partition ``epyc96``:
-  * The AMD EPYC Zen4_ CPU type.
+  * Login node for partition ``epyc96`` running RockyLinux_ 8.
   * Please build all applications for ``epyc96`` with the latest ``foss`` toolchain (see `Software environment modules`_ below)!
-  * 16-CPU (single-processor, 16 cores + Hyperthreading_ = 32 "virtual" cores), 384 GB of RAM,
-    AMD(R) EPYC(R) 9124 CPU @ 3.00GHz Genoa Zen4_ (note: the **epyc96** have more and faster CPU cores).
+  * The AMD EPYC Zen4_ CPU type, 16 CPU-cores + Hyperthreading_ = 32 "virtual" cores, 384 GB of RAM,
+    AMD EPYC 9124 CPU @ 3.00GHz Genoa Zen4_ (note: the **epyc96** partition compute nodes have 96 CPU cores).
   * Refer to this as CPU_ARCH= **epyc9004**.
 
 The login nodes ``fjorm``, ``surt``, ``svol``, ``sylg``, and ``thul`` must not be overloaded with heavy tasks, since this will disturb other users.
