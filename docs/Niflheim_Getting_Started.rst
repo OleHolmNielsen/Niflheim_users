@@ -13,20 +13,20 @@ Overview of Niflheim
 The *Niflheim* Linux cluster setup is based upon:
 
 * Compute nodes as described on the :ref:`Hardware` page.
-* RockyLinux_ 8 and AlmaLinux_ 8 Linux OS,
-* Slurm_ batch queueing system,
+* RockyLinux_ 8 and AlmaLinux_ 8 OS.
+* Slurm_ batch queueing system.
 * Software_Modules_ using Lmod_ and EasyBuild_modules_.
 
 Support: Please see the :ref:`Niflheim_support` page.
 
-Accounting: You can see the Niflheim monthly and weekly usage
-`accounting reports <https://wiki.fysik.dtu.dk/graphs/accounting_reports.html>`_.
+Accounting: You can see the Niflheim usage accounting_reports_ (only access from the DTU network).
 
 .. _CentOS: https://www.centos.org/
 .. _AlmaLinux: https://almalinux.org/
 .. _RockyLinux: https://rockylinux.org/
 .. _Slurm: https://www.schedmd.com/
 .. _EasyBuild_modules: https://wiki.fysik.dtu.dk/Niflheim_system/EasyBuild_modules/
+.. _accounting_reports: https://wiki.fysik.dtu.dk/graphs/accounting_reports.html
 
 Login to Niflheim
 =================
