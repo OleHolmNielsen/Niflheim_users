@@ -647,15 +647,15 @@ Usage of GPU compute nodes
 --------------------------
 
 Please do not use the GPU partitions unless your group has been authorized to use GPUs.
-The appropriate login nodes (RockyLinux_ / AlmaLinux_ 8) for GPU partitions are:
+The appropriate login_nodes_ (RockyLinux_ / AlmaLinux_ 8) for GPU partitions are:
 
 * Partition ``sm3090``: **thul** (Skylake_)
 * Partition ``a100``: **surt** (IceLake_)
 
-The appropriate login node must be used to build software for GPUs, since they have the same CPU architecture as the GPU-nodes.
+The appropriate login_nodes_ must be used to build software for GPUs, since they have the same CPU architecture as the GPU-nodes.
 GPU-specific software modules will only be provided on GPU-compatible nodes.
 
-NVIDIA's CUDA_ software is available as a module on the login nodes and compute nodes::
+NVIDIA's CUDA_ software is available as a module on the login_nodes_ and compute nodes::
 
   $ module avail CUDA/
 
@@ -838,10 +838,10 @@ It is recommended to read the instructions in https://wiki.fysik.dtu.dk/gpaw/pla
 .. _GPAW: https://wiki.fysik.dtu.dk/gpaw
 .. _ASE: https://wiki.fysik.dtu.dk/ase
 
-Jupyter Notebooks on Niflheim
+Jupyter_Notebook_ on Niflheim
 =============================
 
-Jupyter_Notebook_ documents are documents produced by the *Jupyter Notebook App*, which contain both computer code (e.g. python) and rich text elements (paragraph, equations, figures, links, etc…). 
+Jupyter_Notebook_ documents are produced by the *Jupyter Notebook App*, which contain both computer code (e.g. python) and rich text elements (paragraph, equations, figures, links, etc…). 
 Notebook documents are both human-readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which can be run to perform data analysis.
 
 On Niflheim we have installed Jupyter_Notebook_ software modules which you can load and use::
@@ -856,6 +856,8 @@ You have to select the correct *jupyter* version shown above, according to which
 Instead you have to install jupyter in your venv_ (``pip install notebook``).
 
 .. _venv: https://docs.python.org/3/library/venv.html
+.. _Jupyter: https://en.wikipedia.org/wiki/Project_Jupyter
+.. _Jupyter_Notebook: https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html
 
 Restrictions on the use of Jupyter Notebook
 -------------------------------------------
@@ -864,12 +866,12 @@ Restrictions on the use of Jupyter Notebook
 
 * The web-server on port 8888 can only be accessed from a PC on the Fysik cabled network (including *demon*).
 
-* The ``jupyter`` command starts a special web-server on the login node serving a network port number 8888 (plus/minus a small number).
+* The ``jupyter`` command starts a special web-server on the login_nodes_ serving a network port number 8888 (plus/minus a small number).
 
 Using Jupyter_Notebook_ documents on Niflheim from DTU Physics
 --------------------------------------------------------------
 
-1. Log in to a Niflheim login node, preferably *slid*.
+1. Use SSH_ to login to one of the Niflheim login_nodes_, preferably ``slid.fysik.dtu.dk``.
 
 2. Load the relevant module, for example::
 
@@ -877,11 +879,11 @@ Using Jupyter_Notebook_ documents on Niflheim from DTU Physics
 
    Users of venv_ should **not** load this module!
 
-3. Go to the relevant folder for your notebooks, and start Jupyter with the command::
+3. Go to the relevant folder for your notebooks, and start Jupyter_Notebook_ with the command::
 
       jupyter notebook --no-browser --ip=$HOSTNAME
 
-   Jupyter will respond with around ten lines of text, at the bottom is a URL.  
+   Jupyter_Notebook_ will respond with around ten lines of text, at the bottom is a URL.  
    Paste that URL into a browser on your local machine.
 
 4. **IMPORTANT:** Once you are done using your notebooks, **remember to shut down the Jupyter server** so you do not tie up valuable ressources (mainly RAM and port numbers).
@@ -889,9 +891,9 @@ Using Jupyter_Notebook_ documents on Niflheim from DTU Physics
    You shut down *Jupyter* by either:
 
    a. Pressing **Control-C twice** in the terminal running the `jupyter` command, *or*
-   b. Clicking on the **Quit button** on the Jupyter overview page
+   b. Clicking on the **Quit button** on the Jupyter_Notebook_ overview page
 
-      This is **not** the same as the ``Logout`` buttons on each notebook, which will disconnect your browser from the Jupyter server, but actually leave Jupyter running on the login node.
+      This is **not** the same as the ``Logout`` buttons on each notebook, which will disconnect your browser from the Jupyter_Notebook_ server, but actually leave Jupyter_Notebook_ running on the login_nodes_.
 
 Using Jupyter_Notebook_ documents from home or elsewhere on a Linux or macOS_ PC
 -----------------------------------------------------------------------------------
@@ -909,11 +911,11 @@ is running Linux_ or macOS_.
 
    Users of venv_ should **not** load this module!
 
-4. Go to the relevant folder for your notebooks, and start Jupyter with the command::
+4. Go to the relevant folder for your notebooks, and start Jupyter_Notebook_ with the command::
 
       jupyter notebook --no-browser
 
-   Jupyter will respond with around ten lines of text, at the bottom is a URL.  
+   Jupyter_Notebook_ will respond with around ten lines of text, at the bottom is a URL.  
    It will contain the text ``localhost:NNNN`` where NNNN is a port number, typically 8888 or close.  You need that number in the next step.
 
 5. From your desktop/laptop, log in to niflheim again in a new window, using this command to set up an SSH tunnel::
@@ -922,7 +924,7 @@ is running Linux_ or macOS_.
 
    where:
 
-   * ``xxxx`` is slid or whatever machine you are using,
+   * ``xxxx`` is ``slid.fysik.dtu.dk`` or whatever machine you are using,
    * ``username`` is your DTU username,
    * ``NNNN`` is the port number printed by the notebook command,
      
@@ -933,16 +935,14 @@ is running Linux_ or macOS_.
 7. **IMPORTANT:** Once you are done using your notebooks, **remember to shut down the Jupyter server!** See point 4 
    in the instructions in the previous section (usage from DTU Physics).
 
-.. _Jupyter_Notebook: https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html
-
 Using Jupyter_Notebook_ documents on Niflheim from home/elsewhere (Windows)
 ---------------------------------------------------------------------------
 
 Use these instructions when you are located outside DTU Physics, and your laptop/desktop
 is running Microsoft Windows.
 
-1. Log in to a Niflheim login node, preferably *slid*.
-   Use MobaXterm_ to log in directly to e.g. slid.fysik.dtu.dk, but when you create the login session (the Session tab), select Network Settings, then Jump Host.  Fill in the Jump Host (and your DTU user name).
+1. Log in to a Niflheim login_nodes_, preferably ``slid.fysik.dtu.dk``.
+   Use MobaXterm_ to log in directly to e.g. ``slid.fysik.dtu.dk``, but when you create the login session (the Session tab), select Network Settings, then Jump Host.  Fill in the Jump Host (and your DTU user name).
 
 2. Load the relevant module, for example::
 
@@ -950,12 +950,12 @@ is running Microsoft Windows.
 
    Users of venv_ should **not** load this module!
 
-3. Go to the relevant folder for your notebooks, and start Jupyter with the command::
+3. Go to the relevant folder for your notebooks, and start Jupyter_Notebook_ with the command::
 
       jupyter notebook --no-browser --ip=$HOSTNAME
 
    Note the extra ``--ip`` option needed when connecting with MobaXterm_. 
-   Jupyter will respond with around ten lines of text, at the bottom is a URL.  
+   Jupyter_Notebook_ will respond with around ten lines of text, at the bottom is a URL.  
    It will contain the text ``localhost:NNNN`` or ``127.0.0.1:NNNN`` where NNNN is a port number, typically 8888 or close.  You need that number in the next step.
 
 4. Use MobaXterm_ to set up an SSH tunnel (the Tunneling tab).
@@ -964,7 +964,7 @@ is running Microsoft Windows.
 
    * On "SSH server", enter the jump host hostname, and your DTU username as SSH user.  Leave the port number blank.
 
-   * On the remote server, enter "slid.fysik.dtu.dk" (or whatever node you are using) as the Remote server name, and the **port number printed by jupyter** as the port number.
+   * On the remote server, enter ``slid.fysik.dtu.dk`` (or whatever node you are using) as the Remote server name, and the **port number printed by jupyter** as the port number.
 
    Click save, and then start the tunnel with the small "play" icon.
 
@@ -1056,7 +1056,7 @@ To run a Apptainer_ container in parallel on 2 nodes and 10 CPU cores with MPI u
 Visual Studio Code
 =====================
 
-The *Visual Studio Code* (VS_code_) editor can be used on your personal desktop and make remote SSH connections to the Niflheim login nodes.
+The *Visual Studio Code* (VS_code_) editor can be used on your personal desktop and make remote SSH connections to the Niflheim login_nodes_.
 
 The DTU `course 02002/02003: Computer Programming <https://02002.compute.dtu.dk/index.html>`_
 has some material in the page `Using VSCode <https://02002.compute.dtu.dk/vscode/index.html>`_.
