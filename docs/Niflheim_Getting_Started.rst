@@ -841,7 +841,7 @@ It is recommended to read the instructions in https://wiki.fysik.dtu.dk/gpaw/pla
 Jupyter_Notebook_ on Niflheim
 =============================
 
-Jupyter_Notebook_ documents are produced by the *Jupyter Notebook App*, which contain both computer code (e.g. python) and rich text elements (paragraph, equations, figures, links, etc…). 
+Jupyter_Notebook_ documents are produced by the *Jupyter Notebook App*, which contain both computer code (e.g. Python_) and rich text elements (paragraph, equations, figures, links, etc…). 
 Notebook documents are both human-readable documents containing the analysis description and the results (figures, tables, etc..) as well as executable documents which can be run to perform data analysis.
 
 On Niflheim we have installed Jupyter_Notebook_ software modules which you can load and use::
@@ -855,6 +855,7 @@ You have to select the correct *jupyter* version shown above, according to which
 **NOTE:** If you use a *Python virtual environment* (venv_), you cannot use the *IPython* module, as the Jupyter_Notebook_ will not see the modules in the venv_. 
 Instead you have to install jupyter in your venv_ (``pip install notebook``).
 
+.. _Python: https://en.wikipedia.org/wiki/Python_(programming_language)
 .. _venv: https://docs.python.org/3/library/venv.html
 .. _Jupyter: https://en.wikipedia.org/wiki/Project_Jupyter
 .. _Jupyter_Notebook: https://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html
