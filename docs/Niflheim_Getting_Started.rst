@@ -833,7 +833,7 @@ List the modules by::
 
   $ module avail GPAW/ ASE/ 
 
-It is recommended to read the instructions in https://wiki.fysik.dtu.dk/gpaw/platforms/platforms.html for different ways to use GPAW and ASE on Niflheim.
+It is recommended to read the instructions in https://wiki.fysik.dtu.dk/gpaw/platforms/platforms.html for different ways to use GPAW_ and ASE_ on Niflheim.
 
 .. _GPAW: https://wiki.fysik.dtu.dk/gpaw
 .. _ASE: https://wiki.fysik.dtu.dk/ase
@@ -850,7 +850,7 @@ On Niflheim we have installed Jupyter_Notebook_ software modules which you can l
   -------------------------- /home/modules/modules/all ---------------------------
    JupyterNotebook/7.0.2-GCCcore-12.3.0
 
-You have to select the correct *jupyter* version shown above, according to which compiler has been used to compile the other software you are using (such as GPAW).
+You have to select the correct *jupyter* version shown above, according to which compiler has been used to compile the other software you are using (such as GPAW_).
 
 **NOTE:** If you use a *Python virtual environment* (venv_), you cannot use the *IPython* module, as the Jupyter_Notebook_ will not see the modules in the venv_. 
 Instead you have to install jupyter in your venv_ (``pip install notebook``).
