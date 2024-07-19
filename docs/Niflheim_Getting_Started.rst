@@ -7,10 +7,8 @@ Niflheim Getting Started
 View the page contents in the menu bar on the left.
 See the :ref:`Access_to_Niflheim` section about getting access.
 
-Overview of Niflheim
-====================
-
-Overview of the *Niflheim* Linux cluster:
+Overview of the Niflheim cluster
+====================================
 
 * Compute nodes are described in the :ref:`Hardware` page.
 * RockyLinux_ 8 and AlmaLinux_ 8 OS.
