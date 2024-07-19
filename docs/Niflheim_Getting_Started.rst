@@ -11,12 +11,13 @@ Overview of the Niflheim cluster
 ====================================
 
 * Compute nodes are described in the :ref:`Hardware` page.
-* RockyLinux_ 8 and AlmaLinux_ 8 OS.
+* RockyLinux_ 8 and AlmaLinux_ 8 operating system (Linux_ OS).
 * Slurm_ batch queueing system.
 * Software_Modules_ using Lmod_ and EasyBuild_modules_.
 * Usage accounting_reports_ (access restricted to the DTU network).
 * User support: Please see the :ref:`Niflheim_support` page.
 
+.. _Linux: https://en.wikipedia.org/wiki/Linux
 .. _AlmaLinux: https://almalinux.org/
 .. _RockyLinux: https://rockylinux.org/
 .. _Slurm: https://www.schedmd.com/
@@ -90,14 +91,14 @@ SSH setup
 
 The SSH_ (*Secure Shell*) communication protocol is described widely on the Internet.
 The user's SSH_ configuration files and `cryptographic keys <https://www.ssh.com/academy/ssh/public-key-authentication>`_
-are stored in the directory ``$HOME/.ssh/`` on Linux systems.
+are stored in the directory ``$HOME/.ssh/`` on Linux_ systems.
 
 You are encouraged to configure SSH_ keys on your own PC so that you can login to Niflheim without entering a password:
 
-* Linux users: See for example 
+* Linux_ users: See for example 
   `Creating an SSH Key Pair and Configuring Public Key Authentication on a Server <https://www.linode.com/docs/guides/use-public-key-authentication-with-ssh/>`_.
 
-* MacOS users: See for example `Manually generating your SSH key in macOS
+* macOS_ users: See for example `Manually generating your SSH key in macOS
   <https://docs.joyent.com/public-cloud/getting-started/ssh-keys/generating-an-ssh-key-manually/manually-generating-your-ssh-key-in-mac-os-x>`_.
 
 * Windows users can use the free PuTTY_ SSH_ client and read the instructions
@@ -121,6 +122,7 @@ The Niflheim SSH keys must only be used on the Niflheim system.
 The SSH_ key files will be created in the directory ``$HOME/.ssh/``.
 This can be necessary if you use commercial MPI libraries which use SSH in stead of the recommended Slurm_ method for starting tasks.
 
+.. _macOS: https://en.wikipedia.org/wiki/MacOS
 .. _PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/
 .. _MobaXterm: https://mobaxterm.mobatek.net/
 
@@ -195,13 +197,14 @@ If the disk on your local machine is formatted as a Windows ExFAT_ filesystem (f
 
 * ExFAT_ file systems do not support the concept of a symbolic_link_ (soft link) file.
 * File names **must not** contain ":" or other special characters, see `www.ntfs.com <https://www.ntfs.com/exfat-filename-dentry.htm>`_.
-  Such file names may be renamed using the Linux ``rename`` command.
+  Such file names may be renamed using the Linux_ rename_ command.
 
 Windows users may use `WinSCP <https://winscp.net/eng/docs/introduction>`_ or `FileZilla <https://filezilla-project.org/>`_, to do ``scp`` or ``sftp`` operations.
 
 .. _FAT: https://en.wikipedia.org/wiki/File_Allocation_Table
 .. _ExFAT: https://en.wikipedia.org/wiki/ExFAT
 .. _symbolic_link: https://superuser.com/questions/1256530/linux-links-shortcuts-in-exfat-filesystem
+.. _rename: https://man7.org/linux/man-pages/man1/rename.1.html
 
 Slurm batch queueing system
 ===========================
@@ -243,7 +246,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - **RAM memory**
     - **/tmp scratch disk**
     - **Login nodes**
-    - **Linux OS**
+    - **Linux_ OS**
   * - xeon24el8, xeon24el8_test, xeon24el8_week
     - Broadwell_
     - 24
@@ -887,11 +890,11 @@ Using Jupyter_Notebook_ documents on Niflheim from DTU Physics
 
       This is **not** the same as the ``Logout`` buttons on each notebook, which will disconnect your browser from the Jupyter server, but actually leave Jupyter running on the login node.
 
-Using Jupyter_Notebook_ documents on Niflheim from home/elsewhere (Linux or Mac)
---------------------------------------------------------------------------------
+Using Jupyter_Notebook_ documents on Niflheim from home/elsewhere (Linux or macOS_)
+------------------------------------------------------------------------------------
 
 Use these instructions when you are located outside DTU Physics, and your laptop/desktop
-is running Linux or MacOS.
+is running Linux_ or macOS_.
 
 1. Connect to the DTU_VPN_
    
@@ -974,7 +977,7 @@ Containers on Niflheim
 Containers_ for virtual operating system and software environments have become immensely popular.
 The most well-known Containers_ system is Docker_, and huge numbers of Containers_ have been created for this environment.
 Containers_ are well suited to running one or two applications non-interactively in their own custom environments.
-Containers_ share the under-lying Linux kernel of the host system, so only Linux Containers_ can exist on a Linux host.
+Containers_ share the underlying Linux_ kernel of the host system, so only Linux_ Containers_ can exist on a Linux_ host.
 
 However, Docker_ is not well suited for a shared multi-user system, let alone an HPC supercomputer system, primarily due to security issues and performance issues with parallel HPC applications.
 Please see the Apptainer_security_ page.
@@ -1002,7 +1005,7 @@ Apptainer on Niflheim
 
 We have installed Apptainer_ (current version: 1.3 from EPEL) as RPM packages.
 
-If you have root priviledge on your personal Linux PC, you may want to make an Apptainer_ installation locally on the PC.
+If you have root priviledge on your personal Linux_ PC, you may want to make an Apptainer_ installation locally on the PC.
 Finished containers can be copied to Niflheim, and executing Apptainer_ containers is as a **normal user** without any root priviledge at all!
 
 Please note that you must build containers within a **local file system** (not a shared file system like NFS where root access is prohibited).
@@ -1016,7 +1019,7 @@ You can run many recent versions of CentOS_ Docker_ containers from the `CentOS 
 
   apptainer run docker://centos:centos6.9
 
-Ubuntu Linux may be run from the `Ubuntu library <https://hub.docker.com/_/ubuntu/>`_::
+Ubuntu_ Linux_ may be run from the `Ubuntu library <https://hub.docker.com/_/ubuntu/>`_::
 
   apptainer run docker://ubuntu:17.10
 
@@ -1025,6 +1028,7 @@ Application codes may also be on DockerHub_, for example an `OpenFOAM container 
   apptainer run docker://openfoam/openfoam4-paraview50 
 
 .. _DockerHub: https://hub.docker.com/explore/
+.. _Ubuntu: https://en.wikipedia.org/wiki/Ubuntu
 
 Apptainer batch jobs
 ----------------------
