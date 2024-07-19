@@ -865,7 +865,7 @@ Restrictions on the use of Jupyter Notebook
 
 *  **NOTICE: Jupyter Notebooks cannot be connected to directly from any other network at DTU or outside DTU.**
 
-* The web-server on port 8888 can only be accessed from a PC on the *DTU Fysik* cabled network (which includes *demon*).
+* The web-server on port 8888 can only be accessed from a PC on the *DTU Physics* cabled network (which includes *demon*).
 
 * The ``jupyter`` command starts a special web-server on the login_nodes_ serving a network port number 8888 (plus/minus a small number).
 
@@ -1006,7 +1006,7 @@ and
 Apptainer on Niflheim
 -----------------------
 
-We have installed Apptainer_ (current version: 1.3 from EPEL) as RPM packages.
+We have installed Apptainer_ (current version: 1.3 from EPEL_) as RPM packages.
 
 If you have root priviledge on your personal Linux_ PC, you may want to make an Apptainer_ installation locally on the PC.
 Finished containers can be copied to Niflheim, and executing Apptainer_ containers is as a **normal user** without any root priviledge at all!
@@ -1030,6 +1030,7 @@ Application codes may also be on DockerHub_, for example an `OpenFOAM container 
 
   apptainer run docker://openfoam/openfoam4-paraview50 
 
+.. _EPEL: https://fedoraproject.org/wiki/EPEL
 .. _DockerHub: https://hub.docker.com/explore/
 .. _Ubuntu: https://en.wikipedia.org/wiki/Ubuntu
 
