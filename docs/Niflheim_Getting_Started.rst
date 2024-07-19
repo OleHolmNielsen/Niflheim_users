@@ -67,7 +67,8 @@ Niflheim's login nodes are:
 
   * Login node for partition ``epyc96`` (RockyLinux_ 8 OS).
   * Please build all applications for ``epyc96`` with the latest ``foss`` toolchain (see `Software environment modules`_ below)!
-  * 16 CPU cores (AMD EPYC_ 9124 Genoa_ Zen4_; note that the **epyc96** partition have 96 CPU cores), 384 GB of RAM.
+  * 16 CPU cores (AMD EPYC_ 9124 Genoa_ Zen4_), 384 GB of RAM.
+    Note that the **epyc96** partition compute nodes have 96 CPU cores.
   * Refer to this as CPU_ARCH= **epyc9004**.
 
 The login nodes ``fjorm``, ``surt``, ``svol``, ``sylg``, and ``thul`` must not be overloaded with heavy tasks, since this will disturb other users.
