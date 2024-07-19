@@ -53,7 +53,7 @@ Niflheim's login nodes are:
 * ``svol.fysik.dtu.dk`` and ``thul.fysik.dtu.dk``:
 
   * Login node for partitions ``xeon40el8`` as well as ``sm3090el8`` (AlmaLinux_ / RockyLinux_ 8 OS).
-  * Intel Xeon Scalable Gold CPU 5115 @ 2.40GHz Skylake_ with AVX512_ vector instructions.
+  * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions.
   * Refer to this as CPU_ARCH= **skylake_el8**.
 
 * ``surt.fysik.dtu.dk``:
