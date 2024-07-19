@@ -62,7 +62,7 @@ Niflheim's login nodes are:
 
 * ``surt.fysik.dtu.dk``: Login node for partitions ``xeon56``, ``xeon32_4096``, and ``a100``:
 
-  * The Intel IceLake_ CPU type **xeon56**.
+  * The Intel IceLake_ CPU type.
   * OS: AlmaLinux_ 8.
   * Please build all applications for xeon56 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 56-CPU (dual-processor, 56 cores + Hyperthreading_ = 112 "virtual" cores), 512 GB of RAM.
@@ -71,7 +71,7 @@ Niflheim's login nodes are:
 
 * ``fjorm.fysik.dtu.dk``: Login node for partition ``epyc96``:
 
-  * The AMD EPYC Zen4_ CPU type **epyc96**.
+  * The AMD EPYC Zen4_ CPU type.
   * OS: RockyLinux_ 8.
   * Please build all applications for **epyc96** with the latest ``foss`` toolchain (see `Software environment modules`_ below)!
   * 16-CPU (single-processor, 16 cores + Hyperthreading_ = 32 "virtual" cores), 384 GB of RAM.
