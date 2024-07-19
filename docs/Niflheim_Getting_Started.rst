@@ -17,9 +17,9 @@ The *Niflheim* Linux cluster setup is based upon:
 * Slurm_ batch queueing system.
 * Software_Modules_ using Lmod_ and EasyBuild_modules_.
 
-Support: Please see the :ref:`Niflheim_support` page.
+Niflheim usage accounting_reports_ (access restricted to the DTU network).
 
-Accounting: You can see the Niflheim usage accounting_reports_ (only access from the DTU network).
+User support: Please see the :ref:`Niflheim_support` page.
 
 .. _CentOS: https://www.centos.org/
 .. _AlmaLinux: https://almalinux.org/
