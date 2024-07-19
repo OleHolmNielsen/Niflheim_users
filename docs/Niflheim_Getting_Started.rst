@@ -67,7 +67,7 @@ Niflheim's login nodes are:
 
   * Login node for partition ``epyc96`` (RockyLinux_ 8 OS).
   * Please build all applications for ``epyc96`` with the latest ``foss`` toolchain (see `Software environment modules`_ below)!
-  * 16 CPU cores (AMD EPYC 9124 *Genoa* Zen4_; note that the **epyc96** partition have 96 CPU cores), 384 GB of RAM.
+  * 16 CPU cores (AMD EPYC_ 9124 Genoa_ Zen4_; note that the **epyc96** partition have 96 CPU cores), 384 GB of RAM.
   * Refer to this as CPU_ARCH= **epyc9004**.
 
 The login nodes ``fjorm``, ``surt``, ``svol``, ``sylg``, and ``thul`` must not be overloaded with heavy tasks, since this will disturb other users.
@@ -86,6 +86,8 @@ The login nodes ``slid2`` and ``slid`` would be acceptable for more heavy testin
 .. _Skylake: https://en.wikipedia.org/wiki/Skylake_(microarchitecture)
 .. _Broadwell: https://en.wikipedia.org/wiki/Broadwell_%28microarchitecture%29
 .. _Zen4: https://en.wikipedia.org/wiki/Zen_4
+.. _EPYC: https://en.wikipedia.org/wiki/Epyc
+.. _Genoa: https://en.wikichip.org/wiki/amd/cores/genoa
 .. _NVLink: https://en.wikipedia.org/wiki/NVLink
 .. _A100: https://www.nvidia.com/en-us/data-center/a100/
 
@@ -300,7 +302,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - surt
     - AlmaLinux_ 8
   * - epyc96
-    - AMD EPYC Zen4_ 9474F
+    - AMD EPYC_ Zen4_ 9474F
     - 96
     - 768 GB
     - 1.7 GB
