@@ -58,7 +58,7 @@ Niflheim's login nodes are:
 
 * ``surt.fysik.dtu.dk``:
 
-  * Login node for partitions ``xeon56``, ``xeon32_4096``, and ``a100`` (AlmaLinux_ / RockyLinux_ 8 OS).
+  * Login node for partitions ``xeon56``, ``xeon32_4096``, and ``a100`` (RockyLinux_ 8 OS).
   * Please build all applications for xeon56 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 56 CPU cores (Intel Xeon Gold 6348 CPU @ 2.60GHz IceLake_ with AVX512_ vector instructions), 512 GB of RAM.
   * Refer to this as CPU_ARCH= **icelake**.
