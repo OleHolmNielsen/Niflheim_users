@@ -327,7 +327,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 **Please notice** the following points:
 
 * The default **maximum time limit** for jobs is **50 hours** in all partitions.
-  However, the ``xeon24el8_week``, ``sm3090el8``, and ``xeon24_week`` partitions will accept jobs up to **1 week** (168 hours).
+  Some partitions will accept jobs up to **1 week** (168 hours), please use the ``showpartitions`` command to view all available partitions.
   The ``xeon24el8_test`` partition has a 10 minute time limit and must be used only for development tests.
 
 * Please use **all CPU cores** in the most modern CPU compute nodes (``xeon40``, ``xeon56``, and ``epyc96`` partitions),
