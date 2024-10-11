@@ -398,7 +398,7 @@ Submit your Slurm_ script file by::
 See the above mentioned pages for information about writing Slurm_ script files, which may contain a number batch job parameters.
 See the sbatch_ page and this example:
 
-.. code-block:: sbatch
+.. code-block:: bash
 
   #!/bin/bash
   #SBATCH --mail-type=ALL
