@@ -11,14 +11,13 @@ Overview of the Niflheim cluster
 ====================================
 
 * Compute nodes are described in the :ref:`Hardware` page.
-* RockyLinux_ 8 and AlmaLinux_ 8 operating system (Linux_ OS).
+* RockyLinux_ 8 operating system (Linux_ OS).
 * Slurm_ batch queueing system.
 * Software_Modules_ using Lmod_ and EasyBuild_modules_.
 * Usage accounting_reports_ (access restricted to the DTU network).
 * User support: Please see the :ref:`Niflheim_support` page.
 
 .. _Linux: https://en.wikipedia.org/wiki/Linux
-.. _AlmaLinux: https://almalinux.org/
 .. _RockyLinux: https://rockylinux.org/
 .. _Slurm: https://www.schedmd.com/
 .. _EasyBuild_modules: https://wiki.fysik.dtu.dk/Niflheim_system/EasyBuild_modules/
@@ -52,7 +51,7 @@ Niflheim's login nodes are:
 
 * ``svol.fysik.dtu.dk`` and ``thul.fysik.dtu.dk``:
 
-  * Login node for partitions ``xeon40el8`` as well as ``sm3090el8`` (AlmaLinux_ / RockyLinux_ 8 OS).
+  * Login node for partitions ``xeon40el8`` as well as ``sm3090el8`` (RockyLinux_ 8 OS).
   * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions.
   * Refer to this as CPU_ARCH= **skylake_el8**.
 
@@ -287,21 +286,21 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 192 GB
     - 800 GB
     - thul
-    - AlmaLinux_ 8
+    - RockyLinux_ 8
   * - sm3090el8_768
     - Skylake_ + GPUs
     - 80 (40*2 with HT)
     - 768 GB
     - 800 GB
     - thul
-    - AlmaLinux_ 8
+    - RockyLinux_ 8
   * - xeon56
     - IceLake_
     - 56
     - 512 GB
     - 293 GB
     - surt
-    - AlmaLinux_ 8
+    - RockyLinux_ 8
   * - epyc96
     - AMD EPYC_ Zen4_ 9474F
     - 96
@@ -652,7 +651,7 @@ Usage of GPU compute nodes
 --------------------------
 
 Please do not use the GPU partitions unless your group has been authorized to use GPUs.
-The appropriate login_nodes_ (RockyLinux_ / AlmaLinux_ 8) for GPU partitions are:
+The appropriate login_nodes_ (RockyLinux_ 8) for GPU partitions are:
 
 * Partition ``sm3090``: **thul** (Skylake_)
 * Partition ``a100``: **surt** (IceLake_)
