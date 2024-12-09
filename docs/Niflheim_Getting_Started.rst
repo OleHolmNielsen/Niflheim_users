@@ -410,7 +410,7 @@ See the sbatch_ page and this example:
   #SBATCH --error=mpi_job_slurm_errors.log
 
 It is recommended to **omit** the mail-user_ line, in which case mails will be delivered to your default mailbox.
-If you use a mail-user_ address outside of DTU (for example, GMail_), you may have to look for any missing mails in the *Spam* folder.
+If you use a mail-user_ address outside of DTU (for example, Gmail_), you may have to look for any missing mails in the *Spam* folder.
 
 It is **strongly recommended** to specify both nodes and tasks numbers so that jobs will occupy entire nodes (see `Compute node partitions`_).
 For selecting the correct number of **nodes** and **tasks** (cores) see the sbatch_ man-page items::
@@ -438,7 +438,7 @@ You can select a specific node partition (see `Compute node partitions`_) with l
 .. _scancel: https://slurm.schedmd.com/scancel.html
 .. _scontrol: https://slurm.schedmd.com/scontrol.html
 .. _mail-user: https://slurm.schedmd.com/sbatch.html#OPT_mail-user
-.. _GMail: https://en.wikipedia.org/wiki/Gmail
+.. _Gmail: https://en.wikipedia.org/wiki/Gmail
 
 If you have permission to charge jobs to another (non-default) account, jobs can be submitted like::
 
