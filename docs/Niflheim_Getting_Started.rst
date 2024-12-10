@@ -947,19 +947,22 @@ is running Linux_ or macOS_.
 Using Jupyter_Notebook_ documents on Niflheim from home or elsewhere on a Windows PC
 ----------------------------------------------------------------------------------------
 
-Use these instructions when you are located outside DTU Physics, and your laptop/desktop
-is running Microsoft Windows.
+Use these instructions when you are located outside DTU Physics,
+and your laptop/desktop is running Microsoft Windows.
 
-1. Log in to a Niflheim login_nodes_, preferably ``slid.fysik.dtu.dk``.
-   Use MobaXterm_ to log in directly to e.g. ``slid.fysik.dtu.dk``, but when you create the login session (the Session tab), select Network Settings, then Jump Host.  Fill in the Jump Host (and your DTU user name).
+1. Connect to the DTU_VPN_ network (information about DTU_VPN_ is on *DTU Inside*).
 
-2. Load the relevant module, for example::
+2. Log in to one of the Niflheim login_nodes_, preferably ``slid.fysik.dtu.dk``.
+   Use MobaXterm_ to log in directly to e.g. ``slid.fysik.dtu.dk``, but when you create the login session (the Session tab), select Network Settings, then Jump Host.
+   Fill in the Jump Host name ``slid.fysik.dtu.dk`` and your DTU user name.
+
+3. Load the relevant module, for example::
 
      module load JupyterNotebook/7.0.2-GCCcore-12.3.0
 
    Users of venv_ should **not** load this module!
 
-3. Go to the relevant folder for your notebooks, and start Jupyter_Notebook_ with the command::
+4. Go to the relevant folder for your notebooks, and start Jupyter_Notebook_ with the command::
 
       jupyter notebook --no-browser --ip=$HOSTNAME
 
@@ -967,7 +970,7 @@ is running Microsoft Windows.
    Jupyter_Notebook_ will respond with around ten lines of text, at the bottom is a URL.  
    It will contain the text ``localhost:NNNN`` or ``127.0.0.1:NNNN`` where NNNN is a port number, typically 8888 or close.  You need that number in the next step.
 
-4. Use MobaXterm_ to set up an SSH tunnel (the Tunneling tab).
+5. Use MobaXterm_ to set up an SSH tunnel (the Tunneling tab).
    
    * On "My computer" enter **port number printed by jupyter**.
 
@@ -977,9 +980,9 @@ is running Microsoft Windows.
 
    Click save, and then start the tunnel with the small "play" icon.
 
-5. Open a browser, and cut-and-paste the address starting with ``https://localhost`` or ``http://127.0.0.1`` into your browser.
+6. Open a browser, and cut-and-paste the address starting with ``https://localhost`` or ``http://127.0.0.1`` into your browser.
 
-6. **IMPORTANT:** Once you are done using your notebooks, **remember to shut down the Jupyter server!** See point 4 
+7. **IMPORTANT:** Once you are done using your notebooks, **remember to shut down the Jupyter server!** See point 4 
    in the instructions in the previous section (usage from DTU Physics).
 
 Containers on Niflheim
