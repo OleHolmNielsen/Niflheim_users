@@ -535,7 +535,7 @@ Job arrays
 
 Job_arrays_ offer a mechanism for submitting and managing collections of similar jobs quickly and easily; job arrays with millions of tasks can be submitted in milliseconds (subject to configured size limits). 
 All jobs must have the same initial options (e.g. size, time limit, etc.), however it is possible to change some of these options after the job has begun execution using the ``scontrol`` command
-specifying the JobID of the array or individual ArrayJobID.
+specifying the ``JobID`` of the array or individual ``ArrayJobID``.
 
 Job_arrays_ are only supported for batch jobs and the array index values are specified using the ``--array`` or ``-a`` option of the ``sbatch`` command. 
 The option argument can be specific *array index values*, a *range of index values*, and an optional *step size* as shown in the Job_arrays_ page. 
