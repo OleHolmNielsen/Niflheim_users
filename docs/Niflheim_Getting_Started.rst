@@ -329,8 +329,10 @@ Niflheim contains a number of node partitions with different types of CPU archit
   Some partitions will accept jobs up to **1 week** (168 hours), please use the ``showpartitions`` command to view all available partitions.
   The ``xeon24el8_test`` partition has a 10 minute time limit and must be used only for development tests.
 
-* Please use **all CPU cores** in the most modern CPU compute nodes (``xeon40``, ``xeon56``, and ``epyc96`` partitions),
+* Please use **all CPU cores** in the most modern CPU compute nodes (``xeon40el8``, ``xeon56``, and ``epyc96`` partitions),
   and do not submit jobs to these partitions which only use partial nodes.
+
+* For partial-node jobs (1 to 24 CPU cores) please submit to the ``xeon24el8`` partiton.
 
 * Partial node usage, including single-core jobs, are permitted in the ``xeon24`` partition by submitting to 1 and up to 23 cores of a 24-core node.
 
