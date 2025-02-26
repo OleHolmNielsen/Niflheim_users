@@ -134,18 +134,22 @@ This can be necessary if you use commercial MPI libraries which use SSH in stead
 Home directory and disk quota
 =============================
 
-Every user has a personal home directory on one of the Niflheim file servers, located in a file system allocated to the research group (for example, ``/home/energy/``).
+Every user has a personal home directory on one of the Niflheim file servers,
+located in a file system allocated to the research group (for example, ``/home/energy/``).
+Read more about the concept of Disk_quota_.
 
 The home directory file servers have a **daily backup** of all changed files.
 To request a manual restore of lost files, please send mail to the address in the :ref:`Niflheim_support` page.
 
-To view your current disk quota::
+You can view your current Disk_quota_ with this command::
 
   quota -s
 
 To view file systems mounted on the node (omitting temporary file systems)::
 
   df -Phx tmpfs
+
+.. _Disk_quota: https://en.wikipedia.org/wiki/Disk_quota
 
 .. _binary_compiled_code:
 
