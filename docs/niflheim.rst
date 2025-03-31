@@ -12,7 +12,7 @@ Niflheim overview
 The *Niflheim Linux cluster supercomputer* is installed at the 
 `Department of Physics <https://www.fysik.dtu.dk/english>`_ at the 
 `Technical University of Denmark <https://www.dtu.dk/english>`_.
-Niflheim's present compute resources consist of 31000 CPU cores 
+Niflheim's present compute resources consist of about 700 compute nodes containing 31000 CPU cores 
 with a total peak performance of more than 2255 TeraFLOPS_ (2255 million million floating-point operations per second).
 Please see the :ref:`Hardware` page for further details.
 
@@ -25,7 +25,7 @@ Access to Niflheim
 
 Niflheim is available to all HPC users (staff as well as students) at DTU.
 
-DTU departments who have not used Niflheim previously should first contact Prof. Karsten W. Jacobsen (kwj@fysik.dtu.dk) so that new user groups and disk space can be allocated.
+DTU departments who have not used Niflheim previously should first contact Prof. Karsten W. Jacobsen (kwja@dtu.dk) so that new user groups and disk space can be allocated.
 
 Existing user groups on Niflheim should send requests for new users to the :ref:`Niflheim_support` E-mail. 
 
