@@ -10,13 +10,13 @@ Niflheim overview
 =================
 
 The *Niflheim Linux cluster supercomputer* is installed at the 
-`Department of Physics <http://www.fysik.dtu.dk/english>`_ at the 
-`Technical University of Denmark <http://www.dtu.dk/english>`_.
-Niflheim's present compute resources consist of 24560 CPU cores 
-with a total peak performance of more than 1785 TeraFLOPS_ (1785 million million floating-point operations per second).
+`Department of Physics <https://www.fysik.dtu.dk/english>`_ at the 
+`Technical University of Denmark <https://www.dtu.dk/english>`_.
+Niflheim's present compute resources consist of 31000 CPU cores 
+with a total peak performance of more than 2255 TeraFLOPS_ (2255 million million floating-point operations per second).
 Please see the :ref:`Hardware` page for further details.
 
-.. _TeraFLOPS: http://en.wikipedia.org/wiki/FLOPS
+.. _TeraFLOPS: https://en.wikipedia.org/wiki/FLOPS
 
 .. _Access_to_Niflheim:
 
@@ -41,32 +41,31 @@ Niflheim: Niflheim setup with EL8 Linux
 
 The current Niflheim setup is based upon:
 
-* RockyLinux_ and AlmaLinux_ 8 Linux OS,
-* Slurm batch system,
+* RockyLinux_ 8 Linux OS,
+* Slurm batch queue system,
 * Software environment modules.
 
 Please go the the :ref:`Niflheim_Getting_started` page for more information for users.
 
 .. _RockyLinux: https://rockylinux.org/
-.. _AlmaLinux: https://almalinux.org/
 
 The name Niflheim
 =================
 
 The NIFLHEIM cluster supercomputer was given a name through a naming competition held at the *CAMP research center* in the summer of 2002.
 
-.. _Niflheim_mythology: http://en.wikipedia.org/wiki/Niflheim
-.. _Muspelheim: http://en.wikipedia.org/wiki/Muspelheim
+.. _Niflheim_mythology: https://en.wikipedia.org/wiki/Niflheim
+.. _Muspelheim: https://en.wikipedia.org/wiki/Muspelheim
 
 About Niflheim_mythology_:
-In `Nordic mythology <http://en.wikipedia.org/wiki/Norse_mythology>`_
-*Niflheim* is the land of fog and ice, and *Niflheim* is part of the `myth of creation <http://en.wikipedia.org/wiki/Norse_mythology#The_beginning>`_:
+In `Nordic mythology <https://en.wikipedia.org/wiki/Norse_mythology>`_
+*Niflheim* is the land of fog and ice, and *Niflheim* is part of the `myth of creation <https://en.wikipedia.org/wiki/Norse_mythology#The_beginning>`_:
 When the heat from Muspelheim_ melted the first drops of water from the ice of Niflheim_, these drops formed into the giant Ymer, the first living creature. 
 When Ymer was later killed, his dead body was molded into the world as we know it.
 
 Read more about the Edda prose containing the Nordic myth of creation,
-see `Prose Edda <http://en.wikipedia.org/wiki/Prose_Edda>`_
-(see the `Gylfaginning <http://www.sacred-texts.com/neu/pre/pre04.htm>`_ from *IV. Gangleri said*, in other
+see `Prose Edda <https://en.wikipedia.org/wiki/Prose_Edda>`_
+(see the `Gylfaginning <https://www.sacred-texts.com/neu/pre/pre04.htm>`_ from *IV. Gangleri said*, in other
 translations known as *Frá Niflheimi ok Múspelli* section).
 
 The NIFLHEIM cluster supercomputer was originally housed in a basement room with chilled air cooling, and NIFLHEIM is thus bitterly cold. 
