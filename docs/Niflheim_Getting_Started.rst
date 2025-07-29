@@ -57,7 +57,7 @@ Niflheim's login nodes are:
 
 * ``surt.fysik.dtu.dk``:
 
-  * Login node for partitions ``xeon56``, ``xeon32_4096``, and ``a100`` (RockyLinux_ 8 OS).
+  * Login node for partitions ``xeon56``, ``xeon32_4096``, ``a100``, and ``h200`` (RockyLinux_ 8 OS).
   * Please build all applications for xeon56 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 56 CPU cores (Intel Xeon Gold 6348 CPU @ 2.60GHz IceLake_ with AVX512_ vector instructions), 512 GB of RAM.
   * Refer to this as CPU_ARCH= **icelake**.
@@ -90,6 +90,7 @@ The login nodes ``slid2`` and ``slid`` would be acceptable for more heavy testin
 .. _Genoa: https://en.wikichip.org/wiki/amd/cores/genoa
 .. _NVLink: https://en.wikipedia.org/wiki/NVLink
 .. _A100: https://www.nvidia.com/en-us/data-center/a100/
+.. _H200: https://www.nvidia.com/en-us/data-center/h200/
 
 SSH setup
 ---------
@@ -326,6 +327,13 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 1.7 TB
     - surt
     - RockyLinux_ 8
+  * - h200
+    - IceLake_ + 4* H200_ NVLink_ GPUs
+    - 96 (12*4 with HT) 
+    - 512 GB
+    - 800 GB
+    - surt
+    - RockyLinux_ 8
 
 **Please notice** the following points:
 
@@ -340,9 +348,9 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 * Partial node usage, including single-core jobs, are permitted in the ``xeon24`` partition by submitting to 1 and up to 23 cores of a 24-core node.
 
-* Partial node jobs are also permitted in the partitions ``xeon32_4096`` (**BIG memory**) as well as the GPU partitions ``sm3090`` and ``a100``.
+* Partial node jobs are also permitted in the partitions ``xeon32_4096`` (**BIG memory**) as well as the GPU partitions ``sm3090``, ``a100``, and ``h200``.
 
-* Please do not use the GPU partitions ``a100`` or ``sm3090`` unless your group has been authorized to use GPUs.
+* Please do not use the GPU partitions ``a100``, ``h200``, or ``sm3090`` unless your group has been authorized to use GPUs.
 
 * The RAM memory is slightly less than the physical RAM due to operating system overheads.
 
@@ -664,6 +672,7 @@ The appropriate login_nodes_ (RockyLinux_ 8) for GPU partitions are:
 
 * Partition ``sm3090``: **thul** (Skylake_)
 * Partition ``a100``: **surt** (IceLake_)
+* Partition ``h200``: **surt** (IceLake_)
 
 The appropriate login_nodes_ must be used to build software for GPUs, since they have the same CPU architecture as the GPU-nodes.
 GPU-specific software modules will only be provided on GPU-compatible nodes.
@@ -691,6 +700,8 @@ For example, to submit a batch jobs to 1 GPU on 8 CPU cores of a node in the ``s
 
 Similarly, the nodes in the ``a100`` partition have 4 A100_ GPUs each and 128 "virtual" CPU cores,
 so you should request 32 CPU cores per GPU.
+The `h200`` partition have 4 H200_ GPUs each and 96 "virtual" CPU cores,
+so you should request 24 CPU cores per GPU.
 Job scripts that do not use CPU cores or GPUs correctly may be rejected at submit time or be cancelled by the administrators.
 
 For further Slurm_ information see the GRES_ page.
