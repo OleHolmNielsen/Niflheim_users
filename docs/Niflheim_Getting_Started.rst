@@ -257,7 +257,9 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - **/tmp scratch disk**
     - **Login nodes**
     - **Linux_ OS**
-  * - | xeon24el8 | xeon24el8_test | xeon24el8_week
+  * - | xeon24el8
+      | xeon24el8_test
+      | xeon24el8_week
     - Broadwell_
     - 24
     - 254 GB
