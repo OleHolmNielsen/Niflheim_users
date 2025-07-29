@@ -257,7 +257,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - **/tmp scratch disk**
     - **Login nodes**
     - **Linux_ OS**
-  * - xeon24el8, xeon24el8_test, xeon24el8_week
+  * - xeon24el8, xeon24el8_test,
+      xeon24el8_week
     - Broadwell_
     - 24
     - 254 GB
@@ -313,14 +314,14 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 1.7 GB
     - fjorm
     - RockyLinux_ 8
-  * - xeon32_4096
+  * - xeon32_4096, xeon32_week
     - IceLake_
     - 32
     - 4096 GB
     - 14 TB
     - surt
     - RockyLinux_ 8
-  * - a100
+  * - a100, a100_week
     - IceLake_ + 4* A100_ NVLink_ GPUs
     - 128 (16*4 with HT) 
     - 512 GB
