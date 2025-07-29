@@ -268,7 +268,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - RockyLinux_ 8
   * - xeon40el8
     - thul, svol
-    - Skylake_ and Cascade_Lake_.
+    - Skylake_, Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
