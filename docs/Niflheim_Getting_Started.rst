@@ -251,95 +251,95 @@ Niflheim contains a number of node partitions with different types of CPU archit
   :widths: 4 8 4 4 4 4 4
 
   * - **Partition**
+    - **Login nodes**
     - **CPU and GPU architecture**
     - **CPU cores**
     - **RAM memory**
     - **/tmp scratch disk**
-    - **Login nodes**
     - **Linux_ OS**
   * - | xeon24el8
       | xeon24el8_test
       | xeon24el8_week
+    - sylg, slid, slid2
     - Broadwell_
     - 24
     - 254 GB
     - 140 GB
-    - sylg, slid, slid2
     - RockyLinux_ 8
   * - xeon40el8
+    - thul, svol
     - Skylake_ and Cascade_Lake_.
     - 40
     - 380 GB
     - 140 GB
-    - thul, svol
     - RockyLinux_ 8
   * - xeon40el8_768
+    - thul, svol
     - Skylake_
     - 40
     - 760 GB
     - 140 GB
-    - thul, svol
     - RockyLinux_ 8
   * - xeon40el8_clx
+    - thul, svol
     - Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
-    - thul, svol
     - RockyLinux_ 8
   * - | sm3090el8
       | sm3090_devel
+    - thul
     - Skylake_ + GPUs
     - 80 (40*2 with HT)
     - 192 GB
     - 800 GB
-    - thul
     - RockyLinux_ 8
   * - sm3090el8_768
+    - thul
     - Skylake_ + GPUs
     - 80 (40*2 with HT)
     - 768 GB
     - 800 GB
-    - thul
     - RockyLinux_ 8
   * - xeon56
+    - surt
     - IceLake_
     - 56
     - 512 GB
     - 293 GB
-    - surt
     - RockyLinux_ 8
   * - epyc96
+    - fjorm
     - AMD EPYC_ Zen4_ 9474F
     - 96
     - 768 GB
     - 1.7 GB
-    - fjorm
     - RockyLinux_ 8
   * - | xeon32_4096
       | xeon32_week
+    - surt
     - IceLake_
     - 32
     - 4096 GB
     - 14 TB
-    - surt
     - RockyLinux_ 8
   * - | a100
       | a100_week
+    - surt
     - | IceLake_ +
       | 4* A100_ NVLink_ GPUs
     - 128 (16*4 with HT) 
     - 512 GB
     - 1.7 TB
-    - surt
     - RockyLinux_ 8
   * - h200
+    - surt
     - | IceLake_ +
       | 4* H200_ NVLink_ GPUs
     - 96 (12*4 with HT) 
     - 512 GB
     - 800 GB
-    - surt
     - RockyLinux_ 8
 
 **Please notice** the following points:
