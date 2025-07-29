@@ -700,7 +700,7 @@ For example, to submit a batch jobs to 1 GPU on 8 CPU cores of a node in the ``s
 
 Similarly, the nodes in the ``a100`` partition have 4 A100_ GPUs each and 128 "virtual" CPU cores,
 so you should request 32 CPU cores per GPU.
-The `h200`` partition have 4 H200_ GPUs each and 96 "virtual" CPU cores,
+The ``h200`` partition have 4 H200_ GPUs each and 96 "virtual" CPU cores,
 so you should request 24 CPU cores per GPU.
 Job scripts that do not use CPU cores or GPUs correctly may be rejected at submit time or be cancelled by the administrators.
 
