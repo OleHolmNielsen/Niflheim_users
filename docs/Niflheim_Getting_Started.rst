@@ -251,7 +251,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   :widths: 4 8 4 4 4 4 4
 
   * - **Partition**
-    - **CPU architecture**
+    - **CPU and GPU architecture**
     - **CPU cores**
     - **RAM memory**
     - **/tmp scratch disk**
