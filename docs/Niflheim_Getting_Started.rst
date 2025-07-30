@@ -59,7 +59,7 @@ Niflheim's login nodes are:
 
   * Login node for partitions ``xeon56``, ``xeon32_4096``, ``a100``, and ``h200`` (RockyLinux_ 8 OS).
   * Please build all applications for xeon56 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
-  * 56 CPU cores (Intel Xeon Gold 6348 CPU @ 2.60GHz IceLake_ with AVX512_ vector instructions), 512 GB of RAM.
+  * 56 CPU cores (Intel Xeon Gold 6348 CPU @ 2.60GHz Ice_Lake_ with AVX512_ vector instructions), 512 GB of RAM.
   * Refer to this as CPU_ARCH= **icelake**.
 
 * ``fjorm.fysik.dtu.dk``:
@@ -82,7 +82,7 @@ The login nodes ``slid2`` and ``slid`` would be acceptable for more heavy testin
 .. _AVX2: https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2
 .. _SSH: https://en.wikipedia.org/wiki/Secure_Shell
 .. _Sapphire_Rapids: https://en.wikipedia.org/wiki/Sapphire_Rapids
-.. _IceLake: https://en.wikipedia.org/wiki/Ice_Lake_(microprocessor)
+.. _Ice_Lake: https://en.wikipedia.org/wiki/Ice_Lake_(microprocessor)
 .. _Cascade_Lake: https://en.wikipedia.org/wiki/Cascade_Lake_(microarchitecture)
 .. _Skylake: https://en.wikipedia.org/wiki/Skylake_(microarchitecture)
 .. _Broadwell: https://en.wikipedia.org/wiki/Broadwell_%28microarchitecture%29
@@ -290,7 +290,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - RockyLinux_ 8
   * - xeon56
     - surt
-    - IceLake_
+    - Ice_Lake_
     - 56
     - 512 GB
     - 293 GB
@@ -298,7 +298,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | xeon32_4096
       | xeon32_week
     - surt
-    - IceLake_
+    - Ice_Lake_
     - 32
     - 4096 GB
     - 14 TB
@@ -328,7 +328,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | a100
       | a100_week
     - surt
-    - | IceLake_ +
+    - | Ice_Lake_ +
       | 4* A100_ NVLink_ GPUs
     - 128 (16*4 with HT) 
     - 512 GB
@@ -681,8 +681,8 @@ Please do not use the GPU partitions unless your group has been authorized to us
 The appropriate login_nodes_ (RockyLinux_ 8) for GPU partitions are:
 
 * Partition ``sm3090``: **thul** (Skylake_)
-* Partition ``a100``: **surt** (IceLake_)
-* Partition ``h200``: **surt** (IceLake_)
+* Partition ``a100``: **surt** (Ice_Lake_)
+* Partition ``h200``: **surt** (Ice_Lake_)
 
 The appropriate login_nodes_ must be used to build software for GPUs, since they have the same CPU architecture as the GPU-nodes.
 GPU-specific software modules will only be provided on GPU-compatible nodes.
