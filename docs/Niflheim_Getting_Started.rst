@@ -81,6 +81,7 @@ The login nodes ``slid2`` and ``slid`` would be acceptable for more heavy testin
 .. _AVX: https://en.wikipedia.org/wiki/Advanced_Vector_Extensions
 .. _AVX2: https://en.wikipedia.org/wiki/Advanced_Vector_Extensions#Advanced_Vector_Extensions_2
 .. _SSH: https://en.wikipedia.org/wiki/Secure_Shell
+.. _Sapphire_Rapids: https://en.wikipedia.org/wiki/Sapphire_Rapids
 .. _IceLake: https://en.wikipedia.org/wiki/Ice_Lake_(microprocessor)
 .. _Cascade_Lake: https://en.wikipedia.org/wiki/Cascade_Lake_(microarchitecture)
 .. _Skylake: https://en.wikipedia.org/wiki/Skylake_(microarchitecture)
@@ -312,14 +313,14 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | sm3090el8
       | sm3090_devel
     - thul
-    - Skylake_ + GPUs
+    - Skylake_ + RTX3090_ GPUs
     - 80 (40*2 with HT)
     - 192 GB
     - 800 GB
     - RockyLinux_ 8
   * - sm3090el8_768
     - thul
-    - Skylake_ + GPUs
+    - Skylake_ + RTX3090_ GPUs
     - 80 (40*2 with HT)
     - 768 GB
     - 800 GB
@@ -335,7 +336,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - RockyLinux_ 8
   * - h200
     - surt
-    - | IceLake_ +
+    - | Sapphire_Rapids_ +
       | 4* H200_ NVLink_ GPUs
     - 96 (12*4 with HT) 
     - 512 GB
@@ -367,6 +368,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
 * Some partitions are overlapping so that nodes with more memory are also members of the partition with the lower amount of memory.
 
 * The **local node scratch disk space** is **shared** between all Slurm_ jobs currently running on the node, see `Using compute node temporary scratch disk space`_ below.
+
+.. _RTX3090: https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/
 
 Compute nodes and jobs
 ----------------------
