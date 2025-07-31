@@ -299,7 +299,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | xeon32_week
     - surt
     - Ice_Lake_
-    - 32
+    - 32 (8*4)
     - 4096 GB
     - 14 TB
     - RockyLinux_ 8
@@ -330,7 +330,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - surt
     - | Ice_Lake_ +
       | 4* A100_ NVLink_ GPUs
-    - 128 (16*4 with HT) 
+    - 128 (32*2 with HT) 
     - 512 GB
     - 1.7 TB
     - RockyLinux_ 8
@@ -338,7 +338,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - surt
     - | Sapphire_Rapids_ +
       | 4* H200_ NVLink_ GPUs
-    - 96 (12*4 with HT) 
+    - 96 (24*2 with HT) 
     - 512 GB
     - 800 GB
     - RockyLinux_ 8
