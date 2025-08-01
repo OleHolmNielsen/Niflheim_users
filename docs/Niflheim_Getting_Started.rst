@@ -317,7 +317,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - | Skylake_ +
       | RTX3090_ GPUs
     - | 80
-      | (2*40 with HT)
+      | (2*40 with HT_)
     - 192 GB
     - 800 GB
     - RockyLinux_ 8
@@ -326,7 +326,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - | Skylake_ +
       | RTX3090_ GPUs
     - | 80 
-      | (2*40 with HT)
+      | (2*40 with HT_)
     - 768 GB
     - 800 GB
     - RockyLinux_ 8
@@ -336,7 +336,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - | Ice_Lake_ +
       | 4* A100_ NVLink_ GPUs
     - | 128 
-      | (2*32 with HT) 
+      | (2*32 with HT_) 
     - 512 GB
     - 1.7 TB
     - RockyLinux_ 8
@@ -345,7 +345,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - | Sapphire_Rapids_ +
       | 4* H200_ NVLink_ GPUs
     - | 96 
-      | (2*24 with HT) 
+      | (2*24 with HT_) 
     - 512 GB
     - 800 GB
     - RockyLinux_ 8
@@ -376,6 +376,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 * The **local node scratch disk space** is **shared** between all Slurm_ jobs currently running on the node, see `Using compute node temporary scratch disk space`_ below.
 
+.. _HT: https://en.wikipedia.org/wiki/Hyper-threading
 .. _RTX3090: https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/
 
 Compute nodes and jobs
