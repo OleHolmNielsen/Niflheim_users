@@ -23,7 +23,7 @@ Overview of the Niflheim cluster
 .. _EasyBuild_modules: https://wiki.fysik.dtu.dk/Niflheim_system/EasyBuild_modules/
 .. _accounting_reports: https://wiki.fysik.dtu.dk/graphs/accounting_reports.html
 
-.. _login_nodes:
+.. _Login_nodes:
 
 Login to Niflheim
 =================
@@ -252,7 +252,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   :widths: 4 8 4 4 4 4 4
 
   * - **Partition**
-    - login_nodes_
+    - Login_nodes_
     - **CPU and GPU architecture**
     - **CPU cores**
     - **RAM memory**
@@ -678,16 +678,16 @@ Usage of GPU compute nodes
 --------------------------
 
 Please do not use the GPU partitions unless your group has been authorized to use GPUs.
-The appropriate login_nodes_ (RockyLinux_ 8) for GPU partitions are:
+The appropriate Login_nodes_ (RockyLinux_ 8) for GPU partitions are:
 
 * Partition ``sm3090``: **thul** (Skylake_)
 * Partition ``a100``: **surt** (Ice_Lake_)
 * Partition ``h200``: **surt** (Ice_Lake_)
 
-The appropriate login_nodes_ must be used to build software for GPUs, since they have the same CPU architecture as the GPU-nodes.
+The appropriate Login_nodes_ must be used to build software for GPUs, since they have the same CPU architecture as the GPU-nodes.
 GPU-specific software modules will only be provided on GPU-compatible nodes.
 
-NVIDIA's CUDA_ software is available as a module on the login_nodes_ and compute nodes::
+NVIDIA's CUDA_ software is available as a module on the Login_nodes_ and compute nodes::
 
   $ module avail CUDA/
 
@@ -903,12 +903,12 @@ Restrictions on the use of Jupyter Notebook
 
 * The web-server on port 8888 can only be accessed from a PC on the *DTU Physics* cabled network (which includes *demon*).
 
-* The ``jupyter`` command starts a special web-server on the login_nodes_ serving a network port number 8888 (plus/minus a small number).
+* The ``jupyter`` command starts a special web-server on the Login_nodes_ serving a network port number 8888 (plus/minus a small number).
 
 Using Jupyter_Notebook_ documents on Niflheim from DTU Physics
 --------------------------------------------------------------
 
-1. Use SSH_ to login to one of the Niflheim login_nodes_, preferably ``slid.fysik.dtu.dk``.
+1. Use SSH_ to login to one of the Niflheim Login_nodes_, preferably ``slid.fysik.dtu.dk``.
 
 2. Load the relevant module, for example::
 
@@ -930,7 +930,7 @@ Using Jupyter_Notebook_ documents on Niflheim from DTU Physics
    a. Pressing **Control-C twice** in the terminal running the `jupyter` command, *or*
    b. Clicking on the **Quit button** on the Jupyter_Notebook_ overview page
 
-      This is **not** the same as the ``Logout`` buttons on each notebook, which will disconnect your browser from the Jupyter_Notebook_ server, but actually leave Jupyter_Notebook_ running on the login_nodes_.
+      This is **not** the same as the ``Logout`` buttons on each notebook, which will disconnect your browser from the Jupyter_Notebook_ server, but actually leave Jupyter_Notebook_ running on the Login_nodes_.
 
 Using Jupyter_Notebook_ documents from home or elsewhere on a Linux or macOS_ PC
 -----------------------------------------------------------------------------------
@@ -940,7 +940,7 @@ is running Linux_ or macOS_.
 
 1. Connect to the DTU_VPN_ network (information about DTU_VPN_ is on *DTU Inside*).
    
-2. Use SSH_ to connect to one of the Niflheim login_nodes_, preferably ``slid.fysik.dtu.dk``.
+2. Use SSH_ to connect to one of the Niflheim Login_nodes_, preferably ``slid.fysik.dtu.dk``.
 
 3. Load the relevant module, for example::
 
@@ -980,7 +980,7 @@ and your laptop/desktop is running Microsoft Windows.
 
 1. Connect to the DTU_VPN_ network (information about DTU_VPN_ is on *DTU Inside*).
 
-2. Log in to one of the Niflheim login_nodes_, preferably ``slid.fysik.dtu.dk``.
+2. Log in to one of the Niflheim Login_nodes_, preferably ``slid.fysik.dtu.dk``.
    Use MobaXterm_ to log in directly to e.g. ``slid.fysik.dtu.dk``, but when you create the login session (the Session tab), select Network Settings, then Jump Host.
    Fill in the Jump Host name ``slid.fysik.dtu.dk`` and your DTU user name.
 
@@ -1097,7 +1097,7 @@ To run a Apptainer_ container in parallel on 2 nodes and 10 CPU cores with MPI u
 Visual Studio Code
 =====================
 
-The *Visual Studio Code* (VS_code_) editor can be used on your personal desktop and make remote SSH connections to the Niflheim login_nodes_.
+The *Visual Studio Code* (VS_code_) editor can be used on your personal desktop and make remote SSH connections to the Niflheim Login_nodes_.
 
 The DTU `course 02002/02003: Computer Programming <https://02002.compute.dtu.dk/index.html>`_
 has some material in the page `Using VSCode <https://02002.compute.dtu.dk/vscode/index.html>`_.
