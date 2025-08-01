@@ -313,14 +313,16 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | sm3090el8
       | sm3090_devel
     - thul
-    - Skylake_ + RTX3090_ GPUs
+    - | Skylake_ +
+      | RTX3090_ GPUs
     - 80 (40*2 with HT)
     - 192 GB
     - 800 GB
     - RockyLinux_ 8
   * - sm3090el8_768
     - thul
-    - Skylake_ + RTX3090_ GPUs
+    - | Skylake_ +
+      | RTX3090_ GPUs
     - 80 (40*2 with HT)
     - 768 GB
     - 800 GB
