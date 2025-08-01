@@ -316,7 +316,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - | Skylake_ +
       | RTX3090_ GPUs
     - | 80
-      | (40*2 with HT)
+      | (2*40 with HT)
     - 192 GB
     - 800 GB
     - RockyLinux_ 8
@@ -325,7 +325,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - | Skylake_ +
       | RTX3090_ GPUs
     - | 80 
-      | (40*2 with HT)
+      | (2*40 with HT)
     - 768 GB
     - 800 GB
     - RockyLinux_ 8
@@ -335,7 +335,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - | Ice_Lake_ +
       | 4* A100_ NVLink_ GPUs
     - | 128 
-      | (32*2 with HT) 
+      | (2*32 with HT) 
     - 512 GB
     - 1.7 TB
     - RockyLinux_ 8
@@ -344,7 +344,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - | Sapphire_Rapids_ +
       | 4* H200_ NVLink_ GPUs
     - | 96 
-      | (24*2 with HT) 
+      | (2*24 with HT) 
     - 512 GB
     - 800 GB
     - RockyLinux_ 8
