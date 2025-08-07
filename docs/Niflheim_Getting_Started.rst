@@ -246,7 +246,7 @@ Slurm_ node **partitions** are the compute resource in Slurm_ which group nodes 
 
 To display the status of all available Slurm_ partitions use the ``showpartitions`` command (append ``-h`` for help).
 
-Niflheim contains a number of node partitions with different types of CPU architecture hardware and the corresponding recommended login nodes:
+Niflheim contains a number of node partitions with different types of CPU architecture hardware and the corresponding recommended Login_nodes_:
 
 .. list-table::
   :widths: 4 8 4 4 4 4 4
