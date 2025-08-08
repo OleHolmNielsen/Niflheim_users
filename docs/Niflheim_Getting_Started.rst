@@ -877,7 +877,7 @@ List the modules by::
 
   $ module avail GPAW/ ASE/ 
 
-It is recommended to read the `Platforms and architectures <Platforms and architectures>`_ page
+It is recommended to read the `Platforms and architectures <https://gpaw.readthedocs.io/platforms/platforms.html>`_ page
 for different ways to use GPAW_ and ASE_ on Niflheim.
 
 .. _GPAW: https://gpaw.readthedocs.io/
