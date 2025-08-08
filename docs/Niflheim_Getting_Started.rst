@@ -877,7 +877,8 @@ List the modules by::
 
   $ module avail GPAW/ ASE/ 
 
-It is recommended to read the instructions in https://wiki.fysik.dtu.dk/gpaw/platforms/platforms.html for different ways to use GPAW_ and ASE_ on Niflheim.
+It is recommended to read the `Platforms and architectures <Platforms and architectures>`_ page
+for different ways to use GPAW_ and ASE_ on Niflheim.
 
 .. _GPAW: https://gpaw.readthedocs.io/
 .. _ASE: https://ase-lib.org/
