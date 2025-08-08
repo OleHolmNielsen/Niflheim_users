@@ -879,8 +879,8 @@ List the modules by::
 
 It is recommended to read the instructions in https://wiki.fysik.dtu.dk/gpaw/platforms/platforms.html for different ways to use GPAW_ and ASE_ on Niflheim.
 
-.. _GPAW: https://wiki.fysik.dtu.dk/gpaw
-.. _ASE: https://wiki.fysik.dtu.dk/ase
+.. _GPAW: https://gpaw.readthedocs.io/
+.. _ASE: https://ase-lib.org/
 
 Jupyter_Notebook_ on Niflheim
 =============================
