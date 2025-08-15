@@ -314,7 +314,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | sm3090el8
       | sm3090_devel
     - thul
-    - | Skylake_ +
+    - | Cascade_Lake_ +
       | RTX3090_ GPUs
     - | 80
       | (2*40 with HT_)
@@ -323,7 +323,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - RockyLinux_ 8
   * - sm3090el8_768
     - thul
-    - | Skylake_ +
+    - | Cascade_Lake_ +
       | RTX3090_ GPUs
     - | 80 
       | (2*40 with HT_)
@@ -688,9 +688,9 @@ Usage of GPU compute nodes
 Please do not use the GPU partitions unless your group has been authorized to use GPUs.
 The appropriate Login_nodes_ (RockyLinux_ 8) for GPU partitions are:
 
-* Partition ``sm3090``: **thul** (Skylake_)
-* Partition ``a100``: **surt** (Ice_Lake_)
-* Partition ``h200``: **surt** (Ice_Lake_)
+* Partition ``sm3090``: **thul** (Skylake_ CPU)
+* Partition ``a100``: **surt** (Ice_Lake_ CPU)
+* Partition ``h200``: **surt** (Ice_Lake_ CPU)
 
 The appropriate Login_nodes_ must be used to build software for GPUs, since they have the same CPU architecture as the GPU-nodes.
 GPU-specific software modules will only be provided on GPU-compatible nodes.
