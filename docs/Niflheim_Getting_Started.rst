@@ -299,7 +299,6 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | (4*8 cores)
     - 4096 GB
     - 14 TB
-    - RockyLinux_ 8
   * - epyc96
     - fjorm
     - AMD EPYC_ Zen4_ 9474F
