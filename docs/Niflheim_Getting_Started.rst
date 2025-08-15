@@ -255,7 +255,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - Login_nodes_
     - | **CPU** and
       | **GPU** architecture
-    - **CPU cores**
+    - **CPU** cores
     - | **RAM**
       | memory
     - | **/tmp**
@@ -302,7 +302,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 14 TB
   * - epyc96
     - fjorm
-    - AMD EPYC_ Zen4_ 9474F
+    - EPYC_ Zen4_ 9474F
     - 96
     - 768 GB
     - 1.7 GB
