@@ -249,7 +249,7 @@ To display the status of all available Slurm_ partitions use the ``showpartition
 Niflheim contains a number of node partitions with different types of CPU architecture hardware and the corresponding recommended Login_nodes_:
 
 .. list-table::
-  :widths: 3 3 3 3 2 2 
+  :widths: 2 2 3 2 2 2 
 
   * - **Partition**
     - Login_nodes_
@@ -263,7 +263,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | xeon24el8
       | xeon24el8_test
       | xeon24el8_week
-    - sylg, slid, slid2
+    - | sylg,
+      | slid, slid2
     - Broadwell_
     - 24
     - 254 GB
