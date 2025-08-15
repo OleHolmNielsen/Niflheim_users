@@ -258,8 +258,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - **CPU cores**
     - **RAM memory**
     - | **/tmp**
-      | **scratch disk**
-    - **Linux_ OS**
+      | **disk**
   * - | xeon24el8
       | xeon24el8_test
       | xeon24el8_week
@@ -268,35 +267,30 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 24
     - 254 GB
     - 140 GB
-    - RockyLinux_ 8
   * - xeon40el8
     - thul, svol
     - Skylake_, Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
-    - RockyLinux_ 8
   * - xeon40el8_768
     - thul, svol
     - Skylake_
     - 40
     - 760 GB
     - 140 GB
-    - RockyLinux_ 8
   * - xeon40el8_clx
     - thul, svol
     - Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
-    - RockyLinux_ 8
   * - xeon56
     - surt
     - Ice_Lake_
     - 56
     - 512 GB
     - 293 GB
-    - RockyLinux_ 8
   * - | xeon32_4096
       | xeon32_week
     - surt
@@ -312,7 +306,6 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 96
     - 768 GB
     - 1.7 GB
-    - RockyLinux_ 8
   * - | sm3090el8
       | sm3090_devel
     - thul
@@ -322,7 +315,6 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | (2*40 with HT_)
     - 192 GB
     - 800 GB
-    - RockyLinux_ 8
   * - sm3090el8_768
     - thul
     - | Cascade_Lake_ +
@@ -331,7 +323,6 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | (2*40 with HT_)
     - 768 GB
     - 800 GB
-    - RockyLinux_ 8
   * - | a100
       | a100_week
     - surt
@@ -341,7 +332,6 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | (2*32 with HT_) 
     - 512 GB
     - 1.7 TB
-    - RockyLinux_ 8
   * - h200
     - surt
     - | Sapphire_Rapids_ +
@@ -350,9 +340,10 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | (2*24 with HT_) 
     - 512 GB
     - 800 GB
-    - RockyLinux_ 8
 
 **Please notice** the following points:
+
+* All Login_nodes_ and compute nodes are running RockyLinux_ 8.
 
 * The default **maximum time limit** for jobs is **50 hours** in all partitions.
   Some partitions will accept jobs up to **1 week** (168 hours), please use the ``showpartitions`` command to view all available partitions.
