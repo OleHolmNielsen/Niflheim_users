@@ -254,11 +254,12 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - **Partition**
     - Login_nodes_
     - | **CPU** and
-      | **GPU architecture**
+      | **GPU** architecture
     - **CPU cores**
-    - **RAM memory**
+    - | **RAM**
+      | memory
     - | **/tmp**
-      | **disk**
+      | disk
   * - | xeon24el8
       | xeon24el8_test
       | xeon24el8_week
