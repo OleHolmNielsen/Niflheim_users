@@ -328,7 +328,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | a100_week
     - surt
     - | Ice_Lake_ +
-      | 4* A100_ NVLink_ GPUs
+      | 4* A100_ GPUs
+      | with NVLink_
     - | 128 
       | (2*32 + HT_) 
     - 512 GB
@@ -336,7 +337,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - h200
     - surt
     - | Sapphire_Rapids_ +
-      | 4* H200_ NVLink_ GPUs
+      | 4* H200_ GPUs
+      | with NVLink_
     - | 96 
       | (2*24 + HT_) 
     - 512 GB
@@ -344,7 +346,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 **Please notice** the following points:
 
-* All Login_nodes_ and compute nodes are running RockyLinux_ 8.
+* All Login_nodes_ and compute nodes are running the RockyLinux_ 8 OS.
 
 * The default **maximum time limit** for jobs is **50 hours** in all partitions.
   Some partitions will accept jobs up to **1 week** (168 hours), please use the ``showpartitions`` command to view all available partitions.
