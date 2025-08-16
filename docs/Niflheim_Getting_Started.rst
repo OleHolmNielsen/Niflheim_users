@@ -313,7 +313,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - | Cascade_Lake_ +
       | RTX3090_ GPUs
     - | 80
-      | (40+HT_)
+      | (40+ HT_)
     - 192 GB
     - 800 GB
   * - sm3090el8_768
