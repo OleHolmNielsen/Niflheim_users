@@ -567,9 +567,13 @@ Job_arrays_ are only supported for batch jobs and the array index values are spe
 The option argument can be specific *array index values*, a *range of index values*, and an optional *step size* as shown in the Job_arrays_ page. 
 Jobs which are part of a job array will have the environment variable ``SLURM_ARRAY_TASK_ID`` set to its array index value.
 
-See some examples of usage in the Job_arrays_ page.
+See some array usage examples in the Job_arrays_ page.
+A simple example of using sbatch_arrays_ is::
+
+  sbatch --array=0-15 <your-script>
 
 .. _Job_arrays: https://slurm.schedmd.com/job_array.html
+.. _sbatch_arrays: https://slurm.schedmd.com/sbatch.html#OPT_array
 
 Using compute node temporary scratch disk space
 ...............................................
