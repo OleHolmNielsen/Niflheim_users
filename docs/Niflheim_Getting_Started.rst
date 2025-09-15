@@ -504,6 +504,8 @@ You may use this information to determine if your jobs are behaving correctly in
 
 .. _pestat: https://github.com/OleHolmNielsen/Slurm_tools/tree/master/pestat
 
+.. _User_limits:
+
 User limits on batch jobs
 .........................
 
@@ -571,6 +573,8 @@ See some array usage examples in the Job_arrays_ page.
 A simple example of using sbatch_arrays_ is::
 
   sbatch --array=0-15 <your-script>
+
+Please note that Job_arrays_ with many jobs may potentially hit the :ref:`User_limits` maximum values.
 
 .. _Job_arrays: https://slurm.schedmd.com/job_array.html
 .. _sbatch_arrays: https://slurm.schedmd.com/sbatch.html#OPT_array
