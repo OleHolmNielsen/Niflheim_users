@@ -512,7 +512,9 @@ User limits on batch jobs
 Slurm_ has been configured with several limits_ parameter, for example:
 
 * ``MaxSubmitJobs``: Maximum number of jobs in a pending or running state for the user.
-  This means that user job submissions will be rejected if they would exceed the ``MaxSubmitJobs`` limit.
+  This means that user job submissions exceeding the ``MaxSubmitJobs`` limit will be rejected with a message::
+  
+    sbatch: error: AssocMaxSubmitJobLimit
 
 It may happen that some jobs will be in a pending state due to limits_ imposed on the user's account.
 The typical reasons for a job not starting are that the following limits could be exceeded:
@@ -534,7 +536,7 @@ For example, to display the number of CPUs limit or the ``MaxSubmitJobs`` limit:
   showuserlimits -l GrpTRES -s cpu
   showuserlimits -l MaxSubmitJobs
 
-**Notice**: Newly created users will have some lower limits for the first 30 days in order to prevent erroneous bad usage of the system.
+**Notice**: Newly created users will have some lower limits for the first 30 days in order to prevent erroneous and bad usage of the system.
 
 .. _limits: https://slurm.schedmd.com/resource_limits.html
 .. _Association_specific_limits: https://slurm.schedmd.com/resource_limits.html#assoc
