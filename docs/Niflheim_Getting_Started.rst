@@ -509,28 +509,36 @@ You may use this information to determine if your jobs are behaving correctly in
 User limits on batch jobs
 .........................
 
-It may happen that some jobs will be pending due to limits_ imposed on the user account.
+Slurm_ has been configured with several limits_ parameter, for example:
+
+* ``MaxSubmitJobs``: Maximum number of jobs in a pending or running state for the user.
+  This means that user job submissions will be rejected if they would exceed the ``MaxSubmitJobs`` limit.
+
+It may happen that some jobs will be in a pending state due to limits_ imposed on the user's account.
 The typical reasons for a job not starting are that the following limits could be exceeded:
 
-* **AssocGrpCpuLimit**: Limit on the number of CPU cores.
-* **AssocGrpCPURunMinutesLimit**: Limit on the number of CPU cores multiplied by the minutes of wallclock time requested.
-* **AssocGrpNodeLimit**: Limit on the number of compute nodes.
-* **MaxJobsAccrue**: Maximum number of pending jobs able to accrue age priority
+* ``AssocGrpCpuLimit``: Limit on the number of CPU cores.
+* ``AssocGrpCPURunMinutesLimit``: Limit on the number of CPU cores multiplied by the minutes of wallclock time requested.
+* ``AssocGrpNodeLimit``: Limit on the number of compute nodes.
+* ``MaxJobsAccrue``: Maximum number of pending jobs able to accrue age priority
 
-For a full list of limits, see the section `Limits in both Associations and QOS <https://slurm.schedmd.com/resource_limits.html#limits>`_ in the limits_ page.
+See Association_specific_limits_ and QOS_specific_limits_ in the limits_ page for further details.
 
 Use the following command to display the limits currently in effect for your userid::
 
   showuserlimits
 
 Use ``showuserlimits -h`` to see all options.
-For example, to display the number of CPUs limit::
+For example, to display the number of CPUs limit or the ``MaxSubmitJobs`` limit::
 
   showuserlimits -l GrpTRES -s cpu
+  showuserlimits -l MaxSubmitJobs
 
-Newly created users will have some lower limits for the first 30 days in order to prevent erroneous bad usage of the system.
+**Notice**: Newly created users will have some lower limits for the first 30 days in order to prevent erroneous bad usage of the system.
 
 .. _limits: https://slurm.schedmd.com/resource_limits.html
+.. _Association_specific_limits: https://slurm.schedmd.com/resource_limits.html#assoc
+.. _QOS_specific_limits: https://slurm.schedmd.com/resource_limits.html#qos
 
 Fairshare usage
 ...............
@@ -561,11 +569,11 @@ To display job FairShare_ priority values use::
 Job arrays
 ..........
 
-Job_arrays_ offer a mechanism for submitting and managing collections of similar jobs quickly and easily; job arrays with millions of tasks can be submitted in milliseconds (subject to configured size limits). 
-All jobs must have the same initial options (e.g. size, time limit, etc.), however it is possible to change some of these options after the job has begun execution using the ``scontrol`` command
-specifying the ``JobID`` of the array or individual ``ArrayJobID``.
+Job_arrays_ offer a mechanism for submitting and managing large collections of similar batch jobs quickly and easily.
+Job_arrays_ will have some `additional environment variables <https://slurm.schedmd.com/job_array.html#env_vars>`_
+set which help you manage your Job_arrays_.
 
-Job_arrays_ are only supported for batch jobs and the array index values are specified using the ``--array`` or ``-a`` option of the ``sbatch`` command. 
+The array index values are specified using the ``--array`` or ``-a`` option of the ``sbatch`` command. 
 The option argument can be specific *array index values*, a *range of index values*, and an optional *step size* as shown in the Job_arrays_ page. 
 Jobs which are part of a job array will have the environment variable ``SLURM_ARRAY_TASK_ID`` set to its array index value.
 
@@ -574,7 +582,7 @@ A simple example of using sbatch_arrays_ is::
 
   sbatch --array=0-15 <your-script>
 
-Please note that Job_arrays_ with many jobs may potentially hit the :ref:`User_limits` maximum values.
+Please note that Job_arrays_ are subject to the same :ref:`User_limits` as ordinary batch jobs.
 
 .. _Job_arrays: https://slurm.schedmd.com/job_array.html
 .. _sbatch_arrays: https://slurm.schedmd.com/sbatch.html#OPT_array
