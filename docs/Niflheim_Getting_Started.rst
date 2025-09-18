@@ -509,10 +509,11 @@ You may use this information to determine if your jobs are behaving correctly in
 User limits on batch jobs
 .........................
 
-Slurm_ has been configured with several limits_ parameter, for example:
+Slurm_ has been configured with several limits_ parameters, for example:
 
 * ``MaxSubmitJobs``: Maximum number of jobs in a pending or running state for the user.
-  This means that user job submissions exceeding the ``MaxSubmitJobs`` limit will be rejected with a message::
+  This means that batch job submissions which would exceed the user's
+  ``MaxSubmitJobs`` limit will be rejected with a message::
   
     sbatch: error: AssocMaxSubmitJobLimit
 
