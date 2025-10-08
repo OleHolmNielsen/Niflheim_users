@@ -57,9 +57,16 @@ Niflheim's login nodes are:
 
 * ``surt.fysik.dtu.dk``:
 
-  * Login node for partitions ``xeon56``, ``xeon32_4096``, ``a100``, and ``h200`` (RockyLinux_ 8 OS).
-  * Please build all applications for xeon56 with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
+  * Login node for partitions ``xeon56`` and ``a100`` (RockyLinux_ 8 OS).
+  * Please build all applications with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 56 CPU cores (Intel Xeon Gold 6348 CPU @ 2.60GHz Ice_Lake_ with AVX512_ vector instructions), 512 GB of RAM.
+  * Refer to this as CPU_ARCH= **icelake**.
+
+* ``sara.fysik.dtu.dk``:
+
+  * Login node for partitions ``xeon32_4096`` and ``h200`` (RockyLinux_ 8 OS).
+  * Please build all applications with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
+  * 32 CPU cores (Intel(R) Xeon(R) Gold 6430 CPU @ 2.10GHz Sapphire_Rapids_ with AVX512_ vector instructions), 512 GB of RAM.
   * Refer to this as CPU_ARCH= **icelake**.
 
 * ``fjorm.fysik.dtu.dk``:
@@ -70,9 +77,10 @@ Niflheim's login nodes are:
     Note that the **epyc96** partition compute nodes have 96 CPU cores.
   * Refer to this as CPU_ARCH= **epyc9004**.
 
-The login nodes ``fjorm``, ``surt``, ``svol``, ``sylg``, and ``thul`` must not be overloaded with heavy tasks, since this will disturb other users.
+Note: The login nodes **must not be overloaded** with heavy tasks, since this will disturb other users.
 
-The login nodes ``slid2`` and ``slid`` would be acceptable for more heavy testing of codes, but please bear in mind that the login nodes may be shared by many users, and no single user should monopolize any login nodes.
+The login nodes ``slid2`` and ``slid`` would be acceptable for more heavy testing of codes,
+but please bear in mind that the login nodes may be shared by many users, and no single user should monopolize any login nodes.
 **Long tasks should always be submitted as batch jobs**.
 
 .. _Hyperthreading: https://en.wikipedia.org/wiki/Hyper-threading
@@ -295,7 +303,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 293 GB
   * - | xeon32_4096
       | xeon32_week
-    - surt
+    - sara
     - Sapphire_Rapids_
     - | 32 
       | (4*8 cores)
@@ -335,7 +343,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 512 GB
     - 1.7 TB
   * - h200
-    - surt
+    - sara
     - | Sapphire_Rapids_ +
       | 4* H200_ GPUs
       | with NVLink_
