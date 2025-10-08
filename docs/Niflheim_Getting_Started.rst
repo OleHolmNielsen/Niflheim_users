@@ -67,7 +67,7 @@ Niflheim's login nodes are:
   * Login node for partitions ``xeon32_4096`` and ``h200`` (RockyLinux_ 8 OS).
   * Please build all applications with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 32 CPU cores (Intel(R) Xeon(R) Gold 6430 CPU @ 2.10GHz Sapphire_Rapids_ with AVX512_ vector instructions), 512 GB of RAM.
-  * Refer to this as CPU_ARCH= **icelake**.
+  * Refer to this as CPU_ARCH= **sapphirerapids**.
 
 * ``fjorm.fysik.dtu.dk``:
 
@@ -713,7 +713,7 @@ The appropriate Login_nodes_ (RockyLinux_ 8) for GPU partitions are:
 
 * Partition ``sm3090``: **thul** (Skylake_ CPU)
 * Partition ``a100``: **surt** (Ice_Lake_ CPU)
-* Partition ``h200``: **surt** (Ice_Lake_ CPU)
+* Partition ``h200``: **sara** (Sapphire_Rapids_ CPU)
 
 The appropriate Login_nodes_ must be used to build software for GPUs, since they have the same CPU architecture as the GPU-nodes.
 GPU-specific software modules will only be provided on GPU-compatible nodes.
