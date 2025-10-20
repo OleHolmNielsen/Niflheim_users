@@ -906,6 +906,37 @@ for different ways to use GPAW_ and ASE_ on Niflheim.
 .. _GPAW: https://gpaw.readthedocs.io/
 .. _ASE: https://ase-lib.org/
 
+
+Python virtual environments
+===========================
+
+You can make virtual environments (venv_) combining the Niflheim-optimized
+software modules with other Python packages installed in your venv.
+
+1. Load the right version of Python and create the virtual environment
+   with the ``--system-site-packages`` option::
+
+     module load Python/3.13.5-GCCcore-14.3.0
+     python -m venv --system-site-packages my_venv_name
+
+2. Edit the ``bin/activate`` file in your virtual environment, and
+   insert lines loading the desired modules near the top of the file
+
+   ``my_venv_name/bin/activate``::
+
+      # This file must be used with "source bin/activate" *from bash*
+      # You cannot run it directly
+      module purge
+      module load matplotlib/3.10.5-gfbf-2025b
+      module load JupyterNotebook/7.4.7-GCCcore-14.3.0
+      
+      deactivate () {
+
+**Note:** This works well with Python from the 2025b toolchain.  But
+if you use older versions of our Python modules, then packages in the
+modules will override packages you install in your venv, which is
+*not* what you want.
+
 Jupyter_Notebook_ on Niflheim
 =============================
 
@@ -916,13 +947,25 @@ On Niflheim we have installed Jupyter_Notebook_ software modules which you can l
 
   $ module avail JupyterNotebook
   -------------------------- /home/modules/modules/all ---------------------------
-   JupyterNotebook/7.0.2-GCCcore-12.3.0
+   JupyterNotebook/7.0.2-GCCcore-12.3.0    JupyterNotebook/7.4.7-GCCcore-14.3.0 (D)
 
 You have to select the correct *jupyter* version shown above, according to which compiler has been used to compile the other software you are using (such as GPAW_).
 
-**NOTE:** If you use a *Python virtual environment* (venv_), you cannot use the *IPython* module, as the Jupyter_Notebook_ will not see the modules in the venv_. 
-Instead you have to install jupyter in your venv_ (``pip install notebook``).
+**NOTE:** If you use a *Python virtual environment* (venv_), you need
+to register the virtual environment kernel with Jupyter before you can
+use it::
 
+  python -m ipykernel install --user --name=my_venv_name
+
+You can now start the notebook server, connect to it from your
+laptop/desktop PC, and then select the kernel from your venv::
+
+  jupyter notebook --no-browser --ip=$HOSTNAME
+
+It is **very important** that you shut down both your notebooks and
+the server when you stop using it.  It is done by pressing Control-C *twice* in the window where the
+server is running.
+  
 .. _Python: https://en.wikipedia.org/wiki/Python_(programming_language)
 .. _venv: https://docs.python.org/3/library/venv.html
 .. _Jupyter: https://en.wikipedia.org/wiki/Project_Jupyter
