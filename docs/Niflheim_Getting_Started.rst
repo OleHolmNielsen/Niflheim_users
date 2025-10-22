@@ -795,18 +795,20 @@ We currently provide these toolchains_:
 
 * The **foss** toolchain provides **GCC, OpenMPI, OpenBLAS/LAPACK, ScaLAPACK(/BLACS), FFTW**.
 
-  Usage and list of contents::
+  Getting information and loading the toolchain::
 
     module whatis foss
-    module load foss
+    module avail foss/
+    module load foss/2025b
     module list
 
 * The **intel** toolchain provides Intel_compilers_ (Parallel Studio XE), the Intel MKL_ Math Kernel library, and the Intel_MPI_ message-passing library.
 
-  Usage and list of contents::
+  Getting information and loading the toolchain::
 
     module whatis intel
-    module load intel
+    module avail intel/
+    module load intel/2025b
     module list
 
 **WARNING:**
