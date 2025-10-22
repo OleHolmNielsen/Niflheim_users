@@ -845,8 +845,9 @@ If Matplotlib_ cannot start up, in some cases you have to turn the Matplotlib_ba
 Intel VTune Profiler
 ....................
 
-We have installed module for the Intel VTune_ Profiler::
+We have installed a module for the Intel VTune_ Profiler::
 
+  module avail VTune
   module load VTune
 
 Please read the VTune_documentation_.
