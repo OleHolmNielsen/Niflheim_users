@@ -45,33 +45,33 @@ Niflheim's login nodes are:
 
 * ``sylg.fysik.dtu.dk``, ``slid.fysik.dtu.dk``, and ``slid2.fysik.dtu.dk``:
  
-  * Login node for partition ``xeon24el8`` (RockyLinux_ 8 OS).
+  * Login node for :ref:`compute_node_partitions` ``xeon24el8`` (RockyLinux_ 8 OS).
   * 24 CPU cores (Intel Xeon CPU E5-2650 v4 @ 2.20GHz Broadwell_), 256 GB of RAM memory.
   * Refer to this as CPU_ARCH= **broadwell_el8**.
 
 * ``svol.fysik.dtu.dk`` and ``thul.fysik.dtu.dk``:
 
-  * Login node for partitions ``xeon40el8`` as well as ``sm3090el8`` (RockyLinux_ 8 OS).
+  * Login node for :ref:`compute_node_partitions` ``xeon40el8`` as well as ``sm3090el8`` (RockyLinux_ 8 OS).
   * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions.
   * Refer to this as CPU_ARCH= **skylake_el8**.
 
 * ``surt.fysik.dtu.dk``:
 
-  * Login node for partitions ``xeon56`` and ``a100`` (RockyLinux_ 8 OS).
+  * Login node for :ref:`compute_node_partitions` ``xeon56`` and ``a100`` (RockyLinux_ 8 OS).
   * Please build all applications with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 56 CPU cores (Intel Xeon Gold 6348 CPU @ 2.60GHz Ice_Lake_ with AVX512_ vector instructions), 512 GB of RAM.
   * Refer to this as CPU_ARCH= **icelake**.
 
 * ``sara.fysik.dtu.dk``:
 
-  * Login node for partitions ``xeon32_4096`` and ``h200`` (RockyLinux_ 8 OS).
+  * Login node for :ref:`compute_node_partitions` ``xeon32_4096`` and ``h200`` (RockyLinux_ 8 OS).
   * Please build all applications with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 32 CPU cores (Intel(R) Xeon(R) Gold 6430 CPU @ 2.10GHz Sapphire_Rapids_ with AVX512_ vector instructions), 512 GB of RAM.
   * Refer to this as CPU_ARCH= **sapphirerapids**.
 
 * ``fjorm.fysik.dtu.dk``:
 
-  * Login node for partition ``epyc96`` (RockyLinux_ 8 OS).
+  * Login node for :ref:`compute_node_partitions` ``epyc96`` (RockyLinux_ 8 OS).
   * Please build all applications for ``epyc96`` with the latest ``foss`` toolchain (see `Software environment modules`_ below)!
   * 16 CPU cores (AMD EPYC_ 9124 Genoa_ Zen4_), 384 GB of RAM.
     Note that the **epyc96** partition compute nodes have 96 CPU cores.
