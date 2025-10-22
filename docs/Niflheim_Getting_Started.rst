@@ -793,31 +793,31 @@ Loading complete toolchains
 The modules framework at the :ref:`niflheim` includes a number of convenient toolchains_ built as EasyBuild_modules_.
 We currently provide these toolchains_:
 
-* The intel toolchain provides Intel_compilers_ (Parallel Studio XE), the Intel MKL_ Math Kernel library, and the Intel_MPI_ message-passing library.
+* The **foss** toolchain provides **GCC, OpenMPI, OpenBLAS/LAPACK, ScaLAPACK(/BLACS), FFTW**.
 
   Usage and list of contents::
 
-    module load intel
-    module list
-
-* The foss toolchain provides **GCC, OpenMPI, OpenBLAS/LAPACK, ScaLAPACK(/BLACS), FFTW**.
-
-  Usage and list of contents::
-
+    module whatis foss
     module load foss
     module list
 
-* The iomkl toolchain provides Intel_compilers_, Intel MKL_, **OpenMPI**.
+* The **intel** toolchain provides Intel_compilers_ (Parallel Studio XE), the Intel MKL_ Math Kernel library, and the Intel_MPI_ message-passing library.
 
   Usage and list of contents::
 
-    module load iomkl
+    module whatis intel
+    module load intel
     module list
 
-In the future there may be several versions of each toolchain, list them like this::
+**WARNING:**
+You **MUST NOT** mix old and new modules! 
+If you get warnings such as::
 
-  module whatis foss
-  module whatis iomkl
+    The following have been reloaded with a version change:
+      1) GCCcore/12.3.0 => GCCcore/14.3.0
+
+then you are mixing toolchains! 
+Strange problems and code crashes are almost guaranteed!
 
 .. _toolchains: https://easybuild.readthedocs.io/en/latest/eb_list_toolchains.html
 .. _Intel_MPI: https://software.intel.com/en-us/mpi-library
