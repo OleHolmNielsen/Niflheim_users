@@ -189,7 +189,6 @@ Huawei Broadwell servers
 .. _Cascade_Lake: https://en.wikipedia.org/wiki/Cascade_Lake_(microarchitecture)
 .. _Skylake: https://en.wikipedia.org/wiki/Skylake_(microarchitecture)
 .. _Broadwell: https://en.wikipedia.org/wiki/Broadwell_%28microarchitecture%29
-.. _GPU: http://en.wikipedia.org/wiki/Graphics_processing_unit
 .. _AVX-512: https://en.wikipedia.org/wiki/AVX-512
 .. _Xeon_Gold_6348: https://www.intel.com/content/www/us/en/products/sku/212456/intel-xeon-gold-6348-processor-42m-cache-2-60-ghz/specifications.html
 .. _Xeon_Gold_5218R: https://ark.intel.com/content/www/us/en/ark/products/199342/intel-xeon-gold-5218r-processor-27-5m-cache-2-10-ghz.html
