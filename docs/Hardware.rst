@@ -9,19 +9,20 @@ Hardware information
 Niflheim overview
 =================
 
-Niflheim currently (as of February 2024) consists of the following hardware:
+Niflheim currently (as of December 2025) consists of the following hardware:
 
-* A total of **700 compute nodes**.
+* A total of **700 compute nodes** and **106 GPU_** Graphical Processing Units.
 * The nodes contain a total of **31000 CPU cores**.
 * Aggregate theoretical peak CPU performance of more than **2255 TeraFLOPS** (TFLOPS_) or **2.2 PetaFLOPS**.
 * Total aggregate RAM memory is 308 TB.
 
+.. _GPU: https://en.wikipedia.org/wiki/Graphics_processing_unit
 .. _TFLOPS: http://en.wikipedia.org/wiki/FLOPS
 
 CPU and GPU architectures
 ===========================
 
-Niflheim comprises several generations of hardware for a total of **700 compute nodes**:
+Niflheim comprises several generations of hardware as described below.
 
 Lenovo AMD EPYC 9474F servers
 ------------------------------
