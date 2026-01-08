@@ -14,7 +14,7 @@ Niflheim currently (as of December 2025) consists of the following hardware:
 * A total of **693 compute nodes**.
 * The nodes contain a total of 31160 CPU_cores_ and **106 Graphical Processing Units** (GPU_).
 * Aggregate theoretical peak CPU performance of more than **2302 TeraFLOPS** (TFLOPS_) or **2.3 PetaFLOPS**.
-* Total aggregate RAM memory is 313 TB.
+* Total aggregate RAM memory is 313 TB_.
 
 .. _CPU_cores: https://en.wikipedia.org/wiki/Multi-core_processor
 .. _GPU: https://en.wikipedia.org/wiki/Graphics_processing_unit
@@ -33,9 +33,9 @@ Lenovo AMD EPYC 9474F servers
 
   Peak speed: 6500 GFLOPS/node, 442 TFLOPS_ in total for all nodes.
 
-  The RAM memory is 768 GB (8.0 GB/core) 4800 MHz DDR5 dual-rank memory, 52.2 TB in total for all nodes.
+  The RAM memory is 768 GB_ (8.0 GB_/core) 4800 MHz DDR5 dual-rank memory, 52.2 TB_ in total for all nodes.
 
-  Each server has a 1.9 TB local NVMe hard disk.
+  Each server has a 1.9 TB_ local NVMe hard disk.
 
   The network interconnect is **100 Gbit/s** water-cooled
   `ThinkSystem NVIDIA ConnectX-7 NDR200 InfiniBand QSFP112 Adapters <https://lenovopress.lenovo.com/lp1693-thinksystem-nvidia-connectx-7-ndr200-infiniband-qsfp112-adapters>`_.
@@ -54,7 +54,7 @@ Lenovo GPU servers with 4xH200 SXM4
 
   The processors are Intel Xeon Gold 6442Y 96 CPU cores (2*24 cores with Hyperthreading_) running at 2.60 GHz Base frequency.
   
-  The RAM memory is 512 GB 5600 MHz DDR5 dual-rank memory per node.
+  The RAM memory is 512 GB_ 5600 MHz DDR5 dual-rank memory per node.
 
   CPU peak speed: 3994 GFLOPS/node.
 
@@ -70,11 +70,11 @@ Lenovo Intel servers with 4 TB RAM memory
 * **4 32-core nodes** Lenovo SR850_V3_ 2U servers.
   The four processors are Intel(R) Xeon(R) Gold 6434H_ running at 3.70 GHz Base frequency (up to 4.10 GHz in Turbo_mode_) and including AVX-512_ vector instructions..
 
-  The RAM memory is 4096 GB (128 GB/core) 4800 MHz DDR5 dual-rank memory, 16 TB in total for all nodes.
+  The RAM memory is 4096 GB_ (128 GB_/core) 4800 MHz DDR5 dual-rank memory, 16 TB_ in total for all nodes.
 
   Peak speed: 3789 GFLOPS/node, 15 TFLOPS_ in total for all nodes.
 
-  Each server has 15 TB local NVMe_ scratch disk (striped over 4 disks of 3.9 TB for performance).
+  Each server has 15 TB_ local NVMe_ scratch disk (striped over 4 disks of 3.9 TB_ for performance).
 
   Installed in **February 2024**.
 
@@ -89,7 +89,7 @@ Lenovo GPU servers with 4xA100 SXM4
 
   The processors are Intel Xeon Platinum 8358_ 2 times 32-core CPUs running at 2.60 GHz Base frequency (up to 3.40 GHz in Turbo_mode_) and including AVX-512_ vector instructions.
   
-  The RAM memory is 512 GB 3200 MHz DDR4 dual-rank memory per node, 2 TB in total for all nodes.
+  The RAM memory is 512 GB_ 3200 MHz DDR4 dual-rank memory per node, 2 TB_ in total for all nodes.
 
   CPU peak speed: 5325 GFLOPS/node, 21 TFLOPS_ in total for all nodes.
 
@@ -105,8 +105,8 @@ Lenovo GPU servers with 4xA100 SXM4
 Dell AMD server with Instinct MI210 GPU
 ----------------------------------------
 
-* **1 GPU node** Dell R7525_ with two AMD Instinct_ MI210_ GPUs with 64 GB HBM2e memory.
-  This node has two AMD EPYC 7313 16-Core Processor and 256 GB RAM memory.
+* **1 GPU node** Dell R7525_ with two AMD Instinct_ MI210_ GPUs with 64 GB_ HBM2e memory.
+  This node has two AMD EPYC 7313 16-Core Processor and 256 GB_ RAM memory.
 
   Installed in **December 2023**.
 
@@ -121,9 +121,9 @@ Dell Ice Lake servers
 
   Peak speed: 4659 GFLOPS/node, 447 TFLOPS_ in total for all nodes.
 
-  The RAM memory is 512 GB (9.14 GB/core) 3200 MHz DDR4 dual-rank memory, 49.1 TB in total for all nodes.
+  The RAM memory is 512 GB_ (9.14 GB_/core) 3200 MHz DDR4 dual-rank memory, 49.1 TB_ in total for all nodes.
 
-  Each server has a 480 GB local SSD hard disk.
+  Each server has a 480 GB_ local SSD hard disk.
 
   The network interconnect is **100 Gbit/s** Cornelis_Networks_ (previously Intel) OmniPath_.
 
@@ -137,11 +137,11 @@ SuperMicro servers
 
   Peak speed: 2688 GFLOPS/node, 21 TFLOPS_ in total for all nodes.
 
-  The RAM memory is 198 GB (4 nodes) and 768 GB (4 nodes), 3.81 TB in total for all nodes.
+  The RAM memory is 198 GB_ (4 nodes) and 768 GB_ (4 nodes), 3.81 TB_ in total for all nodes.
 
   These servers are equipped with Nvidia GPUs.
 
-  Each server has a 960 GB local NVMe hard disk and a 1 Gbit Ethernet.
+  Each server has a 960 GB_ local NVMe hard disk and a 1 Gbit Ethernet.
 
   Installed in **December 2020 and July 2021**.
 
@@ -155,9 +155,9 @@ Dell Cascade Lake Refresh servers
 
   Peak speed: 3968 GFLOPS/node, 508 TFLOPS_ in total for all nodes.
 
-  The RAM memory is 384 GB (9.6 GB/core) 2933 MHz DDR4 dual-rank memory, 49.1 TB in total for all nodes.
+  The RAM memory is 384 GB_ (9.6 GB_/core) 2933 MHz DDR4 dual-rank memory, 49.1 TB_ in total for all nodes.
 
-  Each server has a 240 GB local SSD hard disk.
+  Each server has a 240 GB_ local SSD hard disk.
 
   The network interconnect is **100 Gbit/s** Cornelis_Networks_ (previously Intel) OmniPath_.
 
@@ -172,10 +172,10 @@ Dell Skylake servers
 
   The RAM memory type is 2666 MHz DDR4 dual-rank memory:
 
-  * 196 C6420_ nodes have 384 GB of memory (9.6 GB/core), 75.3 TB in total for all nodes.
-  * 12 R640_ nodes have 768 GB of memory (19.2 GB/core), 9.2 TB in total for all nodes.
+  * 196 C6420_ nodes have 384 GB_ of memory (9.6 GB_/core), 75.3 TB_ in total for all nodes.
+  * 12 R640_ nodes have 768 GB_ of memory (19.2 GB_/core), 9.2 TB_ in total for all nodes.
 
-  Each server has a 240 GB local SSD hard disk.
+  Each server has a 240 GB_ local SSD hard disk.
 
   The network interconnect is **100 Gbit/s** Cornelis_Networks_ (previously Intel) OmniPath_.
 
@@ -191,10 +191,10 @@ Huawei Broadwell servers
 
   The RAM memory type is 2400 MHz DDR4 dual-rank memory:
 
-  * 180 nodes have 256 GB of memory (10.7 GB/core), 46.1 TB in total for all nodes.
-  * 12 nodes have 512 GB of memory (21.3 GB/core), 6.1 TB in total for all nodes.
+  * 180 nodes have 256 GB_ of memory (10.7 GB_/core), 46.1 TB_ in total for all nodes.
+  * 12 nodes have 512 GB_ of memory (21.3 GB_/core), 6.1 TB_ in total for all nodes.
 
-  Each server has a 240 GB local SSD hard disk.
+  Each server has a 240 GB_ local SSD hard disk.
 
   The network interconnect is **100 Gbit/s** Cornelis_Networks_ (previously Intel) OmniPath_.
 
@@ -227,22 +227,26 @@ File servers
 
 Several Linux file servers are available for the departmental user groups.
 Each group is assigned a file-system on one of the existing file servers.
-Depending on disk requirements, group file-systems can be from 1 TB and up.
+Depending on disk requirements, group file-systems can be from 1 TB_ and up.
 
 The file servers are standard Linux servers with large disk arrays, sharing the file-systems using NFS.
 We do not use any parallel file servers (for example, Lustre_ etc.). 
 
 The file server total available disk spaces are:
 
-* Server niflfs1: 108 TB
-* Server niflfs3: 87 TB
-* Server niflfs4: 90 TB
-* Server niflfs5: 90 TB
-* Server niflfs6: 106 TB
-* Server niflfs7: 106 TB
-* Server niflfs8: 163 TB
-* Server niflfs9: 163 TB
+* Server niflfs1: 218 TB_
+* Server niflfs2: 218 TB_
+* Server niflfs3: 218 TB_
+* Server niflfs8: 163 TB_
+* Server niflfs9: 163 TB_
+* Server niflfs10: 163 TB_
+* Server niflfs11: 196 TB_
+* Server niflfs12: 218 TB_
+* Server niflfs13: 218 TB_
 
-A maximum disk capacity of 913 TB disk space is available for user applications.
+A maximum disk capacity of 1.77 PB_ disk space is available for user applications.
 
+.. _GB: https://en.wikipedia.org/wiki/Gigabyte
+.. _TB: https://simple.wikipedia.org/wiki/Terabyte
+.. _PB: https://simple.wikipedia.org/wiki/Petabyte
 .. _Lustre: https://en.wikipedia.org/wiki/Lustre_%28file_system%29
