@@ -11,10 +11,10 @@ Niflheim overview
 
 Niflheim currently (as of December 2025) consists of the following hardware:
 
-* A total of **700 compute nodes**.
-* The nodes contain a total of 31000 CPU_cores_ and **106 Graphical Processing Units** (GPU_).
-* Aggregate theoretical peak CPU performance of more than **2255 TeraFLOPS** (TFLOPS_) or **2.2 PetaFLOPS**.
-* Total aggregate RAM memory is 308 TB.
+* A total of **693 compute nodes**.
+* The nodes contain a total of 31160 CPU_cores_ and **106 Graphical Processing Units** (GPU_).
+* Aggregate theoretical peak CPU performance of more than **2302 TeraFLOPS** (TFLOPS_) or **2.3 PetaFLOPS**.
+* Total aggregate RAM memory is 313 TB.
 
 .. _CPU_cores: https://en.wikipedia.org/wiki/Multi-core_processor
 .. _GPU: https://en.wikipedia.org/wiki/Graphics_processing_unit
@@ -28,7 +28,7 @@ Niflheim comprises several generations of hardware as described below.
 Lenovo AMD EPYC 9474F servers
 ------------------------------
 
-* **68 96-core nodes** Lenovo SD665_V3_ with two AMD EPYC Zen4_ 9474F_ 48-core CPUs (a total of 6528 cores) running at 3.60 GHz Base frequency (up to 4.10 GHz in Boost Clock) and including AVX-512_ vector instructions.
+* **74 96-core nodes** Lenovo SD665_V3_ with two AMD EPYC Zen4_ 9474F_ 48-core CPUs (a total of 6528 cores) running at 3.60 GHz Base frequency (up to 4.10 GHz in Boost Clock) and including AVX-512_ vector instructions.
   The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
 
   Peak speed: 6500 GFLOPS/node, 442 TFLOPS_ in total for all nodes.
@@ -40,12 +40,29 @@ Lenovo AMD EPYC 9474F servers
   The network interconnect is **100 Gbit/s** water-cooled
   `ThinkSystem NVIDIA ConnectX-7 NDR200 InfiniBand QSFP112 Adapters <https://lenovopress.lenovo.com/lp1693-thinksystem-nvidia-connectx-7-ndr200-infiniband-qsfp112-adapters>`_.
 
-  Installed in **February 2024**.
+  Installed in **February 2024, March and December 2025**.
 
 .. _SD665_V3: https://lenovopress.lenovo.com/lp1612-lenovo-thinksystem-sd665-v3-server
 .. _DW612S: https://pubs.lenovo.com/dw612s_neptune_enclosure/
 .. _9474F: https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9474f.html
 .. _Zen4: https://www.amd.com/en/campaigns/epyc-9004-architecture
+
+Lenovo GPU servers with 4xH200 SXM4
+---------------------------------------
+
+* **2 GPU nodes** Lenovo SD650-N_V3_ 1U servers that feature the Intel Xeon family of processors and 4 times NVIDIA HGX H200_ *H200-SXM4-141GB* GPUs and an NVLink_ interconnect. 
+
+  The processors are Intel Xeon Gold 6442Y 96 CPU cores (2*24 cores with Hyperthreading_) running at 2.60 GHz Base frequency.
+  
+  The RAM memory is 512 GB 5600 MHz DDR5 dual-rank memory per node.
+
+  CPU peak speed: 3994 GFLOPS/node.
+
+  The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
+
+  Installed in **July 2025**.
+
+.. _SD650-N_V3: https://lenovopress.lenovo.com/lp1613-thinksystem-sd650-n-v3-server
 
 Lenovo Intel servers with 4 TB RAM memory
 --------------------------------------------
@@ -116,7 +133,7 @@ SuperMicro servers
 ------------------
 
 * **8 40-core nodes** SYS-4029GP-TRT2_ from Nextron/SuperMicro with Intel Xeon_Gold_5218R_ 20-core CPUs @2.10 GHz (a total of 320 cores).
-  Hyperthreading is enabled so that each node has 80 threads or virtual CPUs.
+  Hyperthreading_ is enabled so that each node has 80 threads or virtual CPUs.
 
   Peak speed: 2688 GFLOPS/node, 21 TFLOPS_ in total for all nodes.
 
@@ -129,6 +146,7 @@ SuperMicro servers
   Installed in **December 2020 and July 2021**.
 
 .. _SYS-4029GP-TRT2: https://www.supermicro.com/en/products/system/4U/4029/SYS-4029GP-TRT2.cfm
+.. _Hyperthreading: https://en.wikipedia.org/wiki/Hyper-threading
 
 Dell Cascade Lake Refresh servers
 ---------------------------------
