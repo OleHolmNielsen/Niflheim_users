@@ -64,6 +64,7 @@ Lenovo GPU servers with 4xH200 SXM4
   Installed in **July 2025**.
 
 .. _SD650-N_V3: https://lenovopress.lenovo.com/lp1613-thinksystem-sd650-n-v3-server
+.. _H200: https://www.nvidia.com/en-us/data-center/h200/
 
 Lenovo Intel servers with 4 TB RAM memory
 --------------------------------------------
