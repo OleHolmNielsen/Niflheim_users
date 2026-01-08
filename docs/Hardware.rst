@@ -18,6 +18,7 @@ Niflheim currently (as of December 2025) consists of the following hardware:
 
 .. _CPU_cores: https://en.wikipedia.org/wiki/Multi-core_processor
 .. _GPU: https://en.wikipedia.org/wiki/Graphics_processing_unit
+.. _GFLOPS: http://en.wikipedia.org/wiki/FLOPS
 .. _TFLOPS: http://en.wikipedia.org/wiki/FLOPS
 
 CPU and GPU architectures
@@ -31,7 +32,7 @@ Lenovo AMD EPYC 9474F servers
 * **74 96-core nodes** Lenovo SD665_V3_ with two AMD EPYC Zen4_ 9474F_ 48-core CPUs (a total of 6528 cores) running at 3.60 GHz Base frequency (up to 4.10 GHz in Boost Clock) and including AVX-512_ vector instructions.
   The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
 
-  Peak speed: 6500 GFLOPS/node, 442 TFLOPS_ in total for all nodes.
+  Peak speed: 6500 GFLOPS_/node, 442 TFLOPS_ in total for all nodes.
 
   The RAM memory is 768 GB_ (8.0 GB_/core) 4800 MHz DDR5 dual-rank memory, 52.2 TB_ in total for all nodes.
 
@@ -56,7 +57,7 @@ Lenovo GPU servers with 4xH200 SXM4
   
   The RAM memory is 512 GB_ 5600 MHz DDR5 dual-rank memory per node.
 
-  CPU peak speed: 3994 GFLOPS/node.
+  CPU peak speed: 3994 GFLOPS_/node.
 
   The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
 
@@ -72,7 +73,7 @@ Lenovo Intel servers with 4 TB RAM memory
 
   The RAM memory is 4096 GB_ (128 GB_/core) 4800 MHz DDR5 dual-rank memory, 16 TB_ in total for all nodes.
 
-  Peak speed: 3789 GFLOPS/node, 15 TFLOPS_ in total for all nodes.
+  Peak speed: 3789 GFLOPS_/node, 15 TFLOPS_ in total for all nodes.
 
   Each server has 15 TB_ local NVMe_ scratch disk (striped over 4 disks of 3.9 TB_ for performance).
 
@@ -91,7 +92,7 @@ Lenovo GPU servers with 4xA100 SXM4
   
   The RAM memory is 512 GB_ 3200 MHz DDR4 dual-rank memory per node, 2 TB_ in total for all nodes.
 
-  CPU peak speed: 5325 GFLOPS/node, 21 TFLOPS_ in total for all nodes.
+  CPU peak speed: 5325 GFLOPS_/node, 21 TFLOPS_ in total for all nodes.
 
   The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
 
@@ -119,7 +120,7 @@ Dell Ice Lake servers
 
 * **96 56-core nodes** Dell R650_ with two Intel IceLake_ Xeon_Gold_6348_ 28-core CPUs (a total of 5376 cores) running at 2.60 GHz Base frequency (up to 3.50 GHz in Turbo_mode_) and including AVX-512_ vector instructions.
 
-  Peak speed: 4659 GFLOPS/node, 447 TFLOPS_ in total for all nodes.
+  Peak speed: 4659 GFLOPS_/node, 447 TFLOPS_ in total for all nodes.
 
   The RAM memory is 512 GB_ (9.14 GB_/core) 3200 MHz DDR4 dual-rank memory, 49.1 TB_ in total for all nodes.
 
@@ -135,7 +136,7 @@ SuperMicro servers
 * **8 40-core nodes** SYS-4029GP-TRT2_ from Nextron/SuperMicro with Intel Xeon_Gold_5218R_ 20-core CPUs @2.10 GHz (a total of 320 cores).
   Hyperthreading_ is enabled so that each node has 80 threads or virtual CPUs.
 
-  Peak speed: 2688 GFLOPS/node, 21 TFLOPS_ in total for all nodes.
+  Peak speed: 2688 GFLOPS_/node, 21 TFLOPS_ in total for all nodes.
 
   The RAM memory is 198 GB_ (4 nodes) and 768 GB_ (4 nodes), 3.81 TB_ in total for all nodes.
 
@@ -153,7 +154,7 @@ Dell Cascade Lake Refresh servers
 
 * **128 40-core nodes** Dell R640_ with two Intel Cascade_Lake_ Xeon_Gold_6242R_ 20-core CPUs (a total of 5120 cores) running at 3.10 GHz Base frequency (up to 4.10 GHz in Turbo_mode_) and including AVX-512_ vector instructions.
 
-  Peak speed: 3968 GFLOPS/node, 508 TFLOPS_ in total for all nodes.
+  Peak speed: 3968 GFLOPS_/node, 508 TFLOPS_ in total for all nodes.
 
   The RAM memory is 384 GB_ (9.6 GB_/core) 2933 MHz DDR4 dual-rank memory, 49.1 TB_ in total for all nodes.
 
@@ -168,7 +169,7 @@ Dell Skylake servers
 
 * **208 40-core nodes** Dell C6420_ and R640_ with two Intel Skylake_ Xeon_Gold_6148_ 20-core CPUs (a total of 8320 cores) running at 2.40 GHz Base frequency (up to 3.70 GHz in Turbo_mode_) and including AVX-512_ vector instructions.
 
-  Peak speed: 3072 GFLOPS/node, 639 TFLOPS_ in total for all nodes.
+  Peak speed: 3072 GFLOPS_/node, 639 TFLOPS_ in total for all nodes.
 
   The RAM memory type is 2666 MHz DDR4 dual-rank memory:
 
@@ -187,7 +188,7 @@ Huawei Broadwell servers
 * **192 24-core nodes** `Huawei XH620 v3 <http://e.huawei.com/en/products/cloud-computing-dc/servers/x-series/xh620-v3>`_
   with two Intel Broadwell_ Xeon_E5-2650_v4_ 12-core CPUs (a total of 4608 cores) running at 2.20 GHz (up to 2.90 GHz in Turbo_mode_).
 
-  Peak speed: 845 GFLOPS/node, 162 TFLOPS_ in total for all nodes.
+  Peak speed: 845 GFLOPS_/node, 162 TFLOPS_ in total for all nodes.
 
   The RAM memory type is 2400 MHz DDR4 dual-rank memory:
 
