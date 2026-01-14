@@ -711,9 +711,13 @@ Usage of GPU compute nodes
 Please do not use the GPU partitions unless your group has been authorized to use GPUs.
 The appropriate Login_nodes_ (RockyLinux_ 8) for GPU partitions are:
 
-* Partition ``sm3090``: **thul** (Skylake_ CPU)
+* Partition ``sm3090el8``: **thul** (Skylake_ CPU)
 * Partition ``a100``: **surt** (Ice_Lake_ CPU)
 * Partition ``h200``: **sara** (Sapphire_Rapids_ CPU)
+
+**Notice:** The partition ``sm3090_devel`` is dedicated to software development and testing.
+Please do not use more than 2 GPUs per job.
+**Production jobs** are not permitted in this partition!
 
 The appropriate Login_nodes_ must be used to build software for GPUs, since they have the same CPU architecture as the GPU-nodes.
 GPU-specific software modules will only be provided on GPU-compatible nodes.
