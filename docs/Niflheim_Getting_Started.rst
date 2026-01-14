@@ -151,6 +151,25 @@ Read more about the concept of Disk_quota_.
 The home directory file servers have a **daily backup** of all changed files.
 To request a manual restore of lost files, please send mail to the address in the :ref:`Niflheim_support` page.
 
+Access to directories of other users
+---------------------------------------
+
+According to DTU's IT security policies, user home directories are personal and private,
+and other users are **not permitted** to access in any way the directories of other users,
+even if file permissions would make this technically possible.
+
+We are in the process of implementing home directory access restrictions
+with the goal of disabling access to other users.
+Details of these restrictions will be documented here soon.
+
+Disk quotas
+-------------------
+
+A Disk_quota_ limits the amount of storage space which you can use.
+If you should exceed one of your Disk_quota_ values, the system will send E-mail warnings to you.
+Please clean up files that are no longer needed,
+but if your projects require a higher Disk_quota_ you should contact the :ref:`Niflheim_support`.
+
 You can view your current Disk_quota_ with this command::
 
   quota -s
@@ -715,7 +734,7 @@ The appropriate Login_nodes_ (RockyLinux_ 8) for GPU partitions are:
 * Partition ``a100``: **surt** (Ice_Lake_ CPU)
 * Partition ``h200``: **sara** (Sapphire_Rapids_ CPU)
 
-**Notice:** The partition ``sm3090_devel`` is dedicated to software development and testing.
+**Notice:** The partition ``sm3090_devel`` with only 1 node is dedicated to software development and brief testing of GPU jobs.
 Please do not use more than 2 GPUs per job.
 **Production jobs** are not permitted in this partition!
 
