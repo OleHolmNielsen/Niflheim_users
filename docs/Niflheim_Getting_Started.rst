@@ -155,7 +155,7 @@ Access to directories of other users
 ---------------------------------------
 
 According to DTU's IT security policies, user home directories are personal and private,
-and other users are **not permitted** to access in any way the directories of other users,
+and you are **not permitted** to access in any way the directories of other users,
 even if file permissions would make this technically possible.
 
 We are in the process of implementing home directory access restrictions
