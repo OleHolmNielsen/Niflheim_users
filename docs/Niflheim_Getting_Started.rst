@@ -52,28 +52,28 @@ Niflheim's login nodes are:
 * ``svol.fysik.dtu.dk`` and ``thul.fysik.dtu.dk``:
 
   * Login node for :ref:`compute_node_partitions` ``xeon40el8`` as well as ``sm3090el8`` (RockyLinux_ 8 OS).
-  * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions.
+  * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions, 768 GB of RAM memory.
   * Refer to this as CPU_ARCH= **skylake_el8**.
 
 * ``surt.fysik.dtu.dk``:
 
   * Login node for :ref:`compute_node_partitions` ``xeon56`` and ``a100`` (RockyLinux_ 8 OS).
   * Please build all applications with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
-  * 56 CPU cores (Intel Xeon Gold 6348 CPU @ 2.60GHz Ice_Lake_ with AVX512_ vector instructions), 512 GB of RAM.
+  * 56 CPU cores (Intel Xeon Gold 6348 CPU @ 2.60GHz Ice_Lake_ with AVX512_ vector instructions), 512 GB of RAM memory.
   * Refer to this as CPU_ARCH= **icelake**.
 
 * ``sara.fysik.dtu.dk``:
 
   * Login node for :ref:`compute_node_partitions` ``xeon32_4096`` and ``h200`` (RockyLinux_ 8 OS).
   * Please build all applications with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
-  * 32 CPU cores (Intel(R) Xeon(R) Gold 6430 CPU @ 2.10GHz Sapphire_Rapids_ with AVX512_ vector instructions), 512 GB of RAM.
+  * 32 CPU cores (Intel(R) Xeon(R) Gold 6430 CPU @ 2.10GHz Sapphire_Rapids_ with AVX512_ vector instructions), 512 GB of RAM memory.
   * Refer to this as CPU_ARCH= **sapphirerapids**.
 
 * ``fjorm.fysik.dtu.dk``:
 
   * Login node for :ref:`compute_node_partitions` ``epyc96`` (RockyLinux_ 8 OS).
   * Please build all applications for ``epyc96`` with the latest ``foss`` toolchain (see `Software environment modules`_ below)!
-  * 16 CPU cores (AMD EPYC_ 9124 Genoa_ Zen4_), 384 GB of RAM.
+  * 16 CPU cores (AMD EPYC_ 9124 Genoa_ Zen4_), 384 GB of RAM memory.
     Note that the **epyc96** partition compute nodes have 96 CPU cores.
   * Refer to this as CPU_ARCH= **epyc9004**.
 
