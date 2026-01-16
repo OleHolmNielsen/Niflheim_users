@@ -36,18 +36,20 @@ Please consult the :ref:`Niflheim_Getting_started` page for information about ho
 
 For Niflheim usage statistics please see the monthly `Niflheim accounting reports <https://wiki.fysik.dtu.dk/graphs/accounting_reports.html>`_.
 
-Niflheim: Niflheim setup with EL8 Linux
+Niflheim setup with EL8 Linux
 ---------------------------------------
 
 The current Niflheim setup is based upon:
 
 * RockyLinux_ 8 Linux OS,
-* Slurm batch queue system,
-* Software environment modules.
+* Slurm_ batch queue system,
+* Software_Modules_ environment modules.
 
 Please go the the :ref:`Niflheim_Getting_started` page for more information for users.
 
 .. _RockyLinux: https://rockylinux.org/
+.. _Slurm: https://www.schedmd.com/
+.. _Software_Modules: https://en.wikipedia.org/wiki/Environment_Modules_%28software%29
 
 The name Niflheim
 =================
