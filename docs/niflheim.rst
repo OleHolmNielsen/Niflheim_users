@@ -36,10 +36,10 @@ Please consult the :ref:`Niflheim_Getting_started` page for information about ho
 
 For Niflheim usage statistics please see the monthly `Niflheim accounting reports <https://wiki.fysik.dtu.dk/graphs/accounting_reports.html>`_.
 
-Niflheim setup with EL8 Linux
+Niflheim software stack
 ---------------------------------------
 
-The current Niflheim setup is based upon:
+The Niflheim software stack is based upon:
 
 * RockyLinux_ 8 Linux OS,
 * Slurm_ batch queue system,
