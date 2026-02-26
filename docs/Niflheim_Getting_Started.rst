@@ -19,7 +19,6 @@ Overview of the Niflheim cluster
 
 .. _Linux: https://en.wikipedia.org/wiki/Linux
 .. _RockyLinux: https://rockylinux.org/
-.. _Slurm: https://www.schedmd.com/
 .. _EasyBuild_modules: https://wiki.fysik.dtu.dk/Niflheim_system/EasyBuild_modules/
 .. _accounting_reports: https://wiki.fysik.dtu.dk/graphs/accounting_reports.html
 
@@ -649,6 +648,7 @@ we provide some scratch file spaces at::
 
   /home/scratch3/$USER/         # CAMD, CatTheory, Energy groups
   /home/scratch11/$USER/        # Construct/MEK group
+  /home/scratch12/$USER/        # Energy group
 
 **REMEMBER:** There is **no backup** of files!!
 Lost files cannot be recovered by any means!
