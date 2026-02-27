@@ -8,6 +8,7 @@ This page contains the documentation of Niflheim for end users.
    :caption: Contents:
 
    Niflheim_Getting_Started
+   Acceptable_Use_Policy
    Niflheim_support
    About the Niflheim Linux supercomputer cluster <niflheim>
    Description of the system hardware <Hardware>
