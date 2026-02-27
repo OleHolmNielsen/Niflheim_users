@@ -11,13 +11,16 @@ Version of 30 January 2026
 INTRODUCTION
 ==============
 
-1.1. A company or other external party (in the following referred to as “Facility Use Party”) may, subject to separate agreement, enter into a written facility use agreement with Technical University of Denmark (DTU) regarding the Facility Use Party’s rights and obligations in connection with its use of the Niflheim supercomputer for HPC computer simulations located at  the Center for Atomic-scale Materials Design (CAMD) at DTU, Department of Physics. Such Agreement on Use of Facilities for Computer Simulations on Niflheim HPC Cluster is in the following referred to as the “Niflheim Agreement”.
+1.1. A user of Niflheim (in the following referred to as *Facility Use Party*) has rights and obligations in connection with the use of the Niflheim supercomputer,
+     located at the Center for Atomic-scale Materials Design (CAMD) at DTU, Department of Physics,
+     for HPC computer simulations.
 
-1.2. The use of Niflheim is subject to this Acceptable Use Policy, cf. Section 8.3 of the “Niflheim Agreement”.
+1.2. Violation of this *Acceptable Use Policy* may result in suspension of access, termination or other legal actions as determined solely by DTU.
 
-1.3. Violation of this Acceptable Use Policy may result in suspension of access, termination or other legal actions as set out in the Niflheim Agreement.
+1.3. The use of Niflheim must comply with any other terms or requirements set out in the Niflheim user documentation on this web site,
+     including any security requirements.
 
-1.4. The use of Niflheim must comply with any other terms or requirements set out in the Niflheim Agreement, including security requirements. Reference is also made to DTU’s right to monitor the usage of and access to Niflheim.
+1.4. DTU reserves the right to monitor the usage of and access to Niflheim.
 
 GENERAL FACILITY USE PARTY RESPONSIBILITIES
 ================================================
