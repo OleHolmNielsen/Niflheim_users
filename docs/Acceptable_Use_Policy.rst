@@ -11,14 +11,11 @@ Version of 30 January 2026
 INTRODUCTION
 ==============
 
-1.1 A user of Niflheim (in the following referred to as *Facility Use Party*) has rights and obligations in connection with the use of the Niflheim supercomputer,
-    located at the Center for Atomic-scale Materials Design (CAMD) at DTU, Department of Physics,
-    for HPC computer simulations.
+1.1 A user of Niflheim (in the following referred to as *Facility Use Party*) has rights and obligations in connection with the use of the Niflheim supercomputer, located at the Center for Atomic-scale Materials Design (CAMD) at DTU, Department of Physics, for HPC computer simulations.
 
 1.2 Violation of this *Acceptable Use Policy* may result in suspension of access, termination or other legal actions as determined solely by DTU.
 
-1.3 The use of Niflheim must comply with any other terms or requirements set out in the Niflheim user documentation on this web site,
-    including any security requirements.
+1.3 The use of Niflheim must comply with any other terms or requirements set out in the Niflheim user documentation on this web site, including any security requirements.
 
 1.4 DTU reserves the right to monitor the usage of and access to Niflheim.
 
