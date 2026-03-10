@@ -9,11 +9,11 @@ Hardware information
 Niflheim overview
 =================
 
-Niflheim currently (as of December 2025) consists of the following hardware:
+Niflheim currently (as of March 2026) consists of the following hardware:
 
-* A total of **693 compute nodes**.
+* A total of **698 compute nodes**.
 * The nodes contain a total of 31160 CPU_cores_ and **106 Graphical Processing Units** (GPU_).
-* Aggregate theoretical peak CPU performance of more than **2302 TeraFLOPS** (TFLOPS_) or **2.3 PetaFLOPS** (PFLOPS_).
+* Aggregate theoretical peak CPU performance of more than **2380 TeraFLOPS** (TFLOPS_) or **2.3 PetaFLOPS** (PFLOPS_).
 * Total aggregate RAM memory is 313 TB_.
 
 .. _CPU_cores: https://en.wikipedia.org/wiki/Multi-core_processor
@@ -30,10 +30,10 @@ Niflheim comprises several generations of hardware as described below.
 Lenovo AMD EPYC 9474F servers
 ------------------------------
 
-* **74 96-core nodes** Lenovo SD665_V3_ with two AMD EPYC Zen4_ 9474F_ 48-core CPUs (a total of 6528 cores) running at 3.60 GHz Base frequency (up to 4.10 GHz in Boost Clock) and including AVX-512_ vector instructions.
+* **80 96-core nodes** Lenovo SD665_V3_ with two AMD EPYC Zen4_ 9474F_ 48-core CPUs (a total of 6528 cores) running at 3.60 GHz Base frequency (up to 4.10 GHz in Boost Clock) and including AVX-512_ vector instructions.
   The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
 
-  Peak speed: 6500 GFLOPS_/node, 442 TFLOPS_ in total for all nodes.
+  Peak speed: 6500 GFLOPS_/node, 520 TFLOPS_ in total for all nodes.
 
   The RAM memory is 768 GB_ (8.0 GB_/core) 4800 MHz DDR5 dual-rank memory, 52.2 TB_ in total for all nodes.
 
