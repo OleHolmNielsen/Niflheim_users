@@ -332,7 +332,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - EPYC_ Zen4_ 9474F
     - 96
     - 768 GB
-    - 1.7 GB
+    - 1.7 TB
   * - | sm3090el8
       | sm3090_devel
     - thul
