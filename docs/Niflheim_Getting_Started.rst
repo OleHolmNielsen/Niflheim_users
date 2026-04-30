@@ -140,8 +140,8 @@ This can be necessary if you use commercial MPI libraries which use SSH in stead
 .. _PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/
 .. _MobaXterm: https://mobaxterm.mobatek.net/
 
-Home directory and disk quota
-=============================
+Home directory, disk quota and other file servers
+=================================================
 
 Every user has a personal home directory on one of the Niflheim file servers,
 located in a file system allocated to the research group (for example, ``/home/energy/``).
@@ -162,7 +162,7 @@ with the goal of disabling access to other users.
 Details of these restrictions will be documented here soon.
 
 Disk quotas
--------------------
+-----------
 
 A Disk_quota_ limits the amount of storage space which you can use.
 If you should exceed one of your Disk_quota_ values, the system will send E-mail warnings to you.
@@ -178,6 +178,11 @@ To view file systems mounted on the node (omitting temporary file systems)::
   df -Phx tmpfs
 
 .. _Disk_quota: https://en.wikipedia.org/wiki/Disk_quota
+
+Scratch file servers
+--------------------
+
+Apart from home folders it is also possible to get a folder on a scratch server, e.g. `/home/scratch12/<USER>`. The scratch folders are similar to the home folder ***except*** there is no backup. See more info and examples for how to utilize scratch folder at LINK_TO_SCRATCH_WIKI
 
 .. _binary_compiled_code:
 
