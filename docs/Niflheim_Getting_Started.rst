@@ -182,7 +182,13 @@ To view file systems mounted on the node (omitting temporary file systems)::
 Scratch file servers
 --------------------
 
-Apart from home folders it is also possible to get a folder on a scratch server, e.g. `/home/scratch12/<USER>`. The scratch folders are similar to the home folder ***except*** there is no backup. See more info and examples for how to utilize scratch folder at LINK_TO_SCRATCH_WIKI
+Apart from home folders it is also possible to get a folder on a scratch server, e.g. ``/home/scratch12/<USER>``. The scratch folders are similar to the home folder ***except*** there is no backup. See more info and examples for how to utilize scratch folder at :doc:`Niflheim_scratch_servers`.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   Niflheim_scratch_servers
 
 .. _binary_compiled_code:
 
