@@ -140,8 +140,8 @@ This can be necessary if you use commercial MPI libraries which use SSH in stead
 .. _PuTTY: https://www.chiark.greenend.org.uk/~sgtatham/putty/
 .. _MobaXterm: https://mobaxterm.mobatek.net/
 
-Home directory and disk quota
-=============================
+Home directory, disk quota and other file servers
+=================================================
 
 Every user has a personal home directory on one of the Niflheim file servers,
 located in a file system allocated to the research group (for example, ``/home/energy/``).
@@ -149,6 +149,10 @@ Read more about the concept of Disk_quota_.
 
 The home directory file servers have a **daily backup** of all changed files.
 To request a manual restore of lost files, please send mail to the address in the :ref:`Niflheim_support` page.
+
+It is very important that every user **refrain from overloading the home folder file servers**!
+This may happen when jobs write temporary files to their ``$HOME`` directories on those file servers. See :ref:`compute_node_tmp` for how to avoid this.
+
 
 Access to directories of other users
 ---------------------------------------
@@ -162,7 +166,7 @@ with the goal of disabling access to other users.
 Details of these restrictions will be documented here soon.
 
 Disk quotas
--------------------
+-----------
 
 A Disk_quota_ limits the amount of storage space which you can use.
 If you should exceed one of your Disk_quota_ values, the system will send E-mail warnings to you.
@@ -178,6 +182,17 @@ To view file systems mounted on the node (omitting temporary file systems)::
   df -Phx tmpfs
 
 .. _Disk_quota: https://en.wikipedia.org/wiki/Disk_quota
+
+Scratch file servers
+--------------------
+
+Apart from home folders it is also possible to get a folder on a scratch server, e.g. ``/home/scratch12/<USER>``. The scratch folders are similar to the home folder ***except*** there is no backup. See more info and examples for how to utilize scratch folder at :doc:`Niflheim_scratch_servers`.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   Niflheim_scratch_servers
 
 .. _binary_compiled_code:
 
@@ -396,7 +411,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 * Some partitions are overlapping so that nodes with more memory are also members of the partition with the lower amount of memory.
 
-* The **local node scratch disk space** is **shared** between all Slurm_ jobs currently running on the node, see `Using compute node temporary scratch disk space`_ below.
+* The **local node scratch disk space** is **shared** between all Slurm_ jobs currently running on the node, see :ref:`compute_node_tmp`.
 
 .. _HT: https://en.wikipedia.org/wiki/Hyper-threading
 .. _RTX3090: https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/
@@ -616,45 +631,6 @@ Please note that Job_arrays_ are subject to the same :ref:`User_limits` as ordin
 .. _Job_arrays: https://slurm.schedmd.com/job_array.html
 .. _sbatch_arrays: https://slurm.schedmd.com/sbatch.html#OPT_array
 
-Using compute node temporary scratch disk space
-...............................................
-
-It is very important that every user **refrain from overloading the central file servers**!
-This may happen when jobs write job temporary files to their ``$HOME`` directories on those file servers.
-
-Users are kindly requested to configure job scripts to use the compute nodes' **/tmp** folder for any temporary files in the job.
-This may sometimes be implemented by using this job script command::
-
-  export TMPDIR=/tmp
-
-This ``$TMPDIR`` setting is the default value in many computer codes and may not need to be set explicitly.
-
-Notes:
-
-* On the **login nodes** you **must not** use ``/tmp`` for large files!
-  Please use in stead the local ``/scratch/$USER`` folder.
-
-Technical details:
-
-* Each Slurm_ job automatically allocates a **temporary /tmp** disk space which is private to the job in question.
-* This temporary disk space lives only for the duration of the Slurm_ job, and is automatically deleted when the job terminates.
-* This temporary disk space is actually allocated on the compute node's local ``/scratch`` disk, the size of which is specified above under the *Compute node partitions* section.
-
-Shared scratch disk spaces
-..........................
-
-For those applications which require the medium-term use of scratch files across several different nodes or for subsequent batch jobs,
-we provide some scratch file spaces at::
-
-  /home/scratch3/$USER/         # CAMD, CatTheory, Energy groups
-  /home/scratch11/$USER/        # Construct/MEK group
-  /home/scratch12/$USER/        # Energy group
-
-**REMEMBER:** There is **no backup** of files!!
-Lost files cannot be recovered by any means!
-
-Please remember to clean up scratch files regularly when they are no longer needed.
-
 Viewing completed or failed job information
 --------------------------------------------
 
@@ -705,10 +681,7 @@ and/or use the large scratch disk space.
 Jobs using up to 768 GB of RAM memory should use one of the other `Compute node partitions`_.
 Partial-node jobs are permitted in the ``xeon32_4096`` partition.
 
-The ``xeon32_4096`` nodes are also equipped with a very large (14 TB) and very fast scratch file system.
-Large scratch spaces are typically required by big-memory jobs.
-Slurm_ jobs use the local scratch disk as the job's private ``/tmp`` directory,
-but note that the scratch disk space is shared between all jobs on the node. 
+See :ref:`compute_node_tmp` for details about local scratch disk and ``/tmp`` behavior.
 
 Here are some special instructions for submitting jobs to the ``xeon32_4096`` partition:
 
