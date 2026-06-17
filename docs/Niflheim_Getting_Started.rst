@@ -40,7 +40,8 @@ This rule will ensure that if you build your own compiled code,
 it is going to run only on compatible compute node hardware,
 see :ref:`binary_compiled_code`.
 
-Niflheim's login nodes are:
+Niflheim's login nodes 
+--------------------------
 
 * ``sylg.fysik.dtu.dk``, ``slid.fysik.dtu.dk``, and ``slid2.fysik.dtu.dk``:
  
@@ -76,12 +77,6 @@ Niflheim's login nodes are:
     Note that the **epyc96** partition compute nodes have 96 CPU cores.
   * Refer to this as CPU_ARCH= **epyc9004**.
 
-Note: The login nodes **must not be overloaded** with heavy tasks, since this will disturb other users.
-
-The login nodes ``slid2`` and ``slid`` would be acceptable for more heavy testing of codes,
-but please bear in mind that the login nodes may be shared by many users, and no single user should monopolize any login nodes.
-**Long tasks should always be submitted as batch jobs**.
-
 .. _Hyperthreading: https://en.wikipedia.org/wiki/Hyper-threading
 .. _AVX512: https://en.wikipedia.org/wiki/AVX-512
 .. _MKL: https://en.wikipedia.org/wiki/Math_Kernel_Library
@@ -99,6 +94,19 @@ but please bear in mind that the login nodes may be shared by many users, and no
 .. _NVLink: https://en.wikipedia.org/wiki/NVLink
 .. _A100: https://www.nvidia.com/en-us/data-center/a100/
 .. _H200: https://www.nvidia.com/en-us/data-center/h200/
+
+Notes on the usage of login nodes
+-------------------------------------
+
+* The login nodes are shared by many users, and no single user should monopolize any login nodes and disturb the other users.
+
+* **Long tasks must always be submitted as batch jobs**.
+
+* The standard limit for the total CPU time a user's processes can accumulate is **20 minutes**
+  before the process will be terminated automatically.
+
+* The login nodes ``slid2`` and ``slid`` would be acceptable for longer-running tasks (such as file transfers etc.),
+  and currently no CPU time limit has been set on these nodes.
 
 SSH setup
 ---------
