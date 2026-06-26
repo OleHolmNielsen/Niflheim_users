@@ -360,7 +360,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | sm3090_devel
     - thul
     - | Cascade_Lake_ +
-      | RTX3090_ GPUs
+      | RTX3090_ GPUs (24 GB)
     - | 80
       | (40+ HT_)
     - 192 GB
@@ -368,7 +368,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - sm3090el8_768
     - thul
     - | Cascade_Lake_ +
-      | RTX3090_ GPUs
+      | RTX3090_ GPUs (24 GB)
     - | 80 
       | (40+ HT_)
     - 768 GB
@@ -377,7 +377,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | a100_week
     - surt
     - | Ice_Lake_ +
-      | 4* A100_ GPUs
+      | 4* A100_ GPUs (80 GB)
       | with NVLink_
     - | 128 
       | (64+ HT_) 
@@ -386,7 +386,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - h200
     - sara
     - | Sapphire_Rapids_ +
-      | 4* H200_ GPUs
+      | 4* H200_ GPUs (141 GB)
       | with NVLink_
     - | 96 
       | (48+ HT_) 
