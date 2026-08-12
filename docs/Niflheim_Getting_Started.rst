@@ -58,7 +58,7 @@ Niflheim's login nodes
 * ``vid.fysik.dtu.dk``:
 
   * Login node for :ref:`compute_node_partitions` ``xeon40el9`` as well as ``sm3090el9`` (RockyLinux_ 9 OS).
-  * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions, 768 GB of RAM memory.
+  * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions, 384 GB of RAM memory.
   * Refer to this as CPU_ARCH= **skylake_el9**.
 
 * ``surt.fysik.dtu.dk``:
