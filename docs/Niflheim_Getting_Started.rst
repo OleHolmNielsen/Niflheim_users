@@ -55,6 +55,12 @@ Niflheim's login nodes
   * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions, 768 GB of RAM memory.
   * Refer to this as CPU_ARCH= **skylake_el8**.
 
+* ``vid.fysik.dtu.dk``:
+
+  * Login node for :ref:`compute_node_partitions` ``xeon40el9`` as well as ``sm3090el9`` (RockyLinux_ 9 OS).
+  * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions, 768 GB of RAM memory.
+  * Refer to this as CPU_ARCH= **skylake_el9**.
+
 * ``surt.fysik.dtu.dk``:
 
   * Login node for :ref:`compute_node_partitions` ``xeon56`` and ``a100`` (RockyLinux_ 8 OS).
@@ -336,6 +342,12 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 40
     - 380 GB
     - 140 GB
+  * - xeon40el9
+    - vid
+    - Skylake_, Cascade_Lake_
+    - 40
+    - 380 GB
+    - 140 GB
   * - xeon56
     - surt
     - Ice_Lake_
@@ -401,7 +413,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   Some partitions will accept jobs up to **1 week** (168 hours), please use the ``showpartitions`` command to view all available partitions.
   The ``xeon24el8_test`` partition has a 10 minute time limit and must be used only for development tests.
 
-* Please use **all CPU cores** in the most modern CPU compute nodes (``xeon40el8``, ``xeon56``, and ``epyc96`` partitions),
+* Please use **all CPU cores** in the most modern CPU compute nodes (``xeon40el?``, ``xeon56``, and ``epyc96`` partitions),
   and do not submit jobs to these partitions which only use partial nodes.
 
 * For partial-node jobs (1 to 24 CPU cores) please submit to the ``xeon24el8`` partiton.
@@ -414,7 +426,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 * The RAM memory is slightly less than the physical RAM due to operating system overheads.
 
-* The ``xeon40`` partition consists of both Skylake_ and Cascade_Lake_ CPU types.
+* The ``xeon40*`` partitions consist of both Skylake_ and Cascade_Lake_ CPU types.
   While these CPUs are (almost) binary compatible, the new Cascade_Lake_ CPUs will have a higher performance.
 
 * Some partitions are overlapping so that nodes with more memory are also members of the partition with the lower amount of memory.
