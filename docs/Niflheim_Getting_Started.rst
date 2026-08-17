@@ -324,6 +324,12 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 24
     - 254 GB
     - 140 GB
+  * - xeon40el9
+    - vid
+    - Skylake_, Cascade_Lake_
+    - 40
+    - 380 GB
+    - 140 GB
   * - xeon40el8
     - thul, svol
     - Skylake_, Cascade_Lake_
@@ -339,12 +345,6 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - xeon40el8_clx
     - thul, svol
     - Cascade_Lake_
-    - 40
-    - 380 GB
-    - 140 GB
-  * - xeon40el9
-    - vid
-    - Skylake_, Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
@@ -368,6 +368,14 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 96
     - 768 GB
     - 1.7 TB
+  * - sm3090el9
+    - vid
+    - | Cascade_Lake_ +
+      | RTX3090_ GPUs (24 GB)
+    - | 80 
+      | (40+ HT_)
+    - 768 GB
+    - 800 GB
   * - | sm3090el8
       | sm3090_devel
     - thul
