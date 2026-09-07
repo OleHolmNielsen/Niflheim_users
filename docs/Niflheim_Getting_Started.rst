@@ -179,6 +179,25 @@ We are in the process of implementing home directory access restrictions
 with the goal of disabling access to other users.
 Details of these restrictions will be documented here soon.
 
+Recommendations:
+
+* We **recommend** that you protect your Home_directory_ and also any scratch folders
+  so that users from other *UNIX groups* cannot read your files.
+  This command will make your Home_directory_ inaccessible by other groups::
+
+    chmod 750 $HOME
+
+  Please note that Niflheim has subdivided research sections into different UNIX subgroups,
+  **vip** (staff), **stud** (students), **gst** (guests), and other subgroups.
+
+* You may also restrict your Home_directory_ from all other users by::
+
+    chmod 700 $HOME
+
+Please contact the :ref:`Niflheim_support` if you would like further advice.
+
+.. _Home_directory: https://en.wikipedia.org/wiki/Home_directory
+
 Disk quotas
 -----------
 
