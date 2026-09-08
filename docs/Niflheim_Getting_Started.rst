@@ -61,6 +61,13 @@ Niflheim's login nodes
   * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions, 768 GB of RAM memory.
   * Refer to this as CPU_ARCH= **skylake_el8**.
 
+* ``hrid.fysik.dtu.dk``:
+
+  * Login node for :ref:`compute_node_partitions` ``xeon56el9`` and ``a100el9`` (RockyLinux_ 9 OS).
+  * Please build all applications with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
+  * 56 CPU cores (Intel Xeon Gold 6348 CPU @ 2.60GHz Ice_Lake_ with AVX512_ vector instructions), 512 GB of RAM memory.
+  * Refer to this as CPU_ARCH= **icelake_el9**.
+
 * ``surt.fysik.dtu.dk``:
 
   * Login node for :ref:`compute_node_partitions` ``xeon56`` and ``a100`` (RockyLinux_ 8 OS).
@@ -367,6 +374,12 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 40
     - 380 GB
     - 140 GB
+  * - xeon56el9
+    - hrid
+    - Ice_Lake_
+    - 24
+    - 128 GB
+    - 32 GB
   * - xeon56
     - surt
     - Ice_Lake_
@@ -749,11 +762,13 @@ Usage of GPU compute nodes
 --------------------------
 
 Please do not use the GPU partitions unless your group has been authorized to use GPUs.
-The appropriate Login_nodes_ (RockyLinux_ 8) for GPU partitions are:
+The appropriate Login_nodes_ (RockyLinux_ 8 or 9) for GPU partitions are:
 
-* Partition ``sm3090el8``: **thul** (Skylake_ CPU)
-* Partition ``a100``: **surt** (Ice_Lake_ CPU)
-* Partition ``h200``: **sara** (Sapphire_Rapids_ CPU)
+* Partition ``sm3090el8``: **thul** (EL8 Skylake_ CPU)
+* Partition ``sm3090el9``: **vid** (EL9 Skylake_ CPU)
+* Partition ``a100``: **surt** (EL8 Ice_Lake_ CPU)
+* Partition ``a100el9``: **hrid** (EL9 Ice_Lake_ CPU)
+* Partition ``h200el9``: **sara** (EL9 Sapphire_Rapids_ CPU)
 
 **Notice:** The partition ``sm3090_devel`` with only 1 node is dedicated to software development and brief testing of GPU jobs.
 Please do not use more than 2 GPUs per job.
