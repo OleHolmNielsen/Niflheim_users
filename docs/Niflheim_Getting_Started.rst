@@ -65,7 +65,7 @@ Niflheim's login nodes
 
   * Login node for :ref:`compute_node_partitions` ``xeon56el9`` and ``a100el9`` (RockyLinux_ 9 OS).
   * Please build all applications with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
-  * 56 CPU cores (Intel Xeon Gold 6348 CPU @ 2.60GHz Ice_Lake_ with AVX512_ vector instructions), 512 GB of RAM memory.
+  * 24 CPU cores (Intel Xeon Gold 6348 CPU @ 2.60GHz Ice_Lake_ with AVX512_ vector instructions), 128 GB of RAM memory.
   * Refer to this as CPU_ARCH= **icelake_el9**.
 
 * ``surt.fysik.dtu.dk``:
