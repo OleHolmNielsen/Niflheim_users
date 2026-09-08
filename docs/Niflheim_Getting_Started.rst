@@ -49,17 +49,17 @@ Niflheim's login nodes
   * 24 CPU cores (Intel Xeon CPU E5-2650 v4 @ 2.20GHz Broadwell_), 256 GB of RAM memory.
   * Refer to this as CPU_ARCH= **broadwell_el8**.
 
-* ``svol.fysik.dtu.dk`` and ``thul.fysik.dtu.dk``:
-
-  * Login node for :ref:`compute_node_partitions` ``xeon40el8`` as well as ``sm3090el8`` (RockyLinux_ 8 OS).
-  * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions, 768 GB of RAM memory.
-  * Refer to this as CPU_ARCH= **skylake_el8**.
-
 * ``vid.fysik.dtu.dk``:
 
   * Login node for :ref:`compute_node_partitions` ``xeon40el9`` as well as ``sm3090el9`` (RockyLinux_ 9 OS).
   * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions, 384 GB of RAM memory.
   * Refer to this as CPU_ARCH= **skylake_el9**.
+
+* ``svol.fysik.dtu.dk`` and ``thul.fysik.dtu.dk``:
+
+  * Login node for :ref:`compute_node_partitions` ``xeon40el8`` as well as ``sm3090el8`` (RockyLinux_ 8 OS).
+  * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions, 768 GB of RAM memory.
+  * Refer to this as CPU_ARCH= **skylake_el8**.
 
 * ``surt.fysik.dtu.dk``:
 
