@@ -70,7 +70,7 @@ Niflheim's login nodes
 
 * ``sara.fysik.dtu.dk``:
 
-  * Login node for :ref:`compute_node_partitions` ``xeon32_4096`` and ``h200`` (RockyLinux_ 8 OS).
+  * Login node for :ref:`compute_node_partitions` ``xeon32el9`` and ``h200el9`` (RockyLinux_ 9 OS).
   * Please build all applications with the latest Intel MKL_ math library (see `Software environment modules`_ below)!
   * 32 CPU cores (Intel(R) Xeon(R) Gold 6430 CPU @ 2.10GHz Sapphire_Rapids_ with AVX512_ vector instructions), 512 GB of RAM memory.
   * Refer to this as CPU_ARCH= **sapphirerapids**.
@@ -373,8 +373,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 56
     - 512 GB
     - 293 GB
-  * - | xeon32_4096
-      | xeon32_week
+  * - | xeon32el9_4096
+      | xeon32el9_week
     - sara
     - Sapphire_Rapids_
     - | 32 
