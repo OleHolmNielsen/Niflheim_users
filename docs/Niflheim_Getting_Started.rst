@@ -426,6 +426,16 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | (40+ HT_)
     - 768 GB
     - 800 GB
+  * - | a100el9
+      | a100el9_week
+    - hrid
+    - | Ice_Lake_ +
+      | 4* A100_ GPUs (80 GB)
+      | with NVLink_
+    - | 128 
+      | (64+ HT_) 
+    - 512 GB
+    - 1.7 TB
   * - | a100
       | a100_week
     - surt
