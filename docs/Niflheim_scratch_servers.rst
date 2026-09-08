@@ -41,6 +41,8 @@ Lost files cannot be recovered by any means!
 
 Please remember to clean up scratch files regularly when they are no longer needed.
 
+**Do not** use ``/scratch/<USER>`` on the login nodes as long term storage. Data in those folders can be removed without warning.
+
 
 .. _compute_node_tmp:
 

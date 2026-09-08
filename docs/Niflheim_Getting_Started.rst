@@ -219,6 +219,8 @@ Scratch file servers
 
 Apart from home folders it is also possible to get a folder on a scratch server, e.g. ``/home/scratch12/<USER>``. The scratch folders are similar to the home folder ***except*** there is no backup. See more info and examples for how to utilize scratch folder at :doc:`Niflheim_scratch_servers`.
 
+**Do not** use ``/scratch/<USER>`` on the login nodes as long term storage. Data in those folders can be removed without warning.
+
 .. toctree::
    :hidden:
    :maxdepth: 1
