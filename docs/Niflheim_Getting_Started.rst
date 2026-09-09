@@ -43,7 +43,13 @@ see :ref:`binary_compiled_code`.
 Niflheim's login nodes 
 --------------------------
 
-* ``sylg.fysik.dtu.dk``, ``slid.fysik.dtu.dk``, and ``slid2.fysik.dtu.dk``:
+* ``slid.fysik.dtu.dk``:
+ 
+  * Login node for :ref:`compute_node_partitions` ``xeon24el9`` (RockyLinux_ 9 OS).
+  * 24 CPU cores (Intel Xeon CPU E5-2650 v4 @ 2.20GHz Broadwell_), 256 GB of RAM memory.
+  * Refer to this as CPU_ARCH= **broadwell_el9**.
+
+* ``sylg.fysik.dtu.dk`` and ``slid2.fysik.dtu.dk``:
  
   * Login node for :ref:`compute_node_partitions` ``xeon24el8`` (RockyLinux_ 8 OS).
   * 24 CPU cores (Intel Xeon CPU E5-2650 v4 @ 2.20GHz Broadwell_), 256 GB of RAM memory.
@@ -1063,7 +1069,7 @@ Restrictions on the use of Jupyter Notebook
 Using Jupyter_Notebook_ documents on Niflheim from DTU Physics
 --------------------------------------------------------------
 
-1. Use SSH_ to login to one of the Niflheim Login_nodes_, preferably ``slid.fysik.dtu.dk``.
+1. Use SSH_ to login to one of the Niflheim Login_nodes_, preferably ``svol.fysik.dtu.dk``.
 
 2. Load the relevant module, for example::
 
@@ -1095,7 +1101,7 @@ is running Linux_ or macOS_.
 
 1. Connect to the DTU_VPN_ network (information about DTU_VPN_ is on *DTU Inside*).
    
-2. Use SSH_ to connect to one of the Niflheim Login_nodes_, preferably ``slid.fysik.dtu.dk``.
+2. Use SSH_ to connect to one of the Niflheim Login_nodes_, preferably ``svol.fysik.dtu.dk``.
 
 3. Load the relevant module, for example::
 
@@ -1116,7 +1122,7 @@ is running Linux_ or macOS_.
 
    where:
 
-   * ``xxxx`` is ``slid.fysik.dtu.dk`` or whatever machine you are using,
+   * ``xxxx`` is ``svol.fysik.dtu.dk`` or whatever machine you are using,
    * ``username`` is your DTU username,
    * ``NNNN`` is the port number printed by the notebook command,
      
