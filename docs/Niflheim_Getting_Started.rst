@@ -379,7 +379,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - Ice_Lake_
     - 24
     - 128 GB
-    - 32 GB
+    - 64 GB
   * - xeon56
     - surt
     - Ice_Lake_
@@ -388,6 +388,14 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 293 GB
   * - | xeon32el9_4096
       | xeon32el9_week
+    - sara
+    - Sapphire_Rapids_
+    - | 32 
+      | (4*8 cores)
+    - 4096 GB
+    - 14 TB
+  * - | xeon32_4096
+      | xeon32_week
     - sara
     - Sapphire_Rapids_
     - | 32 
