@@ -41,7 +41,7 @@ Niflheim software stack
 
 The Niflheim software stack is based upon:
 
-* RockyLinux_ 8 Linux OS,
+* RockyLinux_ 8 and 9 Linux OS,
 * Slurm_ batch queue system,
 * Software_Modules_ environment modules.
 
