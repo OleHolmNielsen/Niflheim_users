@@ -347,7 +347,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | memory
     - | **/tmp**
       | disk
-  * - xeon24el9
+  * - | xeon24el9
+      | xeon24el9_test
     - slid
     - Broadwell_
     - 24
