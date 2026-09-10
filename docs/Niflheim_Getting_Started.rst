@@ -390,9 +390,9 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - xeon56el9
     - hrid
     - Ice_Lake_
-    - 24
-    - 128 GB
-    - 64 GB
+    - 56
+    - 512 GB
+    - 293 GB
   * - xeon56
     - surt
     - Ice_Lake_
