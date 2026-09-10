@@ -11,7 +11,7 @@ Overview of the Niflheim cluster
 ====================================
 
 * Compute nodes are described in the :ref:`Hardware` page.
-* RockyLinux_ 8 operating system (Linux_ OS).
+* RockyLinux_ 9 operating system (Linux_ OS). Older RockyLinux_ 8 nodes are being upgraded to 9.
 * Slurm_ batch queueing system.
 * Software_Modules_ using Lmod_ and EasyBuild_modules_.
 * Usage accounting_reports_ (access restricted to the DTU network).
