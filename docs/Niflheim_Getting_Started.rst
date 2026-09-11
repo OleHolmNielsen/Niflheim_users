@@ -343,7 +343,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - OS
     - | **CPU+GPU** 
       | architectures
-    - **CPU** cores
+    - | **CPU**
+      | cores
     - | **RAM**
       | memory
     - | **/tmp**
@@ -413,7 +414,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - EL9
     - Sapphire_Rapids_
     - | 32 
-      | (4*8 cores)
+      | (4*8)
     - 4096 GB
     - 14 TB
   * - | xeon32el9
@@ -422,7 +423,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - EL9
     - Sapphire_Rapids_
     - | 32 
-      | (4*8 cores)
+      | (4*8)
     - 4096 GB
     - 14 TB
   * - epyc96
