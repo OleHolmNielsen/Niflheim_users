@@ -369,14 +369,16 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - xeon40el9
     - vid
     - EL9
-    - Skylake_, Cascade_Lake_
+    - | Skylake_, 
+      | Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
   * - xeon40el8
     - thul, svol
     - EL8
-    - Skylake_, Cascade_Lake_
+    - | Skylake_, 
+      | Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
