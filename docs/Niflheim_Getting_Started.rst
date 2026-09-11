@@ -336,10 +336,11 @@ To display the status of all available Slurm_ partitions use the ``showpartition
 Niflheim contains a number of node partitions with different types of CPU architecture hardware and the corresponding recommended Login_nodes_:
 
 .. list-table::
-  :widths: 2 2 3 2 2 2 
+  :widths: 2 2 1 3 2 2 2 
 
   * - **Partition**
     - Login_nodes_
+    - Rocky OS
     - | **CPU+GPU** 
       | architectures
     - **CPU** cores
@@ -350,6 +351,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | xeon24el9
       | xeon24el9_test
     - slid
+    - EL9
     - Broadwell_
     - 24
     - 254 GB
@@ -357,44 +359,50 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | xeon24el8
       | xeon24el8_test
       | xeon24el8_week
-    - | sylg,
-      | slid2
+    - sylg, slid2
+    - EL8
     - Broadwell_
     - 24
     - 254 GB
     - 140 GB
   * - xeon40el9
     - vid
+    - EL9
     - Skylake_, Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
   * - xeon40el8
     - thul, svol
+    - EL8
     - Skylake_, Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
   * - xeon40el8_768
     - thul, svol
+    - EL8
     - Skylake_
     - 40
     - 760 GB
     - 140 GB
   * - xeon40el8_clx
     - thul, svol
+    - EL8
     - Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
   * - xeon56el9
     - hrid
+    - EL9
     - Ice_Lake_
     - 56
     - 512 GB
     - 293 GB
   * - xeon56
     - surt
+    - EL8
     - Ice_Lake_
     - 56
     - 512 GB
@@ -402,14 +410,16 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | xeon32el9_4096
       | xeon32el9_week
     - sara
+    - EL9
     - Sapphire_Rapids_
     - | 32 
       | (4*8 cores)
     - 4096 GB
     - 14 TB
-  * - | xeon32_4096
-      | xeon32_week
+  * - | xeon32el9
+      | xeon32el9_week
     - sara
+    - EL9
     - Sapphire_Rapids_
     - | 32 
       | (4*8 cores)
@@ -417,6 +427,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 14 TB
   * - epyc96
     - fjorm
+    - EL8
     - EPYC_ Zen4_ 9474F
     - 96
     - 768 GB
@@ -425,6 +436,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | sm3090el9_devel
       | sm3090el9_768
     - vid
+    - EL9
     - | Cascade_Lake_ +
       | RTX3090_ GPUs (24 GB)
     - | 80 
@@ -433,6 +445,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 800 GB
   * - | sm3090el8
     - thul
+    - EL8
     - | Cascade_Lake_ +
       | RTX3090_ GPUs (24 GB)
     - | 80
@@ -441,6 +454,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 800 GB
   * - sm3090el8_768
     - thul
+    - EL8
     - | Cascade_Lake_ +
       | RTX3090_ GPUs (24 GB)
     - | 80 
@@ -450,6 +464,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | a100el9
       | a100el9_week
     - hrid
+    - EL9
     - | Ice_Lake_ +
       | 4* A100_ GPUs (80 GB)
       | with NVLink_
@@ -460,6 +475,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | a100
       | a100_week
     - surt
+    - EL9
     - | Ice_Lake_ +
       | 4* A100_ GPUs (80 GB)
       | with NVLink_
@@ -469,6 +485,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 1.7 TB
   * - h200el9
     - sara
+    - EL9
     - | Sapphire_Rapids_ +
       | 4* H200_ GPUs (141 GB)
       | with NVLink_
