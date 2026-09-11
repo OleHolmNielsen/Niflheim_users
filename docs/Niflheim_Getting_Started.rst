@@ -339,7 +339,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
   :widths: 2 1 1 3 2 2 2 
 
   * - **Partition**
-    - Login_nodes_
+    - | Login
+      | nodes
     - OS
     - | **CPU+GPU** 
       | architectures
