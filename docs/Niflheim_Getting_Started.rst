@@ -340,7 +340,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
   * - **Partition**
     - Login_nodes_
-    - Rocky OS
+    - OS
     - | **CPU+GPU** 
       | architectures
     - **CPU** cores
