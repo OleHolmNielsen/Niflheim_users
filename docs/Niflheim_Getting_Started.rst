@@ -360,7 +360,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | xeon24el8
       | xeon24el8_test
       | xeon24el8_week
-    - sylg, slid2
+    - | sylg, 
+      | slid2
     - EL8
     - Broadwell_
     - 24
@@ -375,7 +376,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 380 GB
     - 140 GB
   * - xeon40el8
-    - thul, svol
+    - | thul, 
+      | svol
     - EL8
     - | Skylake_, 
       | Cascade_Lake_
@@ -383,14 +385,16 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 380 GB
     - 140 GB
   * - xeon40el8_768
-    - thul, svol
+    - | thul, 
+      | svol
     - EL8
     - Skylake_
     - 40
     - 760 GB
     - 140 GB
   * - xeon40el8_clx
-    - thul, svol
+    - | thul, 
+      | svol
     - EL8
     - Cascade_Lake_
     - 40
