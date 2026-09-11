@@ -336,7 +336,7 @@ To display the status of all available Slurm_ partitions use the ``showpartition
 Niflheim contains a number of node partitions with different types of CPU architecture hardware and the corresponding recommended Login_nodes_:
 
 .. list-table::
-  :widths: 2 2 1 3 2 2 2 
+  :widths: 2 1 1 3 2 2 2 
 
   * - **Partition**
     - Login_nodes_
