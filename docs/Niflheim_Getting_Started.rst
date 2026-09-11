@@ -346,8 +346,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | architectures
     - | **CPU**
       | cores
-    - | **RAM**
-      | memory
+    - **RAM**
     - | **/tmp**
       | disk
   * - | xeon24el9
