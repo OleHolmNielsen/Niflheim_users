@@ -431,7 +431,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - epyc96
     - fjorm
     - EL8
-    - EPYC_ Zen4_ 9474F
+    - | EPYC_ Zen4_ 
+      | 9474F
     - 96
     - 768 GB
     - 1.7 TB
