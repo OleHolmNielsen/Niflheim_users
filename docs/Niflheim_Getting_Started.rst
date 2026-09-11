@@ -414,10 +414,10 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 56
     - 512 GB
     - 293 GB
-  * - | xeon32el9_4096
-      | xeon32el9_week
-    - sara
-    - EL9
+  * - | xeon32_4096
+      | xeon32_week
+    - (none)
+    - EL8
     - Sapphire_Rapids_
     - | 32 
       | (4*8)
