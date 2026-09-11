@@ -419,8 +419,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - (none)
     - EL8
     - Sapphire_Rapids_
-    - | 32 
-      | (4*8)
+    - 32 
     - 4096 GB
     - 14 TB
   * - | xeon32el9
@@ -428,15 +427,14 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - sara
     - EL9
     - Sapphire_Rapids_
-    - | 32 
-      | (4*8)
+    - 32 
     - 4096 GB
     - 14 TB
   * - epyc96
     - fjorm
     - EL8
     - | EPYC_ Zen4_ 
-      | 9474F
+      | 9474F_
     - 96
     - 768 GB
     - 1.7 TB
@@ -538,6 +536,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 .. _HT: https://en.wikipedia.org/wiki/Hyper-threading
 .. _RTX3090: https://www.nvidia.com/en-us/geforce/graphics-cards/30-series/rtx-3090-3090ti/
+.. _9474F: https://www.amd.com/en/products/processors/server/epyc/4th-generation-9004-and-8004-series/amd-epyc-9474f.html
 
 Compute nodes and jobs
 ----------------------
