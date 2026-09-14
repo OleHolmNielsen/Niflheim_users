@@ -90,11 +90,11 @@ Niflheim's login nodes
 
 * ``fjorm.fysik.dtu.dk``:
 
-  * Login node for :ref:`compute_node_partitions` ``epyc96`` (RockyLinux_ 8 OS).
-  * Please build all applications for ``epyc96`` with the latest ``foss`` toolchain (see `Software environment modules`_ below)!
+  * Login node for :ref:`compute_node_partitions` ``epyc96`` (RockyLinux_ 9 OS).
+  * Please build all applications for ``epyc96_el9`` with the latest ``foss`` toolchain (see `Software environment modules`_ below)!
   * 16 CPU cores (AMD EPYC_ 9124 Genoa_ Zen4_), 384 GB of RAM memory.
     Note that the **epyc96** partition compute nodes have 96 CPU cores.
-  * Refer to this as CPU_ARCH= **epyc9004**.
+  * Refer to this as CPU_ARCH= **epyc9004_el9**.
 
 .. _Hyperthreading: https://en.wikipedia.org/wiki/Hyper-threading
 .. _AVX512: https://en.wikipedia.org/wiki/AVX-512
@@ -430,8 +430,16 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 32 
     - 4096 GB
     - 14 TB
-  * - epyc96
+  * - epyc96el9
     - fjorm
+    - EL9
+    - | EPYC_ Zen4_ 
+      | 9474F_
+    - 96
+    - 768 GB
+    - 1.7 TB
+  * - epyc96
+    - (none)
     - EL8
     - | EPYC_ Zen4_ 
       | 9474F_
