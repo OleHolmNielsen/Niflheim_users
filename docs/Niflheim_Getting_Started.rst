@@ -447,7 +447,8 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | sm3090el9
       | sm3090el9_devel
       | sm3090el9_768
-    - vid
+    - | vid
+      | thul
     - EL9
     - | Cascade_Lake_ +
       | RTX3090_ GPUs 
