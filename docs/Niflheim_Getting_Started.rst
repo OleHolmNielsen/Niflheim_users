@@ -457,7 +457,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 768 GB
     - 800 GB
   * - | sm3090el8
-    - thul
+    - (none)
     - EL8
     - | Cascade_Lake_ +
       | RTX3090_ GPUs 
@@ -465,16 +465,6 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - | 80
       | (40+ HT_)
     - 192 GB
-    - 800 GB
-  * - sm3090el8_768
-    - thul
-    - EL8
-    - | Cascade_Lake_ +
-      | RTX3090_ GPUs 
-      | (24 GB)
-    - | 80 
-      | (40+ HT_)
-    - 768 GB
     - 800 GB
   * - | a100el9
       | a100el9_week
@@ -831,7 +821,7 @@ Usage of GPU compute nodes
 Please do not use the GPU partitions unless your group has been authorized to use GPUs.
 The appropriate Login_nodes_ (RockyLinux_ 8 or 9) for GPU partitions are:
 
-* Partition ``sm3090el8``: **thul** (EL8 Skylake_ CPU)
+* Partition ``sm3090el8``: (none)
 * Partition ``sm3090el9``: **vid** (EL9 Skylake_ CPU)
 * Partition ``a100``: **surt** (EL8 Ice_Lake_ CPU)
 * Partition ``a100el9``: **hrid** (EL9 Ice_Lake_ CPU)
