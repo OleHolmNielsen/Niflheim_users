@@ -491,7 +491,7 @@ Niflheim contains a number of node partitions with different types of CPU archit
   * - | a100
       | a100_week
     - surt
-    - EL9
+    - EL8
     - | Ice_Lake_ +
       | 4* A100_ GPUs 
       | (80 GB)
