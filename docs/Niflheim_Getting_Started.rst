@@ -55,13 +55,13 @@ Niflheim's login nodes
   * 24 CPU cores (Intel Xeon CPU E5-2650 v4 @ 2.20GHz Broadwell_), 256 GB of RAM memory.
   * Refer to this as CPU_ARCH= **broadwell_el8**.
 
-* ``vid.fysik.dtu.dk``:
+* ``vid.fysik.dtu.dk`` and ``thul.fysik.dtu.dk``:
 
   * Login node for :ref:`compute_node_partitions` ``xeon40el9`` as well as ``sm3090el9`` (RockyLinux_ 9 OS).
   * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions, 384 GB of RAM memory.
   * Refer to this as CPU_ARCH= **skylake_el9**.
 
-* ``svol.fysik.dtu.dk`` and ``thul.fysik.dtu.dk``:
+* ``svol.fysik.dtu.dk``:
 
   * Login node for :ref:`compute_node_partitions` ``xeon40el8`` as well as ``sm3090el8`` (RockyLinux_ 8 OS).
   * Intel Xeon Scalable Gold Skylake_ CPUs with AVX512_ vector instructions, 768 GB of RAM memory.
@@ -351,15 +351,14 @@ Niflheim contains a number of node partitions with different types of CPU archit
       | disk
   * - | xeon24el9
       | xeon24el9_test
+      | xeon24el9_week
     - slid
     - EL9
     - Broadwell_
     - 24
     - 254 GB
     - 140 GB
-  * - | xeon24el8
-      | xeon24el8_test
-      | xeon24el8_week
+  * - xeon24el8
     - | sylg, 
       | slid2
     - EL8
@@ -368,29 +367,29 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 254 GB
     - 140 GB
   * - xeon40el9
-    - vid
+    - | vid
+      | thul
     - EL9
     - | Skylake_, 
       | Cascade_Lake_
     - 40
     - 380 GB
     - 140 GB
+  * - xeon40el9_768
+    - | vid, 
+      | thul
+    - EL9
+    - Skylake_
+    - 40
+    - 760 GB
+    - 140 GB
   * - xeon40el8
-    - | thul, 
-      | svol
+    - svol
     - EL8
     - | Skylake_, 
       | Cascade_Lake_
     - 40
     - 380 GB
-    - 140 GB
-  * - xeon40el8_768
-    - | thul, 
-      | svol
-    - EL8
-    - Skylake_
-    - 40
-    - 760 GB
     - 140 GB
   * - xeon40el8_clx
     - | thul, 
@@ -520,12 +519,12 @@ Niflheim contains a number of node partitions with different types of CPU archit
 
 * The default **maximum time limit** for jobs is **50 hours** in all partitions.
   Some partitions will accept jobs up to **1 week** (168 hours), please use the ``showpartitions`` command to view all available partitions.
-  The ``xeon24el8_test`` partition has a 10 minute time limit and must be used only for development tests.
+  The ``xeon24el9_test`` partition has a 10 minute time limit and must be used only for development tests.
 
 * Please use **all CPU cores** in the most modern CPU compute nodes (``xeon40el?``, ``xeon56``, and ``epyc96`` partitions),
   and do not submit jobs to these partitions which only use partial nodes.
 
-* For partial-node jobs (1 to 24 CPU cores) please submit to the ``xeon24el8`` partiton.
+* For partial-node jobs (1 to 24 CPU cores) please submit to the ``xeon24el9`` partiton.
 
 * Partial node usage, including single-core jobs, are permitted in the ``xeon24`` partition by submitting to 1 and up to 23 cores of a 24-core node.
 
