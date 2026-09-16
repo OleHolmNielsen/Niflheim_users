@@ -358,6 +358,13 @@ Niflheim contains a number of node partitions with different types of CPU archit
     - 24
     - 254 GB
     - 140 GB
+  * - xeon24el9_512
+    - slid
+    - EL9
+    - Broadwell_
+    - 24
+    - 512 GB
+    - 140 GB
   * - xeon24el8
     - | sylg, 
       | slid2
