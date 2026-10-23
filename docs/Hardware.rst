@@ -11,8 +11,8 @@ Niflheim overview
 
 Niflheim currently (as of March 2026) consists of the following hardware:
 
-* A total of **698 compute nodes**.
-* The nodes contain a total of 31160 CPU_cores_ and **106 Graphical Processing Units** (GPU_).
+* A total of **702 compute nodes**.
+* The nodes contain a total of 32152 CPU_cores_ and **110 Graphical Processing Units** (GPU_).
 * Aggregate theoretical peak CPU performance of more than **2380 TeraFLOPS** (TFLOPS_) or **2.3 PetaFLOPS** (PFLOPS_).
 * Total aggregate RAM memory is 313 TB_.
 
