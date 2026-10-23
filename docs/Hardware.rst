@@ -52,7 +52,7 @@ Lenovo AMD EPYC 9474F servers
 Lenovo GPU servers with 4xH200 SXM4
 ---------------------------------------
 
-* **2 GPU nodes** Lenovo SD650-N_V3_ 1U servers that feature the Intel Xeon family of processors and 4 times NVIDIA HGX H200_ *H200-SXM4-141GB* GPUs and an NVLink_ interconnect. 
+* **3 GPU nodes** Lenovo SD650-N_V3_ 1U servers that feature the Intel Xeon family of processors and 4 times NVIDIA HGX H200_ *H200-SXM4-141GB* GPUs and an NVLink_ interconnect. 
 
   The processors are Intel Xeon Gold 6442Y 96 CPU cores (2*24 cores with Hyperthreading_) running at 2.60 GHz Base frequency.
   
@@ -62,7 +62,7 @@ Lenovo GPU servers with 4xH200 SXM4
 
   The Direct Water Cooled servers are mounted in Lenovo *Neptune* DW612S_ chasisses.
 
-  Installed in **July 2025**.
+  Installed in **July 2025** and **October 2026**.
 
 .. _SD650-N_V3: https://lenovopress.lenovo.com/lp1613-thinksystem-sd650-n-v3-server
 .. _H200: https://www.nvidia.com/en-us/data-center/h200/
