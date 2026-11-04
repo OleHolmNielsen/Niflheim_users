@@ -129,7 +129,9 @@ Finally, you can open the specific folder.
 .. warning::
 
    This recipe only partly locks your home folder, as people still have execute access to it.
-   This means that while people cannot run ``ls`` on your home folder, they can read some metadata about files and folders *if they can guess the file names* (you can ``stat`` the file).
+   This means that while people cannot run ``ls`` on your home folder,
+   they can read some metadata about files and folders *if they can guess the file names*
+   (they can ``stat`` the file).
    An AI can make very qualified guesses about file names!
    But only top-level folder names and file names can be verified in this way.
 
@@ -153,7 +155,7 @@ Make sure that any new files/folders created are also locked down by adding a um
 .. code-block:: bash
 
    umask 0027
-   - or -
+   - or in symbolic notation -
    umask u=rwx,g=rx,o=
 
 .. _umask_command: https://en.wikipedia.org/wiki/Umask
