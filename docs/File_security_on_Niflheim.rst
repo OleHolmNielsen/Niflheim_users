@@ -20,7 +20,7 @@ Specific folders can be protected further if desired.
 2. The GROUP model
 -------------------
 
-**People in the same [Unix group](https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html) can read your files**.
+**People in the same** [Unix group](https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html) **can read your files**.
 
 Employees including PhD students are members of a Unix group named ``xxxvip``.
 M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix group, and supervisors (incl Ph.D. students???) are secondary members of that Unix group too.
@@ -42,20 +42,21 @@ It is possible to open folders for access by either your [Unix group](https://do
 Discussion point
 ----------------
 
-What should be the default security model at Niflheim? Individual users can override this if they so desire.
+What should be the default security model at Niflheim?
+Individual users can override this if they so desire.
 
 .. warning::
 
-   Encrypt your real secret files! If somebody gains root access to a desktop that can mount Niflheim folders, they can access your files!
+   Encrypt your files with real secrets! If somebody gains root access to a desktop that can mount Niflheim folders, they can access your files!
 
 .. raw:: pdf
 
    PageBreak
 
-## Technical stuff
+Technical stuff
+==================
 
-
-We recommend **contacting Ole or Steen** to set stuff up as you desire.
+We recommend contacting **Niflheim Support** at <FYS-mail-Niflheim-support@dtu.dk> to set stuff up as you desire.
 Below is the do-it-yourself description.
 
 Implementing the OPEN, GROUP and PARANOID models without exceptions
