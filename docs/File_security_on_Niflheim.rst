@@ -1,3 +1,5 @@
+.. _File_security:
+
 =========================
 File security on Niflheim
 =========================
@@ -5,12 +7,18 @@ File security on Niflheim
 Overview
 ===========
 
-In light of the possibilities to use AI for automated espionage/snooping we need to consider the amount of openness on Niflheim.
+According to DTU's IT security policies, user home directories are personal and private,
+and you are **not permitted** to access in any way the directories of other users,
+even if file permissions would make this technically possible.
+
+In light of the possibilities to use AI for automated espionage/snooping we need to reconsider the amount of openness on Niflheim.
 Three models of file security can fairly easily be implemented as discussed below.
 
 On Niflheim we recommend model **2. The GROUP model** as a convenient compromise between security and ease of use.
 However, each research section should decide which model is appropriate for them in view of the sensitivity of their data,
 and the section leader should take responsibility for the decision.
+
+Please contact the :ref:`Niflheim_support` if you would like further advice.
 
 1. The OPEN model (the current default)
 ----------------------------------------
@@ -67,7 +75,7 @@ Individual users can override this if they so desire.
 Technical stuff
 ==================
 
-We recommend contacting **Niflheim Support** at <FYS-mail-Niflheim-support@dtu.dk> to set stuff up as you desire.
+We recommend contacting :ref:`Niflheim_support` to set stuff up as you desire.
 Below is the do-it-yourself description.
 
 Implementing the OPEN, GROUP and PARANOID models without exceptions
@@ -150,7 +158,7 @@ Make sure that any new files/folders created are also locked down by adding a um
 
 .. _umask_command: https://en.wikipedia.org/wiki/Umask
 
-Now you need to open your folder (in this example named ``shared``) with the desired permissions.
+Now you need to open your folder (in this example named ``shared``) with the desired permissions:
 
 - To make the folder readable by **members of the group** ``xxxstud`` it must be assigned to that group,
   and the setgid_bit_ must be set so files in the folder are also assigned to the group:
