@@ -1,3 +1,4 @@
+=========================
 File security on Niflheim
 =========================
 
@@ -23,10 +24,10 @@ Specific folders can be protected further if desired.
 **People in the same** Unix_group_ **as yourself can read your files**.
 You can view your own ``userid`` (uid), ``groupid`` (gid) and Unix_group_ memberships with the ``id`` command.
 
-Employees (including PhD students) are members of a Unix_group_ named ``xxxvip`` on Niflheim
-(the ``xxx`` refers to your research section).
+Employees (including PhD students) are members of a Unix_group_ named ``xxxvip`` on Niflheim.
 M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix_group_,
 and supervisors (including Ph.D. students???) are secondary members of that Unix_group_ too.
+Here ``xxx`` refers to your research section.
 
 Within this model:
 
@@ -47,7 +48,7 @@ Within this model:
 Special access in the GROUP and PARANOID models
 -----------------------------------------------
 
-It is possible to open folders for access by either your Unix_group_ or everyone.
+It is possible to open `specific folders` for access by either your Unix_group_ or everyone.
 
 Discussion point
 ----------------
