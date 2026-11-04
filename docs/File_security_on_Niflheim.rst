@@ -127,7 +127,8 @@ Finally, you can open the specific folder.
 
    PLEASE NOTE: If this is not acceptable, the only solution is to store the shared folder on a separate file system from your home folder.
 
-Make your home folder **readable but not listable** for users outside ``xxxvip``:
+Make your home folder **accessible but not listable** (i.e., contents cannot be seen)
+for users outside ``xxxvip``:
 
 .. code-block:: bash
 
@@ -149,7 +150,7 @@ Make sure that any new files/folders created are also locked down by adding a um
 
 .. _umask_command: https://en.wikipedia.org/wiki/Umask
 
-Now you need to open your folder (here named ``shared``) with the desired permissions.
+Now you need to open your folder (in this example named ``shared``) with the desired permissions.
 
 - To make the folder readable by **members of the group** ``xxxstud`` it must be assigned to that group,
   and the [setgid bit](https://en.wikipedia.org/wiki/Setuid) must be set so files in the folder are also assigned to the group:
