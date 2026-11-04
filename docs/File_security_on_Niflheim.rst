@@ -1,27 +1,43 @@
 File security on Niflheim
 =========================
 
-In light of the possibilities to use AI for automated espionage/snooping we need to consider the amount of openness on Niflheim. Three models can easily be implemented.
+In light of the possibilities to use AI for automated espionage/snooping we need to consider the amount of openness on Niflheim.
+Three models of file security can easily be implemented as listed below.
 
-The OPEN model (the current default)
-------------------------------------
+We recommend model 2 **The GROUP model** as a reasonable compromise between security and ease of use.
+However, each research section should decide which model is appropriate for them,
+and the section leader should take responsibility for the decision.
 
-All files are readable by everyone, except for a few sensitive folders where software automatically lock down files. Any user of Niflheim can read your files, as part of a collaboration or with more nefarious purposes. Specific folders can be protected further.
+1. The OPEN model (the current default)
+----------------------------------------
 
-The GROUP model
----------------
+All files are readable by everyone, except for a few sensitive folders where the application software automatically locks down files.
 
-People in the same Unix group can read your files. Employees including PhD students are members of a group named ``xxxvip``. M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` group, and supervisors (incl Ph.D. students???) are secondary members of that group too. Within this model, faculty, postdocs and Ph.D students can read each other's files, and they can read the M.Sc./B.Sc. students' files, but M.Sc./B.Sc. students cannot read the files of the researchers, unless specific folders are opened up.
+**Any user of Niflheim can read your files**,
+as part of a collaboration or with more nefarious purposes.
+Specific folders can be protected further if desired.
 
-The PARANOID model
-------------------
+2. The GROUP model
+-------------------
 
-Nobody can read your files.
+**People in the same [Unix group](https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html) can read your files**.
+
+Employees including PhD students are members of a Unix group named ``xxxvip``.
+M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix group, and supervisors (incl Ph.D. students???) are secondary members of that Unix group too.
+Within this model, faculty, postdocs and Ph.D students can read each others' files,
+and they can read the M.Sc./B.Sc. students' files,
+but M.Sc./B.Sc. students cannot read the files of the researchers,
+unless specific folders are opened up.
+
+3. The PARANOID model
+----------------------
+
+**Noone else can read your files**.
 
 Special access in the GROUP and PARANOID models
 -----------------------------------------------
 
-It is possible to open folders for access by either your group or everyone.
+It is possible to open folders for access by either your [Unix group](https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html) or everyone.
 
 Discussion point
 ----------------
@@ -30,24 +46,26 @@ What should be the default security model at Niflheim? Individual users can over
 
 .. warning::
 
-   Encrypt real secrets! If somebody gains root access to a desktop that can mount Niflheim folders, they can access your files!
+   Encrypt your real secret files! If somebody gains root access to a desktop that can mount Niflheim folders, they can access your files!
 
 .. raw:: pdf
 
    PageBreak
 
-Technical stuff
-===============
+## Technical stuff
 
 
-We recommend contacting Ole or Steen to set stuff up as you desire. Below is the do-it-yourself description.
+We recommend **contacting Ole or Steen** to set stuff up as you desire.
+Below is the do-it-yourself description.
 
 Implementing the OPEN, GROUP and PARANOID models without exceptions
 -------------------------------------------------------------------
 
-This is done by setting the right permissions on your home folder. If you have no open folders, locking down your home folder is sufficient. If you want to open specific subfolders you have to do a bit more, see below.
+This is done by setting the appropriate permissions on your home folder.
+If you have no open folders, locking down your home folder is sufficient.
+If you want to open specific subfolders you have to do a bit more, see below.
 
-You set the right permission of your home folder like this:
+You set the appropriate permission of your home folder like this:
 
 .. code-block:: bash
 
@@ -57,10 +75,17 @@ You set the right permission of your home folder like this:
 
 Note: the ``g`` and/or ``o`` in the permission string sets up permissions for your group and for other users.
 
+Use the [ls command](https://en.wikipedia.org/wiki/Ls) to view your folders:
+
+.. code-block:: bash
+
+   ls -l $HOME
+
 Closing specific folders in the OPEN or GROUP models
 ----------------------------------------------------
 
-You can always close off a folder so it is either only private or only accessible to your group. You do that by
+You can always close off a folder so it is either private-only, or only accessible to your group.
+You do that by:
 
 .. code-block:: bash
 
@@ -76,10 +101,9 @@ If you are in group ``xxxvip`` you may want to make a folder readable for ``xxxs
 
    This recipe only partly locks your home folder, as people still have execute access to it.  This means that while people cannot run ``ls`` on your home folder, they can read some metadata about files and folders *if they can guess the file names* (you can ``stat`` the file).  An AI can make very qualified guesses about file names!  But only top-level folder names and file names can be verified in this way.
 
-   If that is not acceptable, the only solution is to have the shared folder on a separate file system from your home folder.
+   PLEASE NOTE: If that is not acceptable, the only solution is to have the shared folder on a separate file system from your home folder.
 
-
-Make your home folder readable but not listable for people outside ``xxxvip``:
+Make your home folder **readable but not listable** for people outside ``xxxvip``:
 
 .. code-block:: bash
 
@@ -99,16 +123,21 @@ Make sure that any new files/folders created are also locked down by adding this
 
 Now you need to open your folder (here named ``shared``) with the desired permissions.
 
-- To make the folder readable by members of the group ``xxxstud`` it must be assigned to the group and the "setgid bit" must be set so files inside are also assigned to the group:
+- To make the folder readable by **members of the group ``xxxstud``** it must be assigned to the group
+  and the [setgid bit](https://en.wikipedia.org/wiki/Setuid) must be set so files inside are also assigned to the group:
 
   .. code-block:: bash
 
      chgrp -R xxxstud shared
      chmod g=rxs,o= shared
 
-  Files and subfolder created in ``shared`` or copied there with ``cp`` will belong to ``xxxstud``, but files moved there (with ``mv``) need to have their group changed with ``chgrp`` before they are readable by ``xxxstud``.
+  Files and subfolder created in ``shared``, or copied there with ``cp``,
+  will belong to the ``xxxstud`` Unix group,
+  but files `moved` there (with ``mv``) need to have their group changed with ``chgrp`` before they become readable by ``xxxstud``.
 
-- To make a folder, subfolders and files readable by everyone, the folder and all subfolders should have read and execute permissions for everyone, and files should have read permission for everyone:
+- To make a folder, subfolders or files **readable by everyone**,
+  the folder and all subfolders should have read and execute permissions for everyone,
+  and files should have read permission for everyone:
 
   .. code-block:: bash
 
