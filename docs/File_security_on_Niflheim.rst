@@ -21,9 +21,10 @@ Specific folders can be protected further if desired.
 -------------------
 
 **People in the same** Unix_group_ **as yourself can read your files**.
-You can view your own ``userid``, ``groupid`` and Unix_group_ memberships with the ``id`` command.
+You can view your own ``userid`` (uid), ``groupid`` (gid) and Unix_group_ memberships with the ``id`` command.
 
-Employees (including PhD students) are members of a Unix_group_ named ``xxxvip`` on Niflheim.
+Employees (including PhD students) are members of a Unix_group_ named ``xxxvip`` on Niflheim
+(the ``xxx`` refers to your research section).
 M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix_group_,
 and supervisors (including Ph.D. students???) are secondary members of that Unix_group_ too.
 Within this model, faculty, postdocs and Ph.D students can read each others' files,
