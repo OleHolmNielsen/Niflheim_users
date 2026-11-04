@@ -20,14 +20,16 @@ Specific folders can be protected further if desired.
 2. The GROUP model
 -------------------
 
-**People in the same** [Unix group](https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html) **can read your files**.
+**People in the same Unix_group_ can read your files**.
 
-Employees including PhD students are members of a Unix group named ``xxxvip``.
-M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix group, and supervisors (incl Ph.D. students???) are secondary members of that Unix group too.
+Employees including PhD students are members of a Unix_group_ named ``xxxvip``.
+M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix_group_, and supervisors (incl Ph.D. students???) are secondary members of that Unix_group_ too.
 Within this model, faculty, postdocs and Ph.D students can read each others' files,
 and they can read the M.Sc./B.Sc. students' files,
 but M.Sc./B.Sc. students cannot read the files of the researchers,
 unless specific folders are opened up.
+
+.. _Unix_group: https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html
 
 3. The PARANOID model
 ----------------------
@@ -37,7 +39,7 @@ unless specific folders are opened up.
 Special access in the GROUP and PARANOID models
 -----------------------------------------------
 
-It is possible to open folders for access by either your [Unix group](https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html) or everyone.
+It is possible to open folders for access by either your Unix_group_ or everyone.
 
 Discussion point
 ----------------
@@ -76,11 +78,13 @@ You set the appropriate permission of your home folder like this:
 
 Note: the ``g`` and/or ``o`` in the permission string sets up permissions for your group and for other users.
 
-Use the [ls command](https://en.wikipedia.org/wiki/Ls) to view your folders:
+Use the ls_command_ to view your folders:
 
 .. code-block:: bash
 
    ls -l $HOME
+
+.. _ls_command: https://en.wikipedia.org/wiki/Ls
 
 Closing specific folders in the OPEN or GROUP models
 ----------------------------------------------------
@@ -133,7 +137,7 @@ Now you need to open your folder (here named ``shared``) with the desired permis
      chmod g=rxs,o= shared
 
   Files and subfolder created in ``shared``, or copied there with ``cp``,
-  will belong to the ``xxxstud`` Unix group,
+  will belong to the ``xxxstud`` Unix_group_,
   but files `moved` there (with ``mv``) need to have their group changed with ``chgrp`` before they become readable by ``xxxstud``.
 
 - To make a folder, subfolders or files **readable by everyone**,
