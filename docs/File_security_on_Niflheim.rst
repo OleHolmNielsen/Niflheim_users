@@ -153,7 +153,7 @@ Make sure that any new files/folders created are also locked down by adding a um
 Now you need to open your folder (in this example named ``shared``) with the desired permissions.
 
 - To make the folder readable by **members of the group** ``xxxstud`` it must be assigned to that group,
-  and the [setgid bit](https://en.wikipedia.org/wiki/Setuid) must be set so files in the folder are also assigned to the group:
+  and the setgid_bit_ must be set so files in the folder are also assigned to the group:
 
   .. code-block:: bash
 
@@ -174,6 +174,7 @@ Now you need to open your folder (in this example named ``shared``) with the des
      find folder -type f -exec chmod og+r {} +
      find folder -type d -exec chmod og+rx {} +
 
+.. _setgid_bit: https://en.wikipedia.org/wiki/Setuid
 .. _cp_command: https://en.wikipedia.org/wiki/Cp_(Unix)
 .. _mv_command: https://en.wikipedia.org/wiki/Mv_(Unix)
 .. _chgrp_command: https://man7.org/linux/man-pages/man1/chgrp.1.html
