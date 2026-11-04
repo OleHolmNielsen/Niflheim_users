@@ -27,10 +27,15 @@ Employees (including PhD students) are members of a Unix_group_ named ``xxxvip``
 (the ``xxx`` refers to your research section).
 M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix_group_,
 and supervisors (including Ph.D. students???) are secondary members of that Unix_group_ too.
-Within this model, faculty, postdocs and Ph.D students can read each others' files,
-and they can read the M.Sc./B.Sc. students' files,
-but M.Sc./B.Sc. students cannot read the files of the researchers,
-unless specific folders are opened up.
+
+Within this model:
+
+* Faculty, postdocs and Ph.D students can read each others' files.
+
+* They can also read the M.Sc./B.Sc. students' files, provided they are secondary members of the ``xxxstud`` Unix_group_.
+
+* M.Sc./B.Sc. students **cannot** read the files of the researchers,
+  unless the specific folders are opened up.
 
 .. _Unix_group: https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html
 
