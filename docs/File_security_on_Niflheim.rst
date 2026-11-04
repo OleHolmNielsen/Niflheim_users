@@ -20,10 +20,17 @@ Specific folders can be protected further if desired.
 2. The GROUP model
 -------------------
 
-**People in the same** Unix_group_ **can read your files**.
+**People in the same** Unix_group_ **as yourself can read your files**.
+You can view your own Unix_group_ memberships with this command which displays
+your ``userid``, ``groupid`` and Unix_group_ s:
 
-Employees including PhD students are members of a Unix_group_ named ``xxxvip``.
-M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix_group_, and supervisors (incl Ph.D. students???) are secondary members of that Unix_group_ too.
+.. code-block:: bash
+
+   id
+
+Employees (including PhD students) are members of a Unix_group_ named ``xxxvip`` on Niflheim.
+M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix_group_,
+and supervisors (including Ph.D. students???) are secondary members of that Unix_group_ too.
 Within this model, faculty, postdocs and Ph.D students can read each others' files,
 and they can read the M.Sc./B.Sc. students' files,
 but M.Sc./B.Sc. students cannot read the files of the researchers,
