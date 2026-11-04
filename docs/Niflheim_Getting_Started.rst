@@ -188,7 +188,7 @@ According to DTU's IT security policies, user home directories are personal and 
 and you are **not permitted** to access in any way the directories of other users,
 even if file permissions would make this technically possible.
 
-In the page :ref:`File_security_on_Niflheim` we give detailed instructions for protecting your files.
+In the page :ref:`file-security-on-niflheim` we give detailed instructions for protecting your files.
 Please contact the :ref:`Niflheim_support` if you would like further advice.
 
 .. _Home_directory: https://en.wikipedia.org/wiki/Home_directory
