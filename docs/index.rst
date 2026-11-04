@@ -9,6 +9,7 @@ This page contains the documentation of Niflheim for end users.
 
    Niflheim_Getting_Started
    Niflheim_scratch_servers
+   File_security_on_Niflheim
    Acceptable_Use_Policy
    Niflheim_support
    About the Niflheim Linux supercomputer cluster <niflheim>
