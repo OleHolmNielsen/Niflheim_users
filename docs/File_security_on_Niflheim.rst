@@ -20,7 +20,7 @@ Specific folders can be protected further if desired.
 2. The GROUP model
 -------------------
 
-**People in the same Unix_group_ can read your files**.
+**People in the same** Unix_group_ **can read your files**.
 
 Employees including PhD students are members of a Unix_group_ named ``xxxvip``.
 M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix_group_, and supervisors (incl Ph.D. students???) are secondary members of that Unix_group_ too.
