@@ -5,32 +5,31 @@ File security on Niflheim
 In light of the possibilities to use AI for automated espionage/snooping we need to consider the amount of openness on Niflheim.
 Three models of file security can fairly easily be implemented as discussed below.
 
-We recommend model **2. The GROUP model** as a convenient compromise between security and ease of use.
+On Niflheim we recommend model **2. The GROUP model** as a convenient compromise between security and ease of use.
 However, each research section should decide which model is appropriate for them in view of the sensitivity of their data,
 and the section leader should take responsibility for the decision.
 
 1. The OPEN model (the current default)
 ----------------------------------------
 
-All files are readable by everyone, except for a few sensitive folders where the application software by default locks down files.
-
 **Any user of Niflheim can read your files**,
 as part of a collaboration, or with more nefarious purposes.
 Specific folders can be protected further if desired.
+
+All files are readable by everyone, except for a few sensitive folders where the application software by default locks down files.
 
 2. The GROUP model
 -------------------
 
 **People in the same** Unix_group_ **as yourself can read your files**.
 You can view your own ``userid`` (uid), ``groupid`` (gid) and Unix_group_ memberships with the ``id`` command.
-
 Within this model:
 
 * Everyone can read the files of other users in the **same** Unix_group_.
 
-* Faculty, postdocs and Ph.D students are members of a Unix_group_ named ``xxxvip`` and can read the group's files.
+* Faculty, postdocs and Ph.D students are members of a Unix_group_ named ``xxxvip`` and can read this group's files.
 
-  They can also read the M.Sc./B.Sc. students' files, if they are made secondary members of the ``xxxstud`` Unix_group_.
+  They can also read the M.Sc./B.Sc. students' files, if they are made secondary members of (added to) the ``xxxstud`` Unix_group_.
 
 * M.Sc./B.Sc. students **cannot** read the files of the researchers, unless the specific folders are opened up.
 
@@ -46,7 +45,7 @@ In the above ``xxx`` refers to your research section abbreviation.
 Special access in the GROUP and PARANOID models
 -----------------------------------------------
 
-It is possible to open `specific folders` for access by either your Unix_group_ or everyone.
+It is possible to open `specific folders` for access by either your Unix_group_, or by everyone.
 
 Discussion point
 ----------------
@@ -56,7 +55,7 @@ Individual users can override this if they so desire.
 
 .. warning::
 
-   Encrypt your files with real secrets! If somebody gains root access to a desktop that can mount Niflheim folders, they can access your files!
+   Encrypt your files with real secrets! If somebody gains root access to a computer that can mount Niflheim folders, they can access all your files!
 
 .. raw:: pdf
 
@@ -72,16 +71,16 @@ Implementing the OPEN, GROUP and PARANOID models without exceptions
 -------------------------------------------------------------------
 
 This is done by setting the appropriate permissions on your home folder.
-If you have no open folders, locking down your home folder is sufficient.
-If you want to open specific subfolders you have to do a bit more, see below.
+If you do not need to have any open folders, locking down your home folder is sufficient.
+But if you want to open `specific subfolders` you have to do a bit more work, see below.
 
-You set the appropriate permission of your home folder like this:
+Within the above 3 models you set the appropriate permission of your home folder with the chmod_command_:
 
 .. code-block:: bash
 
-   chmod og=rx $HOME     # Open model, permission -rwxr-xr-x
-   chmod g=rx,o= $HOME   # Group model, permission -rwxr-x---
-   chmod og= $HOME       # Paranoid model, permission -rwx------
+   chmod og=rx $HOME     # 1. Open model, permission -rwxr-xr-x
+   chmod g=rx,o= $HOME   # 2. Group model, permission -rwxr-x---
+   chmod og= $HOME       # 3. Paranoid model, permission -rwx------
 
 Note: the ``g`` and/or ``o`` in the permission string sets up permissions for your group and for other users.
 
@@ -91,6 +90,7 @@ Use the ls_command_ to view your folders:
 
    ls -l $HOME
 
+.. _chmod_command: https://en.wikipedia.org/wiki/Chmod
 .. _ls_command: https://en.wikipedia.org/wiki/Ls
 
 Closing specific folders in the OPEN or GROUP models
