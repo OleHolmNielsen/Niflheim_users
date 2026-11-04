@@ -3,10 +3,10 @@ File security on Niflheim
 =========================
 
 In light of the possibilities to use AI for automated espionage/snooping we need to consider the amount of openness on Niflheim.
-Three models of file security can fairly easily be implemented as listed below.
+Three models of file security can fairly easily be implemented as discussed below.
 
-We recommend model 2 **The GROUP model** as a reasonable compromise between security and ease of use.
-However, each research section should decide which model is appropriate for them,
+We recommend model **2. The GROUP model** as a convenient compromise between security and ease of use.
+However, each research section should decide which model is appropriate for them in view of the sensitivity of their data,
 and the section leader should take responsibility for the decision.
 
 1. The OPEN model (the current default)
@@ -24,18 +24,13 @@ Specific folders can be protected further if desired.
 **People in the same** Unix_group_ **as yourself can read your files**.
 You can view your own ``userid`` (uid), ``groupid`` (gid) and Unix_group_ memberships with the ``id`` command.
 
-Employees (including PhD students) are members of a Unix_group_ named ``xxxvip`` on Niflheim.
-M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix_group_,
-and supervisors (including Ph.D. students???) are secondary members of that Unix_group_ too.
-Here ``xxx`` refers to your research section.
-
 Within this model:
 
 * Everyone can read the files of other users in the **same** Unix_group_.
 
 * Faculty, postdocs and Ph.D students are members of a Unix_group_ named ``xxxvip`` and can read the group's files.
 
-  They can also read the M.Sc./B.Sc. students' files, if they are secondary members of the ``xxxstud`` Unix_group_.
+  They can also read the M.Sc./B.Sc. students' files, if they are made secondary members of the ``xxxstud`` Unix_group_.
 
 * M.Sc./B.Sc. students **cannot** read the files of the researchers, unless the specific folders are opened up.
 
