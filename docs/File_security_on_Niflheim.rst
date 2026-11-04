@@ -55,7 +55,7 @@ Individual users can override this if they so desire.
 
 .. warning::
 
-   Encrypt your files with real secrets! If somebody gains root access to a computer that can mount Niflheim folders, they can access all your files!
+   Encrypt any files containing **real secrets**! If somebody gains root access to a computer that can mount Niflheim folders, they can access all your files!
 
 .. raw:: pdf
 
@@ -107,15 +107,24 @@ You do that by:
 Giving students access in the GROUP model
 -----------------------------------------
 
-If you are in group ``xxxvip`` you may want to make a folder readable for ``xxxstud``. First you need to give execute access but no read access to your home folder, then people can access a file or folder *if they know its name AND have permissions to the file/folder*, but they cannot list your file names. Then you lock down all subfolders and files in your home folder.  Finally, you can open the specific folder.
+If you are in group ``xxxvip`` you may want to make a `specific folder` readable by the Unix_group_ ``xxxstud``.
+
+First you need to give `execute access` but `no read access` to your home folder,
+and then people can access a file or folder *if they know its name AND have permissions to the file/folder*,
+but they cannot list your file names.
+Then you lock down all subfolders and files in your home folder. 
+Finally, you can open the specific folder.
 
 .. warning::
 
-   This recipe only partly locks your home folder, as people still have execute access to it.  This means that while people cannot run ``ls`` on your home folder, they can read some metadata about files and folders *if they can guess the file names* (you can ``stat`` the file).  An AI can make very qualified guesses about file names!  But only top-level folder names and file names can be verified in this way.
+   This recipe only partly locks your home folder, as people still have execute access to it.
+   This means that while people cannot run ``ls`` on your home folder, they can read some metadata about files and folders *if they can guess the file names* (you can ``stat`` the file).
+   An AI can make very qualified guesses about file names!
+   But only top-level folder names and file names can be verified in this way.
 
-   PLEASE NOTE: If that is not acceptable, the only solution is to have the shared folder on a separate file system from your home folder.
+   PLEASE NOTE: If this is not acceptable, the only solution is to store the shared folder on a separate file system from your home folder.
 
-Make your home folder **readable but not listable** for people outside ``xxxvip``:
+Make your home folder **readable but not listable** for users outside ``xxxvip``:
 
 .. code-block:: bash
 
@@ -127,29 +136,33 @@ Lock down all files and folders in your home folder:
 
    chmod o= $HOME/* $HOME/.??*
 
-Make sure that any new files/folders created are also locked down by adding this line to your ``.bashrc`` file:
+Make sure that any new files/folders created are also locked down by adding a umask_command_ line to your ``.bashrc`` file:
 
 .. code-block:: bash
 
-   umask 0027   # Alternative syntax: umask u=rwx,g=rx,o=
+   umask 0027
+   - or -
+   umask u=rwx,g=rx,o=
+
+.. _umask_command: https://en.wikipedia.org/wiki/Umask
 
 Now you need to open your folder (here named ``shared``) with the desired permissions.
 
-- To make the folder readable by **members of the group ``xxxstud``** it must be assigned to the group
-  and the [setgid bit](https://en.wikipedia.org/wiki/Setuid) must be set so files inside are also assigned to the group:
+- To make the folder readable by **members of the group** ``xxxstud`` it must be assigned to that group,
+  and the [setgid bit](https://en.wikipedia.org/wiki/Setuid) must be set so files in the folder are also assigned to the group:
 
   .. code-block:: bash
 
      chgrp -R xxxstud shared
      chmod g=rxs,o= shared
 
-  Files and subfolder created in ``shared``, or copied there with ``cp``,
+  Files and subfolders created in ``shared``, or copied there with the cp_command_,
   will belong to the ``xxxstud`` Unix_group_,
-  but files `moved` there (with ``mv``) need to have their group changed with ``chgrp`` before they become readable by ``xxxstud``.
+  but files `moved` there (with the mv_command_) need to have their group changed with the chgrp_command_ before they become readable by ``xxxstud``.
 
 - To make a folder, subfolders or files **readable by everyone**,
-  the folder and all subfolders should have read and execute permissions for everyone,
-  and files should have read permission for everyone:
+  the folder and all its subfolders should be given read and execute permissions for everyone,
+  and all files should be given read permission for everyone by using the find_command_:
 
   .. code-block:: bash
 
@@ -157,3 +170,7 @@ Now you need to open your folder (here named ``shared``) with the desired permis
      find folder -type f -exec chmod og+r {} +
      find folder -type d -exec chmod og+rx {} +
 
+.. _cp_command: https://en.wikipedia.org/wiki/Cp_(Unix)
+.. _mv_command: https://en.wikipedia.org/wiki/Mv_(Unix)
+.. _chgrp_command: https://man7.org/linux/man-pages/man1/chgrp.1.html
+.. _find_command: https://man7.org/linux/man-pages/man1/find.1.html
