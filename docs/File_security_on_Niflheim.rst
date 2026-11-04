@@ -155,7 +155,7 @@ Make sure that any new files/folders created are also locked down by adding a um
 .. code-block:: bash
 
    umask 0027
-   - or in symbolic notation -
+   - or using symbolic notation -
    umask u=rwx,g=rx,o=
 
 .. _umask_command: https://en.wikipedia.org/wiki/Umask
