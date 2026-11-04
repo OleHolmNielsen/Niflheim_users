@@ -21,12 +21,7 @@ Specific folders can be protected further if desired.
 -------------------
 
 **People in the same** Unix_group_ **as yourself can read your files**.
-You can view your own Unix_group_ memberships with this command which displays
-your ``userid``, ``groupid`` and Unix_group_ s:
-
-.. code-block:: bash
-
-   id
+You can view your own ``userid``, ``groupid`` and Unix_group_ memberships with the ``id`` command.
 
 Employees (including PhD students) are members of a Unix_group_ named ``xxxvip`` on Niflheim.
 M.Sc. and B.Sc. students are member of the corresponding ``xxxstud`` Unix_group_,
