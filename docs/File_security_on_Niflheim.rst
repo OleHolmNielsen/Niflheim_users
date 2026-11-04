@@ -3,7 +3,7 @@ File security on Niflheim
 =========================
 
 In light of the possibilities to use AI for automated espionage/snooping we need to consider the amount of openness on Niflheim.
-Three models of file security can easily be implemented as listed below.
+Three models of file security can fairly easily be implemented as listed below.
 
 We recommend model 2 **The GROUP model** as a reasonable compromise between security and ease of use.
 However, each research section should decide which model is appropriate for them,
@@ -12,10 +12,10 @@ and the section leader should take responsibility for the decision.
 1. The OPEN model (the current default)
 ----------------------------------------
 
-All files are readable by everyone, except for a few sensitive folders where the application software automatically locks down files.
+All files are readable by everyone, except for a few sensitive folders where the application software by default locks down files.
 
 **Any user of Niflheim can read your files**,
-as part of a collaboration or with more nefarious purposes.
+as part of a collaboration, or with more nefarious purposes.
 Specific folders can be protected further if desired.
 
 2. The GROUP model
@@ -31,12 +31,15 @@ Here ``xxx`` refers to your research section.
 
 Within this model:
 
-* Faculty, postdocs and Ph.D students can read each others' files.
+* Everyone can read the files of other users in the **same** Unix_group_.
 
-* They can also read the M.Sc./B.Sc. students' files, provided they are secondary members of the ``xxxstud`` Unix_group_.
+* Faculty, postdocs and Ph.D students are members of a Unix_group_ named ``xxxvip`` and can read the group's files.
 
-* M.Sc./B.Sc. students **cannot** read the files of the researchers,
-  unless the specific folders are opened up.
+  They can also read the M.Sc./B.Sc. students' files, if they are secondary members of the ``xxxstud`` Unix_group_.
+
+* M.Sc./B.Sc. students **cannot** read the files of the researchers, unless the specific folders are opened up.
+
+In the above ``xxx`` refers to your research section abbreviation.
 
 .. _Unix_group: https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html
 
