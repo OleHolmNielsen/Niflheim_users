@@ -2,6 +2,9 @@
 File security on Niflheim
 =========================
 
+Overview
+===========
+
 In light of the possibilities to use AI for automated espionage/snooping we need to consider the amount of openness on Niflheim.
 Three models of file security can fairly easily be implemented as discussed below.
 
