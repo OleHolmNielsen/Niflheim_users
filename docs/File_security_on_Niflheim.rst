@@ -7,9 +7,10 @@ File security on Niflheim
 Overview
 ===========
 
-According to DTU's IT security policies, user home directories are personal and private,
+According to DTU's `IT security`_ policies, user home directories are personal and private,
 and you are **not permitted** to access in any way the directories of other users,
-even if file permissions would make this technically possible.
+even if file permissions would make this technically possible,
+except by explicit agreement.
 
 In light of the possibilities to use AI for automated espionage/snooping we need to reconsider the amount of openness on Niflheim.
 Three models of file security can fairly easily be implemented as discussed below.
@@ -20,8 +21,10 @@ and the section leader should take responsibility for the decision.
 
 Please contact the :ref:`Niflheim_support` if you would like further advice.
 
-1. The OPEN model (the current default)
-----------------------------------------
+.. _`IT security`: https://www.inside.dtu.dk/informationshaandtering/informationssikkerhed
+
+1. The OPEN model (the current default - not recommended))
+-----------------------------------------------------------------
 
 **Any user of Niflheim can read your files**,
 as part of a collaboration, or with more nefarious purposes.
@@ -32,53 +35,51 @@ All files are readable by everyone, except for a few sensitive folders where the
 2. The GROUP model
 -------------------
 
-**People in the same** Unix_group_ **as yourself can read your files**.
-You can view your own ``userid`` (uid), ``groupid`` (gid) and Unix_group_ memberships with the ``id`` command.
+**People in the same** `Unix group`_ **as yourself can read your files**.
+You can view your own ``userid`` (uid), ``groupid`` (gid) and `Unix group`_ memberships with the ``id`` command.
 Within this model:
 
-* Everyone can read the files of other users in the **same** Unix_group_.
+* Everyone can read the files of other users in the **same** `Unix group`_.
 
-* Faculty, postdocs and Ph.D students are members of a Unix_group_ named ``xxxvip`` and can read this group's files.
+* Faculty, postdocs and Ph.D students are members of a `Unix group`_ named ``xxxvip`` and can read this group's files.
 
-  They can also read the M.Sc./B.Sc. students' files, if they are made secondary members of (added to) the ``xxxstud`` Unix_group_.
+  They can also read the M.Sc./B.Sc. students' files, if they are made secondary members of (added to) the ``xxxstud`` `Unix group`_.
 
 * M.Sc./B.Sc. students **cannot** read the files of the researchers, unless the specific folders are opened up.
 
+* Selected folders can be protected further if desired.
+
 In the above ``xxx`` refers to your research section abbreviation.
 
-.. _Unix_group: https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html
+.. _`Unix group`: https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html
 
-3. The PARANOID model
+3. The PRIVATE model
 ----------------------
 
 **Noone else can read your files**.
 
-Special access in the GROUP and PARANOID models
+Special access in the GROUP and PRIVATE models
 -----------------------------------------------
 
-It is possible to open `specific folders` for access by either your Unix_group_, or by everyone.
-
-Discussion point
-----------------
-
-What should be the default security model at Niflheim?
-Individual users can override this if they so desire.
+It is possible to open `specific folders` for access by either your `Unix group`_, or by everyone.
 
 .. warning::
 
    Encrypt any files containing **real secrets**! If somebody gains root access to a computer that can mount Niflheim folders, they can access all your files!
 
+To Do: Provice examples on how to encrypt folders.
+
 .. raw:: pdf
 
    PageBreak
 
-Technical stuff
+Technical details
 ==================
 
-We recommend contacting :ref:`Niflheim_support` to set stuff up as you desire.
+We recommend contacting :ref:`Niflheim_support` to set data access up as you desire.
 Below is the do-it-yourself description.
 
-Implementing the OPEN, GROUP and PARANOID models without exceptions
+Implementing the OPEN, GROUP and PRIVATE models without exceptions
 -------------------------------------------------------------------
 
 This is done by setting the appropriate permissions on your home folder.
@@ -99,7 +100,7 @@ Use the ls_command_ to view your folders:
 
 .. code-block:: bash
 
-   ls -l $HOME
+   ls -ld $HOME
 
 .. _chmod_command: https://en.wikipedia.org/wiki/Chmod
 .. _ls_command: https://en.wikipedia.org/wiki/Ls
@@ -118,7 +119,7 @@ You do that by:
 Giving students access in the GROUP model
 -----------------------------------------
 
-If you are in group ``xxxvip`` you may want to make a `specific folder` readable by the Unix_group_ ``xxxstud``.
+If you are in group ``xxxvip`` you may want to make a `specific folder` readable by the `Unix group`_ ``xxxstud``.
 
 First you need to give `execute access` but `no read access` to your home folder,
 and then people can access a file or folder *if they know its name AND have permissions to the file/folder*,
@@ -155,7 +156,7 @@ Make sure that any new files/folders created are also locked down by adding a um
 .. code-block:: bash
 
    umask 0027
-   - or using symbolic notation -
+   # or using symbolic notation:
    umask u=rwx,g=rx,o=
 
 .. _umask_command: https://en.wikipedia.org/wiki/Umask
@@ -163,20 +164,20 @@ Make sure that any new files/folders created are also locked down by adding a um
 Now you need to open your folder (in this example named ``shared``) with the desired permissions:
 
 - To make the folder readable by **members of the group** ``xxxstud`` it must be assigned to that group,
-  and the setgid_bit_ must be set so files in the folder are also assigned to the group:
+  and the `setgid bit`_ must be set so files in the folder are also assigned to the group:
 
   .. code-block:: bash
 
      chgrp -R xxxstud shared
      chmod g=rxs,o= shared
 
-  Files and subfolders created in ``shared``, or copied there with the cp_command_,
-  will belong to the ``xxxstud`` Unix_group_,
-  but files `moved` there (with the mv_command_) need to have their group changed with the chgrp_command_ before they become readable by ``xxxstud``.
+  Files and subfolders created in ``shared``, or copied there with the `cp command`_,
+  will belong to the ``xxxstud`` `Unix group`_,
+  but files `moved` there (with the `mv command`_) need to have their group changed with the `chgrp command`_ before they become readable by ``xxxstud``.
 
 - To make a folder, subfolders or files **readable by everyone**,
   the folder and all its subfolders should be given read and execute permissions for everyone,
-  and all files should be given read permission for everyone by using the find_command_:
+  and all files should be given read permission for everyone by using the `find command`_:
 
   .. code-block:: bash
 
@@ -184,8 +185,8 @@ Now you need to open your folder (in this example named ``shared``) with the des
      find folder -type f -exec chmod og+r {} +
      find folder -type d -exec chmod og+rx {} +
 
-.. _setgid_bit: https://en.wikipedia.org/wiki/Setuid
-.. _cp_command: https://en.wikipedia.org/wiki/Cp_(Unix)
-.. _mv_command: https://en.wikipedia.org/wiki/Mv_(Unix)
-.. _chgrp_command: https://man7.org/linux/man-pages/man1/chgrp.1.html
-.. _find_command: https://man7.org/linux/man-pages/man1/find.1.html
+.. _`setgid_bit`: https://en.wikipedia.org/wiki/Setuid
+.. _`cp_command`: https://en.wikipedia.org/wiki/Cp_(Unix)
+.. _`mv_command`: https://en.wikipedia.org/wiki/Mv_(Unix)
+.. _`chgrp_command`: https://man7.org/linux/man-pages/man1/chgrp.1.html
+.. _`find_command`: https://man7.org/linux/man-pages/man1/find.1.html
