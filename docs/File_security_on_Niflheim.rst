@@ -7,7 +7,7 @@ File security on Niflheim
 Overview
 ===========
 
-According to DTU's `IT security`_ policies, user home directories are personal and private,
+According to DTU's `IT security`_ policies *Appendix B*, user home directories are personal and private,
 and you are **not permitted** to access in any way the directories of other users,
 even if file permissions would make this technically possible,
 except by explicit agreement.
