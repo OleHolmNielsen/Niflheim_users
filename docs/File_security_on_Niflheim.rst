@@ -21,7 +21,7 @@ and the section leader should take responsibility for the decision.
 
 Please contact the :ref:`Niflheim_support` if you would like further advice.
 
-.. _`IT security`: https://www.inside.dtu.dk/informationshaandtering/informationssikkerhed
+.. _IT security: https://www.inside.dtu.dk/informationshaandtering/informationssikkerhed
 
 1. The OPEN model (the current default - not recommended))
 -----------------------------------------------------------------
@@ -51,7 +51,7 @@ Within this model:
 
 In the above ``xxx`` refers to your research section abbreviation.
 
-.. _`Unix group`: https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html
+.. _Unix group: https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html
 
 3. The PRIVATE model
 ----------------------
@@ -185,8 +185,8 @@ Now you need to open your folder (in this example named ``shared``) with the des
      find folder -type f -exec chmod og+r {} +
      find folder -type d -exec chmod og+rx {} +
 
-.. _`setgid_bit`: https://en.wikipedia.org/wiki/Setuid
-.. _`cp_command`: https://en.wikipedia.org/wiki/Cp_(Unix)
-.. _`mv_command`: https://en.wikipedia.org/wiki/Mv_(Unix)
-.. _`chgrp_command`: https://man7.org/linux/man-pages/man1/chgrp.1.html
-.. _`find_command`: https://man7.org/linux/man-pages/man1/find.1.html
+.. _setgid_bit: https://en.wikipedia.org/wiki/Setuid
+.. _cp_command: https://en.wikipedia.org/wiki/Cp_(Unix)
+.. _mv_command: https://en.wikipedia.org/wiki/Mv_(Unix)
+.. _chgrp_command: https://man7.org/linux/man-pages/man1/chgrp.1.html
+.. _find_command: https://man7.org/linux/man-pages/man1/find.1.html
