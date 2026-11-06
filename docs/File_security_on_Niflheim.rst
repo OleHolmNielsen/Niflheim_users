@@ -86,7 +86,7 @@ This is done by setting the appropriate permissions on your home folder.
 If you do not need to have any open folders, locking down your home folder is sufficient.
 But if you want to open `specific subfolders` you have to do a bit more work, see below.
 
-Within the above 3 models you set the appropriate permission of your home folder with the chmod_command_:
+Within the above 3 models you set the appropriate permission of your home folder with the `chmod command`_:
 
 .. code-block:: bash
 
@@ -96,14 +96,14 @@ Within the above 3 models you set the appropriate permission of your home folder
 
 Note: the ``g`` and/or ``o`` in the permission string sets up permissions for your group and for other users.
 
-Use the ls_command_ to view your folders:
+Use the `ls command`_ to view your folders:
 
 .. code-block:: bash
 
    ls -ld $HOME
 
-.. _chmod_command: https://en.wikipedia.org/wiki/Chmod
-.. _ls_command: https://en.wikipedia.org/wiki/Ls
+.. _chmod command: https://en.wikipedia.org/wiki/Chmod
+.. _ls command: https://en.wikipedia.org/wiki/Ls
 
 Closing specific folders in the OPEN or GROUP models
 ----------------------------------------------------
@@ -185,8 +185,8 @@ Now you need to open your folder (in this example named ``shared``) with the des
      find folder -type f -exec chmod og+r {} +
      find folder -type d -exec chmod og+rx {} +
 
-.. _setgid_bit: https://en.wikipedia.org/wiki/Setuid
-.. _cp_command: https://en.wikipedia.org/wiki/Cp_(Unix)
-.. _mv_command: https://en.wikipedia.org/wiki/Mv_(Unix)
-.. _chgrp_command: https://man7.org/linux/man-pages/man1/chgrp.1.html
-.. _find_command: https://man7.org/linux/man-pages/man1/find.1.html
+.. _setgid bit: https://en.wikipedia.org/wiki/Setuid
+.. _cp command: https://en.wikipedia.org/wiki/Cp_(Unix)
+.. _mv command: https://en.wikipedia.org/wiki/Mv_(Unix)
+.. _chgrp command: https://man7.org/linux/man-pages/man1/chgrp.1.html
+.. _find command: https://man7.org/linux/man-pages/man1/find.1.html
