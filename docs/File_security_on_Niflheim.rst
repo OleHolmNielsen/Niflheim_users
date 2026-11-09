@@ -158,9 +158,9 @@ Giving students access in the GROUP model
 If you are in group ``xxxvip`` you may want to make a `specific folder` readable by a student.
 
 First you need to give `execute access` but `no read access` to your home folder,
-and then people can access a file or folder *if they know its name AND have permissions to the file/folder*,
+and then the student can access a file or folder *if they know its name AND have permissions to the file/folder*,
 but they cannot list your file names.
-Then you lock down all subfolders and files in your home folder. 
+If you want to guard against possible access to other files in your home folder, you need to lock down all other subfolders and files in your home folder. 
 Finally, you can open the specific folder.
 
 .. warning::
@@ -175,13 +175,13 @@ Finally, you can open the specific folder.
    PLEASE NOTE: If this is not acceptable, the only solution is to store the shared folder on a separate file system from your home folder.
 
 Make your home folder **accessible but not listable** (i.e., contents cannot be seen)
-for users outside ``xxxvip``:
+for a user outside ``xxxvip``:
 
 .. code-block:: bash
 
-   chmod o=x $HOME
+   setfacl -m u:username:x $HOME
 
-Lock down all files and folders in your home folder:
+Optionally lock down all files and folders in your home folder:
 
 .. code-block:: bash
 
@@ -199,13 +199,12 @@ Make sure that any new files/folders created are also locked down by adding a um
 
 Now you need to open your folder (in this example named ``shared``) with the desired permissions:
 
-- To make the folder readable by **members of the group** ``xxxstud`` it must be assigned to that group,
-  and the `setgid bit`_ must be set so files in the folder are also assigned to the group:
+- To make the folder readable by a user, set the modify the ACL and set the default also:
 
   .. code-block:: bash
 
-     chgrp -R xxxstud shared
-     chmod g=rxs,o= shared
+     setfacl -R -m u:username:rx shared  # Recursively allow read and execute access
+     setfacl -m d:u:username:rx shared  # Set the default so newly created files get the same ACL
 
   Files and subfolders created in ``shared``, or copied there with the `cp command`_,
   will belong to the ``xxxstud`` `Unix group`_,
@@ -221,7 +220,6 @@ Now you need to open your folder (in this example named ``shared``) with the des
      find folder -type f -exec chmod og+r {} +
      find folder -type d -exec chmod og+rx {} +
 
-.. _setgid bit: https://en.wikipedia.org/wiki/Setuid
 .. _cp command: https://en.wikipedia.org/wiki/Cp_(Unix)
 .. _mv command: https://en.wikipedia.org/wiki/Mv_(Unix)
 .. _chgrp command: https://man7.org/linux/man-pages/man1/chgrp.1.html
