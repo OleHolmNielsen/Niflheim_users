@@ -79,23 +79,26 @@ Technical details
 We recommend contacting :ref:`Niflheim_support` to set data access up as you desire.
 Below is the do-it-yourself description.
 
-Access to files and folders are handled with `unix file permissions <https://compenv.phys.ethz.ch/linux/basics_1/31_basic_permissions/>` and `access control lists (ACL) <https://docs.tacc.utexas.edu/tutorials/acls/>`
+Access to files and folders are handled with `unix file permissions <https://compenv.phys.ethz.ch/linux/basics_1/31_basic_permissions/>`_ and `access control lists (ACL) <https://docs.tacc.utexas.edu/tutorials/acls/>`_
 
 Tools for setting permissions
 -----------------------------
 
-``chmod``
-+++++++++
+|chmod|_
+++++++++
 
 Sets the standard Unix permissions for the owner, owning group and everyone else.
 Inspect them with ``ls -l file`` or ``ls -ld folder``.
 For folders, ``r`` allows listing names, ``x`` allows accessing entries, and ``w`` together with ``x`` allows creating or deleting entries.
 
-``setfacl`` and ``getfacl``
+.. |chmod| replace:: ``chmod``
+.. _chmod: https://en.wikipedia.org/wiki/Chmod
+
+|setfacl|_ and |getfacl|_
 +++++++++++++++++++++++++
 
 ACLs grant permissions to additional users or groups without changing the owning group.
-Use ```setfacl```_ to change them and `getfacl`_ to inspect them:
+Use |setfacl|_ to change them and |getfacl|_ to inspect them:
 
 .. code-block:: bash
 
@@ -113,10 +116,8 @@ A default ACL, such as ``setfacl -m d:u:username:r-x shared``, supplies inherite
 it does not change existing entries or files moved into the folder.
 New files normally inherit read access without execute permission.
 
-The ACL mask limits the effective permissions of named users and all groups.
-Check ``getfacl`` for ``effective:`` annotations: ``setfacl`` normally recalculates the mask,
-and later changes to group permissions with ``chmod`` also change it.
-
+.. |setfacl| replace:: ``setfacl``
+.. |getfacl| replace:: ``getfacl``
 .. _setfacl: https://man7.org/linux/man-pages/man1/setfacl.1.html
 .. _getfacl: https://man7.org/linux/man-pages/man1/getfacl.1.html
 
