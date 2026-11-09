@@ -7,61 +7,40 @@ File security on Niflheim
 Overview
 ===========
 
-According to DTU's `IT security`_ policies *Appendix B*, user home directories are personal and private,
-and you are **not permitted** to access in any way the directories of other users,
-even if file permissions would make this technically possible,
-except by explicit agreement.
+According to DTU's `IT security`_ policies *Appendix B*, home directories are personal and private.
+**Access to another user's home directory requires explicit agreement**, even if file permissions allow it.
 
-In light of the possibilities to use AI for automated espionage/snooping we need to reconsider the amount of openness on Niflheim.
-Three models of file security can fairly easily be implemented as discussed below.
-
-On Niflheim we recommend model **2. The GROUP model** as a convenient compromise between security and ease of use.
-However, each research section should decide which model is appropriate for them in view of the sensitivity of their data,
-and the section leader should take responsibility for the decision.
+We recommend the **GROUP model** for a balance between security and ease of collaboration.
+Each research section should choose a model appropriate to its data, with the section leader responsible for the decision.
 
 Please contact the :ref:`Niflheim_support` if you would like further advice.
 
 .. _IT security: https://www.inside.dtu.dk/informationshaandtering/informationssikkerhed
 
-1. The OPEN model (the current default - not recommended))
------------------------------------------------------------------
+Choose a security model
+-----------------------
 
-**Any user of Niflheim can read your files**,
-as part of a collaboration, or with more nefarious purposes.
-Specific folders can be protected further if desired.
+.. list-table::
+   :header-rows: 1
+   :widths: 25 75
 
-All files are readable by everyone, except for a few sensitive folders where the application software by default locks down files.
+   * - Model
+     - Who may access your home directory
+   * - 1. OPEN
+     - All Niflheim users (current default; not recommended).
+   * - 2. GROUP
+     - You and members of your home directory's `Unix group`_ (recommended).
+   * - 3. PRIVATE
+     - You only, apart from administrators with privileged access.
 
-2. The GROUP model
--------------------
+Apart from the home folder access to individual files also depends on their permissions and any access control lists (ACLs).
+You can restrict individual folders or grant exceptions using ACLs.
 
-**People in the same** `Unix group`_ **as yourself can read your files**.
-You can view your own ``userid`` (uid), ``groupid`` (gid) and `Unix group`_ memberships with the ``id`` command.
-Within this model:
-
-* Everyone can read the files of other users in the **same** `Unix group`_.
-
-* Faculty, postdocs and Ph.D students are members of a `Unix group`_ named ``xxxvip`` and can read this group's files.
-
-  They can also read the M.Sc./B.Sc. students' files, if they are given access to those folders using access control lists. 
-
-* M.Sc./B.Sc. students **cannot** read the files of the researchers, unless the specific folders are opened up.
-
-* Selected folders can be protected further if desired.
-
-In the above ``xxx`` refers to your research section abbreviation.
+Faculty, postdocs and Ph.D. students belong to ``xxxvip``, where ``xxx`` is the research section abbreviation.
+Under the GROUP or PRIVATE models, students and supervisors can easily grant each other access to selected folders using ACLs.
+Run ``id`` to see your user ID and group memberships.
 
 .. _Unix group: https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html
-
-3. The PRIVATE model
-----------------------
-
-**Noone else can read your files**.
-
-Special access in the GROUP and PRIVATE models
------------------------------------------------
-
-It is possible to open `specific folders` for access to specific users with access control lists or to your `Unix group`_, or to everyone.
 
 .. warning::
 
