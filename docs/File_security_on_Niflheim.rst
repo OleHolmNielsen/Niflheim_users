@@ -185,7 +185,7 @@ Optionally lock down all files and folders in your home folder:
 
 .. code-block:: bash
 
-   chmod o= $HOME/* $HOME/.??*
+   find "$HOME" -mindepth 1 -maxdepth 1 -exec chmod o= {} +
 
 Make sure that any new files/folders created are also locked down by adding a umask_command_ line to your ``.bashrc`` file:
 
