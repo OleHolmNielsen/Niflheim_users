@@ -206,9 +206,11 @@ Now you need to open your folder (in this example named ``shared``) with the des
      setfacl -R -m u:username:rX shared  # Read access; execute for directories and existing executables
      find shared -type d -exec setfacl -m d:u:username:rx {} +  # Set inheritance on all existing directories
 
-  Files and subfolders created in ``shared``, or copied there with the `cp command`_,
-  will belong to the ``xxxstud`` `Unix group`_,
-  but files `moved` there (with the `mv command`_) need to have their group changed with the `chgrp command`_ before they become readable by ``xxxstud``.
+  New files and subfolders inherit the default ACL, limited by the permissions requested by the creating application.
+  These ACL commands do not change group ownership.
+  Files copied with the `cp command`_ may inherit the default ACL, but options such as ``-p`` or ``-a`` preserve source permissions and ACLs instead.
+  Files moved with the `mv command`_ retain their ACLs; rerun the two commands above after moving files or copying with preserved permissions.
+  Check effective access with ``getfacl``.
 
 - To make a folder, subfolders or files **readable by everyone**,
   the folder and all its subfolders should be given read and execute permissions for everyone,
