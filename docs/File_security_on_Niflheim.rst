@@ -82,15 +82,38 @@ Below is the do-it-yourself description.
 Tools for setting permissions
 -----------------------------
 
-`chmod`
-+++++++
-
-The standard method for controlling the permission bits in unix. The set permissions are visible by running `ls -l` on a file or `ls -ld` on a folder.
-
-`setfacl`
+``chmod``
 +++++++++
 
-Sets a possibly more fine-grained control of access. Access can be granted to single users instead of full user groups. The ACL permissions are visible by running `getfacl <FILE-OR-FOLDER>`.
+Sets the standard Unix permissions for the owner, owning group and everyone else.
+Inspect them with ``ls -l file`` or ``ls -ld folder``.
+For folders, ``r`` allows listing names, ``x`` allows accessing entries, and ``w`` together with ``x`` allows creating or deleting entries.
+
+``setfacl`` and ``getfacl``
++++++++++++++++++++++++++
+
+ACLs grant permissions to additional users or groups without changing the owning group.
+Use ``setfacl`` to change them and ``getfacl`` to inspect them:
+
+.. code-block:: bash
+
+   setfacl -m u:username:--x "$HOME"    # Allow traversal of your home folder
+   setfacl -m u:username:r-x shared     # Allow listing and entering shared
+   setfacl -m u:username:r-- shared/file # Allow reading a specific file
+   getfacl shared
+   setfacl -x u:username shared         # Remove this user's ACL entry
+
+Replace ``username`` with the intended user; use ``g:groupname`` for a group.
+Access requires ``x`` permission on every parent folder as well as permission on the target.
+These commands affect only the named file or folder, not its contents.
+
+A default ACL, such as ``setfacl -m d:u:username:r-x shared``, supplies inherited permissions for newly created entries;
+it does not change existing entries or files moved into the folder.
+New files normally inherit read access without execute permission.
+
+The ACL mask limits the effective permissions of named users and all groups.
+Check ``getfacl`` for ``effective:`` annotations: ``setfacl`` normally recalculates the mask,
+and later changes to group permissions with ``chmod`` also change it.
 
 Implementing the OPEN, GROUP and PRIVATE models without exceptions
 -------------------------------------------------------------------
@@ -132,7 +155,7 @@ You do that by:
 Giving students access in the GROUP model
 -----------------------------------------
 
-If you are in group ``xxxvip`` you may want to make a `specific folder` readable by the `Unix group`_ ``xxxstud``.
+If you are in group ``xxxvip`` you may want to make a `specific folder` readable by a student.
 
 First you need to give `execute access` but `no read access` to your home folder,
 and then people can access a file or folder *if they know its name AND have permissions to the file/folder*,
