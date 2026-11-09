@@ -203,8 +203,8 @@ Now you need to open your folder (in this example named ``shared``) with the des
 
   .. code-block:: bash
 
-     setfacl -R -m u:username:rx shared  # Recursively allow read and execute access
-     setfacl -m d:u:username:rx shared  # Set the default so newly created files get the same ACL
+     setfacl -R -m u:username:rX shared  # Read access; execute for directories and existing executables
+     find shared -type d -exec setfacl -m d:u:username:rx {} +  # Set inheritance on all existing directories
 
   Files and subfolders created in ``shared``, or copied there with the `cp command`_,
   will belong to the ``xxxstud`` `Unix group`_,
