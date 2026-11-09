@@ -95,7 +95,7 @@ For folders, ``r`` allows listing names, ``x`` allows accessing entries, and ``w
 +++++++++++++++++++++++++
 
 ACLs grant permissions to additional users or groups without changing the owning group.
-Use ``setfacl`` to change them and ``getfacl`` to inspect them:
+Use ```setfacl```_ to change them and `getfacl`_ to inspect them:
 
 .. code-block:: bash
 
@@ -116,6 +116,9 @@ New files normally inherit read access without execute permission.
 The ACL mask limits the effective permissions of named users and all groups.
 Check ``getfacl`` for ``effective:`` annotations: ``setfacl`` normally recalculates the mask,
 and later changes to group permissions with ``chmod`` also change it.
+
+.. _setfacl: https://man7.org/linux/man-pages/man1/setfacl.1.html
+.. _getfacl: https://man7.org/linux/man-pages/man1/getfacl.1.html
 
 Implementing the OPEN, GROUP and PRIVATE models without exceptions
 -------------------------------------------------------------------
@@ -206,7 +209,7 @@ Now you need to open your folder (in this example named ``shared``) with the des
   .. code-block:: bash
 
      setfacl -R -m u:username:rX shared  # Read access; execute for directories and existing executables
-     find shared -type d -exec setfacl -m d:u:username:rx {} +  # Set inheritance on all existing directories
+     setfacl -R -m d:u:username:rX shared  # Set inheritance on all existing directories
 
   New files and subfolders inherit the default ACL, limited by the permissions requested by the creating application.
   These ACL commands do not change group ownership.
@@ -220,9 +223,7 @@ Now you need to open your folder (in this example named ``shared``) with the des
 
   .. code-block:: bash
 
-     chmod og+rx folder
-     find folder -type f -exec chmod og+r {} +
-     find folder -type d -exec chmod og+rx {} +
+     chmod -R og+rX folder
 
 .. _cp command: https://en.wikipedia.org/wiki/Cp_(Unix)
 .. _mv command: https://en.wikipedia.org/wiki/Mv_(Unix)
