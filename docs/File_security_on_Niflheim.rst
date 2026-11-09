@@ -43,7 +43,7 @@ Within this model:
 
 * Faculty, postdocs and Ph.D students are members of a `Unix group`_ named ``xxxvip`` and can read this group's files.
 
-  They can also read the M.Sc./B.Sc. students' files, if they are made secondary members of (added to) the ``xxxstud`` `Unix group`_.
+  They can also read the M.Sc./B.Sc. students' files, if they are given access to those folders using access control lists. 
 
 * M.Sc./B.Sc. students **cannot** read the files of the researchers, unless the specific folders are opened up.
 
@@ -61,7 +61,7 @@ In the above ``xxx`` refers to your research section abbreviation.
 Special access in the GROUP and PRIVATE models
 -----------------------------------------------
 
-It is possible to open `specific folders` for access by either your `Unix group`_, or by everyone.
+It is possible to open `specific folders` for access to specific users with access control lists or to your `Unix group`_, or to everyone.
 
 .. warning::
 
@@ -79,6 +79,19 @@ Technical details
 We recommend contacting :ref:`Niflheim_support` to set data access up as you desire.
 Below is the do-it-yourself description.
 
+Tools for setting permissions
+-----------------------------
+
+`chmod`
++++++++
+
+The standard method for controlling the permission bits in unix. The set permissions are visible by running `ls -l` on a file or `ls -ld` on a folder.
+
+`setfacl`
++++++++++
+
+Sets a possibly more fine-grained control of access. Access can be granted to single users instead of full user groups. The ACL permissions are visible by running `getfacl <FILE-OR-FOLDER>`.
+
 Implementing the OPEN, GROUP and PRIVATE models without exceptions
 -------------------------------------------------------------------
 
@@ -92,7 +105,7 @@ Within the above 3 models you set the appropriate permission of your home folder
 
    chmod og=rx $HOME     # 1. Open model, permission -rwxr-xr-x
    chmod g=rx,o= $HOME   # 2. Group model, permission -rwxr-x---
-   chmod og= $HOME       # 3. Paranoid model, permission -rwx------
+   chmod og= $HOME       # 3. Private model, permission -rwx------
 
 Note: the ``g`` and/or ``o`` in the permission string sets up permissions for your group and for other users.
 
