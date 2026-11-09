@@ -79,6 +79,8 @@ Technical details
 We recommend contacting :ref:`Niflheim_support` to set data access up as you desire.
 Below is the do-it-yourself description.
 
+Access to files and folders are handled with `unix file permissions <https://compenv.phys.ethz.ch/linux/basics_1/31_basic_permissions/>` and `access control lists (ACL) <https://docs.tacc.utexas.edu/tutorials/acls/>`
+
 Tools for setting permissions
 -----------------------------
 
