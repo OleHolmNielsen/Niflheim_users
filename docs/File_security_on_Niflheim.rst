@@ -58,43 +58,40 @@ Technical details
 We recommend contacting :ref:`Niflheim_support` to set data access up as you desire.
 Below is the do-it-yourself description.
 
-Access to files and folders are handled with `unix file permissions <https://compenv.phys.ethz.ch/linux/basics_1/31_basic_permissions/>`_ and `access control lists (ACL) <https://docs.tacc.utexas.edu/tutorials/acls/>`_
+Permission basics
+-----------------
 
-Tools for setting permissions
------------------------------
+Standard Unix permissions apply to the owner (``u``), owning group (``g``), and everyone else (``o``):
 
-|chmod|_
-++++++++
+.. list-table::
+   :header-rows: 1
 
-Sets the standard Unix permissions for the owner, owning group and everyone else.
-Inspect them with ``ls -l file`` or ``ls -ld folder``.
-For folders, ``r`` allows listing names, ``x`` allows accessing entries, and ``w`` together with ``x`` allows creating or deleting entries.
+   * - Permission
+     - Files
+     - Folders
+   * - Read (``r``)
+     - Read contents
+     - List names
+   * - Write (``w``)
+     - Modify contents
+     - Create, delete or rename entries (also requires ``x``)
+   * - Execute (``x``)
+     - Run as a program
+     - Traverse the folder to access entries
+
+Access to a file requires permission on the file itself and ``x`` on every parent folder.
+Use |chmod|_ to change standard permissions; inspect them with ``ls -l file`` or ``ls -ld folder``.
+
+Access control lists (ACLs) grant permissions to additional users or groups without changing group ownership.
+Use |setfacl|_ to change ACLs and |getfacl|_ to inspect them.
+A default ACL on a folder supplies inherited permissions for newly created files and subfolders;
+ordinary new files normally receive no execute permission.
+
+For introductions, see `Unix file permissions <https://compenv.phys.ethz.ch/linux/basics_1/31_basic_permissions/>`_
+and `Managing file access with ACLs <https://docs.rc.fas.harvard.edu/kb/acls-facls/>`_.
 
 .. |chmod| replace:: ``chmod``
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
-
-|setfacl|_ and |getfacl|_
-+++++++++++++++++++++++++
-
-ACLs grant permissions to additional users or groups without changing the owning group.
-Use |setfacl|_ to change them and |getfacl|_ to inspect them:
-
-.. code-block:: bash
-
-   setfacl -m u:username:--x "$HOME"    # Allow traversal of your home folder
-   setfacl -m u:username:r-x shared     # Allow listing and entering shared
-   setfacl -m u:username:r-- shared/file # Allow reading a specific file
-   getfacl shared
-   setfacl -x u:username shared         # Remove this user's ACL entry
-
-Replace ``username`` with the intended user; use ``g:groupname`` for a group.
-Access requires ``x`` permission on every parent folder as well as permission on the target.
-These commands affect only the named file or folder, not its contents.
-
-A default ACL, such as ``setfacl -m d:u:username:r-x shared``, supplies inherited permissions for newly created entries;
-it does not change existing entries or files moved into the folder.
-New files normally inherit read access without execute permission.
-
 .. |setfacl| replace:: ``setfacl``
 .. |getfacl| replace:: ``getfacl``
 .. _setfacl: https://man7.org/linux/man-pages/man1/setfacl.1.html
@@ -162,6 +159,8 @@ Finally, you can open the specific folder.
 Make your home folder **accessible but not listable** (i.e., contents cannot be seen)
 for a user outside ``xxxvip``:
 
+Replace ``username`` with the intended user; ``u:username`` selects a user and ``g:groupname`` selects a group.
+
 .. code-block:: bash
 
    setfacl -m u:username:x $HOME
@@ -186,6 +185,9 @@ Now you need to open your folder (in this example named ``shared``) with the des
 
 - To make the folder readable by a user, set the modify the ACL and set the default also:
 
+  ``-R`` applies recursively; ``X`` grants execute access to directories and files already executable by anyone.
+  The ``d:`` prefix sets the default ACL for inheritance.
+
   .. code-block:: bash
 
      setfacl -R -m u:username:rX shared  # Read access; execute for directories and existing executables
@@ -196,6 +198,10 @@ Now you need to open your folder (in this example named ``shared``) with the des
   Files copied with the `cp command`_ may inherit the default ACL, but options such as ``-p`` or ``-a`` preserve source permissions and ACLs instead.
   Files moved with the `mv command`_ retain their ACLs; rerun the two commands above after moving files or copying with preserved permissions.
   Check effective access with ``getfacl``.
+
+  For example, ``getfacl`` may show ``user:username:r-x  #effective:r--``:
+  the user was granted read and execute access, but the ACL mask allows only read access.
+  Changing group permissions with ``chmod`` changes this mask and can therefore affect the user's access.
 
 - To make a folder, subfolders or files **readable by everyone**,
   the folder and all its subfolders should be given read and execute permissions for everyone,
