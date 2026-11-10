@@ -45,7 +45,8 @@ Run ``id`` to see your user ID and group memberships.
 .. warning::
 
    Encrypt any files containing **real secrets**! If somebody gains root access to a computer that can mount Niflheim folders, they can access all your files!
-   For example, the *GNU Privacy Guard* (GPG_ or gpg) tool is a native/baseos security tool for encrypting files. 
+
+For example, the *GNU Privacy Guard* (GPG_ or gpg) tool is a native/baseos security tool for encrypting files. 
 
 .. raw:: pdf
 
