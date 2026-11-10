@@ -124,44 +124,27 @@ You do that by:
    chmod g=rx,o= folder  # Only the group can read/list the folder
    chmod og= folder      # Nobody can access the folder
 
-Giving students access in the GROUP model
------------------------------------------
+Giving students access in the GROUP or PRIVATE models
+-----------------------------------------------------
 
-If you are in group ``xxxvip`` you may want to make a `specific folder` readable by a student in group ``xxxstud``.
-
-First you need to give `execute access` but `no read access` to your home folder,
-and then the student can access a file or folder *if they know its name AND have permissions to the file/folder*,
-but they cannot list your file names.
-If you want to guard against possible access to other files in your home folder, you need to lock down all other subfolders and files in your home folder. 
-Finally, you can open the specific folder.
+To share ``$HOME/shared`` with a student, replace ``username`` below with their login name.
+The folder must already exist. Students can use the same recipe to share with supervisors.
+For a group, replace ``u:username`` with ``g:groupname``.
 
 .. warning::
 
-   This recipe only partly locks your home folder, as people still have execute access to it.
-   This means that while people cannot run ``ls`` on your home folder,
-   they can read some metadata about files and folders *if they can guess the file names*
-   (they can ``stat`` the file).
-   An AI can make very qualified guesses about file names!
-   But only top-level folder names and file names can be verified in this way.
+   Traversing your home folder lets the recipient check guessed names and some metadata, even without listing its contents. An AI can make very qualified guesses about file names!
+   If this is unacceptable, use of a shared storage space outside your home folder is necessary. Contact :ref:`Niflheim_support` in this case.
 
-   PLEASE NOTE: If this is not acceptable, the only solution is to store the shared folder on a separate file system from your home folder.
-
-Make your home folder **accessible but not listable** (i.e., contents cannot be seen)
-for a user outside ``xxxvip``:
-
-Replace ``username`` with the intended user; ``u:username`` selects a user and ``g:groupname`` selects a group.
-
-.. code-block:: bash
-
-   setfacl -m u:username:x $HOME
-
-Optionally lock down all files and folders in your home folder:
+Before sharing, review access to your other files. To remove access through the "others" permissions
+from all immediate files and folders, including hidden entries:
 
 .. code-block:: bash
 
    find "$HOME" -mindepth 1 -maxdepth 1 -exec chmod o= {} +
 
-Make sure that any new files/folders created are also locked down by adding a umask_command_ line to your ``.bashrc`` file:
+This leaves group permissions and existing ACL grants unchanged.
+Make sure that any new files/folders created are also locked down by adding a umask_command_ line to your ``~/.bashrc`` file:
 
 .. code-block:: bash
 
@@ -169,39 +152,56 @@ Make sure that any new files/folders created are also locked down by adding a um
    # or using symbolic notation:
    umask u=rwx,g=rx,o=
 
+This allows group access but no access for others.
+
 .. _umask_command: https://en.wikipedia.org/wiki/Umask
 
-Now you need to open your folder (in this example named ``shared``) with the desired permissions:
+Give the student traversal access to your home folder, then read access to the shared folder and its contents:
 
-- To make the folder readable by a user, set the modify the ACL and set the default also:
+.. code-block:: bash
 
-  ``-R`` applies recursively; ``X`` grants execute access to directories and files already executable by anyone.
-  The ``d:`` prefix sets the default ACL for inheritance.
+   setfacl -m u:username:x "$HOME"              # Traverse without listing names
+   setfacl -R -m u:username:rX "$HOME/shared"   # Access existing contents
+   setfacl -R -m d:u:username:rX "$HOME/shared" # Inherit access for new contents
 
-  .. code-block:: bash
+``-R`` applies recursively; ``X`` grants execute access to directories and files already executable by anyone.
+The ``d:`` prefix sets default ACLs on all existing directories.
+New entries inherit access, limited by the permissions requested by the creating application;
+ordinary new files normally receive no execute permission. Group ownership stays unchanged.
 
-     setfacl -R -m u:username:rX shared  # Read access; execute for directories and existing executables
-     setfacl -R -m d:u:username:rX shared  # Set inheritance on all existing directories
+Check the result:
 
-  New files and subfolders inherit the default ACL, limited by the permissions requested by the creating application.
-  These ACL commands do not change group ownership.
-  Files copied with the `cp command`_ may inherit the default ACL, but options such as ``-p`` or ``-a`` preserve source permissions and ACLs instead.
-  Files moved with the `mv command`_ retain their ACLs; rerun the two commands above after moving files or copying with preserved permissions.
-  Check effective access with ``getfacl``.
+.. code-block:: bash
 
-  For example, ``getfacl`` may show ``user:username:r-x  #effective:r--``:
-  the user was granted read and execute access, but the ACL mask allows only read access.
-  Changing group permissions with ``chmod`` changes this mask and can therefore affect the user's access.
+   getfacl "$HOME" "$HOME/shared"
 
-- To make a folder, subfolders or files **readable by everyone**,
-  the folder and all its subfolders should be given read and execute permissions for everyone,
-  and all files should be given read permission for everyone by using the `find command`_:
+Give the student the full path to the shared folder and ask them to check that they can read its files.
+For nested shared folders, they also need ``x`` on every intermediate folder.
 
-  .. code-block:: bash
+If ``getfacl`` shows ``user:username:r-x  #effective:r--``, the ACL mask is blocking execute access.
+Changing group permissions with ``chmod`` changes this mask and can affect the student's access.
 
-     chmod -R og+rX folder
+**Moving or copying files into the shared folder:** default ACLs apply when entries are created,
+but transfer commands can keep the source permissions instead:
 
-.. _cp command: https://en.wikipedia.org/wiki/Cp_(Unix)
-.. _mv command: https://en.wikipedia.org/wiki/Mv_(Unix)
-.. _chgrp command: https://man7.org/linux/man-pages/man1/chgrp.1.html
-.. _find command: https://man7.org/linux/man-pages/man1/find.1.html
+* ``mv`` preserves existing permissions and ACLs, so moved files and folders do not inherit the shared folder's access settings.
+* Plain ``cp`` normally lets newly created entries inherit the destination's default ACL, limited by the source permissions.
+  However, ``cp -p`` and ``cp -a`` preserve source permissions and ACLs instead, so the student may lose access to the copied files.
+* ``rsync -a`` preserves source permission bits, which can limit the student's access through the ACL mask.
+  It does **not** copy source ACLs unless you also use ``-A`` (``--acls``); that option replaces destination ACLs with source ACLs.
+
+After moving files with ``mv`` or copying with preserved permissions or ACLs,
+rerun both recursive ``setfacl`` commands above to grant access to the imported files and set inheritance on imported folders.
+Ask the student to check access again after the transfer.
+
+Sharing with everyone
+---------------------
+
+To allow everyone to read a folder and its contents:
+
+.. code-block:: bash
+
+   chmod -R og+rX folder
+
+Everyone also needs traversal (``x``) permission on every parent folder.
+
