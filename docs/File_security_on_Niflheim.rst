@@ -53,7 +53,7 @@ For example, the *GNU Privacy Guard* (GPG_ or gpg) tool is a native/baseos secur
    PageBreak
 
 .. _ACL: https://www.redhat.com/en/blog/linux-access-control-lists
-.. _PGP: https://www.redhat.com/en/blog/encryption-decryption-gpg
+.. _GPG: https://www.redhat.com/en/blog/encryption-decryption-gpg
 
 Technical details
 ==================
