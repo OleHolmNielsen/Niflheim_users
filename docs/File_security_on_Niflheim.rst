@@ -97,31 +97,21 @@ and `Managing file access with ACLs <https://docs.rc.fas.harvard.edu/kb/acls-fac
 .. _setfacl: https://man7.org/linux/man-pages/man1/setfacl.1.html
 .. _getfacl: https://man7.org/linux/man-pages/man1/getfacl.1.html
 
-Implementing the OPEN, GROUP and PRIVATE models without exceptions
--------------------------------------------------------------------
+Implementing a model by setting home-folder permissions
+-------------------------------------------------------
 
-This is done by setting the appropriate permissions on your home folder.
-If you do not need to have any open folders, locking down your home folder is sufficient.
-But if you want to open `specific subfolders` you have to do a bit more work, see below.
+The model is implemented by setting permissions on your home folder; permissions on its contents remain unchanged.
 
-Within the above 3 models you set the appropriate permission of your home folder with the `chmod command`_:
+Run **one** of these commands:
 
 .. code-block:: bash
 
-   chmod og=rx $HOME     # 1. Open model, permission -rwxr-xr-x
-   chmod g=rx,o= $HOME   # 2. Group model, permission -rwxr-x---
-   chmod og= $HOME       # 3. Private model, permission -rwx------
+   chmod og=rx "$HOME"     # OPEN: allow all users, permissions -rwxr-xr-x
+   chmod g=rx,o= "$HOME"   # GROUP: allow the owning group, permissions -rwxr-x---
+   chmod og= "$HOME"       # PRIVATE: allow only yourself, permissions -rwx------
 
-Note: the ``g`` and/or ``o`` in the permission string sets up permissions for your group and for other users.
-
-Use the `ls command`_ to view your folders:
-
-.. code-block:: bash
-
-   ls -ld $HOME
-
-.. _chmod command: https://en.wikipedia.org/wiki/Chmod
-.. _ls command: https://en.wikipedia.org/wiki/Ls
+These commands leave your own permissions unchanged. Run ``getfacl "$HOME"`` to check the result.
+To share selected subfolders under GROUP or PRIVATE, follow the sharing recipe below.
 
 Closing specific folders in the OPEN or GROUP models
 ----------------------------------------------------
@@ -137,7 +127,7 @@ You do that by:
 Giving students access in the GROUP model
 -----------------------------------------
 
-If you are in group ``xxxvip`` you may want to make a `specific folder` readable by a student.
+If you are in group ``xxxvip`` you may want to make a `specific folder` readable by a student in group ``xxxstud``.
 
 First you need to give `execute access` but `no read access` to your home folder,
 and then the student can access a file or folder *if they know its name AND have permissions to the file/folder*,
