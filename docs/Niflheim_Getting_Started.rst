@@ -13,13 +13,13 @@ Overview of the Niflheim cluster
 * Compute nodes are described in the :ref:`Hardware` page.
 * RockyLinux_ 9 operating system (Linux_ OS). Older RockyLinux_ 8 nodes are being upgraded to 9.
 * Slurm_ batch queueing system.
-* Software_Modules_ using Lmod_ and EasyBuild_modules_.
+* `Software Modules`_ using Lmod_ and `EasyBuild modules`_.
 * Usage accounting_reports_ (access restricted to the DTU network).
 * User support: Please see the :ref:`Niflheim_support` page.
 
 .. _Linux: https://en.wikipedia.org/wiki/Linux
 .. _RockyLinux: https://rockylinux.org/
-.. _EasyBuild_modules: https://wiki.fysik.dtu.dk/Niflheim_system/EasyBuild_modules/
+.. _EasyBuild modules: https://wiki.fysik.dtu.dk/Niflheim_system/EasyBuild_modules/
 .. _accounting_reports: https://wiki.fysik.dtu.dk/graphs/accounting_reports.html
 
 .. _Login_nodes:
@@ -857,12 +857,12 @@ For further Slurm_ information see the GRES_ page.
 Software environment modules
 ============================
 
-The classical problem of maintaining multiple versions of software packages and compilers is solved using Software_Modules_.
+The classical problem of maintaining multiple versions of software packages and compilers is solved using `Software Modules`_.
 
-.. _Software_Modules: https://en.wikipedia.org/wiki/Environment_Modules_%28software%29
+.. _Software Modules: https://en.wikipedia.org/wiki/Environment_Modules_%28software%29
 
 Niflheim uses the Lmod_ implementation of software environment modules (we do not use the *modules* command which might be supplied by the OS).
-For creating modules we support the EasyBuild_modules_ build and installation framework.
+For creating modules we support the `EasyBuild modules`_ build and installation framework.
 
 The Lmod_ command ``module`` (and its brief equivalent form ``ml``) is installed on all nodes.
 
@@ -891,7 +891,7 @@ If you work on different CPU architectures, it may be convenient to turm off Lmo
 Loading complete toolchains
 ---------------------------
 
-The modules framework at the :ref:`niflheim` includes a number of convenient toolchains_ built as EasyBuild_modules_.
+The modules framework at the :ref:`niflheim` includes a number of convenient toolchains_ built as `EasyBuild modules`_.
 We currently provide these toolchains_:
 
 * The **foss** toolchain provides **GCC, OpenMPI, OpenBLAS/LAPACK, ScaLAPACK(/BLACS), FFTW**.
@@ -960,20 +960,20 @@ Need additional modules?
 ------------------------
 
 Please send your requests for additional modules to the :ref:`Niflheim_support` E-mail. 
-We will see if EasyBuild_modules_ are already available.
+We will see if `EasyBuild modules`_ are already available.
 
 Building your own modules
 -------------------------
 
 It is possible for you to use your personal modules in addition to those provided by the :ref:`niflheim` system.
-If you use EasyBuild_modules_ you can define your private module directory in your home directory and prepend it to the already defined modules::
+If you use `EasyBuild modules`_ you can define your private module directory in your home directory and prepend it to the already defined modules::
 
   mkdir $HOME/modules
   export EASYBUILD_PREFIX=$HOME/modules
   module use $EASYBUILD_PREFIX/modules/all
   module load EasyBuild
 
-and then build and install EasyBuild_modules_ into ``$HOME/modules``.
+and then build and install `EasyBuild modules`_ into ``$HOME/modules``.
 If you need help with this, please write to the :ref:`Niflheim_support` E-mail. 
 
 .. _Environment_modules: https://modules.sourceforge.net/
