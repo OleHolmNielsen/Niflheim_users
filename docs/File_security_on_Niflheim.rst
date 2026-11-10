@@ -34,7 +34,7 @@ Choose a security model
      - You only, apart from administrators with privileged access.
 
 Apart from the home folder, access to a file requires permission on the file itself and traversal permission on every parent folder.
-You can restrict individual folders or grant access to specific folders using Access Control Lists (ACL_).
+You can restrict individual folders or grant access to specific folders using *Access Control Lists* (ACL_).
 
 Faculty belong to the group ``xxxfac``, postdocs and Ph.D. students to ``xxxvip``, and M.Sc. / B.Sc. students to ``xxxstud`` where ``xxx`` is the research section abbreviation.
 Under the GROUP or PRIVATE models, students and supervisors can easily grant each other access to selected folders using ACL_.
