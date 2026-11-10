@@ -84,7 +84,7 @@ Standard Unix permissions apply to the owner (``u`` for *user*), owning group (`
 Access to a file requires permission on the file itself and ``x`` on every parent folder.
 Use |chmod|_ to change standard permissions; inspect them with ``ls -l file`` or ``ls -ld folder``.
 
-Access control lists (ACL_) grant permissions to additional users or groups without changing group ownership.
+*Access Control Lists* (ACL_) grant permissions to additional users or groups without changing group ownership.
 Use |setfacl|_ to change ACL_ and |getfacl|_ to inspect them.
 You can set a default ACL_ on a folder, then newly created files and subfolders inherit those permissions.
 
