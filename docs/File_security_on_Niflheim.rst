@@ -34,10 +34,10 @@ Choose a security model
      - You only, apart from administrators with privileged access.
 
 Apart from the home folder, access to a file requires permission on the file itself and traversal permission on every parent folder.
-You can restrict individual folders or grant access to specific folders using Access Control Lists (ACLs).
+You can restrict individual folders or grant access to specific folders using Access Control Lists (ACL_).
 
 Faculty belong to the group ``xxxfac``, postdocs and Ph.D. students to ``xxxvip``, and M.Sc. / B.Sc. students to ``xxxstud`` where ``xxx`` is the research section abbreviation.
-Under the GROUP or PRIVATE models, students and supervisors can easily grant each other access to selected folders using ACLs.
+Under the GROUP or PRIVATE models, students and supervisors can easily grant each other access to selected folders using ACL_.
 Run ``id`` to see your user ID and group memberships.
 
 .. _Unix group: https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html
@@ -51,6 +51,8 @@ To Do: Provide examples on how to encrypt folders.
 .. raw:: pdf
 
    PageBreak
+
+.. _ACL: https://www.redhat.com/en/blog/linux-access-control-lists
 
 Technical details
 ==================
@@ -82,9 +84,9 @@ Standard Unix permissions apply to the owner (``u`` for *user*), owning group (`
 Access to a file requires permission on the file itself and ``x`` on every parent folder.
 Use |chmod|_ to change standard permissions; inspect them with ``ls -l file`` or ``ls -ld folder``.
 
-Access control lists (ACLs) grant permissions to additional users or groups without changing group ownership.
-Use |setfacl|_ to change ACLs and |getfacl|_ to inspect them.
-You can set a default ACL on a folder, then newly created files and subfolders inherit those permissions.
+Access control lists (ACL_) grant permissions to additional users or groups without changing group ownership.
+Use |setfacl|_ to change ACL_ and |getfacl|_ to inspect them.
+You can set a default ACL_ on a folder, then newly created files and subfolders inherit those permissions.
 
 For introductions, see `Unix file permissions <https://compenv.phys.ethz.ch/linux/basics_1/31_basic_permissions/>`_
 and `Managing file access with ACLs <https://docs.rc.fas.harvard.edu/kb/acls-facls/>`_.
@@ -123,8 +125,8 @@ You do that by:
    chmod g=rx,o= folder  # Only the group can read/list the folder
    chmod og= folder      # Only the owner can access the folder
 
-Check with ``getfacl folder`` if any named user or group still has access through an ACL. If so remove the ACL with ``setfacl -x u:username folder`` or ``setfacl -x g:groupname folder``.
-
+Check with ``getfacl folder`` if any named user or group still has access through an ACL_.
+If so remove the ACL_ with ``setfacl -x u:username folder`` or ``setfacl -x g:groupname folder``.
 
 Checking access to a specific folder
 ------------------------------------
@@ -165,8 +167,8 @@ from all immediate files and folders, including hidden entries but excluding sym
 
    find "$HOME" -mindepth 1 -maxdepth 1 ! -type l -exec chmod o= {} +
 
-This leaves group permissions and existing ACL grants unchanged.
-Make sure that any new files/folders created (without a default ACL) are also locked down by adding a `umask`_ line to your ``~/.bashrc`` file and run it in your current shell:
+This leaves group permissions and existing ACL_ grants unchanged.
+Make sure that any new files/folders created (without a default ACL_) are also locked down by adding a `umask`_ line to your ``~/.bashrc`` file and run it in your current shell:
 
 .. code-block:: bash
 
@@ -178,8 +180,9 @@ This allows group access but no access for others.
 
 .. _umask: https://en.wikipedia.org/wiki/Umask
 
-Before adding access, inspect existing ACLs with ``getfacl "$HOME"`` and ``getfacl -R "$HOME/shared"``.
-If you find unexpected ACL entries, contact :ref:`Niflheim_support` before proceeding, otherwise you might accidentally grant more access than you intended!
+Before adding access, inspect existing ACL_ with ``getfacl "$HOME"`` and ``getfacl -R "$HOME/shared"``.
+If you find unexpected ACL_ entries, contact :ref:`Niflheim_support` before proceeding,
+otherwise you might accidentally grant more access than you intended!
 
 Give the student traversal access to your home folder, then read access to the shared folder and its contents:
 
@@ -190,8 +193,9 @@ Give the student traversal access to your home folder, then read access to the s
    setfacl -R -m d:u:username:rX "$HOME/shared" # Inherit access for new contents
 
 ``-R`` applies recursively; ``X`` grants execute access to directories and files already executable by anyone.
-The ``d:`` prefix sets default ACLs on all existing directories.
-New entries inherit access, limited by the permissions requested by the creating application. Group ownership stays unchanged.
+The ``d:`` prefix sets default ACL_ on all existing directories.
+New entries inherit access, limited by the permissions requested by the creating application.
+Group ownership stays unchanged.
 
 Check the result:
 
@@ -202,19 +206,19 @@ Check the result:
 Give the student the full path to the shared folder and ask them to check that they can read its files.
 For nested shared folders, they also need ``x`` on every intermediate folder.
 
-If ``getfacl`` shows ``user:username:r-x  #effective:r--``, the ACL mask is blocking execute access.
+If ``getfacl`` shows ``user:username:r-x  #effective:r--``, the ACL_ mask is blocking execute access.
 Changing group permissions with ``chmod`` changes this mask and can affect the student's access.
 
-**Moving or copying files into the shared folder:** default ACLs apply when entries are created,
+**Moving or copying files into the shared folder:** default ACL_ apply when entries are created,
 but if you move exitisting folders or files into the shared folder they keep their original permissions:
 
-* ``mv`` preserves existing permissions and ACLs, so moved files and folders do not inherit the shared folder's access settings.
-* Plain ``cp`` normally lets newly created entries inherit the destination's default ACL, limited by the source permissions.
-  However, ``cp -p`` and ``cp -a`` preserve source permissions and ACLs instead, so the student may lose access to the copied files.
-* ``rsync -a`` preserves source permission bits, which can limit the student's access through the ACL mask.
-  It does **not** copy source ACLs unless you also use ``-A`` (``--acls``); that option replaces destination ACLs with source ACLs.
+* ``mv`` preserves existing permissions and ACL_, so moved files and folders do not inherit the shared folder's access settings.
+* Plain ``cp`` normally lets newly created entries inherit the destination's default ACL_, limited by the source permissions.
+  However, ``cp -p`` and ``cp -a`` preserve source permissions and ACL_ instead, so the student may lose access to the copied files.
+* ``rsync -a`` preserves source permission bits, which can limit the student's access through the ACL_ mask.
+  It does **not** copy source ACL_ unless you also use ``-A`` (``--acls``); that option replaces destination ACL_ with source ACL_.
 
-After moving files with ``mv`` or copying with preserved permissions or ACLs,
+After moving files with ``mv`` or copying with preserved permissions or ACL_,
 rerun both recursive ``setfacl`` commands above to grant access to the imported files and set inheritance on imported folders.
 Ask the student to check access again after the transfer.
 
