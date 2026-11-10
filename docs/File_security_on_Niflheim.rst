@@ -46,7 +46,7 @@ Run ``id`` to see your user ID and group memberships.
 
    Encrypt any files containing **real secrets**! If somebody gains root access to a computer that can mount Niflheim folders, they can access all your files!
 
-To Do: Provice examples on how to encrypt folders.
+To Do: Provide examples on how to encrypt folders.
 
 .. raw:: pdf
 
@@ -124,7 +124,7 @@ You do that by:
    chmod g=rx,o= folder  # Only the group can read/list the folder
    chmod og= folder      # Only the owner can access the folder
 
-Check with ``getfacl folder`` if any named user still has access through an ACL. If so remove the ACL with ``setfacl -x folder``.
+Check with ``getfacl folder`` if any named user still has access through an ACL. If so remove the ACL with ``setfacl -x u:username folder``.
 
 Giving students access in the GROUP or PRIVATE models
 -----------------------------------------------------
@@ -140,11 +140,11 @@ For a group, replace ``u:username`` with ``g:groupname``.
    If this is unacceptable, use of a shared storage space outside your home folder is necessary. Contact :ref:`Niflheim_support` in this case.
 
 Before sharing, review access to your other files. To remove access through the "others" permissions
-from all immediate files and folders, including hidden entries:
+from all immediate files and folders, including hidden entries but excluding symbolic links:
 
 .. code-block:: bash
 
-   find "$HOME" -mindepth 1 -maxdepth 1 -exec chmod o= {} +
+   find "$HOME" -mindepth 1 -maxdepth 1 ! -type l -exec chmod o= {} +
 
 This leaves group permissions and existing ACL grants unchanged.
 Make sure that any new files/folders created (without a default ACL) are also locked down by adding a `umask`_ line to your ``~/.bashrc`` file and run it in your current shell:
@@ -158,6 +158,10 @@ Make sure that any new files/folders created (without a default ACL) are also lo
 This allows group access but no access for others.
 
 .. _umask: https://en.wikipedia.org/wiki/Umask
+
+Before adding access, inspect existing ACLs with ``getfacl "$HOME"`` and ``getfacl -R "$HOME/shared"``.
+Adding an ACL normally recalculates the mask and can restore access for other users or groups previously blocked by it,
+even after ``chmod og=``. If you find unexpected ACL entries, contact :ref:`Niflheim_support` before proceeding.
 
 Give the student traversal access to your home folder, then read access to the shared folder and its contents:
 
