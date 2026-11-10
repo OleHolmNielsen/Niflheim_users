@@ -34,9 +34,9 @@ Choose a security model
      - You only, apart from administrators with privileged access.
 
 Apart from the home folder, access to a file requires permission on the file itself and traversal permission on every parent folder.
-You can restrict individual folders or grant exceptions using ACLs.
+You can restrict individual folders or grant access to specific folders using Access Control Lists (ACLs).
 
-Faculty, postdocs and Ph.D. students belong to ``xxxvip``, where ``xxx`` is the research section abbreviation.
+Faculty belong to the group ``xxxfac``, postdocs and Ph.D. students to ``xxxvip``, and M.Sc. / B.Sc. students to ``xxxstud`` where ``xxx`` is the research section abbreviation.
 Under the GROUP or PRIVATE models, students and supervisors can easily grant each other access to selected folders using ACLs.
 Run ``id`` to see your user ID and group memberships.
 
@@ -61,7 +61,7 @@ Below is the do-it-yourself description.
 Permission basics
 -----------------
 
-Standard Unix permissions apply to the owner (``u``), owning group (``g``), and everyone else (``o``):
+Standard Unix permissions apply to the owner (``u`` for *user*), owning group (``g`` for *group*), and everyone else (``o`` for *other*):
 
 .. list-table::
    :header-rows: 1
@@ -84,8 +84,7 @@ Use |chmod|_ to change standard permissions; inspect them with ``ls -l file`` or
 
 Access control lists (ACLs) grant permissions to additional users or groups without changing group ownership.
 Use |setfacl|_ to change ACLs and |getfacl|_ to inspect them.
-A default ACL on a folder supplies inherited permissions for newly created files and subfolders;
-ordinary new files normally receive no execute permission.
+You can set a default ACL on a folder, then newly created files and subfolders inherit those permissions.
 
 For introductions, see `Unix file permissions <https://compenv.phys.ethz.ch/linux/basics_1/31_basic_permissions/>`_
 and `Managing file access with ACLs <https://docs.rc.fas.harvard.edu/kb/acls-facls/>`_.
@@ -124,14 +123,34 @@ You do that by:
    chmod g=rx,o= folder  # Only the group can read/list the folder
    chmod og= folder      # Only the owner can access the folder
 
-Check with ``getfacl folder`` if any named user still has access through an ACL. If so remove the ACL with ``setfacl -x u:username folder``.
+Check with ``getfacl folder`` if any named user or group still has access through an ACL. If so remove the ACL with ``setfacl -x u:username folder`` or ``setfacl -x g:groupname folder``.
+
+
+Checking access to a specific folder
+------------------------------------
+
+Use ``getfacl folder`` to check who has access.  Example:
+
+.. code-block:: bash
+
+   ~$ getfacl tmp
+   # file: tmp
+   # owner: schiotz
+   # group: camdfac
+   user::rwx
+   group::r-x                # <--- The group camdfac has r-x access (Unix permissions)
+   group:camdvip:r-x         # <--- The group camdvip also has access (through the ACL)
+   mask::r-x
+   other::---
+
+Note that this folder named ``tmp`` belongs to the group ``camdfac`` which has access, but the group ``camdvip`` has also been given access.
 
 Giving students access in the GROUP or PRIVATE models
 -----------------------------------------------------
 
 To share ``$HOME/shared`` with a student, replace ``username`` below with their login name.
 The folder must already exist. Students can use the same recipe to share with supervisors.
-For a group, replace ``u:username`` with ``g:groupname``.
+You can also give access to an entire group by replacing ``u:username`` with ``g:groupname``.
 
 .. warning::
 
@@ -160,8 +179,7 @@ This allows group access but no access for others.
 .. _umask: https://en.wikipedia.org/wiki/Umask
 
 Before adding access, inspect existing ACLs with ``getfacl "$HOME"`` and ``getfacl -R "$HOME/shared"``.
-Adding an ACL normally recalculates the mask and can restore access for other users or groups previously blocked by it,
-even after ``chmod og=``. If you find unexpected ACL entries, contact :ref:`Niflheim_support` before proceeding.
+If you find unexpected ACL entries, contact :ref:`Niflheim_support` before proceeding, otherwise you might accidentally grant more access than you intended!
 
 Give the student traversal access to your home folder, then read access to the shared folder and its contents:
 
@@ -173,8 +191,7 @@ Give the student traversal access to your home folder, then read access to the s
 
 ``-R`` applies recursively; ``X`` grants execute access to directories and files already executable by anyone.
 The ``d:`` prefix sets default ACLs on all existing directories.
-New entries inherit access, limited by the permissions requested by the creating application;
-ordinary new files normally receive no execute permission. Group ownership stays unchanged.
+New entries inherit access, limited by the permissions requested by the creating application. Group ownership stays unchanged.
 
 Check the result:
 
@@ -189,7 +206,7 @@ If ``getfacl`` shows ``user:username:r-x  #effective:r--``, the ACL mask is bloc
 Changing group permissions with ``chmod`` changes this mask and can affect the student's access.
 
 **Moving or copying files into the shared folder:** default ACLs apply when entries are created,
-but transfer commands can keep the source permissions instead:
+but if you move exitisting folders or files into the shared folder they keep their original permissions:
 
 * ``mv`` preserves existing permissions and ACLs, so moved files and folders do not inherit the shared folder's access settings.
 * Plain ``cp`` normally lets newly created entries inherit the destination's default ACL, limited by the source permissions.
