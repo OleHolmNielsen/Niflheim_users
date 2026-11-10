@@ -33,7 +33,7 @@ Choose a security model
    * - 3. PRIVATE
      - You only, apart from administrators with privileged access.
 
-Apart from the home folder access to individual files also depends on their permissions and any access control lists (ACLs).
+Apart from the home folder, access to a file requires permission on the file itself and traversal permission on every parent folder.
 You can restrict individual folders or grant exceptions using ACLs.
 
 Faculty, postdocs and Ph.D. students belong to ``xxxvip``, where ``xxx`` is the research section abbreviation.
@@ -106,9 +106,9 @@ Run **one** of these commands:
 
 .. code-block:: bash
 
-   chmod og=rx "$HOME"     # OPEN: allow all users, permissions -rwxr-xr-x
-   chmod g=rx,o= "$HOME"   # GROUP: allow the owning group, permissions -rwxr-x---
-   chmod og= "$HOME"       # PRIVATE: allow only yourself, permissions -rwx------
+   chmod og=rx "$HOME"     # OPEN: allow all users
+   chmod g=rx,o= "$HOME"   # GROUP: allow the owning group
+   chmod og= "$HOME"       # PRIVATE: allow only yourself
 
 These commands leave your own permissions unchanged. Run ``getfacl "$HOME"`` to check the result.
 To share selected subfolders under GROUP or PRIVATE, follow the sharing recipe below.
@@ -122,7 +122,9 @@ You do that by:
 .. code-block:: bash
 
    chmod g=rx,o= folder  # Only the group can read/list the folder
-   chmod og= folder      # Nobody can access the folder
+   chmod og= folder      # Only the owner can access the folder
+
+Check with ``getfacl folder`` if any named user still has access through an ACL. If so remove the ACL with ``setfacl -x folder``.
 
 Giving students access in the GROUP or PRIVATE models
 -----------------------------------------------------
@@ -134,6 +136,7 @@ For a group, replace ``u:username`` with ``g:groupname``.
 .. warning::
 
    Traversing your home folder lets the recipient check guessed names and some metadata, even without listing its contents. An AI can make very qualified guesses about file names!
+
    If this is unacceptable, use of a shared storage space outside your home folder is necessary. Contact :ref:`Niflheim_support` in this case.
 
 Before sharing, review access to your other files. To remove access through the "others" permissions
@@ -144,7 +147,7 @@ from all immediate files and folders, including hidden entries:
    find "$HOME" -mindepth 1 -maxdepth 1 -exec chmod o= {} +
 
 This leaves group permissions and existing ACL grants unchanged.
-Make sure that any new files/folders created are also locked down by adding a umask_command_ line to your ``~/.bashrc`` file:
+Make sure that any new files/folders created (without a default ACL) are also locked down by adding a `umask`_ line to your ``~/.bashrc`` file and run it in your current shell:
 
 .. code-block:: bash
 
@@ -154,7 +157,7 @@ Make sure that any new files/folders created are also locked down by adding a um
 
 This allows group access but no access for others.
 
-.. _umask_command: https://en.wikipedia.org/wiki/Umask
+.. _umask: https://en.wikipedia.org/wiki/Umask
 
 Give the student traversal access to your home folder, then read access to the shared folder and its contents:
 
