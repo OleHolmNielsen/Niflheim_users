@@ -45,14 +45,14 @@ Run ``id`` to see your user ID and group memberships.
 .. warning::
 
    Encrypt any files containing **real secrets**! If somebody gains root access to a computer that can mount Niflheim folders, they can access all your files!
-
-To Do: Provide examples on how to encrypt folders.
+   For example, the *GNU Privacy Guard* (GPG_ or gpg) tool is a native/baseos security tool for encrypting files. 
 
 .. raw:: pdf
 
    PageBreak
 
 .. _ACL: https://www.redhat.com/en/blog/linux-access-control-lists
+.. _PGP: https://www.redhat.com/en/blog/encryption-decryption-gpg
 
 Technical details
 ==================
