@@ -47,7 +47,7 @@ To view your current security model, run the script ``showsecuritymodel``.  Be p
 
 .. code-block::
 
-   $ ./showmodel
+   $ ./showsecuritymodel
    Folder /home/niflheim/myusername has file access model GROUP (groupname)
 
    Folder /home/niflheim2/myusername has file access model PRIVATE
