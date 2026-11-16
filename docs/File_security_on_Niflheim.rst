@@ -179,6 +179,8 @@ Use ``manageaccess show folder`` to check who has access.  It also works on indi
 
 Note that this folder named ``tmp`` belongs to the group ``camdfac`` which has access, but the group ``camdvip`` has also been given access.  However, the latter group cannot read the parent folder, but they can traverse it: they need to know the name of the shared folder to access it.
 
+The ``manageaccess`` script acts a a front-end for the ``getfacl`` and ``setfacl`` unix commands.
+
 Giving other users access in the GROUP or PRIVATE model
 -------------------------------------------------------
 
