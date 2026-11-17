@@ -162,6 +162,25 @@ You do that by:
 Check with ``getfacl folder`` if any named user or group still has access through an ACL_.
 If so remove the ACL_ with ``setfacl -x u:username folder`` or ``setfacl -x g:groupname folder``.
 
+
+The ``manageaccess`` script, for sharing folders with others
+------------------------------------------------------------
+
+We provide a script named ``manageaccess`` to help you share folders with other users.  The script has the following subcommands
+
+``manageaccess overview``
+   Gives an overview of what you are sharing now.
+
+``manageaccess show``
+  Shows who you have given access to a specific folder (see next section).
+
+``manageaccess add``
+  Share a given folder with another user or group, see sections below.
+
+``manageaccess remove``
+  Revoke access for another user (or all other users)
+
+
 Checking access to a specific folder
 ------------------------------------
 
@@ -227,6 +246,12 @@ To revoke access, use the ``manageaccess remove SPECIFICATION ITEM [ITEM2 ...]``
 The command will also revoke access to all subfolders and files in a folder, unless you speficy otherwise by giving the ``-F`` or ``-N`` options (see the ``manageaccess add`` command above).
 
 If the parent folder(s) give traversal access to the user and no other shared folders require that traversal access is preserved, the traversal access of the parent folder(s) is also revoked.
+
+You can also remove access to all other users with the command
+
+.. code-block:: bash
+
+   manageaccess remove --all sharedfolder1 sharedfolder2
 
 
 Sharing with everyone
