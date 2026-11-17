@@ -133,10 +133,14 @@ For the OPEN model, run this command:
 
 For the GROUP model, run the first line below.  If you later intend to share subfolders you should also run the second line, it takes away permissions on subfolders and files so you don't accidentally open them up (the file sharing script below should catch that, however).
 
+.. code-block:: bash
+
    chmod g=rx,o= "$HOME"   # GROUP: allow the owning group
    find "$HOME" -mindepth 1 -maxdepth 1 ! -type l -exec chmod o= {} +
 
 For the PRIVATE mode, run the first line below. If you later intend to share subfolders you should also run the second line.
+
+.. code-block:: bash
 
    chmod og= "$HOME"       # PRIVATE: allow only yourself
    find "$HOME" -mindepth 1 -maxdepth 1 ! -type l -exec chmod go= {} +
