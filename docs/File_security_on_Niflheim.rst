@@ -29,9 +29,9 @@ Choose a security model
    * - 1. OPEN
      - All Niflheim users (current default; not recommended).
    * - 2. GROUP
-     - You and members of your home directory's `Unix group`_ (recommended).
+     - You and members of your home directory's `Unix group`_.
    * - 3. PRIVATE
-     - You only, apart from administrators with privileged access.
+     - Only you, apart from administrators with privileged access.
 
 Apart from the home folder, access to a file requires permission on the file itself and traversal permission on every parent folder.
 You can restrict individual folders or grant access to specific folders using *Access Control Lists* (ACL_).
