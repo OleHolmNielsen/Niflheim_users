@@ -29,9 +29,9 @@ Choose a security model
    * - 1. OPEN
      - All Niflheim users (current default; not recommended).
    * - 2. GROUP
-     - You and members of your home directory's `Unix group`_ (recommended).
+     - You and members of your home directory's `Unix group`_.
    * - 3. PRIVATE
-     - You only, apart from administrators with privileged access.
+     - Only you, apart from administrators with privileged access.
 
 Apart from the home folder, access to a file requires permission on the file itself and traversal permission on every parent folder.
 You can restrict individual folders or grant access to specific folders using *Access Control Lists* (ACL_).
@@ -39,6 +39,27 @@ You can restrict individual folders or grant access to specific folders using *A
 Faculty belong to the group ``xxxfac``, postdocs and Ph.D. students to ``xxxvip``, and M.Sc. / B.Sc. students to ``xxxstud`` where ``xxx`` is the research section abbreviation.
 Under the GROUP or PRIVATE models, students and supervisors can easily grant each other access to selected folders using ACL_.
 Run ``id`` to see your user ID and group memberships.
+
+Checking your security model
+----------------------------
+
+To view your current security model, run the script ``showsecuritymodel``.  Be particularly aware of any warnings issued.  The script will report the security models of your home folder and any other file systems you may have access to.  Example:
+
+.. code-block::
+
+   $ ./showsecuritymodel
+   Folder /home/niflheim/myusername has file access model GROUP (groupname)
+
+   Folder /home/niflheim2/myusername has file access model PRIVATE
+
+   Folder /home/scratch3/myusername has file access model GROUP (groupname)
+   Folder is TRAVERSIBLE for all users
+   WARNING: Folder is not readable for all users, but these subfolders are:
+         /home/scratch3/myusername/somefolder  (r-x)
+         /home/scratch3/myusername/someotherfolder  (r-x)
+
+   Folder /scratch/myusername has file access model OPEN
+
 
 .. _Unix group: https://docs.oracle.com/cd/E19120-01/open.solaris/819-2379/userconcept-35906/index.html
 
@@ -90,7 +111,7 @@ Use |setfacl|_ to change ACL_ and |getfacl|_ to inspect them.
 You can set a default ACL_ on a folder, then newly created files and subfolders inherit those permissions.
 
 For introductions, see `Unix file permissions <https://compenv.phys.ethz.ch/linux/basics_1/31_basic_permissions/>`_
-and `Managing file access with ACLs <https://docs.rc.fas.harvard.edu/kb/acls-facls/>`_.
+and `POSIX file ACLs on Linux <https://stackharbor.com/en/knowledge-base/linux-posix-file-acls-setfacl/>`_.
 
 .. |chmod| replace:: ``chmod``
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
@@ -102,15 +123,27 @@ and `Managing file access with ACLs <https://docs.rc.fas.harvard.edu/kb/acls-fac
 Implementing a model by setting home-folder permissions
 -------------------------------------------------------
 
-The model is implemented by setting permissions on your home folder; permissions on its contents remain unchanged.
+The model is implemented by setting permissions on your home folder; permissions on its contents may remain unchanged unless you later intend to share subfolders.
 
-Run **one** of these commands:
+For the OPEN model, run this command:
 
 .. code-block:: bash
 
    chmod og=rx "$HOME"     # OPEN: allow all users
+
+For the GROUP model, run the first line below.  If you later intend to share subfolders you should also run the second line, it takes away permissions on subfolders and files so you don't accidentally open them up (the file sharing script below should catch that, however).
+
+.. code-block:: bash
+
    chmod g=rx,o= "$HOME"   # GROUP: allow the owning group
+   find "$HOME" -mindepth 1 -maxdepth 1 ! -type l -exec chmod o= {} +
+
+For the PRIVATE mode, run the first line below. If you later intend to share subfolders you should also run the second line.
+
+.. code-block:: bash
+
    chmod og= "$HOME"       # PRIVATE: allow only yourself
+   find "$HOME" -mindepth 1 -maxdepth 1 ! -type l -exec chmod go= {} +
 
 These commands leave your own permissions unchanged. Run ``getfacl "$HOME"`` to check the result.
 To share selected subfolders under GROUP or PRIVATE, follow the sharing recipe below.
@@ -129,16 +162,37 @@ You do that by:
 Check with ``getfacl folder`` if any named user or group still has access through an ACL_.
 If so remove the ACL_ with ``setfacl -x u:username folder`` or ``setfacl -x g:groupname folder``.
 
+
+The ``manageaccess`` script, for sharing folders with others
+------------------------------------------------------------
+
+We provide a script named ``manageaccess`` to help you share folders with other users.  The script has the following subcommands
+
+``manageaccess overview``
+   Gives an overview of what you are sharing now.
+
+``manageaccess show``
+  Shows who you have given access to a specific folder (see next section).
+
+``manageaccess add``
+  Share a given folder with another user or group, see sections below.
+
+``manageaccess remove``
+  Revoke access for another user (or all other users)
+
+The ``manageaccess`` script acts a a front-end for the ``getfacl`` and ``setfacl`` unix commands.
+
+
 Checking access to a specific folder
 ------------------------------------
 
-Use ``getfacl folder`` to check who has access.  Example:
+Use ``manageaccess show folder`` to check who has access.  It also works on individual files.  Example:
 
 .. code-block:: bash
 
-   ~$ getfacl tmp
+   ~$ manageaccess show tmp
    # file: tmp
-   # owner: schiotz
+   # owner: username
    # group: camdfac
    user::rwx
    group::r-x                # <--- The group camdfac has r-x access (Unix permissions)
@@ -146,82 +200,60 @@ Use ``getfacl folder`` to check who has access.  Example:
    mask::r-x
    other::---
 
-Note that this folder named ``tmp`` belongs to the group ``camdfac`` which has access, but the group ``camdvip`` has also been given access.
+   /home/niflheim/username TRAVERSIBLE (not readable for: group:camdvip)
 
-Giving students access in the GROUP or PRIVATE models
------------------------------------------------------
+Note that this folder named ``tmp`` belongs to the group ``camdfac`` which has access, but the group ``camdvip`` has also been given access.  However, the latter group cannot read the parent folder, but they can traverse it: they need to know the name of the shared folder to access it.
 
-To share ``$HOME/shared`` with a student, replace ``username`` below with their login name.
-The folder must already exist. Students can use the same recipe to share with supervisors.
-You can also give access to an entire group by replacing ``u:username`` with ``g:groupname``.
+
+Giving other users access in the GROUP or PRIVATE model
+-------------------------------------------------------
+
 
 .. warning::
 
-   Traversing your home folder lets the recipient check guessed names and some metadata, even without listing its contents. An AI can make very qualified guesses about file names!
+   Giving acccess to a subfolder of your home folder allows the users to traverse your home folder.  Traversing your home folder lets the user check guessed names and some metadata, even without listing its contents. An AI can make very qualified guesses about file names!
 
    If this is unacceptable, use of a shared storage space outside your home folder is necessary. Contact :ref:`Niflheim_support` in this case.
 
-Before sharing, review access to your other files. To remove access through the "others" permissions
-from all immediate files and folders, including hidden entries but excluding symbolic links:
+
+Use ``manageaccess add -N|-R|-F SPECIFICATION ITEM [ITEM2 ...]`` to give individual users or user groups access to an item (folder or file).  Example:
 
 .. code-block:: bash
 
-   find "$HOME" -mindepth 1 -maxdepth 1 ! -type l -exec chmod o= {} +
+   manageaccess add -R u:mystudent:rx sharedfolder1 sharedfolder2
 
-This leaves group permissions and existing ACL_ grants unchanged.
-Make sure that any new files/folders created (without a default ACL_) are also locked down by adding a `umask`_ line to your ``~/.bashrc`` file and run it in your current shell:
+You specify which user/group to give access with a specification string: ``u:username:rx`` or ``g:groupname:rx``.  The ``rx`` part of the string indicates that you intend to give read access to files (and execute access *if and only if* they already are executable), and that you both give the right to list a folder (``r``) and access its content (``x``).
 
-.. code-block:: bash
+For a folder, you need to speciy whether you want to give access to all subfolders (``-R`` or ``--recursive``), only to the folder and its files but not to subfolders (``-N`` or ``--non-recursive``), or only to the folder itself but not any of its content (``-F`` or ``--folder-only``).  The latter is probably not very useful.
 
-   umask 0027
-   # or using symbolic notation:
-   umask u=rwx,g=rx,o=
+If you want to give access to more than one user or group, separate specifications by a comma but no space: ``u:user1:rx,u:user2:rx,g:group1:rx``. The ITEM can be a folder or a file, several folders or files can be specified by separating them with a space.
 
-This allows group access but no access for others.
+The script will open traversal access to all parent folders so the relevant users can reach the folder you are opening.  The script checks if giving traversal access to parent folders would open access to other folders as a side effect, if that is the case it aborts without changing any permissions.
 
-.. _umask: https://en.wikipedia.org/wiki/Umask
+.. warning::
 
-Before adding access, inspect existing ACL_ with ``getfacl "$HOME"`` and ``getfacl -R "$HOME/shared"``.
-If you find unexpected ACL_ entries, contact :ref:`Niflheim_support` before proceeding,
-otherwise you might accidentally grant more access than you intended!
+   Do not give write access (``w``) to files or folders unless you **really** know what you are doing.  Even if you trust the other person, accidents easily happen.  There are almost always better ways to collaborate (version control for code, cloud based solutions for documents).
 
-Give the student traversal access to your home folder, then read access to the shared folder and its contents:
 
-.. code-block:: bash
+Revoking access to other users
+------------------------------
 
-   setfacl -m u:username:x "$HOME"              # Traverse without listing names
-   setfacl -R -m u:username:rX "$HOME/shared"   # Access existing contents
-   setfacl -R -m d:u:username:rX "$HOME/shared" # Inherit access for new contents
-
-``-R`` applies recursively; ``X`` grants execute access to directories and files already executable by anyone.
-The ``d:`` prefix sets default ACL_ on all existing directories.
-New entries inherit access, limited by the permissions requested by the creating application.
-Group ownership stays unchanged.
-
-Check the result:
+To revoke access, use the ``manageaccess remove SPECIFICATION ITEM [ITEM2 ...]`` command.  Example:
 
 .. code-block:: bash
 
-   getfacl "$HOME" "$HOME/shared"
+   manageaccess remove u:mystudent:rx sharedfolder1 sharedfolder2
 
-Give the student the full path to the shared folder and ask them to check that they can read its files.
-For nested shared folders, they also need ``x`` on every intermediate folder.
+The command will also revoke access to all subfolders and files in a folder, unless you speficy otherwise by giving the ``-F`` or ``-N`` options (see the ``manageaccess add`` command above).
 
-If ``getfacl`` shows ``user:username:r-x  #effective:r--``, the ACL_ mask is blocking execute access.
-Changing group permissions with ``chmod`` changes this mask and can affect the student's access.
+If the parent folder(s) give traversal access to the user and no other shared folders require that traversal access is preserved, the traversal access of the parent folder(s) is also revoked.
 
-**Moving or copying files into the shared folder:** default ACL_ apply when entries are created,
-but if you move exitisting folders or files into the shared folder they keep their original permissions:
+You can also remove access to all other users with the command
 
-* ``mv`` preserves existing permissions and ACL_, so moved files and folders do not inherit the shared folder's access settings.
-* Plain ``cp`` normally lets newly created entries inherit the destination's default ACL_, limited by the source permissions.
-  However, ``cp -p`` and ``cp -a`` preserve source permissions and ACL_ instead, so the student may lose access to the copied files.
-* ``rsync -a`` preserves source permission bits, which can limit the student's access through the ACL_ mask.
-  It does **not** copy source ACL_ unless you also use ``-A`` (``--acls``); that option replaces destination ACL_ with source ACL_.
+.. code-block:: bash
 
-After moving files with ``mv`` or copying with preserved permissions or ACL_,
-rerun both recursive ``setfacl`` commands above to grant access to the imported files and set inheritance on imported folders.
-Ask the student to check access again after the transfer.
+   manageaccess remove --all sharedfolder1 sharedfolder2
+
 
 Sharing with everyone
 ---------------------
