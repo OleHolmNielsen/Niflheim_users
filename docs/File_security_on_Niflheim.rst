@@ -111,7 +111,7 @@ Use |setfacl|_ to change ACL_ and |getfacl|_ to inspect them.
 You can set a default ACL_ on a folder, then newly created files and subfolders inherit those permissions.
 
 For introductions, see `Unix file permissions <https://compenv.phys.ethz.ch/linux/basics_1/31_basic_permissions/>`_
-and `Managing file access with ACLs <https://docs.rc.fas.harvard.edu/kb/acls-facls/>`_.
+and `POSIX file ACLs on Linux <https://stackharbor.com/en/knowledge-base/linux-posix-file-acls-setfacl/>`_.
 
 .. |chmod| replace:: ``chmod``
 .. _chmod: https://en.wikipedia.org/wiki/Chmod
