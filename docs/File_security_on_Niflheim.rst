@@ -125,25 +125,41 @@ Implementing a model by setting home-folder permissions
 
 The model is implemented by setting permissions on your home folder; permissions on its contents may remain unchanged unless you later intend to share subfolders.
 
-For the OPEN model, run this command:
+**For the OPEN model,** run this command:
 
 .. code-block:: bash
 
    chmod og=rx "$HOME"     # OPEN: allow all users
 
-For the GROUP model, run the first line below.  If you later intend to share subfolders you should also run the second line, it takes away permissions on subfolders and files so you don't accidentally open them up (the file sharing script below should catch that, however).
+**For the GROUP model,** run the first line below.  If you later intend to share subfolders you should also run the second line, it takes away permissions on subfolders and files so you don't accidentally open them up (the file sharing script below should catch that, however).
 
 .. code-block:: bash
 
    chmod g=rx,o= "$HOME"   # GROUP: allow the owning group
    find "$HOME" -mindepth 1 -maxdepth 1 ! -type l -exec chmod o= {} +
 
-For the PRIVATE mode, run the first line below. If you later intend to share subfolders you should also run the second line.
+If you want to share folders later, you should also add a ``umask`` line to your ``.bashrc`` file, otherwise new folders you create will have too open permissions:
+
+.. code-block:: bash
+
+   umask 0027
+   # or using symbolic notation:
+   umask u=rwx,g=rx,o=
+
+**For the PRIVATE mode,** run the first line below. If you later intend to share subfolders you should also run the second line.
 
 .. code-block:: bash
 
    chmod og= "$HOME"       # PRIVATE: allow only yourself
    find "$HOME" -mindepth 1 -maxdepth 1 ! -type l -exec chmod go= {} +
+
+If you intend to share subfolders, you should also add a ``umask`` line to your ``.bashrc`` file, otherwise new folders you create will have too open permissions:
+
+.. code-block:: bash
+
+   umask 0077
+   # or using symbolic notation:
+   umask u=rwx,g=,o=
 
 These commands leave your own permissions unchanged. Run ``getfacl "$HOME"`` to check the result.
 To share selected subfolders under GROUP or PRIVATE, follow the sharing recipe below.
